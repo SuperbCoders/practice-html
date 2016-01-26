@@ -1,0 +1,127 @@
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Practic добавить', false, false, true)
+
+    body
+        .wrapper
+            .rect_1024
+            .base.controls_mod
+                +header(1)
+
+                div.main_content
+                    .section_inner
+                        .profile_container
+                            .profile_tab_header_inner
+                                a.go_back_btn(href='#')
+                                h2.caption_v1.text_center Новая карточка пациента
+                            .profile_tab_holder
+                                    
+                                .patient_info_block
+                                    
+                                    .form_row
+                                        .patient_photo_block
+                                            +patient_status()
+                                            .patient_phone
+                                                a.gl_link.blue_link(href='#')
+                                                    span
+                                                        | Телефон 
+                                                        span.mob_hidden  клиента 
+                                            label.patient_add_avatar
+                                                span.patient_avatar_letter Ф
+                                                input.hidden_input(type='file')
+                                            
+                                    .form_row
+                                        label.input_w
+                                            input.form_input.input_v3(placeholder='ФИО')
+                                    .form_row
+                                        label.input_w
+                                            textarea.form_input.input_v3(placeholder='Краткое описание клиента (этот текст будет видеть только врач)')
+                                    .form_row.mob_add_mod
+                                        label.input_w
+                                            input.form_input.input_v3(placeholder='Телефон клиента')
+                                            .add_btn_holder
+                                                a.add_row_btn.yellow_black_btn.cloneRowBtn(href='#')
+
+                                    .form_row
+                                        label.input_w
+                                            input.form_input.input_v3(placeholder='Email')
+
+                                .tab_inner.form_row_v1
+                                    h2.caption_v1 Портрет пациента
+
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_gender') Пол
+                                        .input_w.size_45.max_w_300
+                                            ul.filter_toggle.filter_toggle_v2
+                                                li.filter_t_item
+                                                    label.filter_t_box
+                                                        input.hidden_input(type='radio' name='patient_filter' checked)
+                                                        span.filter_t_name Мужской
+                                                li.filter_t_item
+                                                    label.filter_t_box
+                                                        input.hidden_input(type='radio' name='patient_filter')
+                                                        span.filter_t_name Женский
+                                                
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_age') Возраст
+                                        label.input_w.size_29.datepicker_v1.max_w_300
+                                            input#patient_age.form_input.input_v1()
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_weight') Вес
+                                        .input_w.size_59
+                                            input#patient_weight.form_input.input_v1(placeholder='80 кг')
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_height') Рост
+                                        .input_w.size_59
+                                            input#patient_height.form_input.input_v1(placeholder='185 см')
+                                            
+                                    .form_row
+                                        .label_holder: .form_label() Группа крови
+                                        .input_w.size_27.mob_size_43.chosen_v1.no_search
+                                            select#doctor_stand_time.chosen-select(data-placeholder='Группа')
+                                                option(value='' data-title='')
+                                                option(value=1 data-title='1 группа') 1 группа
+                                                option(value=2 data-title='2 группа') 2 группа
+                                                option(value=3 data-title='3 группа') 3 группа
+                                                option(value=4 data-title='4 группа') 4 группа
+                                            
+                                        .input_w.size_27.mob_size_43.chosen_v1.no_search
+                                            select#doctor_stand_time.chosen-select(data-placeholder='Резус фактора')
+                                                option(value='' data-title='')
+                                                option(value=0 data-title='+') -
+                                                option(value=1 data-title='-') +
+
+                                .tab_inner.form_row_v1
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_chronic_diseases') Хронические заболевания
+                                        .input_w.size_59
+                                            textarea#patient_chronic_diseases.form_input.mod_1.input_v1(placeholder='Перечислите через запятую')
+    
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_bad_habits') Вредные привычки
+                                        .input_w.size_59
+                                            textarea#patient_bad_habits.form_input.mod_1.input_v1(placeholder='Перечислите через запятую')
+    
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_profession') Профессия
+                                        .input_w.size_59
+                                            input#patient_profession.form_input.input_v1()
+                                            
+                                .tab_inner.form_row_v1
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_doc_number') Договор №
+                                        .input_w.size_59
+                                            input#patient_doc_number.form_input.input_v1()
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_reg_date') Дата регистрации
+                                        .input_w.size_59
+                                            input#patient_reg_date.form_input.input_v1()
+                                                     
+                            .profile_tab_controls
+                                .section_inner
+                                    .form_controls
+                                        .fl: .mb: a.btn_v2.yellow_black_btn.save_btn(href='#') Сохранить
+                                        .fl: .mb: a.btn_v2.save_btn.black_yellow_btn(href='#'): span.mb Сохранить и добавить запись
+                
+                +aside_menu()

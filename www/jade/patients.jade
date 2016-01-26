@@ -1,0 +1,85 @@
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Practic пациенты', false, true)
+
+    body.body_gray.sub_header_mod
+        .wrapper
+            .rect_1024
+            .base.load_more_mod
+                +header(2, true)
+
+                div.main_content
+                    .section_inner
+                        ul.patients_list
+                            +loop_while(3)
+                                li.patient_unit
+                                    .patient_card
+                                        +patient_status()
+                                        +patient_menu()
+                                        .patient_avatar: img(src='i/user_2.png')
+                                        .patient_info
+                                            .patient_name Осинцев Константин
+                                            p Краткая информация о пациенте Первичный прием, возможно анализы...
+                                        +patient_info_table()
+                                        
+                                        .patient_card_controls.patient_warn: .patient_info_table
+                                            .controls_cell
+                                                a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
+                                                p: a.gl_link(href='#') Изменить время приема
+                        
+                                li.patient_unit
+                                    .patient_card
+                                        +patient_status()
+                                        +patient_menu()
+                                        .patient_avatar: img(src='i/user_1.png')
+                                        .patient_info
+                                            .patient_name Самойлов Ярослав Георгиевич
+                                            p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
+                                        +patient_info_table()
+                                        .patient_card_controls: .patient_info_table
+                                            .controls_cell
+                                                a.btn_v2.patient_btn.black_yellow_btn(href='#'): span.mb Записать на прием
+                        
+                                li.patient_unit
+                                    .patient_card
+                                        +patient_status()
+                                        +patient_menu()
+                                        .patient_avatar: img(src='i/user_2.png')
+                                        .patient_info
+                                            .patient_name Петрова Алина
+                                            p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
+                                        +patient_info_table()
+                                        .patient_card_controls.patient_confirm: .patient_info_table
+                                            .controls_cell
+                                                a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Изменить прием 29 февраля, в 12:00
+                                                p: a.gl_link(href='#') Отменить приём
+
+                                li.patient_unit
+                                    .patient_card
+                                        +patient_status()
+                                        +patient_menu()
+                                        .patient_avatar: img(src='i/user_2.png')
+                                        .patient_info
+                                            .patient_name Петрова Алина
+                                            p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
+                                        +patient_info_table()
+                                        .patient_card_controls.patient_ready: .patient_info_table
+                                            .controls_cell
+                                                a.btn_v2.patient_btn.green_btn(href='#'): span.mb Начать прием
+
+                        .pagination_holder
+                            ul.pagination_list
+                                li.pagination_item.pagination_prev: a.gl_link(href='#') 
+                                li.pagination_item: a.gl_link(href='#') 1
+                                li.pagination_item.active: a.gl_link(href='#') 2
+                                li.pagination_item: a.gl_link(href='#') 3
+                                li.pagination_item: a.gl_link(href='#') 4
+                                li.pagination_item: a.gl_link(href='#') 5
+                                li.pagination_item: a.gl_link(href='#') ...304
+                                li.pagination_item.pagination_next: a.gl_link(href='#')
+                                
+                a.load_more_btn(href='#') Показать еще карточки пациентов
+                
+                +aside_menu()
+                                                

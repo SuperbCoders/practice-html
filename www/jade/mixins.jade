@@ -1,0 +1,122 @@
+mixin dev_head(page_title, edit_profile, patients, add_patient)
+    head
+        title=page_title
+        | <!-- saved from url=(0014)about:internet -->
+        meta(charset='utf-8')
+        meta(name='viewport', content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='styles/main_global.css?no_cache', media='all')
+        script(src='js/jquery1.10.js')
+        script(src='js/chosen.jquery.js')
+        script(src='js/script.js?no_cache')
+        - if (edit_profile)
+            script(src='js/jquery-ui.js')
+            script(src='js/swiper.js')
+            script(src='js/chosen.jquery.js')
+            script(src='js/jquery.nicescroll.js')
+            script(src='js/edit_profile.js?no_cache')
+        - if (patients)
+            script(src='js/jquery-ui.js')
+            //script(src='js/swiper.js')
+            script(src='js/chosen.jquery.js')
+            script(src='js/jquery.nicescroll.js')
+            script(src='js/patients_script.js?no_cache')
+        - if (add_patient)
+            link(href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css')
+            script(src='js/jquery-ui.js')
+            //script(src='js/swiper.js')
+            script(src='js/chosen.jquery.js')
+            script(src='js/jquery.nicescroll.js')
+            script(src='js/add_patient_script.js?no_cache')
+
+
+mixin loop_while(counter)
+    -i=0;
+    while i < counter
+        -i++;
+        block
+        
+mixin patient_status()
+    .patient_status_w.chosen_v2.no_search
+        select.chosen-select()
+            option.status_pin.status_blue(value=0 data-title='status_blue' selected) 1 
+            option.status_pin.status_green(value=1 data-title='status_green') 2
+            option.status_pin.status_red(value=2 data-title='status_red') 3
+            option.status_pin.status_orange(value=2 data-title='status_orange') 4
+
+mixin patient_menu()
+    .patient_menu_w.chosen_v2.no_search
+        select.chosen-select()
+            option.status_pin.status_blue(value=0 data-title='status_blue' selected) 1 
+            option.status_pin.status_green(value=1 data-title='status_green') 2
+            option.status_pin.status_red(value=2 data-title='status_red') 3
+            option.status_pin.status_orange(value=2 data-title='status_orange') 4
+            
+mixin patient_info_table()
+    .patient_info_table: .other_info_cell
+        p +7 927 026 10 22
+        p yaosamo@gmail.com
+            
+mixin header(active_menu, sub_header)
+    div.header
+        .section_inner.clearfix
+            .fl.mob_hidden
+                a.logo(href='#')
+            .menu_holder
+                ul.main_menu
+                    li.main_m_item(class= active_menu == 1 ? 'active' : ''): a.gl_link(href='index.html'): span Расписание
+                    li.main_m_item(class= active_menu == 2 ? 'active' : ''): a.gl_link(href='patients.html'): span Пациенты
+            .fr
+                .mb.mob_hidden: .user_m_item
+                    a.notifications.white_transp_btn.new_notification(href='#') 2
+
+                .mb.mob_hidden: .user_m_item
+                    a.btn_v1.white_transp_btn.quick_reg_btn(href='#') Быстрая запись
+
+                a.menu_humburger.openMenu(href='#'): span Меню
+    - if (sub_header)
+        .sub_header_holder
+            .section_inner.clearfix
+                .fl.header_search_form_holder
+                    .header_search_form
+                        form(action='#')
+                            label.input_w.search_input_w
+                                input.input_v2.form_input(placeholder='Поиск пациента')
+    
+                .fl.mob_hidden
+                    a.btn_v1.add_card_btn.yellow_black_btn(href='add_patient.html') Создать новую карточку
+
+                .fr.filter_toggle_holder: .mb: form(action='#')
+                    ul.filter_toggle.filter_toggle_v1
+                        li.filter_t_item
+                            label.filter_t_box
+                                input.hidden_input(type='radio' name='patient_filter' checked)
+                                span.filter_t_name
+                                    | Все
+                                    span.dt_hidden  пациенты
+                        li.filter_t_item
+                            label.filter_t_box
+                                input.hidden_input(type='radio' name='patient_filter')
+                                span.filter_t_name
+                                    span.dt_hidden Не подтвержденые
+                                    span.mob_hidden Ожидают подтверждения
+                        li.filter_t_item.mob_hidden
+                            label.filter_t_box
+                                input.hidden_input(type='radio' name='patient_filter')
+                                span.filter_t_name В архиве 
+
+mixin aside_menu()
+    .aside_menu_overlay.asideOverlay
+    .aside_menu_holder
+        .aside_menu
+            a.aside_close_btn.openMenu(href='#')
+            .user_info
+                .user_avatar: img(src='i/user_small_1.png')
+                .user_name: b Ярослав Самойлов
+                p 
+                    a.gl_link.blue_link(href='#'): span Перейти на сайт
+            .aside_m_scroller: ul.aside_m_list
+                li.aside_m_item: a.gl_link(href='#') Поделиться моей страницей
+                li.aside_m_item: a.gl_link(href='#') Настройки
+                li.aside_m_item: a.gl_link(href='#') Выход из учетной записи
+                li.aside_m_item.aside_m_last: a.gl_link(href='#') Техническая поддержка
+                
