@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Practic пациенты</title><!-- saved from url=(0014)about:internet -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles/main_global.css?no_cache" media="all"/>
+    <script src="js/jquery1.10.js"></script>
+    <script src="js/chosen.jquery.js"></script>
+    <script src="js/script.js?no_cache"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--script(src='js/swiper.js')-->
+    <script src="js/chosen.jquery.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+    <script src="js/patients_script.js?no_cache"></script>
+  </head>
+  <body class="body_gray sub_header_mod">
+    <div class="wrapper">
+      <div class="rect_1024"></div>
+      <div class="base load_more_mod">
+        <div class="header">
+          <div class="section_inner clearfix">
+            <div class="fl mob_hidden"><a href="#" class="logo"></a></div>
+            <div class="menu_holder">
+              <ul class="main_menu">
+                <li class="main_m_item"><a href="index.html" class="gl_link"><span>Расписание</span></a></li>
+                <li class="main_m_item active"><a href="patients.html" class="gl_link"><span>Пациенты</span></a></li>
+              </ul>
+            </div>
+            <div class="fr">
+              <div class="mb mob_hidden">
+                <div class="user_m_item"><a href="#" class="notifications white_transp_btn new_notification">2</a></div>
+              </div>
+              <div class="mb mob_hidden">
+                <div class="user_m_item"><a href="#" class="btn_v1 white_transp_btn quick_reg_btn">Быстрая запись</a></div>
+              </div><a href="#" class="menu_humburger openMenu"><span>Меню</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="sub_header_holder">
+          <div class="section_inner clearfix">
+            <div class="fl header_search_form_holder">
+              <div class="header_search_form">
+                <form action="#">
+                  <label class="input_w search_input_w">
+                    <input placeholder="Поиск пациента" class="input_v2 form_input"/>
+                  </label>
+                </form>
+              </div>
+            </div>
+            <div class="fl mob_hidden"><a href="add_patient.html" class="btn_v1 add_card_btn yellow_black_btn">Создать новую карточку</a></div>
+            <div class="fr filter_toggle_holder">
+              <div class="mb">
+                <form action="#">
+                  <ul class="filter_toggle filter_toggle_v1">
+                    <li class="filter_t_item">
+                      <label class="filter_t_box">
+                        <input type="radio" name="patient_filter" checked="checked" class="hidden_input"/><span class="filter_t_name">Все<span class="dt_hidden"> пациенты</span></span>
+                      </label>
+                    </li>
+                    <li class="filter_t_item">
+                      <label class="filter_t_box">
+                        <input type="radio" name="patient_filter" class="hidden_input"/><span class="filter_t_name"><span class="dt_hidden">Не подтвержденые</span><span class="mob_hidden">Ожидают подтверждения</span></span>
+                      </label>
+                    </li>
+                    <li class="filter_t_item mob_hidden">
+                      <label class="filter_t_box">
+                        <input type="radio" name="patient_filter" class="hidden_input"/><span class="filter_t_name">В архиве </span>
+                      </label>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main_content">
+          <div class="section_inner">
+            <ul class="patients_list">
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Осинцев Константин</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls patient_warn">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
+                        <p><a href="#" class="gl_link">Изменить время приема</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_1.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Самойлов Ярослав Георгиевич</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Петрова Алина</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls patient_confirm">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
+                        <p><a href="#" class="gl_link">Отменить приём</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Петрова Алина</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls patient_ready">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Осинцев Константин</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls patient_warn">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
+                        <p><a href="#" class="gl_link">Изменить время приема</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_1.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Самойлов Ярослав Георгиевич</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Петрова Алина</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls patient_confirm">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
+                        <p><a href="#" class="gl_link">Отменить приём</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Петрова Алина</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls patient_ready">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Осинцев Константин</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls patient_warn">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
+                        <p><a href="#" class="gl_link">Изменить время приема</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_1.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Самойлов Ярослав Георгиевич</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Петрова Алина</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls patient_confirm">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
+                        <p><a href="#" class="gl_link">Отменить приём</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="patient_unit">
+                <div class="patient_card">
+                  <div class="patient_status_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_menu_w chosen_v2 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                    </select>
+                  </div>
+                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_info">
+                    <div class="patient_name">Петрова Алина</div>
+                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                  </div>
+                  <div class="patient_info_table">
+                    <div class="other_info_cell">
+                      <p>+7 927 026 10 22</p>
+                      <p>yaosamo@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="patient_card_controls patient_ready">
+                    <div class="patient_info_table">
+                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="pagination_holder">
+              <ul class="pagination_list">
+                <li class="pagination_item pagination_prev"><a href="#" class="gl_link"> </a></li>
+                <li class="pagination_item"><a href="#" class="gl_link">1</a></li>
+                <li class="pagination_item active"><a href="#" class="gl_link">2</a></li>
+                <li class="pagination_item"><a href="#" class="gl_link">3</a></li>
+                <li class="pagination_item"><a href="#" class="gl_link">4</a></li>
+                <li class="pagination_item"><a href="#" class="gl_link">5</a></li>
+                <li class="pagination_item"><a href="#" class="gl_link">...304</a></li>
+                <li class="pagination_item pagination_next"><a href="#" class="gl_link"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div><a href="#" class="load_more_btn">Показать еще карточки пациентов</a>
+        <div class="aside_menu_overlay asideOverlay"></div>
+        <div class="aside_menu_holder">
+          <div class="aside_menu"><a href="#" class="aside_close_btn openMenu"></a>
+            <div class="user_info">
+              <div class="user_avatar"><img src="i/user_small_1.png"/></div>
+              <div class="user_name"><b>Ярослав Самойлов</b></div>
+              <p> <a href="#" class="gl_link blue_link"><span>Перейти на сайт</span></a></p>
+            </div>
+            <div class="aside_m_scroller">
+              <ul class="aside_m_list">
+                <li class="aside_m_item"><a href="#" class="gl_link">Поделиться моей страницей</a></li>
+                <li class="aside_m_item"><a href="#" class="gl_link">Настройки</a></li>
+                <li class="aside_m_item"><a href="#" class="gl_link">Выход из учетной записи</a></li>
+                <li class="aside_m_item aside_m_last"><a href="#" class="gl_link">Техническая поддержка</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

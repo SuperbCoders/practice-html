@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Practic расписание</title><!-- saved from url=(0014)about:internet -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles/main_global.css?no_cache" media="all"/>
+    <script src="js/jquery1.10.js"></script>
+    <script src="js/chosen.jquery.js"></script>
+    <script src="js/script.js?no_cache"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/chosen.jquery.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+    <script src="js/edit_profile.js?no_cache"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="rect_1024"></div>
+      <div class="base controls_mod">
+        <div class="header">
+          <div class="section_inner clearfix">
+            <div class="fl mob_hidden"><a href="#" class="logo"></a></div>
+            <div class="menu_holder">
+              <ul class="main_menu">
+                <li class="main_m_item active"><a href="index.html" class="gl_link"><span>Расписание</span></a></li>
+                <li class="main_m_item"><a href="patients.html" class="gl_link"><span>Пациенты</span></a></li>
+              </ul>
+            </div>
+            <div class="fr">
+              <div class="mb mob_hidden">
+                <div class="user_m_item"><a href="#" class="notifications white_transp_btn new_notification">2</a></div>
+              </div>
+              <div class="mb mob_hidden">
+                <div class="user_m_item"><a href="#" class="btn_v1 white_transp_btn quick_reg_btn">Быстрая запись</a></div>
+              </div><a href="#" class="menu_humburger openMenu"><span>Меню</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="main_content">
+          <div class="section_inner">
+            <div class="profile_container">
+              <div class="tabHeaderSpacer profile_tab_header_spacer">
+                <div class="profile_tab_header tabHeader">
+                  <div class="profile_tab_header_inner"><a href="#" class="go_back_btn"></a>
+                    <div class="profile_tab_holder">
+                      <h2 class="caption_v1">Профиль врача</h2>
+                      <div class="tab_holder tabListScroller">
+                        <ul id="tab_list" class="tab_list">
+                          <li class="tab_item"><a href="#tab_1" class="tab_link"><span class="mb">Личные данные</span></a></li>
+                          <li class="tab_item"><a href="#tab_2" class="tab_link"><span class="mb">Настройки</span></a></li>
+                          <li class="tab_item"><a href="#tab_3" class="tab_link"><span class="mb">Публичный профиль</span></a></li>
+                          <li class="tab_item"><a href="#tab_4" class="tab_link"><span class="mb">Подписка</span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="profile_tab_holder">
+                <div data-tab-context="#tab_list" class="tabBlock">
+                  <div id="tab_1">
+                    <div class="tab_inner form_row_v1">
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_name" class="form_label">Имя врача</label>
+                        </div>
+                        <div class="input_w size_59">
+                          <input id="doctor_name" class="form_input input_v1">
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_phone" class="form_label">Телефон</label>
+                        </div>
+                        <div class="input_w size_59 mob_size_85">
+                          <input id="doctor_phone" class="form_input input_v1">
+                        </div>
+                        <div class="fl mob_right">
+                          <div class="mb"><a href="#" class="add_row_btn yellow_black_btn cloneRowBtn"></a></div>
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_email" class="form_label">Email</label>
+                        </div>
+                        <div class="input_w size_59 mob_size_85">
+                          <input id="doctor_email" class="form_input input_v1">
+                        </div>
+                        <div class="fl mob_right">
+                          <div class="mb"><a href="#" class="add_row_btn yellow_black_btn cloneRowBtn"></a></div>
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_pass" class="form_label">Пароль</label>
+                        </div>
+                        <div class="input_w size_27"><a href="#" class="btn_v2 black_blue_btn change_btn passBtn">Изменить</a>
+                          <input type="password" style="display:none" class="form_input input_v1 passInput">
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_photo" class="form_label">Портрет врача</label>
+                        </div>
+                        <div class="input_w">
+                          <input id="doctor_photo" type="file" class="hidden_input">
+                          <div class="doctor_photo"><img src="i/user_1.png" class="doctor_img">
+                            <label for="doctor_photo" class="change_photo_btn btn_v1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab_2">
+                    <div class="tab_inner form_row_v1">
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_work_days" class="form_label">Время работы врача</label>
+                        </div>
+                        <div class="input_w size_27 chosen_v1 no_search chosen_multiple_v1">
+                          <select id="doctor_work_days" multiple data-placeholder="Выберите день" class="chosen-select">
+                            <option value="0"></option>
+                            <option value="1" data-title="Понедельнк" data-short="Пн">Понедельнк</option>
+                            <option value="2" data-title="Вторник" data-short="В">Вторник</option>
+                            <option value="3" data-title="Среда" data-short="С">Среда</option>
+                            <option value="4" data-title="Четверг" data-short="Ч">Четверг</option>
+                            <option value="5" data-title="Пятница" data-short="П">Пятница</option>
+                            <option value="6" data-title="Суббота" data-short="Сб">Суббота</option>
+                            <option value="7" data-title="Воскресенье" data-short="Вс">Воскресенье</option>
+                          </select>
+                        </div>
+                        <div class="input_w size_15 mob_size_43 mob_pt_5">
+                          <input placeholder="С" class="form_input input_v1">
+                        </div>
+                        <div class="input_w size_15 mob_size_43 mob_pt_5">
+                          <input placeholder="До" class="form_input input_v1">
+                        </div>
+                      </div>
+                      <div class="form_row mt_-10">
+                        <div class="label_holder">
+                          <div class="form_label"></div>
+                        </div>
+                        <div class="input_w size_27 chosen_v1 no_search chosen_multiple_v1">
+                          <select id="doctor_work_days" multiple data-placeholder="Выберите день" class="chosen-select">
+                            <option value="0"></option>
+                            <option value="1" data-title="Понедельнк" data-short="Пн">Понедельнк</option>
+                            <option value="2" data-title="Вторник" data-short="В">Вторник</option>
+                            <option value="3" data-title="Среда" data-short="С">Среда</option>
+                            <option value="4" data-title="Четверг" data-short="Ч">Четверг</option>
+                            <option value="5" data-title="Пятница" data-short="П">Пятница</option>
+                            <option value="6" data-title="Суббота" data-short="Сб">Суббота</option>
+                            <option value="7" data-title="Воскресенье" data-short="Вс">Воскресенье</option>
+                          </select>
+                        </div>
+                        <div class="input_w size_15 mob_size_43 mob_pt_5">
+                          <input placeholder="С" class="form_input input_v1">
+                        </div>
+                        <div class="input_w size_15 mob_size_43 mob_pt_5">
+                          <input placeholder="До" class="form_input input_v1">
+                        </div>
+                        <div class="fl mob_right mob_pt_5">
+                          <div class="mb"><a href="#" class="add_row_btn yellow_black_btn cloneRowBtn"></a></div>
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_stand_time" class="form_label">Стаднартное время приема</label>
+                        </div>
+                        <div class="input_w size_27 chosen_v1 no_search">
+                          <select id="doctor_stand_time" data-placeholder="Выберите время приема" class="chosen-select">
+                            <option value="" data-title=""></option>
+                            <option value="0" data-title="40 минут">40 минут</option>
+                            <option value="1" data-title="60 минут">60 минут</option>
+                            <option value="2" data-title="80 минут">80 минут</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_before_schedule" class="form_label">Время записи до приема</label>
+                        </div>
+                        <div class="input_w size_27 chosen_v1 no_search">
+                          <select id="doctor_before_schedule" data-placeholder="Выберите время записи" class="chosen-select">
+                            <option value="" data-title=""> </option>
+                            <option value="0" data-title="4 часа до приема">4 часа до приема</option>
+                            <option value="1" data-title="6 часа до приема">6 часа до приема</option>
+                            <option value="2" data-title="8 часа до приема">8 часа до приема</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab_3">
+                    <div class="tab_inner form_row_v1">
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_public_photo" class="form_label">Фото на сайт</label>
+                        </div>
+                        <div class="input_w size_59">
+                          <input id="doctor_public_photo" type="file" class="hidden_input">
+                          <div class="doctor_public_photo"><img src="i/user_large_1.jpg" class="doctor_img">
+                            <label for="doctor_public_photo" class="change_photo_btn btn_v1"></label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_specialty" class="form_label">Специальность</label>
+                        </div>
+                        <div class="input_w size_59">
+                          <input id="doctor_specialty" class="form_input input_v1">
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_education" class="form_label">Образование</label>
+                        </div>
+                        <div class="input_w size_59">
+                          <input id="doctor_education" class="form_input input_v1">
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_experience" class="form_label">Опыт работы</label>
+                        </div>
+                        <div class="input_w size_59">
+                          <textarea id="doctor_experience" class="form_input input_v1"></textarea>
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_about" class="form_label">О себе</label>
+                        </div>
+                        <div class="input_w size_59">
+                          <textarea id="doctor_about" class="form_input input_v1"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab_inner form_row_v1">
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <label for="doctor_contact" class="form_label">Контакты</label>
+                        </div>
+                        <div class="input_w size_59">
+                          <input id="doctor_contact" class="form_input input_v1">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab_inner form_row_v1">
+                      <div class="form_row lh_32">
+                        <div class="label_holder">
+                          <label for="doctor_allow_que" class="form_label">Разрешить запись на прием</label>
+                        </div>
+                        <div class="input_w size_8">
+                          <label class="toggle_emul toggle_v1">
+                            <input type="checkbox" class="hidden_input">
+                            <div class="toggle_box"><span class="toggle_text toggle_true">Да</span><span class="toggle_text toggle_false">Нет</span></div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab_inner form_row_v1">
+                      <div class="form_row lh_32">
+                        <div class="label_holder">
+                          <label for="doctor_profile_vis" class="form_label">Профиль опубликован</label>
+                        </div>
+                        <div class="input_w size_8">
+                          <label class="toggle_emul toggle_v1">
+                            <input type="checkbox" class="hidden_input">
+                            <div class="toggle_box"><span class="toggle_text toggle_true">Да</span><span class="toggle_text toggle_false">Нет</span></div>
+                          </label>
+                        </div>
+                        <div class="input_w size_52">
+                          <p><a href="#" class="gl_link blue_link"><span>Посмотреть страницу</span></a></p>
+                          <p>Вы можете временно выключить профиль и тогда никто не сможет заходить на страницу врача кроме вас</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab_inner form_row_v1">
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <div class="form_label">Социальные сети</div>
+                        </div>
+                        <label class="input_w size_59 soc_input soc_i_vk">
+                          <input value="vk.com/" class="form_input input_v1">
+                        </label>
+                      </div>
+                      <div class="form_row">
+                        <div class="mob_hidden label_holder">
+                          <div class="form_label"> </div>
+                        </div>
+                        <label class="input_w size_59 soc_input soc_i_tw">
+                          <input value="twitter.com/" class="form_input input_v1">
+                        </label>
+                      </div>
+                      <div class="form_row">
+                        <div class="mob_hidden label_holder">
+                          <div class="form_label"> </div>
+                        </div>
+                        <label class="input_w size_59 soc_input soc_i_fb">
+                          <input value="facebook.com/" class="form_input input_v1">
+                        </label>
+                      </div>
+                      <div class="form_row">
+                        <div class="label_holder">
+                          <div class="form_label"> </div>
+                        </div>
+                        <div class="input_w size_59">
+                          <p>Введите названия профилей из ваших соц. сетей, чтобы пациенты могли вас найти и на других ресурсах </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab_4"> 
+                    <div class="tab_inner form_row_v1">
+                      <div class="form_row lh_norm">
+                        <div class="label_holder">
+                          <div class="form_label">Оплата</div>
+                        </div>
+                        <ul class="input_w size_59 payment_list mob_pt_5">
+                          <li class="payment_item">
+                            <label class="radio_emul radio_v1">
+                              <input type="radio" name="payment" checked class="hidden_input"><span class="check_text">1000 ₽ Месячная</span>
+                            </label>
+                          </li>
+                          <li class="payment_item">
+                            <label class="radio_emul radio_v1">
+                              <input type="radio" name="payment" class="hidden_input"><span class="check_text">10 000₽ Годовая,<span class="color_green">скидка 20%</span></span>
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="tab_inner form_row_v1">
+                      <div class="form_row lh_norm">
+                        <div class="label_holder">
+                          <div class="form_label">Способ оплаты</div>
+                        </div>
+                        <div class="input_w size_59">
+                          <p>Карта Visa, номер заканчивается на 0128 <a href="#" class="gl_link blue_link"><span>Изменить </span></a><br>Вы платите 1000₽ в месяц, подписка будет продлена  <br>  31 января 2016 года</p>
+                          <p><a href="#" class="gl_link blue_link"><span>Посмотреть история платежей</span></a></p>
+                          <p><a href="#" class="gl_link blue_link"><span>Отменить подписку</span></a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="profile_tab_controls">
+                <div class="section_inner">
+                  <div class="form_controls">
+                    <div class="fl">
+                      <div class="mb"><a href="#" class="btn_v2 yellow_black_btn save_btn">Сохранить</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aside_menu_overlay asideOverlay"></div>
+        <div class="aside_menu_holder">
+          <div class="aside_menu"><a href="#" class="aside_close_btn openMenu"></a>
+            <div class="user_info">
+              <div class="user_avatar"><img src="i/user_small_1.png"/></div>
+              <div class="user_name"><b>Ярослав Самойлов</b></div>
+              <p> <a href="#" class="gl_link blue_link"><span>Перейти на сайт</span></a></p>
+            </div>
+            <div class="aside_m_scroller">
+              <ul class="aside_m_list">
+                <li class="aside_m_item"><a href="#" class="gl_link">Поделиться моей страницей</a></li>
+                <li class="aside_m_item"><a href="#" class="gl_link">Настройки</a></li>
+                <li class="aside_m_item"><a href="#" class="gl_link">Выход из учетной записи</a></li>
+                <li class="aside_m_item aside_m_last"><a href="#" class="gl_link">Техническая поддержка</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

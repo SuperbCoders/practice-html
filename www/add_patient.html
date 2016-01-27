@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Practic добавить</title><!-- saved from url=(0014)about:internet -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles/main_global.css?no_cache" media="all"/>
+    <script src="js/jquery1.10.js"></script>
+    <script src="js/chosen.jquery.js"></script>
+    <script src="js/script.js?no_cache"></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-ui.js"></script>
+    <!--script(src='js/swiper.js')-->
+    <script src="js/chosen.jquery.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+    <script src="js/add_patient_script.js?no_cache"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="rect_1024"></div>
+      <div class="base controls_mod">
+        <div class="header">
+          <div class="section_inner clearfix">
+            <div class="fl mob_hidden"><a href="#" class="logo"></a></div>
+            <div class="menu_holder">
+              <ul class="main_menu">
+                <li class="main_m_item active"><a href="index.html" class="gl_link"><span>Расписание</span></a></li>
+                <li class="main_m_item"><a href="patients.html" class="gl_link"><span>Пациенты</span></a></li>
+              </ul>
+            </div>
+            <div class="fr">
+              <div class="mb mob_hidden">
+                <div class="user_m_item"><a href="#" class="notifications white_transp_btn new_notification">2</a></div>
+              </div>
+              <div class="mb mob_hidden">
+                <div class="user_m_item"><a href="#" class="btn_v1 white_transp_btn quick_reg_btn">Быстрая запись</a></div>
+              </div><a href="#" class="menu_humburger openMenu"><span>Меню</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="main_content">
+          <div class="section_inner">
+            <div class="profile_container">
+              <div class="profile_tab_header_inner"><a href="#" class="go_back_btn"></a>
+                <h2 class="caption_v1 text_center">Новая карточка пациента</h2>
+              </div>
+              <div class="profile_tab_holder">
+                <div class="patient_info_block">
+                  <div class="form_row">
+                    <div class="patient_photo_block">
+                      <div class="patient_status_w chosen_v2 no_search">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="status_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="status_pin status_red">3</option>
+                          <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_phone"><a href="#" class="gl_link blue_link"><span>Телефон <span class="mob_hidden"> клиента </span></span></a></div>
+                      <label class="patient_add_avatar"><span class="patient_avatar_letter">Ф</span>
+                        <input type="file" class="hidden_input">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form_row">
+                    <label class="input_w">
+                      <input placeholder="ФИО" class="form_input input_v3">
+                    </label>
+                  </div>
+                  <div class="form_row">
+                    <label class="input_w">
+                      <textarea placeholder="Краткое описание клиента (этот текст будет видеть только врач)" class="form_input input_v3"></textarea>
+                    </label>
+                  </div>
+                  <div class="form_row mob_add_mod">
+                    <label class="input_w">
+                      <input placeholder="Телефон клиента" class="form_input input_v3">
+                      <div class="add_btn_holder"><a href="#" class="add_row_btn yellow_black_btn cloneRowBtn"></a></div>
+                    </label>
+                  </div>
+                  <div class="form_row">
+                    <label class="input_w">
+                      <input placeholder="Email" class="form_input input_v3">
+                    </label>
+                  </div>
+                </div>
+                <div class="tab_inner form_row_v1">
+                  <h2 class="caption_v1">Портрет пациента</h2>
+                  <div class="form_row">
+                    <div class="label_holder">
+                      <label for="patient_gender" class="form_label">Пол</label>
+                    </div>
+                    <div class="input_w size_45 max_w_300">
+                      <ul class="filter_toggle filter_toggle_v2">
+                        <li class="filter_t_item">
+                          <label class="filter_t_box">
+                            <input type="radio" name="patient_filter" checked class="hidden_input"><span class="filter_t_name">Мужской</span>
+                          </label>
+                        </li>
+                        <li class="filter_t_item">
+                          <label class="filter_t_box">
+                            <input type="radio" name="patient_filter" class="hidden_input"><span class="filter_t_name">Женский</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form_row">
+                    <div class="label_holder">
+                      <label for="patient_age" class="form_label">Возраст</label>
+                    </div>
+                    <label class="input_w size_29 datepicker_v1 max_w_300">
+                      <input id="patient_age" class="form_input input_v1">
+                    </label>
+                  </div>
+                  <div class="form_row">
+                    <div class="label_holder">
+                      <label for="patient_weight" class="form_label">Вес</label>
+                    </div>
+                    <div class="input_w size_59">
+                      <input id="patient_weight" placeholder="80 кг" class="form_input input_v1">
+                    </div>
+                  </div>
+                  <div class="form_row">
+                    <div class="label_holder">
+                      <label for="patient_height" class="form_label">Рост</label>
+                    </div>
+                    <div class="input_w size_59">
+                      <input id="patient_height" placeholder="185 см" class="form_input input_v1">
+                    </div>
+                  </div>
+                  <div class="form_row">
+                    <div class="label_holder">
+                      <div class="form_label">Группа крови</div>
+                    </div>
+                    <div class="input_w size_27 mob_size_43 chosen_v1 no_search">
+                      <select id="doctor_stand_time" data-placeholder="Группа" class="chosen-select">
+                        <option value="" data-title=""></option>
+                        <option value="1" data-title="1 группа">1 группа</option>
+                        <option value="2" data-title="2 группа">2 группа</option>
+                        <option value="3" data-title="3 группа">3 группа</option>
+                        <option value="4" data-title="4 группа">4 группа</option>
+                      </select>
+                    </div>
+                    <div class="input_w size_27 mob_size_43 chosen_v1 no_search">
+                      <select id="doctor_stand_time" data-placeholder="Резус фактора" class="chosen-select">
+                        <option value="" data-title=""></option>
+                        <option value="0" data-title="+">-</option>
+                        <option value="1" data-title="-">+</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab_inner form_row_v1">
+                  <div class="form_row">
+                    <div class="label_holder">
+                      <label for="patient_chronic_diseases" class="form_label">Хронические заболевания</label>
+                    </div>
+                    <div class="input_w size_59">
+                      <textarea id="patient_chronic_diseases" placeholder="Перечислите через запятую" class="form_input mod_1 input_v1"></textarea>
+                    </div>
+                  </div>
+                  <div class="form_row">
+                    <div class="label_holder">
+                      <label for="patient_bad_habits" class="form_label">Вредные привычки</label>
+                    </div>
+                    <div class="input_w size_59">
+                      <textarea id="patient_bad_habits" placeholder="Перечислите через запятую" class="form_input mod_1 input_v1"></textarea>
+                    </div>
+                  </div>
+                  <div class="form_row">
+                    <div class="label_holder">
+                      <label for="patient_profession" class="form_label">Профессия</label>
+                    </div>
+                    <div class="input_w size_59">
+                      <input id="patient_profession" class="form_input input_v1">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab_inner form_row_v1">
+                  <div class="form_row">
+                    <div class="label_holder">
+                      <label for="patient_doc_number" class="form_label">Договор №</label>
+                    </div>
+                    <div class="input_w size_59">
+                      <input id="patient_doc_number" class="form_input input_v1">
+                    </div>
+                  </div>
+                  <div class="form_row">
+                    <div class="label_holder">
+                      <label for="patient_reg_date" class="form_label">Дата регистрации</label>
+                    </div>
+                    <div class="input_w size_59">
+                      <input id="patient_reg_date" class="form_input input_v1">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="profile_tab_controls">
+                <div class="section_inner">
+                  <div class="form_controls">
+                    <div class="fl">
+                      <div class="mb"><a href="#" class="btn_v2 yellow_black_btn save_btn">Сохранить</a></div>
+                    </div>
+                    <div class="fl">
+                      <div class="mb"><a href="#" class="btn_v2 save_btn black_yellow_btn"><span class="mb">Сохранить и добавить запись</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aside_menu_overlay asideOverlay"></div>
+        <div class="aside_menu_holder">
+          <div class="aside_menu"><a href="#" class="aside_close_btn openMenu"></a>
+            <div class="user_info">
+              <div class="user_avatar"><img src="i/user_small_1.png"/></div>
+              <div class="user_name"><b>Ярослав Самойлов</b></div>
+              <p> <a href="#" class="gl_link blue_link"><span>Перейти на сайт</span></a></p>
+            </div>
+            <div class="aside_m_scroller">
+              <ul class="aside_m_list">
+                <li class="aside_m_item"><a href="#" class="gl_link">Поделиться моей страницей</a></li>
+                <li class="aside_m_item"><a href="#" class="gl_link">Настройки</a></li>
+                <li class="aside_m_item"><a href="#" class="gl_link">Выход из учетной записи</a></li>
+                <li class="aside_m_item aside_m_last"><a href="#" class="gl_link">Техническая поддержка</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

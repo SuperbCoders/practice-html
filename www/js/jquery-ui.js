@@ -2924,7 +2924,8 @@
             constrainInput: true, // The input is constrained by the current date format
             showButtonPanel: false, // True to show button panel, false to not show it
             autoSize: false, // True to size the input for the date format, false to leave as is
-            disabled: false // The initial disabled state
+            disabled: false, // The initial disabled state
+            unifyNumRows: false, // True to always use six rows; ensuring datepickers showing different months having the same height
         };
         $.extend(this._defaults, this.regional[""]);
         this.regional.en = $.extend(true, {}, this.regional[""]);
@@ -4447,7 +4448,7 @@
             var maxDraw, prevText, prev, nextText, next, currentText, gotoDate,
                 controls, buttonPanel, firstDay, showWeek, dayNames, dayNamesMin,
                 monthNames, monthNamesShort, beforeShowDay, showOtherMonths,
-                selectOtherMonths, defaultDate, html, dow, row, group, col, selectedDate,
+                selectOtherMonths, unifyNumRows, defaultDate, html, dow, row, group, col, selectedDate,
                 cornerClass, calender, thead, day, daysInMonth, leadDays, curRows, numRows,
                 printDate, dRow, tbody, daySettings, otherMonth, unselectable,
                 tempDate = new Date(),
@@ -4530,6 +4531,7 @@
             beforeShowDay = this._get(inst, "beforeShowDay");
             showOtherMonths = this._get(inst, "showOtherMonths");
             selectOtherMonths = this._get(inst, "selectOtherMonths");
+            unifyNumRows = this._get(inst, "unifyNumRows");
             defaultDate = this._getDefaultDate(inst);
             html = "";
             dow;
@@ -4580,7 +4582,8 @@
                     }
                     leadDays = (this._getFirstDayOfMonth(drawYear, drawMonth) - firstDay + 7) % 7;
                     curRows = Math.ceil((leadDays + daysInMonth) / 7); // calculate the number of rows to generate
-                    numRows = (isMultiMonth ? this.maxRows > curRows ? this.maxRows : curRows : curRows); //If multiple months, use the higher number of rows (see #7043)
+                    //numRows = (isMultiMonth ? (this.maxRows > curRows ? this.maxRows : curRows) : curRows); //If multiple months, use the higher number of rows (see #7043)
+                    numRows = ((isMultiMonth || unifyNumRows) ? 6 : curRows); // calculate the number of rows to generate
                     this.maxRows = numRows;
                     printDate = this._daylightSavingAdjust(new Date(drawYear, drawMonth, 1 - leadDays));
                     for (dRow = 0; dRow < numRows; dRow++) { // create date picker rows

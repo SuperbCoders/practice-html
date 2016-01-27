@@ -152,7 +152,7 @@ a {
 
   @include respond-to-min($desktop) {
     padding: 0;
-    top: 50px;
+    top: 60px;
     line-height: 72px;
     height: 72px;
 
@@ -948,12 +948,17 @@ a {
 }
 
 .patient_card {
+  @include transition_all(box-shadow .3s);
   border-radius: 10px;
   padding: 0 20px;
   border: 1px solid #d4d4d4;
   background: #fff;
   position: relative;
   text-align: center;
+
+  &:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .19);
+  }
 }
 
 .patient_avatar {
@@ -1264,7 +1269,7 @@ a {
           padding-right: 1.5%;
           width: 43%;
         }
-        
+
         &.max_w_300 {
           width: 100%;
           float: left;
@@ -1918,13 +1923,20 @@ textarea.form_input.input_v3 {
     }
   }
 
+  .patient_card:hover &,
   .chosen_v2 .chzn-with-drop & {
     border-color: #d4d4d4;
     z-index: 7;
 
     &:before {
-      @include transform_rotate(90);
       opacity: 1;
+    }
+  }
+
+  .chosen_v2 .chzn-with-drop & {
+
+    &:before {
+      @include transform_rotate(90);
     }
   }
 
@@ -2031,6 +2043,7 @@ textarea.form_input.input_v3 {
     border: 1px solid #a7a69c;
   }
 
+  
   .chosen_v2 & {
     @include transition_all(border-color .3s);
     border-radius: 4px;
