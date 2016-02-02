@@ -1,4 +1,4 @@
-mixin dev_head(page_title, edit_profile, patients, add_patient)
+mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, public_profile)
     head
         title=page_title
         | <!-- saved from url=(0014)about:internet -->
@@ -20,6 +20,15 @@ mixin dev_head(page_title, edit_profile, patients, add_patient)
             script(src='js/chosen.jquery.js')
             script(src='js/jquery.nicescroll.js')
             script(src='js/patients_script.js?no_cache')
+        - if (public_profile)
+            link(href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css')
+            script(src='js/jquery-ui.js')
+            //script(src='js/swiper.js')
+            script(src='js/chosen.jquery.js')
+            script(src='js/jquery.nicescroll.js')
+            script(src='js/moment.min.js')
+            script(src='js/fullcalendar.js')
+            script(src='js/public_profile_script.js?no_cache')
         - if (add_patient)
             link(href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css')
             script(src='js/jquery-ui.js')
@@ -27,6 +36,13 @@ mixin dev_head(page_title, edit_profile, patients, add_patient)
             script(src='js/chosen.jquery.js')
             script(src='js/jquery.nicescroll.js')
             script(src='js/add_patient_script.js?no_cache')
+        - if (scheduller)
+            //link(href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css')
+            script(src='js/jquery-ui.js')
+            script(src='js/moment.min.js')
+            script(src='js/jquery.nicescroll.js')
+            script(src='js/fullcalendar.js')
+            script(src='js/calendar_script.js?no_cache')
 
 
 mixin loop_while(counter)
@@ -35,39 +51,43 @@ mixin loop_while(counter)
         -i++;
         block
         
-mixin patient_status()
-    .patient_status_w.chosen_v2.no_search
-        select.chosen-select()
-            option.status_pin.status_blue(value=0 data-title='status_blue' selected) 1 
-            option.status_pin.status_green(value=1 data-title='status_green') 2
-            option.status_pin.status_red(value=2 data-title='status_red') 3
-            option.status_pin.status_orange(value=2 data-title='status_orange') 4
+mixin patient_status(cls, chzn_cls)
+    .patient_status_w.chosen_v2.no_search.skipOpen(class=cls)
+        select.chosen-select(class = chzn_cls)
+            option.state_pin.status_blue(value=0 data-title='status_blue' selected) 1 
+            option.state_pin.status_green(value=1 data-title='status_green') 2
+            option.state_pin.status_red(value=2 data-title='status_red') 3
+            option.state_pin.status_orange(value=3 data-title='status_orange') 4
 
 mixin patient_menu()
-    .patient_menu_w.chosen_v2.no_search
-        select.chosen-select()
-            option.status_pin.status_blue(value=0 data-title='status_blue' selected) 1 
-            option.status_pin.status_green(value=1 data-title='status_green') 2
-            option.status_pin.status_red(value=2 data-title='status_red') 3
-            option.status_pin.status_orange(value=2 data-title='status_orange') 4
+    .patient_menu_w.skipOpen
+        .drop_down_btn: span
+        .drop_down_w
+            ul.drop_down_menu
+                li.drop_down_item.active: a.gl_link(href='#'): span Подтвердить прием
+                li.drop_down_item: a.gl_link(href='#'): span Отказать в  приёме
+                li.drop_down_item: a.gl_link(href='#'): span Добавить запись в карту
+                li.drop_down_item: a.gl_link(href='#'): span Редактировать
+                li.drop_down_item: a.gl_link(href='#'): span Отправить в архив
+                li.drop_down_item: a.gl_link(href='#'): span Удалить
             
 mixin patient_info_table()
     .patient_info_table: .other_info_cell
         p +7 927 026 10 22
         p yaosamo@gmail.com
             
-mixin header(active_menu, sub_header)
+mixin header(active_menu, sub_header, profile_sub_header)
     div.header
         .section_inner.clearfix
             .fl.mob_hidden
-                a.logo(href='#')
+                a.logo(href='profile.html')
             .menu_holder
                 ul.main_menu
-                    li.main_m_item(class= active_menu == 1 ? 'active' : ''): a.gl_link(href='index.html'): span Расписание
+                    li.main_m_item(class= active_menu == 1 ? 'active' : ''): a.gl_link(href='schedule.html'): span Расписание
                     li.main_m_item(class= active_menu == 2 ? 'active' : ''): a.gl_link(href='patients.html'): span Пациенты
             .fr
                 .mb.mob_hidden: .user_m_item
-                    a.notifications.white_transp_btn.new_notification(href='#') 2
+                    a.notifications.white_transp_2_btn.new_notification(href='#') 2
 
                 .mb.mob_hidden: .user_m_item
                     a.btn_v1.white_transp_btn.quick_reg_btn(href='#') Быстрая запись
@@ -81,6 +101,7 @@ mixin header(active_menu, sub_header)
                         form(action='#')
                             label.input_w.search_input_w
                                 input.input_v2.form_input(placeholder='Поиск пациента')
+                                button.search_btn
     
                 .fl.mob_hidden
                     a.btn_v1.add_card_btn.yellow_black_btn(href='add_patient.html') Создать новую карточку
@@ -103,7 +124,99 @@ mixin header(active_menu, sub_header)
                             label.filter_t_box
                                 input.hidden_input(type='radio' name='patient_filter')
                                 span.filter_t_name В архиве 
+    - if (profile_sub_header)
+        //- just spacer       
+        .calendar_header_holder.calendarSubHeader
 
+
+mixin popup()
+    .popup_form.form_corner#add_patient_form(style='display:none'): form(action='#')
+        +patient_status('right_mod', 'newPatientState')
+        .form_row
+            label.form_label.fz_20(for='new_patient_name') Имя пациента
+            .input_w: input#new_patient_name.form_input.input_v4(type='text', name='new_patient_name', value='')
+        .form_row
+            label.form_label(for='new_patient_phone') Телефон
+            .input_w: input#new_patient_phone.form_input.input_v4(type='tel', name='new_patient_phone')
+        .form_row
+            label.form_label(for='new_patient_email') Email
+            .input_w: input#new_patient_email.form_input.input_v4(type='email', name='new_patient_email')
+        .form_row
+            label.form_label(for='new_patient_describe') Краткое описание (только для вас)
+            .input_w: input#new_patient_describe.form_input.input_v4(type='email', name='new_patient_describe')
+        
+        button.btn_v2.new_patient_btn.newPatientBtn.yellow_black_btn() Записать на 30 декабря, в 12:00
+        
+        
+    .popup_form.form_corner.popup_v2#patient_info_form(style='display:none'): form(action='#')
+        .patient_card
+            +patient_status()
+            +patient_menu()
+            a.patient_avatar(href='#'): img(src='i/user_2.png')
+            .patient_info
+                .patient_name: a.gl_link.gray_link(href='#'): span Осинцев Константин
+                textarea.input_v5.form_input Болят карманы, ломит штаны, от водки тошнит, вылечите скорей меня
+            +patient_info_table()
+
+            .patient_card_controls.skipOpen.patient_warn: .patient_info_table
+                .controls_cell
+                    a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
+                    p: a.gl_link(href='#') Изменить время приема
+            +patient_overview()
+        
+mixin appointments()
+    form#appointments_form(action='#' style='display:none' title=''): .popup_form.popup_v1
+        .form_caption Для записи заполните  <br>  три поля ниже
+        .form_content
+            .form_row
+                label.form_label.fz_20(for='new_patient_name') Ваше имя и фамилия
+                .input_w: input#new_patient_name.form_input.input_v4(type='text', name='new_patient_name', value='')
+            .form_row
+                label.form_label(for='new_patient_phone') Телефон
+                .input_w: input#new_patient_phone.form_input.input_v4(type='tel', name='new_patient_phone')
+            .form_row
+                label.form_label(for='new_patient_email') Email (если есть, чтобы получить мед. карту)
+                .input_w: input#new_patient_email.form_input.input_v4(type='email', name='new_patient_email')
+        
+        .form_footer: a.btn_v4.appointment_btn.appointmentTimeBtn.yellow_black_btn(href='#form_page_1') Выбрать время записи
+        
+        .form_page#form_page_1: .popup_form
+            .form_caption_holder
+                .form_caption Выберите день и время приема
+                .form_tip Кликните в свободную ячейку
+            .form_content
+                +popup_calendar()
+        
+            .form_footer: button.btn_v4.doctor_btn.appointmentTimeBtn.yellow_black_btn() Записаться на 15 января, в 9:50
+        
+mixin popup_calendar()
+    .popup_calendar_holder
+        #popup_calendar.calendar_v2
+        
+mixin patient_overview()
+    .patient_overview
+        a.btn_v3.add_patient_line.white__btn(href='#') Добавить запись в карту
+        ul.patient_overview_list
+            li.patient_overview_line
+                .overview_caption ПОРТРЕТ ПАЦИЕНТА
+                dl.overview_info
+                    dt Рост:
+                    dd 185
+                    dt Вес
+                    dd 78 кг
+                    dt Возраст
+                    dd 18 лет
+                    
+            li.patient_overview_line
+                .overview_caption МЕДИЦИНСКИЕ ОСОБЕННОСТИ
+                p Есть хвост
+                
+            li.patient_overview_line
+                .overview_caption ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+                p Договор №000099
+                
+                
+    
 mixin aside_menu()
     .aside_menu_overlay.asideOverlay
     .aside_menu_holder

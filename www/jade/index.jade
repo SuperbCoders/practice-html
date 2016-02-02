@@ -1,7 +1,7 @@
 include mixins
 doctype html
 html(lang='ru')
-    +dev_head('Practic расписание', true )
+    +dev_head('Practic профиль', false, false, false, true )
 
     body
         .wrapper
@@ -224,6 +224,6 @@ html(lang='ru')
                             .profile_tab_controls
                                 .section_inner
                                     .form_controls
-                                        .fl: .mb: a.btn_v2.yellow_black_btn.save_btn(href='#') Сохранить
+                                        .fl: .mb: a.btn_v2.yellow_black_btn.save_btn(href='#'): span.mb Сохранить
                 
                 +aside_menu()

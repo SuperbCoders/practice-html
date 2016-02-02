@@ -5,14 +5,28 @@ var profile_tabs,
 
 $(function ($) {
 
+    $('body').delegate('.patient_card', 'click', function (e) {
+        var firedEl = $(e.target);
+
+        console.log(firedEl.hasClass('chzn*') || !!firedEl.parents('.chzn*').length);
+        
+        if (firedEl.hasClass('skipOpen') || !!firedEl.parents('.skipOpen').length) {
+
+        } else {
+            $(this).toggleClass('open_card');
+            return false;
+        }
+
+    });
+
 
     $('.chosen-select').chosen({
         width: "100%",
         disable_search_threshold: 3
     }).on('liszt:showing_dropdown', function (evt, params) {
 
-        $('.chosen-select')
-        
+        //$('.chosen-select')
+
         var firedEl = $(evt.currentTarget);
 
         var niceScrollBlock = firedEl.next('.chzn-container').find('.chzn-results');

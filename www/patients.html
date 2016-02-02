@@ -20,16 +20,16 @@
       <div class="base load_more_mod">
         <div class="header">
           <div class="section_inner clearfix">
-            <div class="fl mob_hidden"><a href="#" class="logo"></a></div>
+            <div class="fl mob_hidden"><a href="profile.html" class="logo"></a></div>
             <div class="menu_holder">
               <ul class="main_menu">
-                <li class="main_m_item"><a href="index.html" class="gl_link"><span>Расписание</span></a></li>
+                <li class="main_m_item"><a href="schedule.html" class="gl_link"><span>Расписание</span></a></li>
                 <li class="main_m_item active"><a href="patients.html" class="gl_link"><span>Пациенты</span></a></li>
               </ul>
             </div>
             <div class="fr">
               <div class="mb mob_hidden">
-                <div class="user_m_item"><a href="#" class="notifications white_transp_btn new_notification">2</a></div>
+                <div class="user_m_item"><a href="#" class="notifications white_transp_2_btn new_notification">2</a></div>
               </div>
               <div class="mb mob_hidden">
                 <div class="user_m_item"><a href="#" class="btn_v1 white_transp_btn quick_reg_btn">Быстрая запись</a></div>
@@ -44,6 +44,7 @@
                 <form action="#">
                   <label class="input_w search_input_w">
                     <input placeholder="Поиск пациента" class="input_v2 form_input"/>
+                    <button class="search_btn"></button>
                   </label>
                 </form>
               </div>
@@ -79,25 +80,29 @@
             <ul class="patients_list">
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_2.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Осинцев Константин</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Осинцев Константин</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
                   </div>
                   <div class="patient_info_table">
@@ -106,36 +111,63 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls patient_warn">
+                  <div class="patient_card_controls skipOpen patient_warn">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
                         <p><a href="#" class="gl_link">Изменить время приема</a></p>
                       </div>
                     </div>
                   </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_1.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_1.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Самойлов Ярослав Георгиевич</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Самойлов Ярослав Георгиевич</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
                   </div>
                   <div class="patient_info_table">
@@ -144,34 +176,61 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls">
+                  <div class="patient_card_controls skipOpen">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
                     </div>
                   </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_2.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Петрова Алина</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Петрова Алина</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
                   </div>
                   <div class="patient_info_table">
@@ -180,36 +239,63 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls patient_confirm">
+                  <div class="patient_card_controls skipOpen patient_confirm">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
                         <p><a href="#" class="gl_link">Отменить приём</a></p>
                       </div>
                     </div>
                   </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_2.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Петрова Алина</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Петрова Алина</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
                   </div>
                   <div class="patient_info_table">
@@ -218,34 +304,61 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls patient_ready">
+                  <div class="patient_card_controls skipOpen patient_ready">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
                     </div>
+                  </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_2.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Осинцев Константин</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Осинцев Константин</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
                   </div>
                   <div class="patient_info_table">
@@ -254,36 +367,63 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls patient_warn">
+                  <div class="patient_card_controls skipOpen patient_warn">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
                         <p><a href="#" class="gl_link">Изменить время приема</a></p>
                       </div>
                     </div>
                   </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_1.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_1.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Самойлов Ярослав Георгиевич</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Самойлов Ярослав Георгиевич</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
                   </div>
                   <div class="patient_info_table">
@@ -292,34 +432,61 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls">
+                  <div class="patient_card_controls skipOpen">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
                     </div>
                   </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_2.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Петрова Алина</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Петрова Алина</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
                   </div>
                   <div class="patient_info_table">
@@ -328,36 +495,63 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls patient_confirm">
+                  <div class="patient_card_controls skipOpen patient_confirm">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
                         <p><a href="#" class="gl_link">Отменить приём</a></p>
                       </div>
                     </div>
                   </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_2.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Петрова Алина</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Петрова Алина</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
                   </div>
                   <div class="patient_info_table">
@@ -366,34 +560,61 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls patient_ready">
+                  <div class="patient_card_controls skipOpen patient_ready">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
                     </div>
+                  </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_2.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Осинцев Константин</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Осинцев Константин</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
                   </div>
                   <div class="patient_info_table">
@@ -402,36 +623,63 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls patient_warn">
+                  <div class="patient_card_controls skipOpen patient_warn">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
                         <p><a href="#" class="gl_link">Изменить время приема</a></p>
                       </div>
                     </div>
                   </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_1.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_1.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Самойлов Ярослав Георгиевич</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Самойлов Ярослав Георгиевич</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
                   </div>
                   <div class="patient_info_table">
@@ -440,34 +688,61 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls">
+                  <div class="patient_card_controls skipOpen">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
                     </div>
                   </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_2.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Петрова Алина</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Петрова Алина</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
                   </div>
                   <div class="patient_info_table">
@@ -476,36 +751,63 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls patient_confirm">
+                  <div class="patient_card_controls skipOpen patient_confirm">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
                         <p><a href="#" class="gl_link">Отменить приём</a></p>
                       </div>
                     </div>
                   </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="patient_unit">
                 <div class="patient_card">
-                  <div class="patient_status_w chosen_v2 no_search">
+                  <div class="patient_status_w chosen_v2 no_search skipOpen">
                     <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
+                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
                     </select>
                   </div>
-                  <div class="patient_menu_w chosen_v2 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="status_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="status_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="status_pin status_red">3</option>
-                      <option value="2" data-title="status_orange" class="status_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_avatar"><img src="i/user_2.png"></div>
+                  <div class="patient_menu_w skipOpen">
+                    <div class="drop_down_btn"><span></span></div>
+                    <div class="drop_down_w">
+                      <ul class="drop_down_menu">
+                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                      </ul>
+                    </div>
+                  </div><a href="#" class="patient_avatar"><img src="i/user_2.png"></a>
                   <div class="patient_info">
-                    <div class="patient_name">Петрова Алина</div>
+                    <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Петрова Алина</span></a></div>
                     <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
                   </div>
                   <div class="patient_info_table">
@@ -514,10 +816,33 @@
                       <p>yaosamo@gmail.com</p>
                     </div>
                   </div>
-                  <div class="patient_card_controls patient_ready">
+                  <div class="patient_card_controls skipOpen patient_ready">
                     <div class="patient_info_table">
                       <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
                     </div>
+                  </div>
+                  <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                    <ul class="patient_overview_list">
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                        <dl class="overview_info">
+                          <dt>Рост:</dt>
+                          <dd>185</dd>
+                          <dt>Вес</dt>
+                          <dd>78 кг</dd>
+                          <dt>Возраст</dt>
+                          <dd>18 лет</dd>
+                        </dl>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                        <p>Есть хвост</p>
+                      </li>
+                      <li class="patient_overview_line">
+                        <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                        <p>Договор №000099</p>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </li>
