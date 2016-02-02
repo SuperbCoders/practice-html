@@ -1251,7 +1251,7 @@ a {
   @include transition_all(background .3s);
   margin: 0 -20px;
   position: relative;
-  z-index: 2;
+  //z-index: 2;
   background: #fff;
   border-radius: 0 0 10px 10px;
 
@@ -1314,7 +1314,7 @@ a {
 
 .patient_menu_w {
   position: absolute;
-  z-index: 3;
+  //z-index: 3;
   top: 13px;
   right: 18px;
 
@@ -1710,6 +1710,14 @@ a {
     }
   }
 
+}
+
+.popup_calendar_holder {
+  position: relative;
+  border: solid #e0e0e0;
+  border-width: 1px 0;
+  padding-top: 53px;
+  margin: 0 -30px;
 }
 
 //************ forms
@@ -3066,6 +3074,8 @@ textarea.form_input.input_v3 {
 
   &.doctor_btn {
     width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
     display: block;
     text-decoration: none;
     text-align: center;

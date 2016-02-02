@@ -176,15 +176,20 @@ mixin appointments()
         .form_caption Для записи заполните  <br>  три поля ниже
         .form_content
             .form_row
-                label.form_label.fz_20(for='new_patient_name') Ваше имя и фамилия
-                .input_w: input#new_patient_name.form_input.input_v4(type='text', name='new_patient_name', value='')
+                .input_w.placeholder_mod
+                    input#new_patient_name.form_input.input_v4.checkEmpty(type='text', name='new_patient_name', value='')
+                    span.form_label.fz_20(for='new_patient_name') Ваше имя и фамилия
+
             .form_row
-                label.form_label(for='new_patient_phone') Телефон
-                .input_w: input#new_patient_phone.form_input.input_v4(type='tel', name='new_patient_phone')
+                .input_w.placeholder_mod
+                    input#new_patient_phone.form_input.input_v4.checkEmpty(type='tel', name='new_patient_phone')
+                    span.form_label(for='new_patient_phone') Телефон
+
             .form_row
-                label.form_label(for='new_patient_email') Email (если есть, чтобы получить мед. карту)
-                .input_w: input#new_patient_email.form_input.input_v4(type='email', name='new_patient_email')
-        
+                .input_w.placeholder_mod
+                    input#new_patient_email.form_input.input_v4.checkEmpty(type='email', name='new_patient_email')
+                    span.form_label(for='new_patient_email') Email (если есть, чтобы получить мед. карту)
+
         .form_footer: a.btn_v4.appointment_btn.appointmentTimeBtn.yellow_black_btn(href='#form_page_1') Выбрать время записи
         
         .form_page#form_page_1: .popup_form

@@ -25,7 +25,6 @@ $(function ($) {
 
     $('.checkEmpty').on('keydown blur', function (e) {
         var firedEl = $(this);
-        console.log(firedEl.val().length, !firedEl.val().length);
 
         if (firedEl.val().length) {
             firedEl.addClass('not_empty');
@@ -37,8 +36,6 @@ $(function ($) {
 
     $('body').delegate('.patient_card', 'click', function (e) {
         var firedEl = $(e.target);
-
-        console.log(firedEl.hasClass('chzn*') || !!firedEl.parents('.chzn*').length);
 
         if (firedEl.hasClass('skipOpen') || !!firedEl.parents('.skipOpen').length) {
 

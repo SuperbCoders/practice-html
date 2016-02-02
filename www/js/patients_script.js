@@ -25,6 +25,8 @@ $(function ($) {
         disable_search_threshold: 3
     }).on('liszt:showing_dropdown', function (evt, params) {
 
+        console.log(evt, params);
+        
         //$('.chosen-select')
 
         var firedEl = $(evt.currentTarget);

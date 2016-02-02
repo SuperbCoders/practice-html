@@ -28,9 +28,11 @@ $(function ($) {
         width: "100%",
         disable_search_threshold: 3
     }).on('liszt:showing_dropdown', function (evt, params) {
-
-        $('.chosen-select')
-
+        //
+        //console.log(evt, params);
+        //
+        //$('.chzn-container-active').click();
+        
         var firedEl = $(evt.currentTarget);
 
         var niceScrollBlock = firedEl.next('.chzn-container').find('.chzn-results');

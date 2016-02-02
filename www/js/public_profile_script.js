@@ -14,10 +14,23 @@ $(function ($) {
         return false;
     });
 
+    $('.checkEmpty').on('keydown blur', function (e) {
+        var firedEl = $(this);
+
+        if (firedEl.val().length) {
+            firedEl.addClass('not_empty');
+        } else {
+            firedEl.removeClass('not_empty');
+        }
+
+    });
 
     $('.appointmentTimeBtn').on('click', function () {
         var firedEl = $(this);
         $(firedEl.attr('href')).addClass('open_page');
+
+        $('.fc-agendaDay-button').click();
+
         return false;
     });
 
@@ -71,7 +84,7 @@ $(function ($) {
         defaultDate: regDate,
         //businessHours: true, // display business hours
         editable: true,
-        //allDaySlot: false,
+        allDaySlot: false,
         slotLabelFormat: 'H:mm',
         timeFormat: 'H:mm',
 
@@ -81,7 +94,7 @@ $(function ($) {
 
         dayClick: function (date, jsEvent, view) {
 
-           
+
         },
 
         events: [
@@ -230,5 +243,5 @@ $(function ($) {
             }
         ]
     });
-    
+
 });
