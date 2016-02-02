@@ -877,7 +877,7 @@ a {
 }
 .cal_body_mod .section_inner {
   max-width: none;
-  padding: 0;
+  padding: 0 0 0 15px;
 }
 
 .header {
@@ -2256,6 +2256,10 @@ a {
   }
 }
 
+.form_caption_holder {
+  min-height: 110px;
+}
+
 .popup_calendar_holder {
   position: relative;
   border: solid #e0e0e0;
@@ -2327,6 +2331,12 @@ a {
 }
 .popup_form .input_w {
   margin-bottom: 32px;
+}
+
+.popup_form .input_w.calendar_add_input {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
 }
 
 .form_caption {
@@ -2725,6 +2735,32 @@ a {
   overflow-x: hidden;
 }
 .form_input.input_v5:focus {
+  border-color: #ffdd4a;
+}
+
+.form_input.input_v6 {
+  -webkit-transition: border-color 0.3s;
+  -ms-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  font: 13px/16px "HelveticaNeueMedium", sans-serif;
+  letter-spacing: -.5px;
+  color: #787878;
+  background: #fff;
+  border-radius: 13px;
+  max-width: 180px;
+}
+
+.form_input.input_v6::-webkit-input-placeholder {
+  color: #b5b5b5;
+}
+
+.form_input.input_v6::-moz-placeholder {
+  color: #b5b5b5;
+}
+
+.form_input.input_v6:focus {
   border-color: #ffdd4a;
 }
 
@@ -4996,14 +5032,6 @@ be a descendant of the grid when it is being dragged.
   background: #ca97fc;
 }
 
-@media only screen and (min-width: 1200px) {
-  .day_mode .calendar_v2 {
-    margin-right: 342px;
-  }
-  .day_mode .calendar_v2 .fc-time-grid .fc-event-container {
-    margin-right: 140px;
-  }
-}
 .calendar_v2 .fc-toolbar {
   position: absolute;
   top: 60px;
@@ -5150,8 +5178,13 @@ be a descendant of the grid when it is being dragged.
   display: none;
 }
 .calendar_v2 .fc-time-grid .fc-slats td {
-  height: 1.9em;
-  border-color: #e8e8e8;
+  height: 2.2em;
+  border-color: #fff;
+  background: #e8e8e8;
+}
+
+.calendar_v2 .fc-time-grid .fc-slats td.fc-axis {
+  background: #fff;
 }
 .calendar_v2 .fc-time-grid .fc-slats .fc-minor td {
   border-top: none;
@@ -5193,6 +5226,7 @@ be a descendant of the grid when it is being dragged.
 }
 .calendar_v2 .fc-time-grid-container {
   margin-top: 2px;
+  padding-left: 20px;
 }
 .calendar_v2 .fc-event {
   -webkit-transition: background 0.3s, color 0.3s;

@@ -36,7 +36,7 @@ $(function ($) {
 
     popup_calendar = $('#popup_calendar').fullCalendar({
         firstDay: 1,
-        height: 300,
+        height: 315,
         //height: 'auto',
         monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'οюнь', 'οюль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
         monthNamesShort: ['Янв.', 'Фев.', 'Март', 'Апр.', 'Май', 'οюнь', 'οюль', 'Авг.', 'Сент.', 'Окт.', 'Ноя.', 'Дек.'],
@@ -87,13 +87,51 @@ $(function ($) {
         allDaySlot: false,
         slotLabelFormat: 'H:mm',
         timeFormat: 'H:mm',
+        defaultEventMinutes: 60,
 
         viewRender: function (view, element) {
 
         },
 
+        eventAfterRender: function (event, element, view) {
+
+
+            if (element.hasClass('popupAddEvent')) {
+
+                var title_input = $('<input class="form_input input_v6" placeholder="Введите имя и фамилию" />');
+
+                element.find('.fc-content').append($('<div class="input_w calendar_add_input" />').append(title_input));
+
+                title_input.focus().on('blur', function (e) {
+                    popup_calendar.fullCalendar('removeEvents', event._id);
+
+                    if (title_input.val().length) {
+                        addEvent(popup_calendar, title_input.val(), event.start, event.end, 'status_red', false);
+                    }
+
+                }).on('keydown', function (e) {
+                    if (e.keyCode == 13 && title_input.val().length) {
+                        popup_calendar.fullCalendar('removeEvents', event._id);
+                        addEvent(popup_calendar, title_input.val(), event.start, event.end, 'status_red', false);
+                    } else if (e.keyCode == 27) {
+                        popup_calendar.fullCalendar('removeEvents', event._id);
+                        return false;
+                    }
+                });
+            }
+
+        },
+
         dayClick: function (date, jsEvent, view) {
 
+            //console.log(date, jsEvent, view);
+
+            popup_calendar.fullCalendar('renderEvent', {
+                start: date.subtract(0, 'minutes'),
+                end: date.add(30, 'minutes'),
+                className: 'status_red popupAddEvent',
+                allDay: false
+            });
 
         },
 
@@ -244,4 +282,19 @@ $(function ($) {
         ]
     });
 
+    $('body').delegate('.fc-event', 'click', function (e) {
+        var firedEl = $(e.target);
+        if (firedEl.prop("tagName").toLowerCase() == 'input') firedEl.focus();
+    });
+
 });
+
+function addEvent(cal_hndl, ev_title, ev_start, ev_end, ev_class, ev_allday) {
+    cal_hndl.fullCalendar('renderEvent', {
+        title: ev_title || '',
+        start: ev_start,
+        end: ev_end,
+        className: ev_class,
+        allDay: ev_allday
+    });
+}

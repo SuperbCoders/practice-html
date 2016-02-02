@@ -126,7 +126,7 @@ a {
 
   .cal_body_mod & {
     max-width: none;
-    padding: 0;
+    padding: 0 0 0 15px;
   }
 
 }
@@ -1712,6 +1712,10 @@ a {
 
 }
 
+.form_caption_holder {
+  min-height: 110px;
+}
+
 .popup_calendar_holder {
   position: relative;
   border: solid #e0e0e0;
@@ -1794,6 +1798,12 @@ a {
 
   .input_w {
     margin-bottom: 32px;
+
+    &.calendar_add_input {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0;
+    }
   }
 
 }
@@ -2255,6 +2265,30 @@ a {
     color: #424242;
     text-align: center;
     overflow-x: hidden;
+
+    &:focus {
+      border-color: #ffdd4a;
+    }
+  }
+
+  &.input_v6 {
+    @include transition_all(border-color .3s);
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    font: 13px/16px $HelveticaNeueMedium;
+    letter-spacing: -.5px;
+    color: #787878;
+    background: #fff;
+    border-radius: 13px;
+    max-width: 180px;
+
+    &::-webkit-input-placeholder {
+      color: #b5b5b5;
+    }
+
+    &::-moz-placeholder, {
+      color: #b5b5b5;
+    }
 
     &:focus {
       border-color: #ffdd4a;

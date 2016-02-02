@@ -418,20 +418,6 @@ $axisWidth: 60px;
 
 .calendar_v2 {
 
-  .day_mode & {
-    @include respond-to-min($desktop) {
-      margin-right: 342px;
-
-      .fc-time-grid .fc-event-container {
-        margin-right: 140px;
-      }
-    }
-  }
-
-  .fc-scroller {
-    //overflow: hidden;
-  }
-
   .fc-toolbar {
     position: absolute;
     top: 60px;
@@ -637,8 +623,13 @@ $axisWidth: 60px;
       }
 
       td {
-        height: 1.9em;
-        border-color: #e8e8e8;
+        height: 2.2em;
+        border-color: #fff;
+        background: #e8e8e8;
+
+        &.fc-axis {
+          background: #fff;
+        }
       }
 
       .fc-minor {
@@ -709,6 +700,7 @@ $axisWidth: 60px;
 
   .fc-time-grid-container {
     margin-top: 2px;
+    padding-left: 20px;
   }
 
   .fc-event {

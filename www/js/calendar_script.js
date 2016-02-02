@@ -106,6 +106,7 @@ $(function ($) {
         allDaySlot: false,
         slotLabelFormat: 'H:mm',
         timeFormat: 'H:mm',
+        defaultEventMinutes: 60,
 
         viewRender: function (view, element) {
             calendarHolder.toggleClass('day_mode', 'agendaDay' == view.name);
@@ -444,7 +445,7 @@ function setTimeline() {
 
     if (timeline.length == 0) { //if timeline isn't there, add it
         timeline = $("<div />").addClass("timeline").append("<span />");
-        parentDiv.find('.fc-time-grid-container').append(timeline);
+        parentDiv.find('.fc-slats').append(timeline);
     }
 
     var curTime = new Date();
