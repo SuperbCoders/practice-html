@@ -2223,7 +2223,6 @@ a {
 .day_info_block .patient_overview,
 .day_info_block .patient_card {
   border: none;
-  border-radius: 0;
 }
 @media only screen and (min-width: 1200px) {
   .day_mode .day_info_block {

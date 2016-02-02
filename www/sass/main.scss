@@ -1701,7 +1701,6 @@ a {
   .patient_overview,
   .patient_card {
     border: none;
-    border-radius: 0;
   }
   @include respond-to-min($desktop) {
     .day_mode & {

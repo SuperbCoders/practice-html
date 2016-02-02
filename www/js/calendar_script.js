@@ -35,6 +35,19 @@ $(function ($) {
 
     });
 
+    $('body').delegate('.patient_card', 'click', function (e) {
+        var firedEl = $(e.target);
+
+        console.log(firedEl.hasClass('chzn*') || !!firedEl.parents('.chzn*').length);
+
+        if (firedEl.hasClass('skipOpen') || !!firedEl.parents('.skipOpen').length) {
+
+        } else {
+            $(this).toggleClass('open_card');
+            return false;
+        }
+
+    });
 
     patient_info_form = $('#patient_info_form').dialog({
         autoOpen: false,
