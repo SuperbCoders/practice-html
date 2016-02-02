@@ -107,6 +107,10 @@ a {
     }
   }
 
+  .cal_body_mod & {
+    padding-bottom: 0;
+  }
+
 }
 
 .section_inner {
@@ -118,6 +122,11 @@ a {
 
   @include respond-to-min($desktop) {
     padding: 0 20px;
+  }
+
+  .cal_body_mod & {
+    max-width: none;
+    padding: 0;
   }
 
 }
@@ -1135,7 +1144,7 @@ a {
 }
 
 .patient_info_table {
-  max-width: 300px;
+  max-width: 320px;
   margin: 0 auto;
   display: table;
   width: 100%;
@@ -1670,12 +1679,16 @@ a {
   margin-bottom: 20px;
 }
 
+.calendar_holder {
+  position: relative;
+}
+
 .day_info_block {
   @include transition_all(transform .3s, opacity .3s);
   @include transform_translate(100%, 0);
   position: absolute;
-  top: 0;
-  right: 20px;
+  top: 3px;
+  right: 0;
   bottom: 0;
   background: #fff;
   z-index: 1;
@@ -1690,11 +1703,12 @@ a {
     border: none;
     border-radius: 0;
   }
-
-  .day_mode & {
-    @include transform_translate(0, 0);
-    opacity: 1;
-    pointer-events: all;
+  @include respond-to-min($desktop) {
+    .day_mode & {
+      @include transform_translate(0, 0);
+      opacity: 1;
+      pointer-events: all;
+    }
   }
 
 }
@@ -1775,14 +1789,6 @@ a {
     margin-bottom: 32px;
   }
 
-  .form_label {
-    font: 16px $HelveticaNeueLight;
-    color: #969696;
-
-    &.fz_20 {
-      font-size: 20px;
-    }
-  }
 }
 
 .form_caption {
@@ -2261,6 +2267,45 @@ a {
 }
 
 .input_w {
+
+  &.placeholder_mod {
+    position: relative;
+    padding-top: 20px;
+    overflow: hidden;
+
+    .form_label {
+      @include transition_all(top .3s, font-size .3s, color .3s);
+      position: absolute;
+      top: 20px;
+      left: 0;
+      font: 18px $HelveticaNeueLight;
+      color: #969696;
+      white-space: nowrap;
+
+      &.fz_20 {
+        font-size: 20px;
+      }
+    }
+
+    input {
+      position: relative;
+      z-index: 1;
+
+      &:focus {
+        + .form_label {
+          color: #ffdd4a;
+        }
+      }
+
+      &:focus,
+      &.not_empty {
+        + .form_label {
+          top: 0;
+          font-size: 16px;
+        }
+      }
+    }
+  }
 
   &.datepicker_v1 {
     position: relative;

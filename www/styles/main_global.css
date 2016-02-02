@@ -107,6 +107,13 @@
   transform: translate(0, -50%);
 }
 
+.fc-agenda-view .calendar_v1 th.active-day {
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
 .aside_close_btn:before, .change_photo_btn:before, .patient_avatar_letter, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .search_btn:before, .go_back_btn:before, .add_row_btn:before, .btn_v1.add_card_btn:before, .calendar_v1 .fc-toolbar .fc-center, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before {
   top: 50%;
@@ -828,6 +835,9 @@ a {
     padding-bottom: 50px;
   }
 }
+.cal_body_mod .base {
+  padding-bottom: 0;
+}
 
 .section_inner {
   width: 100%;
@@ -840,6 +850,10 @@ a {
   .section_inner {
     padding: 0 20px;
   }
+}
+.cal_body_mod .section_inner {
+  max-width: none;
+  padding: 0;
 }
 
 .header {
@@ -1745,7 +1759,7 @@ a {
 }
 
 .patient_info_table {
-  max-width: 300px;
+  max-width: 320px;
   margin: 0 auto;
   display: table;
   width: 100%;
@@ -2183,6 +2197,10 @@ a {
   margin-bottom: 20px;
 }
 
+.calendar_holder {
+  position: relative;
+}
+
 .day_info_block {
   -webkit-transition: transform 0.3s, opacity 0.3s;
   -ms-transition: transform 0.3s, opacity 0.3s;
@@ -2191,8 +2209,8 @@ a {
   -ms-transform: translate(100%, 0);
   transform: translate(100%, 0);
   position: absolute;
-  top: 0;
-  right: 20px;
+  top: 3px;
+  right: 0;
   bottom: 0;
   background: #fff;
   z-index: 1;
@@ -2207,12 +2225,14 @@ a {
   border: none;
   border-radius: 0;
 }
-.day_mode .day_info_block {
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-  opacity: 1;
-  pointer-events: all;
+@media only screen and (min-width: 1200px) {
+  .day_mode .day_info_block {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: all;
+  }
 }
 
 @media only screen and (max-width: 1199px) {
@@ -2278,13 +2298,6 @@ a {
 }
 .popup_form .input_w {
   margin-bottom: 32px;
-}
-.popup_form .form_label {
-  font: 16px "HelveticaNeueLight", sans-serif;
-  color: #969696;
-}
-.popup_form .form_label.fz_20 {
-  font-size: 20px;
 }
 
 .form_caption {
@@ -2697,6 +2710,36 @@ a {
   }
 }
 
+.input_w.placeholder_mod {
+  position: relative;
+  padding-top: 20px;
+  overflow: hidden;
+}
+.input_w.placeholder_mod .form_label {
+  -webkit-transition: top 0.3s, font-size 0.3s, color 0.3s;
+  -ms-transition: top 0.3s, font-size 0.3s, color 0.3s;
+  transition: top 0.3s, font-size 0.3s, color 0.3s;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  font: 18px "HelveticaNeueLight", sans-serif;
+  color: #969696;
+  white-space: nowrap;
+}
+.input_w.placeholder_mod .form_label.fz_20 {
+  font-size: 20px;
+}
+.input_w.placeholder_mod input {
+  position: relative;
+  z-index: 1;
+}
+.input_w.placeholder_mod input:focus + .form_label {
+  color: #ffdd4a;
+}
+.input_w.placeholder_mod input:focus + .form_label, .input_w.placeholder_mod input.not_empty + .form_label {
+  top: 0;
+  font-size: 16px;
+}
 .input_w.datepicker_v1 {
   position: relative;
 }
@@ -4655,7 +4698,6 @@ be a descendant of the grid when it is being dragged.
   line-height: 40px;
   background: #fff;
   margin: 0 auto;
-  max-width: 1200px;
   padding: 0 20px;
 }
 @media only screen and (min-width: 1200px) {
@@ -4759,11 +4801,14 @@ be a descendant of the grid when it is being dragged.
 .calendar_v1 th.active-day {
   color: #f00;
 }
+.fc-agenda-view .calendar_v1 th.active-day {
+  position: absolute;
+  top: 100%;
+}
 .calendar_v1 .fc-view .fc-head {
   position: fixed;
   right: 0;
   left: 0;
-  max-width: 1200px;
   top: 40px;
   z-index: 7;
   margin: 0 auto;
@@ -4804,6 +4849,9 @@ be a descendant of the grid when it is being dragged.
 .calendar_v1 .fc-time-grid .fc-slats .fc-minor td {
   border-top: none;
 }
+.calendar_v1 .fc-agenda-view th.fc-axis.fc-widget-header {
+  width: 14px !important;
+}
 @media only screen and (max-width: 1199px) {
   .calendar_v1 .fc-left,
   .calendar_v1 .fc-center {
@@ -4835,6 +4883,9 @@ be a descendant of the grid when it is being dragged.
 .calendar_v1 hr.fc-divider.fc-widget-header:last-child {
   background: none !important;
   border-width: 0 0 1px 0 !important;
+}
+.calendar_v1 .fc-time-grid-container {
+  margin-top: 2px;
 }
 .calendar_v1 .fc-event {
   -webkit-transition: background 0.3s, color 0.3s;

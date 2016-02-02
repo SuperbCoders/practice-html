@@ -15,10 +15,10 @@
     <script src="js/fullcalendar.js"></script>
     <script src="js/calendar_script.js?no_cache"></script>
   </head>
-  <body class="cal_header_mod">
+  <body class="cal_header_mod cal_body_mod">
     <div class="wrapper">
       <!--.rect_1024-->
-      <div class="base controls_mod">
+      <div class="base">
         <div class="header">
           <div class="section_inner clearfix">
             <div class="fl mob_hidden"><a href="profile.html" class="logo"></a></div>
@@ -139,27 +139,23 @@
             </select>
           </div>
           <div class="form_row">
-            <label for="new_patient_name" class="form_label fz_20">Имя пациента</label>
-            <div class="input_w">
-              <input id="new_patient_name" type="text" name="new_patient_name" value="" class="form_input input_v4"/>
+            <div class="input_w placeholder_mod">
+              <input id="new_patient_name" type="text" name="new_patient_name" value="" class="form_input input_v4 checkEmpty"/><span for="new_patient_name" class="form_label fz_20_">Имя пациента</span>
             </div>
           </div>
           <div class="form_row">
-            <label for="new_patient_phone" class="form_label">Телефон</label>
-            <div class="input_w">
-              <input id="new_patient_phone" type="tel" name="new_patient_phone" class="form_input input_v4"/>
+            <div class="input_w placeholder_mod">
+              <input id="new_patient_phone" type="tel" name="new_patient_phone" class="form_input input_v4 checkEmpty"/><span for="new_patient_phone" class="form_label">Телефон</span>
             </div>
           </div>
           <div class="form_row">
-            <label for="new_patient_email" class="form_label">Email</label>
-            <div class="input_w">
-              <input id="new_patient_email" type="email" name="new_patient_email" class="form_input input_v4"/>
+            <div class="input_w placeholder_mod">
+              <input id="new_patient_email" type="email" name="new_patient_email" class="form_input input_v4 checkEmpty"/><span for="new_patient_email" class="form_label">Email</span>
             </div>
           </div>
           <div class="form_row">
-            <label for="new_patient_describe" class="form_label">Краткое описание (только для вас)</label>
-            <div class="input_w">
-              <input id="new_patient_describe" type="email" name="new_patient_describe" class="form_input input_v4"/>
+            <div class="input_w placeholder_mod">
+              <input id="new_patient_describe" type="email" name="new_patient_describe" class="form_input input_v4 checkEmpty"/><span for="new_patient_describe" class="form_label">Краткое описание (только для вас)</span>
             </div>
           </div>
           <button class="btn_v2 new_patient_btn newPatientBtn yellow_black_btn">Записать на 30 декабря, в 12:00</button>

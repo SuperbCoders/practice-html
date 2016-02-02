@@ -4,6 +4,7 @@ var calendar,
     patient_info_form,
     newEventDate,
     win,
+    calTimer,
     calendarHolder,
     regDate = moment('2016-01-12'),
 //regDate = new Date(),
@@ -22,6 +23,19 @@ $(function ($) {
         dialogClass: "dialog_v1 no_close_mod"
     });
 
+    $('.checkEmpty').on('keydown blur', function (e) {
+        var firedEl = $(this);
+        console.log(firedEl.val().length, !firedEl.val().length);
+
+        if (firedEl.val().length) {
+            firedEl.addClass('not_empty');
+        } else {
+            firedEl.removeClass('not_empty');
+        }
+
+    });
+
+
     patient_info_form = $('#patient_info_form').dialog({
         autoOpen: false,
         modal: true,
@@ -31,7 +45,7 @@ $(function ($) {
 
     calendar = $('#calendar').fullCalendar({
         firstDay: 1,
-        height: win.height() - 50 - $('.wrapper').css('paddingTop').replace('px', '') * 1,
+        height: getCalendarHeight(),
         //height: 'auto',
         monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'οюнь', 'οюль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
         monthNamesShort: ['Янв.', 'Фев.', 'Март', 'Апр.', 'Май', 'οюнь', 'οюль', 'Авг.', 'Сент.', 'Окт.', 'Ноя.', 'Дек.'],
@@ -79,7 +93,7 @@ $(function ($) {
         defaultDate: regDate,
         //businessHours: true, // display business hours
         editable: true,
-        //allDaySlot: false,
+        allDaySlot: false,
         slotLabelFormat: 'H:mm',
         timeFormat: 'H:mm',
 
@@ -278,7 +292,7 @@ $(function ($) {
         disable_search_threshold: 3
     }).on('liszt:showing_dropdown', function (evt, params) {
 
-        $('.chosen-select')
+        $('.chosen-select');
 
         var firedEl = $(evt.currentTarget);
 
@@ -395,6 +409,23 @@ $(function ($) {
     switchToAgendaDay();
 
 });
+
+
+$(window).resize(function () {
+    clearTimeout(calTimer);
+
+    calTimer = setTimeout(function () {
+        calendar.fullCalendar('options', 'slotTime', getCalendarHeight());
+    }, 10);
+
+});
+
+function getCalendarHeight() {
+
+    var newHeight = (win.height() + (win.width() > 1200 ? 40 : -50) - $('.wrapper').css('paddingTop').replace('px', '') * 1);
+
+    return Math.max(newHeight, 300);
+}
 
 function setTimeline() {
     var parentDiv = $(".fc-agenda-view");

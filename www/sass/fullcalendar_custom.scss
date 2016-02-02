@@ -25,7 +25,7 @@ $axisWidth: 60px;
     line-height: 40px;
     background: #fff;
     margin: 0 auto;
-    max-width: 1200px;
+    //max-width: 1200px;
     padding: 0 20px;
 
     @include respond-to-min($desktop) {
@@ -158,6 +158,12 @@ $axisWidth: 60px;
 
   th.active-day {
     color: #f00;
+
+    .fc-agenda-view & {
+      @extend %hor_centr;
+      position: absolute;
+      top: 100%;
+    }
   }
 
   td.active-day {
@@ -169,7 +175,7 @@ $axisWidth: 60px;
       position: fixed;
       right: 0;
       left: 0;
-      max-width: 1200px;
+      //max-width: 1200px;
       top: 40px;
       z-index: 7;
       margin: 0 auto;
@@ -239,6 +245,10 @@ $axisWidth: 60px;
     }
   }
 
+  .fc-agenda-view th.fc-axis.fc-widget-header {
+    width: 14px !important;
+  }
+
   @include respond-to-max($desktop) {
 
     .fc-left,
@@ -258,6 +268,7 @@ $axisWidth: 60px;
     th.fc-axis.fc-widget-header {
       display: none;
     }
+
   }
 
   .fc-axis {
@@ -288,7 +299,7 @@ $axisWidth: 60px;
   }
 
   .fc-time-grid-container {
-    //height: auto !important;
+    margin-top: 2px;
   }
 
   .fc-event {
