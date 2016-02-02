@@ -100,7 +100,7 @@
   backface-visibility: hidden;
 }
 
-.patient_info_block .add_btn_holder, .input_w.datepicker_v1:before, .input_w.soc_input:before {
+.patient_info_block .add_btn_holder, .input_w.datepicker_v1 .calendar_icon, .input_w.soc_input:before {
   top: 50%;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -340,8 +340,23 @@ textarea:focus::-moz-placeholder {
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices:before, .chosen_v1 .chzn-single:before, .chosen_v2 .chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
+
+[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices:before, .chosen_v1 .chzn-single:before, .chosen_v2 .chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'practic_icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-after:after, .input_w.datepicker_v1 .calendar_icon:after {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'practic_icons' !important;
   speak: none;
@@ -401,6 +416,14 @@ textarea:focus::-moz-placeholder {
 
 .icon-search:before, .search_btn:before {
   content: "\e909";
+}
+
+.icon-calendar_icon:before, .input_w.datepicker_v1 .calendar_icon:before {
+  content: "\e90a";
+}
+
+.icon-calendar_icon:after, .input_w.datepicker_v1 .calendar_icon:after {
+  content: "\e90b";
 }
 
 .ui-datepicker {
@@ -2742,16 +2765,41 @@ a {
 .input_w.datepicker_v1 {
   position: relative;
 }
-.input_w.datepicker_v1:before {
-  content: '';
+
+.input_w.datepicker_v1 .calendar_icon {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   left: 10px;
-  background: red;
+}
+
+.input_w.datepicker_v1 .calendar_icon:after, .input_w.datepicker_v1 .calendar_icon:before {
+  -webkit-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  transition: color 0.3s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+}
+
+.input_w.datepicker_v1 .calendar_icon:before {
+  color: #63637b;
+}
+
+.input_w.datepicker_v1 .calendar_icon:after {
+  color: #c1c1c1;
 }
 .input_w.datepicker_v1 .form_input {
   padding-left: 37px;
+}
+
+.input_w.datepicker_v1 .form_input:focus + .calendar_icon:before {
+  color: #4c88fd;
+}
+
+.input_w.datepicker_v1 .form_input:focus + .calendar_icon:after {
+  color: #b8d0ff;
 }
 .input_w.search_input_w {
   display: block;

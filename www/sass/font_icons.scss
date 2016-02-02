@@ -27,6 +27,24 @@
   }
 }
 
+.icon-after {
+
+  &:after {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'practic_icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
 .icon-pencil:before {
   content: "\e900";
 }
@@ -75,3 +93,10 @@
   content: "\e909";
 }
 
+.icon-calendar_icon:before {
+  content: "\e90a";
+}
+
+.icon-calendar_icon:after {
+  content: "\e90b";
+}

@@ -2309,18 +2309,61 @@ a {
   &.datepicker_v1 {
     position: relative;
 
-    &:before {
+    .calendar_icon {
+      @extend .icon-before;
+      @extend .icon-after;
+      @extend .icon-calendar_icon;
       @extend %vert_centr;
-      content: '';
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 14px;
+      height: 14px;
       left: 10px;
-      background: red;
+
+      &:after,
+      &:before {
+        @include transition_all(color .3s);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 14px;
+      }
+
+      &:before {
+        //color: rgba(99, 99, 123, 0.4);
+        color: #63637b;
+      }
+
+      &:after {
+        //color: rgb(99, 99, 123);
+        color: #c1c1c1;
+      }
+
     }
+
+    //&:hover .calendar_icon {
+    //  &:before {
+    //    color: #4c88fd;
+    //  }
+    //
+    //  &:after {
+    //    color: #b8d0ff;
+    //  }
+    //}
 
     .form_input {
       padding-left: 37px;
+
+      &:focus {
+        + .calendar_icon {
+          &:before {
+            color: #4c88fd;
+          }
+
+          &:after {
+            color: #b8d0ff;
+          }
+        }
+      }
     }
 
   }
