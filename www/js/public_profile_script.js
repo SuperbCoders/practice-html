@@ -124,15 +124,8 @@ $(function ($) {
 
         dayClick: function (date, jsEvent, view) {
 
-            //console.log(date, jsEvent, view);
-
-            popup_calendar.fullCalendar('renderEvent', {
-                start: date.subtract(0, 'minutes'),
-                end: date.add(30, 'minutes'),
-                className: 'status_red popupAddEvent',
-                allDay: false
-            });
-
+            addEvent(popup_calendar, '', date.subtract(30, 'minutes'), date.add(30, 'minutes'), 'status_red popupAddEvent', false);
+            
         },
 
         events: [
