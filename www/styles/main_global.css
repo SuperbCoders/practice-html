@@ -427,6 +427,14 @@ textarea:focus::-moz-placeholder {
   content: "\e90b";
 }
 
+.icon-map_pin:before {
+  content: "\e90b";
+}
+
+.icon-attach:before {
+  content: "\e90c";
+}
+
 .ui-datepicker {
   display: none;
   position: absolute;
@@ -2332,7 +2340,6 @@ a {
 .popup_form .input_w {
   margin-bottom: 32px;
 }
-
 .popup_form .input_w.calendar_add_input {
   position: relative;
   z-index: 1;
@@ -2716,6 +2723,7 @@ a {
   line-height: 20px;
   letter-spacing: -.5px;
   color: #424242;
+  box-shadow: none !important;
 }
 .form_input.input_v4:focus {
   border-color: #ffdd4a;
@@ -2737,7 +2745,6 @@ a {
 .form_input.input_v5:focus {
   border-color: #ffdd4a;
 }
-
 .form_input.input_v6 {
   -webkit-transition: border-color 0.3s;
   -ms-transition: border-color 0.3s;
@@ -2751,15 +2758,12 @@ a {
   border-radius: 13px;
   max-width: 180px;
 }
-
 .form_input.input_v6::-webkit-input-placeholder {
   color: #b5b5b5;
 }
-
 .form_input.input_v6::-moz-placeholder {
   color: #b5b5b5;
 }
-
 .form_input.input_v6:focus {
   border-color: #ffdd4a;
 }
@@ -4884,7 +4888,8 @@ be a descendant of the grid when it is being dragged.
 .calendar_v1 .fc-body > tr > td {
   border: none;
 }
-.calendar_v1 th.active-day {
+
+.fc-agendaWeek-view .calendar_v1 th.active-day {
   color: #f00;
 }
 .fc-agenda-view .calendar_v1 th.active-day {
@@ -4935,7 +4940,8 @@ be a descendant of the grid when it is being dragged.
 .calendar_v1 .fc-time-grid .fc-slats .fc-minor td {
   border-top: none;
 }
-.calendar_v1 .fc-agenda-view th.fc-axis.fc-widget-header {
+
+.calendar_v1 .fc-agendaDay-view th.fc-axis.fc-widget-header {
   width: 14px !important;
 }
 @media only screen and (max-width: 1199px) {
@@ -5182,7 +5188,6 @@ be a descendant of the grid when it is being dragged.
   border-color: #fff;
   background: #e8e8e8;
 }
-
 .calendar_v2 .fc-time-grid .fc-slats td.fc-axis {
   background: #fff;
 }

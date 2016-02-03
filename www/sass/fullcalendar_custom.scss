@@ -157,8 +157,11 @@ $axisWidth: 60px;
   }
 
   th.active-day {
-    color: #f00;
 
+    .fc-agendaWeek-view & {
+      color: #f00;
+    }
+    
     .fc-agenda-view & {
       @extend %hor_centr;
       position: absolute;
@@ -245,7 +248,7 @@ $axisWidth: 60px;
     }
   }
 
-  .fc-agenda-view th.fc-axis.fc-widget-header {
+  .fc-agendaDay-view th.fc-axis.fc-widget-header {
     width: 14px !important;
   }
 
@@ -268,7 +271,6 @@ $axisWidth: 60px;
     th.fc-axis.fc-widget-header {
       display: none;
     }
-
   }
 
   .fc-axis {
