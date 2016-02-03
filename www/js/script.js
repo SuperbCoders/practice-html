@@ -30,8 +30,13 @@ $(function ($) {
         return false;
     });
 
-    $('.openMenu, .asideOverlay').on('click', function () {
-        html_var.toggleClass('menu_open');
+    $('.openMenu').on('click', function () {
+        html_var.addClass('menu_open');
+        return false;
+    });
+
+    $('.closeMenu').on('click', function () {
+        html_var.removeClass('menu_open aside_open');
         return false;
     });
 

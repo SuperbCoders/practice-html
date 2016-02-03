@@ -5,7 +5,7 @@ html(lang='ru')
 
     body.body_gray.sub_header_mod
         .wrapper
-            .rect_1024
+            //.rect_1024
             .base.load_more_mod
                 +header(2, true)
 
@@ -14,12 +14,12 @@ html(lang='ru')
                         ul.patients_list
                             +loop_while(3)
                                 li.patient_unit
-                                    .patient_card
+                                    .patient_card.cardAsideOverview
                                         +patient_status()
                                         +patient_menu()
-                                        a.patient_avatar(href='#'): img(src='i/user_2.png')
+                                        a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_2.png')
                                         .patient_info
-                                            .patient_name: a.gl_link.gray_link(href='#'): span Осинцев Константин
+                                            .patient_name: a.skipOpen.gl_link.gray_link.write2Card(href='#'): span Осинцев Константин
                                             p Краткая информация о пациенте Первичный прием, возможно анализы...
                                         +patient_info_table()
                                         
@@ -27,50 +27,50 @@ html(lang='ru')
                                             .controls_cell
                                                 a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
                                                 p: a.gl_link(href='#') Изменить время приема
-                                        +patient_overview()
+                                        ////+patient_overview()
                         
                                 li.patient_unit
-                                    .patient_card
+                                    .patient_card.cardAsideOverview
                                         +patient_status()
                                         +patient_menu()
-                                        a.patient_avatar(href='#'): img(src='i/user_1.png')
+                                        a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_1.png')
                                         .patient_info
-                                            .patient_name: a.gl_link.gray_link(href='#'): span Самойлов Ярослав Георгиевич
+                                            .patient_name: a.skipOpen.gl_link.gray_link.write2Card(href='#'): span Самойлов Ярослав Георгиевич
                                             p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
                                         +patient_info_table()
                                         .patient_card_controls.skipOpen: .patient_info_table
                                             .controls_cell
                                                 a.btn_v2.patient_btn.black_yellow_btn(href='#'): span.mb Записать на прием
-                                        +patient_overview()
+                                        //+patient_overview()
 
                                 li.patient_unit
-                                    .patient_card
+                                    .patient_card.cardAsideOverview
                                         +patient_status()
                                         +patient_menu()
-                                        a.patient_avatar(href='#'): img(src='i/user_2.png')
+                                        a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_2.png')
                                         .patient_info
-                                            .patient_name: a.gl_link.gray_link(href='#'): span Петрова Алина
+                                            .patient_name: a.skipOpen.gl_link.gray_link.write2Card(href='#'): span Петрова Алина
                                             p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
                                         +patient_info_table()
                                         .patient_card_controls.skipOpen.patient_confirm: .patient_info_table
                                             .controls_cell
                                                 a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Изменить прием 29 февраля, в 12:00
                                                 p: a.gl_link(href='#') Отменить приём
-                                        +patient_overview()
+                                        //+patient_overview()
 
                                 li.patient_unit
-                                    .patient_card
+                                    .patient_card.cardAsideOverview
                                         +patient_status()
                                         +patient_menu()
-                                        a.patient_avatar(href='#'): img(src='i/user_2.png')
+                                        a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_2.png')
                                         .patient_info
-                                            .patient_name: a.gl_link.gray_link(href='#'): span Петрова Алина
+                                            .patient_name: a.skipOpen.gl_link.gray_link.write2Card(href='#'): span Петрова Алина
                                             p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
                                         +patient_info_table()
                                         .patient_card_controls.skipOpen.patient_ready: .patient_info_table
                                             .controls_cell
                                                 a.btn_v2.patient_btn.green_btn(href='#'): span.mb Начать прием
-                                        +patient_overview()
+                                        //+patient_overview()
 
                         .pagination_holder
                             ul.pagination_list
@@ -86,4 +86,4 @@ html(lang='ru')
                 a.load_more_btn(href='#') Показать еще карточки пациентов
                 
                 +aside_menu()
-                                                
+                +aside_card()

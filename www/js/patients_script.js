@@ -5,20 +5,47 @@ var profile_tabs,
 
 $(function ($) {
 
-    $('body').delegate('.patient_card', 'click', function (e) {
+    $('body').delegate('.cardOverview', 'click', function (e) {
         var firedEl = $(e.target);
 
         console.log(firedEl.hasClass('chzn*') || !!firedEl.parents('.chzn*').length);
-        
+
         if (firedEl.hasClass('skipOpen') || !!firedEl.parents('.skipOpen').length) {
 
         } else {
             $(this).toggleClass('open_card');
             return false;
         }
-
     });
 
+    $('.openMenu').on('click', function () {
+        html_var.addClass('menu_open');
+        return false;
+    });
+    
+    $('.closeMenu').on('click', function () {
+        html_var.removeClass('menu_open aside_open');
+        return false;
+    });
+
+    $('body').delegate('.cardAsideOverview', 'click', function (e) {
+        var firedEl = $(e.target);
+
+        if (firedEl.hasClass('skipOpen') || !!firedEl.parents('.skipOpen').length) {
+
+        } else {
+            html_var.addClass('aside_open');
+            return false;
+        }
+    });
+
+    $('body').delegate('.write2Card', 'click', function (e) {
+        var firedEl = $(e.target);
+
+        console.log('write2Card');
+        
+        return false;
+    });
 
     $('.chosen-select').chosen({
         width: "100%",
@@ -26,7 +53,7 @@ $(function ($) {
     }).on('liszt:showing_dropdown', function (evt, params) {
 
         console.log(evt, params);
-        
+
         //$('.chosen-select')
 
         var firedEl = $(evt.currentTarget);

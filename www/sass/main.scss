@@ -575,7 +575,7 @@ a {
 .aside_menu_overlay {
   @include transition_all(opacity .3s);
   position: fixed;
-  z-index: 14;
+  z-index: 5;
   top: 0;
   bottom: 0;
   left: 0;
@@ -585,6 +585,15 @@ a {
   opacity: 0;
   visibility: hidden;
 
+  .aside_open & {
+    z-index: 11;
+  }
+
+  .menu_open & {
+    z-index: 16;
+  }
+
+  .aside_open &,
   .menu_open & {
     visibility: visible;
     pointer-events: all;
@@ -600,7 +609,7 @@ a {
   top: 0;
   bottom: 50px;
   width: 100%;
-  z-index: 15;
+  z-index: 17;
   background: #fff;
 
   .menu_open & {
@@ -610,6 +619,54 @@ a {
   @include respond-to-min($desktop) {
     bottom: 0;
     max-width: 320px;
+  }
+}
+
+.patient_aside_overview {
+  //padding-top: 40px;
+  overflow-x: hidden;
+  height: 100%;
+
+  .patient_overview {
+    left: 0;
+    right: 0;
+  }
+
+  .patient_overview,
+  .patient_card {
+    border: none;
+    box-shadow: none !important;
+    border-radius: 0;
+  }
+
+  .patient_card,
+  .patient_card_controls {
+    border-radius: 0;
+  }
+}
+
+.aside_card_holder {
+  @include transition_all(transform .3s);
+  @include transform_translate(100%, 0);
+  position: fixed;
+  right: 0;
+  top: 60px;
+  bottom: 50px;
+  width: 100%;
+  z-index: 15;
+  background: #fff;
+
+  .aside_open & {
+    @include transform_translate(0, 0);
+  }
+
+  @include respond-to-min($desktop) {
+    bottom: 0;
+    max-width: 320px;
+
+    &.card_mod {
+      max-width: 340px;
+    }
   }
 }
 
@@ -1067,7 +1124,7 @@ a {
     border-radius: 100%;
   }
 
-  &:hover {
+  .patient_card:hover & {
     @include transform_scale(1.2);
   }
 }
@@ -2999,6 +3056,12 @@ textarea.form_input.input_v3 {
   @include respond-to-max($desktop) {
     left: -5px;
   }
+
+  &.card_mod {
+    left: 25px;
+    top: 12px;
+  }
+
 }
 
 .add_row_btn {
@@ -3026,7 +3089,7 @@ textarea.form_input.input_v3 {
     display: inline-block;
     vertical-align: middle;
     position: relative;
-    line-height: 30px;
+    line-height: 32px;
     padding: 0 10px 0 30px;
     border-radius: 20px;
     cursor: pointer;

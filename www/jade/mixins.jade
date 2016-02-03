@@ -76,7 +76,7 @@ mixin patient_info_table()
         p +7 927 026 10 22
         p yaosamo@gmail.com
             
-mixin header(active_menu, sub_header, profile_sub_header)
+mixin header(active_menu, sub_header, profile_sub_header, card_sub_header)
     div.header
         .section_inner.clearfix
             .fl.mob_hidden
@@ -127,7 +127,38 @@ mixin header(active_menu, sub_header, profile_sub_header)
     - if (profile_sub_header)
         //- just spacer       
         .calendar_header_holder.calendarSubHeader
+    
+    - if (card_sub_header)
+        .sub_header_holder
+            .section_inner.clearfix
+                .fl.header_search_form_holder
+                    .header_search_form
+                        form(action='#')
+                            label.input_w.search_input_w
+                                input.input_v2.form_input(placeholder='Поиск пациента')
+                                button.search_btn
+    
+                .fl.mob_hidden
+                    a.btn_v1.add_card_btn.yellow_black_btn(href='add_patient.html') Создать новую карточку
 
+                .fr.filter_toggle_holder: .mb: form(action='#')
+                    ul.filter_toggle.filter_toggle_v1
+                        li.filter_t_item
+                            label.filter_t_box
+                                input.hidden_input(type='radio' name='patient_filter' checked)
+                                span.filter_t_name
+                                    | Все
+                                    span.dt_hidden  пациенты
+                        li.filter_t_item
+                            label.filter_t_box
+                                input.hidden_input(type='radio' name='patient_filter')
+                                span.filter_t_name
+                                    span.dt_hidden Не подтвержденые
+                                    span.mob_hidden Ожидают подтверждения
+                        li.filter_t_item.mob_hidden
+                            label.filter_t_box
+                                input.hidden_input(type='radio' name='patient_filter')
+                                span.filter_t_name В архиве 
 
 mixin popup()
     .popup_form#add_patient_form(style='display:none')
@@ -160,7 +191,7 @@ mixin popup()
     .popup_form.popup_v2#patient_info_form(style='display:none')
         .form_corner
         form(action='#')
-            .patient_card
+            .patient_card.cardOverview
                 +patient_status()
                 +patient_menu()
                 a.patient_avatar(href='#'): img(src='i/user_2.png')
@@ -209,7 +240,7 @@ mixin popup_calendar()
     .popup_calendar_holder
         #popup_calendar.calendar_v2
         
-mixin patient_overview()
+mixin patient_overview(collapsed)
     .patient_overview
         a.btn_v3.add_patient_line.white__btn(href='#') Добавить запись в карту
         ul.patient_overview_list
@@ -231,13 +262,12 @@ mixin patient_overview()
                 .overview_caption ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
                 p Договор №000099
                 
-                
     
 mixin aside_menu()
-    .aside_menu_overlay.asideOverlay
+    .aside_menu_overlay.closeMenu
     .aside_menu_holder
         .aside_menu
-            a.aside_close_btn.openMenu(href='#')
+            a.aside_close_btn.closeMenu(href='#')
             .user_info
                 .user_avatar: img(src='i/user_small_1.png')
                 .user_name: b Ярослав Самойлов
@@ -248,4 +278,23 @@ mixin aside_menu()
                 li.aside_m_item: a.gl_link(href='#') Настройки
                 li.aside_m_item: a.gl_link(href='#') Выход из учетной записи
                 li.aside_m_item.aside_m_last: a.gl_link(href='#') Техническая поддержка
-                
+                    
+mixin aside_card()
+    .aside_card_holder.card_mod
+        .aside_menu
+            //a.aside_close_btn.closeMenu(href='#')
+            .patient_aside_overview
+                .patient_card.cardOverview
+                    a.go_back_btn.card_mod.closeMenu(href='#')
+                    +patient_menu()
+                    a.patient_avatar(href='#'): img(src='i/user_2.png')
+                    .patient_info
+                        .patient_name: a.gl_link.gray_link(href='#'): span Осинцев Константин
+                        textarea.input_v5.form_input.skipOpen Болят карманы, ломит штаны, от водки тошнит, вылечите скорей меня
+                    +patient_info_table()
+    
+                    .patient_card_controls.skipOpen.patient_warn: .patient_info_table
+                        .controls_cell
+                            a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
+                            p: a.gl_link(href='#') Изменить время приема
+                    +patient_overview()
