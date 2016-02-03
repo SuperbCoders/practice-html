@@ -429,8 +429,6 @@ $(function ($) {
 
 $(window).resize(function () {
     clearTimeout(calTimer);
-
-    console.log(getCalendarHeight());
     
     calTimer = setTimeout(function () {
         console.log(getCalendarHeight());

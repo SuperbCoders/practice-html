@@ -946,7 +946,6 @@ a {
   line-height: 40px;
   padding: 5px 0;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19);
 }
 @media only screen and (min-width: 1200px) {
   .calendar_header_holder {
@@ -4924,6 +4923,7 @@ be a descendant of the grid when it is being dragged.
   line-height: 35px;
   height: 38px;
   padding-top: 7px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19);
 }
 .calendar_v1 .fc-view .fc-head .fc-head-container {
   padding: 0 20px;

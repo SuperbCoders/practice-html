@@ -192,7 +192,7 @@ a {
   line-height: 40px;
   padding: 5px 0;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .19);
+  //box-shadow: 0 2px 4px rgba(0, 0, 0, .19);
 
   @include respond-to-min($desktop) {
     padding: 0;
