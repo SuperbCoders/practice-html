@@ -103,27 +103,36 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header)
                                 input.input_v2.form_input(placeholder='Поиск пациента')
                                 button.search_btn
     
-                .fl.mob_hidden
+                .fl.mob_hidden.read_mode
                     a.btn_v1.add_card_btn.yellow_black_btn(href='add_patient.html') Создать новую карточку
 
-                .fr.filter_toggle_holder: .mb: form(action='#')
-                    ul.filter_toggle.filter_toggle_v1
-                        li.filter_t_item
-                            label.filter_t_box
-                                input.hidden_input(type='radio' name='patient_filter' checked)
-                                span.filter_t_name
-                                    | Все
-                                    span.dt_hidden  пациенты
-                        li.filter_t_item
-                            label.filter_t_box
-                                input.hidden_input(type='radio' name='patient_filter')
-                                span.filter_t_name
-                                    span.dt_hidden Не подтвержденые
-                                    span.mob_hidden Ожидают подтверждения
-                        li.filter_t_item.mob_hidden
-                            label.filter_t_box
-                                input.hidden_input(type='radio' name='patient_filter')
-                                span.filter_t_name В архиве 
+                .patient_edit_controls.edit_mode
+                    a.btn_v1.green_btn.save_card_btn.saveCard(href='#') Написать в карту
+                    
+                .fr.filter_toggle_holder
+                    .mb.read_mode: form(action='#')
+                        ul.filter_toggle.filter_toggle_v1
+                            li.filter_t_item
+                                label.filter_t_box
+                                    input.hidden_input(type='radio' name='patient_filter' checked)
+                                    span.filter_t_name
+                                        | Все
+                                        span.dt_hidden  пациенты
+                            li.filter_t_item
+                                label.filter_t_box
+                                    input.hidden_input(type='radio' name='patient_filter')
+                                    span.filter_t_name
+                                        span.dt_hidden Не подтвержденые
+                                        span.mob_hidden Ожидают подтверждения
+                            li.filter_t_item.mob_hidden
+                                label.filter_t_box
+                                    input.hidden_input(type='radio' name='patient_filter')
+                                    span.filter_t_name В архиве 
+    
+                    .mb.edit_mode
+                        ul.avatar_catcher.avatarCatcher
+    
+    
     - if (profile_sub_header)
         //- just spacer       
         .calendar_header_holder.calendarSubHeader

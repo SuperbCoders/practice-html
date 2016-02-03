@@ -78,7 +78,7 @@
   -webkit-box-align: stretch;
 }
 
-.clearfix:after, .main_menu:after, .user_info:after, .tab_list:after, .overview_info:after, .form_row:after, .filter_toggle:after, .gender_toggle:after, .form_controls:after {
+.clearfix:after, .main_menu:after, .user_info:after, .tab_list:after, .overview_info:after, .form_row:after, .filter_toggle:after, .note_lines:after, .gender_toggle:after, .form_controls:after {
   position: static;
   display: block;
   height: 0;
@@ -107,7 +107,7 @@
   transform: translate(0, -50%);
 }
 
-.fc-agenda-view .calendar_v1 th.active-day, .fc-agenda-view .calendar_v2 th.active-day {
+.avatar_clone .patient_avatar, .fc-agenda-view .calendar_v1 th.active-day, .fc-agenda-view .calendar_v2 th.active-day {
   left: 50%;
   -webkit-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
@@ -1312,6 +1312,7 @@ a {
 .patient_aside_overview .patient_overview {
   left: 0;
   right: 0;
+  height: auto;
 }
 .patient_aside_overview .patient_overview,
 .patient_aside_overview .patient_card {
@@ -1578,6 +1579,16 @@ a {
   margin-left: -40px;
 }
 
+.hidden_tab_controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 15000;
+  padding: 20px;
+  display: none;
+}
+
 .tab_item {
   float: left;
   padding-left: 41px;
@@ -1701,6 +1712,9 @@ a {
   background: #4c88fd;
 }
 
+.patients_list {
+  position: relative;
+}
 @media only screen and (min-width: 1200px) {
   .patients_list {
     margin-right: -1%;
@@ -1709,12 +1723,16 @@ a {
 }
 
 .patient_unit {
+  -webkit-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  transition: opacity 0.3s;
   -webkit-box-flex: 0 1 100%;
   -moz-box-flex: 0 1 100%;
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
   padding: 20px 0 0;
+  position: relative;
 }
 @media only screen and (min-width: 720px) {
   .patient_unit {
@@ -1736,23 +1754,57 @@ a {
     flex: 0 1 33%;
   }
 }
+.patient_unit.card_edit {
+  -webkit-transition: transform 1s, height 1s, width 1s, padding 1s;
+  -ms-transition: transform 1s, height 1s, width 1s, padding 1s;
+  transition: transform 1s, height 1s, width 1s, padding 1s;
+  position: absolute;
+  z-index: 10;
+}
+.edit_patient .patients_list .patient_unit {
+  opacity: 0;
+  pointer-events: none;
+}
+.patient_unit.go_to_avatar {
+  -webkit-transform: translate(-50%, -48px) !important;
+  -ms-transform: translate(-50%, -48px) !important;
+  transform: translate(-50%, -48px) !important;
+}
+.patient_unit.go_to_avatar .patient_card {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  opacity: 0;
+  border-radius: 100%;
+  overflow: hidden;
+}
 
 .patient_card {
-  -webkit-transition: box-shadow 0.3s;
-  -ms-transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s;
+  -webkit-transition: box-shadow 0.3s, background-color 1s 0.5s, border-color 0.5s, border-radius 0.5s, transform 0.5s 0.1s, opacity 0.33333s;
+  -ms-transition: box-shadow 0.3s, background-color 1s 0.5s, border-color 0.5s, border-radius 0.5s, transform 0.5s 0.1s, opacity 0.33333s;
+  transition: box-shadow 0.3s, background-color 1s 0.5s, border-color 0.5s, border-radius 0.5s, transform 0.5s 0.1s, opacity 0.33333s;
   border-radius: 10px;
-  padding: 0 20px;
+  padding: 0 20px 0;
   border: 1px solid #d4d4d4;
   background: #fff;
   position: relative;
   text-align: center;
+  -webkit-transform-origin: center top !important;
+  -moz-transform-origin: center top !important;
+  -o-transform-origin: center top !important;
+  transform-origin: center top !important;
 }
 .patient_card:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19);
 }
 .patient_card.open_card {
   border-radius: 10px 10px 0 0;
+}
+.patient_unit .patient_card {
+  padding-top: 90px;
+}
+.card_edit .patient_card .patient_avatar img {
+  display: none;
 }
 
 .patient_avatar {
@@ -1766,12 +1818,44 @@ a {
   border-radius: 100%;
 }
 .patient_avatar img {
+  -webkit-transition: transform 0.3s;
+  -ms-transition: transform 0.3s;
+  transition: transform 0.3s;
   width: 40px;
   height: 40px;
   display: block;
   border-radius: 100%;
 }
-.patient_card:hover .patient_avatar {
+.patient_card:hover + .patient_avatar {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.patient_card:hover + .avatar_clone .patient_avatar img {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.avatar_clone {
+  -webkit-transition: left 1s, height 0.5s;
+  -ms-transition: left 1s, height 0.5s;
+  transition: left 1s, height 0.5s;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 40px;
+  margin-left: -20px;
+  height: 100%;
+  max-height: 88px;
+}
+.avatar_clone .patient_avatar {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+}
+.avatar_clone .patient_avatar:hover img {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
@@ -1992,6 +2076,7 @@ a {
 
 .patient_menu_w {
   position: absolute;
+  z-index: 2;
   top: 13px;
   right: 18px;
 }
@@ -2681,6 +2766,101 @@ a {
   }
 }
 
+.patient_edit_block {
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 40px 10px 10px;
+}
+
+.patient_edit_controls {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+@media only screen and (min-width: 1200px) {
+  .patient_edit_controls {
+    bottom: auto;
+    right: auto;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.patient_note_date {
+  color: #767676;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  font: 12px "HelveticaNeueMedium", sans-serif;
+  letter-spacing: 1px;
+}
+
+.patient_note_block {
+  border-radius: 10px;
+  padding: 0 18px;
+  border: 1px solid #d3d3d3;
+}
+
+.patient_note {
+  margin-bottom: 20px;
+}
+
+.note_lines {
+  overflow: hidden;
+  line-height: 1.4;
+}
+.note_lines dt, .note_lines dd {
+  float: left;
+  padding: 19px 0;
+}
+.note_lines dt {
+  clear: both;
+  width: 26%;
+  color: #4c88fd;
+  font: 14px "HelveticaNeueMedium", sans-serif;
+  padding-right: 10px;
+  position: relative;
+}
+.note_lines dt:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: -5000px;
+  top: 0;
+  height: 1px;
+  border-top: 2px solid #ececec;
+}
+.note_lines dt:first-child:before {
+  display: none;
+}
+.note_lines dd {
+  width: 74%;
+  color: #000;
+}
+.note_lines p {
+  margin-top: 15px;
+}
+.note_lines p:first-child {
+  margin-top: 0;
+}
+
+.note_img {
+  margin-top: 15px;
+}
+.note_img img {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.avatar_catcher {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
 @media only screen and (max-width: 1199px) {
   .header_search_form_holder {
     width: 100%;
@@ -2688,6 +2868,14 @@ a {
   .header_search_form_holder .header_search_form {
     width: 100%;
   }
+}
+
+html:not(.edit_patient) .edit_mode {
+  display: none;
+}
+
+.edit_patient .read_mode {
+  display: none;
 }
 
 .filter_t_box {
@@ -2846,11 +3034,17 @@ a {
 .header_search_form {
   display: inline-block;
   vertical-align: middle;
+  -webkit-transition: min-width 0.3s;
+  -ms-transition: min-width 0.3s;
+  transition: min-width 0.3s;
 }
 @media only screen and (min-width: 1200px) {
   .header_search_form {
     min-width: 380px;
     padding-right: 20px;
+  }
+  .edit_patient .header_search_form {
+    min-width: 240px;
   }
 }
 
@@ -3399,6 +3593,17 @@ textarea.form_input.input_v3 {
 .btn_v1 {
   height: 32px;
 }
+.btn_v1.save_card_btn {
+  display: block;
+  position: relative;
+  line-height: 32px;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 0 10px;
+  text-align: center;
+  letter-spacing: .5px;
+  min-width: 240px;
+}
 .btn_v1.add_card_btn {
   display: inline-block;
   vertical-align: middle;
@@ -3708,8 +3913,12 @@ textarea.form_input.input_v3 {
 }
 
 #chromeperfectpixel-panel #chromeperfectpixel-layers {
-  max-height: 30vh;
-  overflow: auto;
+  max-height: 30vh !important;
+  overflow: auto !important;
+}
+
+#chromeperfectpixel-panel .chromeperfectpixel-layer {
+  margin-right: 1px !important;
 }
 
 #chromeperfectpixel-ad {

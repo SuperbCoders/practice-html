@@ -49,9 +49,10 @@
                 </form>
               </div>
             </div>
-            <div class="fl mob_hidden"><a href="add_patient.html" class="btn_v1 add_card_btn yellow_black_btn">Создать новую карточку</a></div>
+            <div class="fl mob_hidden read_mode"><a href="add_patient.html" class="btn_v1 add_card_btn yellow_black_btn">Создать новую карточку</a></div>
+            <div class="patient_edit_controls edit_mode"><a href="#" class="btn_v1 green_btn save_card_btn saveCard">Написать в карту</a></div>
             <div class="fr filter_toggle_holder">
-              <div class="mb">
+              <div class="mb read_mode">
                 <form action="#">
                   <ul class="filter_toggle filter_toggle_v1">
                     <li class="filter_t_item">
@@ -72,531 +73,616 @@
                   </ul>
                 </form>
               </div>
+              <div class="mb edit_mode">
+                <ul class="avatar_catcher avatarCatcher"></ul>
+              </div>
             </div>
           </div>
         </div>
         <div class="main_content">
           <div class="section_inner">
-            <ul class="patients_list">
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Осинцев Константин</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen patient_warn">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
-                        <p><a href="#" class="gl_link">Изменить время приема</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <!--//+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_1.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Самойлов Ярослав Георгиевич</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
-                    </div>
-                  </div>
-                  <!--+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen patient_confirm">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
-                        <p><a href="#" class="gl_link">Отменить приём</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <!--+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen patient_ready">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
-                    </div>
-                  </div>
-                  <!--+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Осинцев Константин</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen patient_warn">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
-                        <p><a href="#" class="gl_link">Изменить время приема</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <!--//+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_1.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Самойлов Ярослав Георгиевич</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
-                    </div>
-                  </div>
-                  <!--+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen patient_confirm">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
-                        <p><a href="#" class="gl_link">Отменить приём</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <!--+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen patient_ready">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
-                    </div>
-                  </div>
-                  <!--+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Осинцев Константин</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen patient_warn">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
-                        <p><a href="#" class="gl_link">Изменить время приема</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <!--//+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_1.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Самойлов Ярослав Георгиевич</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
-                    </div>
-                  </div>
-                  <!--+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen patient_confirm">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
-                        <p><a href="#" class="gl_link">Отменить приём</a></p>
-                      </div>
-                    </div>
-                  </div>
-                  <!--+patient_overview()-->
-                </div>
-              </li>
-              <li class="patient_unit">
-                <div class="patient_card cardAsideOverview">
-                  <div class="patient_status_w chosen_v2 no_search skipOpen">
-                    <select class="chosen-select">
-                      <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                      <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                      <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                      <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                    </select>
-                  </div>
-                  <div class="patient_menu_w skipOpen">
-                    <div class="drop_down_btn"><span></span></div>
-                    <div class="drop_down_w">
-                      <ul class="drop_down_menu">
-                        <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                        <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                      </ul>
-                    </div>
-                  </div><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a>
-                  <div class="patient_info">
-                    <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
-                    <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
-                  </div>
-                  <div class="patient_info_table">
-                    <div class="other_info_cell">
-                      <p>+7 927 026 10 22</p>
-                      <p>yaosamo@gmail.com</p>
-                    </div>
-                  </div>
-                  <div class="patient_card_controls skipOpen patient_ready">
-                    <div class="patient_info_table">
-                      <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
-                    </div>
-                  </div>
-                  <!--+patient_overview()-->
-                </div>
-              </li>
-            </ul>
-            <div class="pagination_holder">
-              <ul class="pagination_list">
-                <li class="pagination_item pagination_prev"><a href="#" class="gl_link"> </a></li>
-                <li class="pagination_item"><a href="#" class="gl_link">1</a></li>
-                <li class="pagination_item active"><a href="#" class="gl_link">2</a></li>
-                <li class="pagination_item"><a href="#" class="gl_link">3</a></li>
-                <li class="pagination_item"><a href="#" class="gl_link">4</a></li>
-                <li class="pagination_item"><a href="#" class="gl_link">5</a></li>
-                <li class="pagination_item"><a href="#" class="gl_link">...304</a></li>
-                <li class="pagination_item pagination_next"><a href="#" class="gl_link"></a></li>
+            <div class="tabListScroller hidden_tab_controls">
+              <ul id="tab_list" class="tab_list">
+                <li class="tab_item"><a id="open_read" href="#tab_1" class="tab_link"><span class="mb">Сохранить</span></a></li>
+                <li class="tab_item"><a id="open_edit" href="#tab_2" class="tab_link"><span class="mb">Редактировать</span></a></li>
               </ul>
             </div>
+            <div data-tab-context="#tab_list" class="tabBlock">
+              <div id="tab_1">
+                <ul class="patients_list">
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Осинцев Константин</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen patient_warn">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
+                            <p><a href="#" class="gl_link">Изменить время приема</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Самойлов Ярослав Георгиевич</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_1.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen patient_confirm">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
+                            <p><a href="#" class="gl_link">Отменить приём</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen patient_ready">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Осинцев Константин</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen patient_warn">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
+                            <p><a href="#" class="gl_link">Изменить время приема</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Самойлов Ярослав Георгиевич</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_1.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen patient_confirm">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
+                            <p><a href="#" class="gl_link">Отменить приём</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen patient_ready">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Осинцев Константин</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen patient_warn">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
+                            <p><a href="#" class="gl_link">Изменить время приема</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Самойлов Ярослав Георгиевич</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_1.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen patient_confirm">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Изменить прием 29 февраля, в 12:00</span></a>
+                            <p><a href="#" class="gl_link">Отменить приём</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a></div>
+                  </li>
+                  <li class="patient_unit">
+                    <div class="patient_card cardAsideOverview">
+                      <div class="patient_status_w chosen_v2 no_search skipOpen">
+                        <select class="chosen-select">
+                          <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                          <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                          <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                          <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+                        </select>
+                      </div>
+                      <div class="patient_menu_w skipOpen">
+                        <div class="drop_down_btn"><span></span></div>
+                        <div class="drop_down_w">
+                          <ul class="drop_down_menu">
+                            <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                            <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="patient_info">
+                        <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Петрова Алина</span></a></div>
+                        <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
+                      </div>
+                      <div class="patient_info_table">
+                        <div class="other_info_cell">
+                          <p>+7 927 026 10 22</p>
+                          <p>yaosamo@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="patient_card_controls skipOpen patient_ready">
+                        <div class="patient_info_table">
+                          <div class="controls_cell"><a href="#" class="btn_v2 patient_btn green_btn"><span class="mb">Начать прием</span></a></div>
+                        </div>
+                      </div>
+                      <!--+patient_overview()-->
+                    </div>
+                    <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_2.png"></a></div>
+                  </li>
+                </ul>
+                <div class="pagination_holder read_mode">
+                  <ul class="pagination_list">
+                    <li class="pagination_item pagination_prev"><a href="#" class="gl_link"> </a></li>
+                    <li class="pagination_item"><a href="#" class="gl_link">1</a></li>
+                    <li class="pagination_item active"><a href="#" class="gl_link">2</a></li>
+                    <li class="pagination_item"><a href="#" class="gl_link">3</a></li>
+                    <li class="pagination_item"><a href="#" class="gl_link">4</a></li>
+                    <li class="pagination_item"><a href="#" class="gl_link">5</a></li>
+                    <li class="pagination_item"><a href="#" class="gl_link">...304</a></li>
+                    <li class="pagination_item pagination_next"><a href="#" class="gl_link"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div id="tab_2">
+                <div class="patient_edit_block">
+                  <ul class="patient_notes">
+                    <li class="patient_note">
+                      <div class="patient_note_date">12 ЯНВАРЯ 2015</div>
+                      <div class="patient_note_block">
+                        <dl class="note_lines">
+                          <dt>Совет</dt>
+                          <dd>
+                            <p>Покурить</p>
+                          </dd>
+                          <dt>Анамнез</dt>
+                          <dd>
+                            <p>Заболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работы</p>
+                          </dd>
+                        </dl>
+                      </div>
+                    </li>
+                    <li class="patient_note">
+                      <div class="patient_note_date">20 ДЕКАБРЯ 2015</div>
+                      <div class="patient_note_block">
+                        <dl class="note_lines">
+                          <dt>Анализы</dt>
+                          <dd>
+                            <p>Заболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работыЗаболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работыЗаболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работы</p>
+                            <div class="note_img"><img src="i/note_img_1.jpg"></div>
+                          </dd>
+                        </dl>
+                      </div>
+                    </li>
+                    <li class="patient_note">
+                      <div class="patient_note_date">12 ЯНВАРЯ 2015</div>
+                      <div class="patient_note_block">
+                        <dl class="note_lines">
+                          <dt>Совет</dt>
+                          <dd>
+                            <p>Покурить</p>
+                          </dd>
+                          <dt>Анамнез</dt>
+                          <dd>
+                            <p>Заболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работы</p>
+                          </dd>
+                        </dl>
+                      </div>
+                    </li>
+                    <li class="patient_note">
+                      <div class="patient_note_date">20 ДЕКАБРЯ 2015</div>
+                      <div class="patient_note_block">
+                        <dl class="note_lines">
+                          <dt>Анализы</dt>
+                          <dd>
+                            <p>Заболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работыЗаболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работыЗаболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работы</p>
+                            <div class="note_img"><img src="i/note_img_1.jpg"></div>
+                          </dd>
+                        </dl>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-        </div><a href="#" class="load_more_btn">Показать еще карточки пациентов</a>
+        </div><a href="#" class="load_more_btn read_mode">Показать еще карточки пациентов</a>
         <div class="aside_menu_overlay closeMenu"></div>
         <div class="aside_menu_holder">
           <div class="aside_menu"><a href="#" class="aside_close_btn closeMenu"></a>

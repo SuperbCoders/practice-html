@@ -630,6 +630,7 @@ a {
   .patient_overview {
     left: 0;
     right: 0;
+    height: auto;
   }
 
   .patient_overview,
@@ -917,6 +918,16 @@ a {
   margin-left: -40px;
 }
 
+.hidden_tab_controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 15000;
+  padding: 20px;
+  display: none;
+}
+
 .tab_item {
   float: left;
   padding-left: 41px;
@@ -1060,6 +1071,7 @@ a {
 
 .patients_list {
   @extend %global_flex_block_row_wrap_flex-start_stretch;
+  position: relative;
 
   @include respond-to-min($desktop) {
     margin-right: -1%;
@@ -1067,9 +1079,13 @@ a {
   }
 }
 
+$patient_scale_time: 1s;
+
 .patient_unit {
+  @include transition_all(opacity .3s);
   @include flex(0 1 100%);
   padding: 20px 0 0;
+  position: relative;
 
   @include respond-to-min($tablet) {
     -webkit-box-flex: 0 1 50%;
@@ -1088,16 +1104,69 @@ a {
     -ms-flex: 0 1 33%;
     flex: 0 1 33%;
   }
+
+  &.card_edit {
+    @include transition_all(transform $patient_scale_time, height $patient_scale_time, width $patient_scale_time, padding $patient_scale_time);
+    //@include transform_scale(0);
+    position: absolute;
+    //padding: 0;
+    //width: 40px !important;
+    //height: 40px !important;
+    z-index: 10;
+    //padding-top: 0;
+
+    .patient_card {
+      //@include transform_scale(0);
+    }
+
+    .avatar_clone {
+      //right: 20px;
+      //height: 40px;
+    }
+
+    ~ .patient_unit {
+
+    }
+
+  }
+
+  .edit_patient .patients_list & {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.go_to_avatar {
+    -webkit-transform: translate(-50%, -48px) !important;
+    -ms-transform: translate(-50%, -48px) !important;
+    transform: translate(-50%, -48px) !important;
+
+    .patient_card {
+      @include transform_scale(0);
+      opacity: 0;
+      border-radius: 100%;
+      overflow: hidden;
+    }
+
+    .avatar_clone {
+      //left: 30px;
+      //height: 40px;
+    }
+  }
+
 }
 
 .patient_card {
-  @include transition_all(box-shadow .3s);
+  @include transition_all(box-shadow .3s, background-color $patient_scale_time $patient_scale_time / 2, border-color $patient_scale_time / 2, border-radius $patient_scale_time / 2, transform $patient_scale_time / 2 .1s, opacity $patient_scale_time / 3);
   border-radius: 10px;
-  padding: 0 20px;
+  padding: 0 20px 0;
   border: 1px solid #d4d4d4;
   background: #fff;
   position: relative;
   text-align: center;
+  -webkit-transform-origin: center top !important;
+  -moz-transform-origin: center top !important;
+  -o-transform-origin: center top !important;
+  transform-origin: center top !important;
 
   &:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .19);
@@ -1107,6 +1176,23 @@ a {
     border-radius: 10px 10px 0 0;
   }
 
+  .patient_unit & {
+    padding-top: 90px;
+  }
+
+  .card_edit & {
+    //width: 40px;
+    //height: 40px;
+    //padding: 0;
+
+    //background-color: transparent;
+    //border-color: transparent;
+    //height: 100%;
+
+    .patient_avatar img {
+      display: none;
+    }
+  }
 }
 
 .patient_avatar {
@@ -1118,14 +1204,46 @@ a {
   border-radius: 100%;
 
   img {
+    @include transition_all(transform .3s);
     width: 40px;
     height: 40px;
     display: block;
     border-radius: 100%;
   }
 
-  .patient_card:hover & {
+  .patient_card:hover + & {
     @include transform_scale(1.2);
+  }
+
+  .patient_card:hover + .avatar_clone & {
+    img {
+      @include transform_scale(1.2);
+    }
+  }
+}
+
+.avatar_clone {
+  @include transition_all(left $patient_scale_time, height $patient_scale_time / 2);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 40px;
+  margin-left: -20px;
+  height: 100%;
+  max-height: 88px;
+
+  .patient_avatar {
+    @extend %hor_centr;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+
+    &:hover {
+      img {
+        @include transform_scale(1.2);
+      }
+    }
   }
 }
 
@@ -1371,7 +1489,7 @@ a {
 
 .patient_menu_w {
   position: absolute;
-  //z-index: 3;
+  z-index: 2;
   top: 13px;
   right: 18px;
 
@@ -2198,6 +2316,111 @@ a {
   }
 }
 
+.patient_edit_block {
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 40px 10px 10px;
+}
+
+.patient_edit_controls {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+
+  @include respond-to-min($desktop) {
+    bottom: auto;
+    right: auto;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+.patient_note_date {
+  color: #767676;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  font: 12px $HelveticaNeueMedium;
+  letter-spacing: 1px;
+}
+
+.patient_note_block {
+  border-radius: 10px;
+  padding: 0 18px;
+  border: 1px solid #d3d3d3;
+}
+
+.patient_note {
+  margin-bottom: 20px;
+}
+
+.note_lines {
+  @extend %clearfix;
+  overflow: hidden;
+  line-height: 1.4;
+
+  dt, dd {
+    float: left;
+    padding: 19px 0;
+  }
+
+  dt {
+    clear: both;
+    width: 26%;
+    color: #4c88fd;
+    font: 14px $HelveticaNeueMedium;
+    padding-right: 10px;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: -5000px;
+      top: 0;
+      height: 1px;
+      border-top: 2px solid #ececec;
+    }
+
+    &:first-child:before {
+      display: none;
+    }
+  }
+
+  dd {
+    width: 74%;
+    color: #000;
+
+  }
+
+  p {
+    margin-top: 15px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.note_img {
+  margin-top: 15px;
+
+  img {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;
+  }
+}
+
+.avatar_catcher {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
 .header_search_form_holder {
   @include respond-to-max($desktop) {
     width: 100%;
@@ -2206,6 +2429,21 @@ a {
       width: 100%;
     }
   }
+}
+
+.edit_mode {
+
+  html:not(.edit_patient) & {
+    display: none;
+  }
+}
+
+.edit_patient {
+
+  .read_mode {
+    display: none;
+  }
+
 }
 
 .filter_t_box {
@@ -2378,10 +2616,15 @@ a {
 .header_search_form {
   display: inline-block;
   vertical-align: middle;
+  @include transition_all(min-width .3s);
 
   @include respond-to-min($desktop) {
     min-width: 380px;
     padding-right: 20px;
+
+    .edit_patient & {
+      min-width: 240px;
+    }
   }
 }
 
@@ -3083,6 +3326,18 @@ textarea.form_input.input_v3 {
 .btn_v1 {
   height: 32px;
 
+  &.save_card_btn {
+    display: block;
+    position: relative;
+    line-height: 32px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 0 10px;
+    text-align: center;
+    letter-spacing: .5px;
+    min-width: 240px;
+  }
+
   &.add_card_btn {
     @extend .icon-before;
     @extend .icon-plus;
@@ -3417,8 +3672,12 @@ $rectWidth: 1200px;
 }
 
 #chromeperfectpixel-panel #chromeperfectpixel-layers {
-  max-height: 30vh;
-  overflow: auto;
+  max-height: 30vh !important;
+  overflow: auto !important;
+}
+
+#chromeperfectpixel-panel .chromeperfectpixel-layer {
+  margin-right: 1px !important;
 }
 
 #chromeperfectpixel-ad {

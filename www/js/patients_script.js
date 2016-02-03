@@ -22,7 +22,7 @@ $(function ($) {
         html_var.addClass('menu_open');
         return false;
     });
-    
+
     $('.closeMenu').on('click', function () {
         html_var.removeClass('menu_open aside_open');
         return false;
@@ -39,11 +39,72 @@ $(function ($) {
         }
     });
 
-    $('body').delegate('.write2Card', 'click', function (e) {
-        var firedEl = $(e.target);
+    var tabBlock = $('.tabBlock');
 
-        console.log('write2Card');
-        
+    tabBlock.tabs({
+        active: 0,
+        tabContext: tabBlock.data('tab-context'),
+        activate: function (e, u) {
+
+        }
+    });
+
+    $('body').delegate('.write2Card', 'click', function (e) {
+
+        html_var.addClass('edit_patient');
+
+        var firedEl = $(this),
+            avatarCatcher = $('.avatarCatcher'),
+            patient_list = firedEl.closest('.patients_list'),
+            patient_card = firedEl.closest('.patient_unit'),
+            avatar_clone = $('<li class="avatar_clone" />').append(patient_card.find('.patient_avatar').clone().removeClass('skipOpen write2Card').addClass('cardAsideOverview')),
+            patient_card_clone = patient_card.clone();
+
+        avatarCatcher.empty();
+
+        var oldTop = patient_card.offset().top - avatarCatcher.offset().top,
+            oldLeft = patient_card.offset().left - avatarCatcher.offset().left - avatarCatcher.outerWidth() / 2;
+
+        patient_card_clone.css({
+            width: patient_card.outerWidth(),
+            height: patient_card.outerHeight(),
+            '-webkit-transform': 'translate(' + oldLeft + 'px , ' + oldTop + 'px)',
+            '-ms-transform': 'translate(' + oldLeft + 'px , ' + oldTop + 'px)',
+            'transform': 'translate(' + oldLeft + 'px , ' + oldTop + 'px)',
+            top: 0,
+            left: '50%'
+        });
+
+        var newTop = 0,
+            newLeft = avatarCatcher.outerWidth();
+
+        avatarCatcher.prepend(patient_card_clone.addClass('card_edit'));
+
+        setTimeout(function () {
+            patient_card_clone.addClass('go_to_avatar');
+            body_var.removeClass('body_gray');
+        }, 10);
+
+        setTimeout(function () {
+            avatarCatcher.empty();
+            avatarCatcher.prepend(avatar_clone);
+            $('#open_edit').click();
+        }, 1020);
+
+        patient_card_clone.css({
+            //width: 40,
+            //height: 40,
+            //'-webkit-transform': 'translate(' + newLeft + 'px , ' + newTop + 'px)',
+            //'-ms-transform': 'translate(' + newLeft + 'px , ' + newTop + 'px)',
+            //'transform': 'translate(' + newLeft + 'px , ' + newTop + 'px)'
+        });
+
+        return false;
+    });
+
+    $('.saveCard').on('click', function () {
+        html_var.removeClass('edit_patient');
+        $('#open_read').click();
         return false;
     });
 
