@@ -130,46 +130,50 @@ mixin header(active_menu, sub_header, profile_sub_header)
 
 
 mixin popup()
-    .popup_form.form_corner#add_patient_form(style='display:none'): form(action='#')
-        +patient_status('right_mod', 'newPatientState')
-        .form_row
-            .input_w.placeholder_mod
-                input#new_patient_name.form_input.input_v4.checkEmpty(type='text', name='new_patient_name', value='')
-                span.form_label.fz_20_(for='new_patient_name') Имя пациента
-
-        .form_row
-            .input_w.placeholder_mod
-                input#new_patient_phone.form_input.input_v4.checkEmpty(type='tel', name='new_patient_phone')
-                span.form_label(for='new_patient_phone') Телефон
-
-        .form_row
-            .input_w.placeholder_mod
-                input#new_patient_email.form_input.input_v4.checkEmpty(type='email', name='new_patient_email')
-                span.form_label(for='new_patient_email') Email
-
-        .form_row
-            .input_w.placeholder_mod
-                input#new_patient_describe.form_input.input_v4.checkEmpty(type='email', name='new_patient_describe')
-                span.form_label(for='new_patient_describe') Краткое описание (только для вас)
-
-        button.btn_v2.new_patient_btn.newPatientBtn.yellow_black_btn() Записать на 30 декабря, в 12:00
+    .popup_form#add_patient_form(style='display:none')
+        .form_corner
+        form(action='#')
+            +patient_status('right_mod', 'newPatientState')
+            .form_row
+                .input_w.placeholder_mod
+                    input#new_patient_name.form_input.input_v4.checkEmpty(type='text', name='new_patient_name', value='')
+                    span.form_label.fz_20_(for='new_patient_name') Имя пациента
+    
+            .form_row
+                .input_w.placeholder_mod
+                    input#new_patient_phone.form_input.input_v4.checkEmpty(type='tel', name='new_patient_phone')
+                    span.form_label(for='new_patient_phone') Телефон
+    
+            .form_row
+                .input_w.placeholder_mod
+                    input#new_patient_email.form_input.input_v4.checkEmpty(type='email', name='new_patient_email')
+                    span.form_label(for='new_patient_email') Email
+    
+            .form_row
+                .input_w.placeholder_mod
+                    input#new_patient_describe.form_input.input_v4.checkEmpty(type='email', name='new_patient_describe')
+                    span.form_label(for='new_patient_describe') Краткое описание (только для вас)
+    
+            button.btn_v2.new_patient_btn.newPatientBtn.yellow_black_btn() Записать на 30 декабря, в 12:00
         
         
-    .popup_form.form_corner.popup_v2#patient_info_form(style='display:none'): form(action='#')
-        .patient_card
-            +patient_status()
-            +patient_menu()
-            a.patient_avatar(href='#'): img(src='i/user_2.png')
-            .patient_info
-                .patient_name: a.gl_link.gray_link(href='#'): span Осинцев Константин
-                textarea.input_v5.form_input Болят карманы, ломит штаны, от водки тошнит, вылечите скорей меня
-            +patient_info_table()
-
-            .patient_card_controls.skipOpen.patient_warn: .patient_info_table
-                .controls_cell
-                    a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
-                    p: a.gl_link(href='#') Изменить время приема
-            +patient_overview()
+    .popup_form.popup_v2#patient_info_form(style='display:none')
+        .form_corner
+        form(action='#')
+            .patient_card
+                +patient_status()
+                +patient_menu()
+                a.patient_avatar(href='#'): img(src='i/user_2.png')
+                .patient_info
+                    .patient_name: a.gl_link.gray_link(href='#'): span Осинцев Константин
+                    textarea.input_v5.form_input.skipOpen Болят карманы, ломит штаны, от водки тошнит, вылечите скорей меня
+                +patient_info_table()
+    
+                .patient_card_controls.skipOpen.patient_warn: .patient_info_table
+                    .controls_cell
+                        a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
+                        p: a.gl_link(href='#') Изменить время приема
+                +patient_overview()
         
 mixin appointments()
     form#appointments_form(action='#' style='display:none' title=''): .popup_form.popup_v1

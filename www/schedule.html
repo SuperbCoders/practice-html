@@ -43,69 +43,22 @@
           <div class="section_inner calendarHolder">
             <div id="calendar" class="calendar_v1"></div>
             <div class="day_info_block dayInfoBlock">
-              <div class="patient_card">
-                <div class="patient_status_w chosen_v2 no_search skipOpen">
-                  <select class="chosen-select">
-                    <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                    <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                    <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                    <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                  </select>
-                </div>
-                <div class="patient_menu_w skipOpen">
-                  <div class="drop_down_btn"><span></span></div>
-                  <div class="drop_down_w">
-                    <ul class="drop_down_menu">
-                      <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                      <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                      <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                      <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                      <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                      <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                    </ul>
-                  </div>
-                </div><a href="#" class="patient_avatar"><img src="i/user_2.png"></a>
-                <div class="patient_info">
-                  <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Осинцев Константин</span></a></div>
-                  <p>Краткая информация о пациенте Первичный прием, возможно анализы...</p>
-                </div>
-                <div class="patient_info_table">
-                  <div class="other_info_cell">
-                    <p>+7 927 026 10 22</p>
-                    <p>yaosamo@gmail.com</p>
-                  </div>
-                </div>
-                <div class="patient_card_controls skipOpen patient_warn">
-                  <div class="patient_info_table">
-                    <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
-                      <p><a href="#" class="gl_link">Изменить время приема</a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
-                  <ul class="patient_overview_list">
-                    <li class="patient_overview_line">
-                      <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
-                      <dl class="overview_info">
-                        <dt>Рост:</dt>
-                        <dd>185</dd>
-                        <dt>Вес</dt>
-                        <dd>78 кг</dd>
-                        <dt>Возраст</dt>
-                        <dd>18 лет</dd>
-                      </dl>
-                    </li>
-                    <li class="patient_overview_line">
-                      <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
-                      <p>Есть хвост</p>
-                    </li>
-                    <li class="patient_overview_line">
-                      <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
-                      <p>Договор №000099</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <!--.patient_card
+              +patient_status()
+              +patient_menu()
+              a.patient_avatar(href='#'): img(src='i/user_2.png')
+              .patient_info
+                  .patient_name: a.gl_link.gray_link(href='#'): span Осинцев Константин
+                  p Краткая информация о пациенте Первичный прием, возможно анализы...
+              +patient_info_table()
+              
+              .patient_card_controls.skipOpen.patient_warn: .patient_info_table
+                  .controls_cell
+                      a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
+                      p: a.gl_link(href='#') Изменить время приема
+              +patient_overview()
+              
+              -->
             </div>
           </div>
         </div>
@@ -128,7 +81,8 @@
           </div>
         </div>
       </div>
-      <div id="add_patient_form" style="display:none" class="popup_form form_corner">
+      <div id="add_patient_form" style="display:none" class="popup_form">
+        <div class="form_corner"></div>
         <form action="#">
           <div class="patient_status_w chosen_v2 no_search skipOpen right_mod">
             <select class="chosen-select newPatientState">
@@ -161,7 +115,8 @@
           <button class="btn_v2 new_patient_btn newPatientBtn yellow_black_btn">Записать на 30 декабря, в 12:00</button>
         </form>
       </div>
-      <div id="patient_info_form" style="display:none" class="popup_form form_corner popup_v2">
+      <div id="patient_info_form" style="display:none" class="popup_form popup_v2">
+        <div class="form_corner"></div>
         <form action="#">
           <div class="patient_card">
             <div class="patient_status_w chosen_v2 no_search skipOpen">
@@ -187,7 +142,7 @@
             </div><a href="#" class="patient_avatar"><img src="i/user_2.png"/></a>
             <div class="patient_info">
               <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Осинцев Константин</span></a></div>
-              <textarea class="input_v5 form_input">Болят карманы, ломит штаны, от водки тошнит, вылечите скорей меня</textarea>
+              <textarea class="input_v5 form_input skipOpen">Болят карманы, ломит штаны, от водки тошнит, вылечите скорей меня</textarea>
             </div>
             <div class="patient_info_table">
               <div class="other_info_cell">

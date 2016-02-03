@@ -35,12 +35,17 @@ $(function ($) {
     });
 
     $('body').delegate('.patient_card', 'click', function (e) {
-        var firedEl = $(e.target);
+        var firedEl = $(e.target), patient_card = $(this);
 
         if (firedEl.hasClass('skipOpen') || !!firedEl.parents('.skipOpen').length) {
 
         } else {
-            $(this).toggleClass('open_card');
+            patient_card.toggleClass('open_card');
+
+            if (patient_card.closest('.popup_form')) {
+                //console.log('repos');
+            }
+
             return false;
         }
 
@@ -50,6 +55,7 @@ $(function ($) {
         autoOpen: false,
         modal: true,
         width: 360,
+        appendTo: '.dayInfoBlock',
         dialogClass: "dialog_v1 no_close_mod no_title_mod"
     });
 
