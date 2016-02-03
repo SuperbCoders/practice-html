@@ -430,9 +430,12 @@ $(function ($) {
 $(window).resize(function () {
     clearTimeout(calTimer);
 
+    console.log(getCalendarHeight());
+    
     calTimer = setTimeout(function () {
-        calendar.fullCalendar('options', 'slotTime', getCalendarHeight());
-    }, 10);
+        console.log(getCalendarHeight());
+        calendar.fullCalendar('option', 'height', getCalendarHeight());
+    }, 3);
 
 });
 
