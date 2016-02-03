@@ -7,6 +7,9 @@ $(function ($) {
 
     $("#patient_age").datepicker({
         firstDay: 1,
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '1920:2016',
         dateFormat: 'dd / mm / yy',
         //changeYear: $changeYear,
         defaultDate: +1,

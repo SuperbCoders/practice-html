@@ -8438,8 +8438,7 @@
             }
         }
     });
-
-
+    
     /*!
      * jQuery UI Tabs 1.11.4
      * http://jqueryui.com
@@ -8451,7 +8450,6 @@
      * http://api.jqueryui.com/tabs/
      */
 
-
     var tabs = $.widget("ui.tabs", {
         version: "1.11.4",
         delay: 300,
@@ -8462,6 +8460,7 @@
             heightStyle: "content",
             hide: null,
             show: null,
+            tabContext: null,
 
             // callbacks
             activate: null,
@@ -8498,6 +8497,8 @@
         })(),
 
         _create: function () {
+            //debugger;
+
             var that = this,
                 options = this.options;
 
@@ -8901,7 +8902,7 @@
 
         // allow overriding how to find the list for rare usage scenarios (#7715)
         _getList: function () {
-            return this.tablist || this.element.find("ol,ul").eq(0);
+            return this.tablist || $(this.options.tabContext).eq(0) || this.element.find("ol,ul").eq(0);
         },
 
         _createPanel: function (id) {
@@ -9312,6 +9313,5 @@
             return this.element.find(this._sanitizeSelector("#" + id));
         }
     });
-
 
 }));

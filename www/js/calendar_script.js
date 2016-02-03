@@ -138,8 +138,6 @@ $(function ($) {
 
                     var dialog_form = $(this), cornerY = jsEvent.pageY - obj.top - 40;
 
-                    console.log(dialog_form.height());
-
                     if (info.horizontal != "left") {
                         dialog_form.addClass("flipped_left");
                     } else {
@@ -361,26 +359,27 @@ $(function ($) {
         var btn = $(this);
 
         patient_info_form.dialog("option", "position", {
-            my: "left+20 top-150",
+            my: "left+15 top-150",
             of: e,
-            collision: "flip",
+            collision: "flip fit",
             within: '.fc-view-container',
             using: function (obj, info) {
 
-                if (info.vertical != "top") {
-                    $(this).addClass("flipped_top");
-                } else {
-                    $(this).removeClass("flipped_top");
-                }
+                var dialog_form = $(this), cornerY = e.pageY - obj.top - 40;
+
+                console.log(e.pageY , obj.top);
+                
                 if (info.horizontal != "left") {
-                    $(this).addClass("flipped_left");
+                    dialog_form.addClass("flipped_left");
                 } else {
-                    $(this).removeClass("flipped_left");
+                    dialog_form.removeClass("flipped_left");
                 }
 
-                $(this).css({
+                dialog_form.css({
                     left: obj.left + 'px',
                     top: obj.top + 'px'
+                }).find('.form_corner').css({
+                    top: Math.min(Math.max(cornerY, -20), dialog_form.height() - 55) + 'px'
                 });
             }
         }).dialog('open');

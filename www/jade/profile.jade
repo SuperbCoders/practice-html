@@ -1,0 +1,229 @@
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Practic профиль', true )
+
+    body
+        .wrapper
+            .rect_1024
+            .base.controls_mod
+                +header(1)
+
+                div.main_content
+                    .section_inner
+                        .profile_container
+                            .tabHeaderSpacer.profile_tab_header_spacer
+                                .profile_tab_header.tabHeader: .profile_tab_header_inner
+                                    a.go_back_btn(href='#')
+                                    .profile_tab_holder
+                                        h2.caption_v1 Профиль врача
+                                        
+                                        .tab_holder.tabListScroller: ul#tab_list.tab_list
+                                            li.tab_item: a.tab_link(href='#tab_1'): span.mb Личные данные
+                                            li.tab_item: a.tab_link(href='#tab_2'): span.mb Настройки
+                                            li.tab_item: a.tab_link(href='#tab_3'): span.mb Публичный профиль
+                                            li.tab_item: a.tab_link(href='#tab_4'): span.mb Подписка
+                            .profile_tab_holder
+                                .tabBlock(data-tab-context='#tab_list')
+                                    #tab_1
+                                        .tab_inner.form_row_v1
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_name') Имя врача
+                                                .input_w.size_59
+                                                    input#doctor_name.form_input.input_v1()
+                                                    
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_phone') Телефон
+                                                .input_w.size_59.mob_size_85
+                                                    input#doctor_phone.form_input.input_v1()
+                                                .fl.mob_right: .mb
+                                                    a.add_row_btn.yellow_black_btn.cloneRowBtn(href='#')
+                                                    
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_email') Email
+                                                .input_w.size_59.mob_size_85
+                                                    input#doctor_email.form_input.input_v1()
+                                                .fl.mob_right: .mb
+                                                    a.add_row_btn.yellow_black_btn.cloneRowBtn(href='#')
+
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_pass') Пароль
+                                                .input_w.size_27
+                                                    a.btn_v2.black_blue_btn.change_btn.passBtn(href='#') Изменить
+                                                    input.form_input.input_v1.passInput(type='password' style='display:none')
+
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_photo') Портрет врача
+                                                .input_w
+                                                    input#doctor_photo.hidden_input(type='file')
+                                                    .doctor_photo
+                                                        img.doctor_img(src='i/user_1.png')
+                                                        label.change_photo_btn.btn_v1(for='doctor_photo')
+
+                                    #tab_2
+                                        .tab_inner.form_row_v1
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_work_days') Время работы врача
+                                                .input_w.size_27.chosen_v1.no_search.chosen_multiple_v1
+                                                    select#doctor_work_days.chosen-select(multiple data-placeholder='Выберите день')
+                                                        option(value=0)
+                                                        option(value=1 data-title='Понедельнк' data-short='Пн') Понедельнк
+                                                        option(value=2 data-title='Вторник' data-short='В') Вторник
+                                                        option(value=3 data-title='Среда' data-short='С') Среда
+                                                        option(value=4 data-title='Четверг' data-short='Ч') Четверг
+                                                        option(value=5 data-title='Пятница' data-short='П') Пятница
+                                                        option(value=6 data-title='Суббота' data-short='Сб') Суббота
+                                                        option(value=7 data-title='Воскресенье' data-short='Вс') Воскресенье
+
+                                                .input_w.size_15.mob_size_43.mob_pt_5
+                                                    input.form_input.input_v1(placeholder='С')
+                                                .input_w.size_15.mob_size_43.mob_pt_5
+                                                    input.form_input.input_v1(placeholder='До')
+                                                        
+                                            .form_row.mt_-10
+                                                .label_holder: .form_label
+                                                .input_w.size_27.chosen_v1.no_search.chosen_multiple_v1
+                                                    select#doctor_work_days.chosen-select(multiple data-placeholder='Выберите день')
+                                                        option(value=0)
+                                                        option(value=1 data-title='Понедельнк' data-short='Пн') Понедельнк
+                                                        option(value=2 data-title='Вторник' data-short='В') Вторник
+                                                        option(value=3 data-title='Среда' data-short='С') Среда
+                                                        option(value=4 data-title='Четверг' data-short='Ч') Четверг
+                                                        option(value=5 data-title='Пятница' data-short='П') Пятница
+                                                        option(value=6 data-title='Суббота' data-short='Сб') Суббота
+                                                        option(value=7 data-title='Воскресенье' data-short='Вс') Воскресенье
+                                                .input_w.size_15.mob_size_43.mob_pt_5
+                                                    input.form_input.input_v1(placeholder='С')
+                                                .input_w.size_15.mob_size_43.mob_pt_5
+                                                    input.form_input.input_v1(placeholder='До')
+                                                .fl.mob_right.mob_pt_5: .mb
+                                                    a.add_row_btn.yellow_black_btn.cloneRowBtn(href='#')
+                                            
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_stand_time') Стаднартное время приема
+                                                .input_w.size_27.chosen_v1.no_search
+                                                    select#doctor_stand_time.chosen-select(data-placeholder='Выберите время приема')
+                                                        option(value='' data-title='')
+                                                        option(value=0 data-title='40 минут') 40 минут
+                                                        option(value=1 data-title='60 минут') 60 минут
+                                                        option(value=2 data-title='80 минут') 80 минут
+                                                        
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_before_schedule') Время записи до приема
+                                                .input_w.size_27.chosen_v1.no_search
+                                                    select#doctor_before_schedule.chosen-select(data-placeholder='Выберите время записи')
+                                                        option(value='' data-title='') 
+                                                        option(value=0 data-title='4 часа до приема') 4 часа до приема
+                                                        option(value=1 data-title='6 часа до приема') 6 часа до приема
+                                                        option(value=2 data-title='8 часа до приема') 8 часа до приема
+                                        
+                                    #tab_3
+                                        .tab_inner.form_row_v1
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_public_photo') Фото на сайт
+                                                .input_w.size_59
+                                                    input#doctor_public_photo.hidden_input(type='file')
+                                                    .doctor_public_photo
+                                                        img.doctor_img(src='i/user_large_1.jpg')
+                                                        label.change_photo_btn.btn_v1(for='doctor_public_photo')
+                                                    
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_specialty') Специальность
+                                                .input_w.size_59
+                                                    input#doctor_specialty.form_input.input_v1()
+
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_education') Образование
+                                                .input_w.size_59
+                                                    input#doctor_education.form_input.input_v1()
+
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_experience') Опыт работы
+                                                .input_w.size_59
+                                                    textarea#doctor_experience.form_input.input_v1()
+
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_about') О себе
+                                                .input_w.size_59
+                                                    textarea#doctor_about.form_input.input_v1()
+
+                                        .tab_inner.form_row_v1
+                                            .form_row
+                                                .label_holder: label.form_label(for='doctor_contact') Контакты
+                                                .input_w.size_59
+                                                    input#doctor_contact.form_input.input_v1()
+
+                                        .tab_inner.form_row_v1
+                                            .form_row.lh_32
+                                                .label_holder: label.form_label(for='doctor_allow_que') Разрешить запись на прием
+                                                .input_w.size_8
+                                                    label.toggle_emul.toggle_v1
+                                                        input.hidden_input(type='checkbox')
+                                                        .toggle_box
+                                                            span.toggle_text.toggle_true Да
+                                                            span.toggle_text.toggle_false Нет
+                                        
+                                        .tab_inner.form_row_v1
+                                            .form_row.lh_32
+                                                .label_holder: label.form_label(for='doctor_profile_vis') Профиль опубликован
+                                                .input_w.size_8
+                                                    label.toggle_emul.toggle_v1
+                                                        input.hidden_input(type='checkbox')
+                                                        .toggle_box
+                                                            span.toggle_text.toggle_true Да
+                                                            span.toggle_text.toggle_false Нет
+                                                    
+                                                .input_w.size_52
+                                                    p: a.gl_link.blue_link(href='#'): span Посмотреть страницу
+                                                    p Вы можете временно выключить профиль и тогда никто не сможет заходить на страницу врача кроме вас
+                                        
+                                        .tab_inner.form_row_v1
+                                            .form_row
+                                                .label_holder: .form_label Социальные сети
+                                                label.input_w.size_59.soc_input.soc_i_vk
+                                                    input.form_input.input_v1(value='vk.com/')
+                                            .form_row
+                                                .mob_hidden.label_holder: .form_label 
+                                                label.input_w.size_59.soc_input.soc_i_tw
+                                                    input.form_input.input_v1(value='twitter.com/')
+                                            .form_row
+                                                .mob_hidden.label_holder: .form_label 
+                                                label.input_w.size_59.soc_input.soc_i_fb
+                                                    input.form_input.input_v1(value='facebook.com/')
+                                            .form_row
+                                                .label_holder: .form_label 
+                                                .input_w.size_59
+                                                    p Введите названия профилей из ваших соц. сетей, чтобы пациенты могли вас найти и на других ресурсах 
+                                        
+                                    #tab_4 
+                                        .tab_inner.form_row_v1
+                                            .form_row.lh_norm
+                                                .label_holder: .form_label() Оплата
+                                                ul.input_w.size_59.payment_list.mob_pt_5
+                                                    li.payment_item: label.radio_emul.radio_v1
+                                                        input.hidden_input(type='radio' name='payment' checked)
+                                                        span.check_text 1000 ₽ Месячная
+                                                    li.payment_item: label.radio_emul.radio_v1
+                                                        input.hidden_input(type='radio' name='payment')
+                                                        span.check_text 10 000₽ Годовая,
+                                                            span.color_green скидка 20%
+                                        
+                                        .tab_inner.form_row_v1
+                                            .form_row.lh_norm
+                                                .label_holder: .form_label Способ оплаты
+                                                .input_w.size_59
+                                                    p Карта Visa, номер заканчивается на 0128 
+                                                        a.gl_link.blue_link(href='#'): span Изменить 
+                                                        br
+                                                        | Вы платите 1000₽ в месяц, подписка будет продлена  <br>  31 января 2016 года
+                                                    p
+                                                        a.gl_link.blue_link(href='#'): span Посмотреть история платежей
+                                                    p
+                                                        a.gl_link.blue_link(href='#'): span Отменить подписку
+                                                        
+                            .profile_tab_controls
+                                .section_inner
+                                    .form_controls
+                                        .fl: .mb: a.btn_v2.yellow_black_btn.save_btn(href='#'): span.mb Сохранить
+                
+                +aside_menu()

@@ -428,11 +428,11 @@ textarea:focus::-moz-placeholder {
 }
 
 .icon-map_pin:before {
-  content: "\e90b";
+  content: "\e90c";
 }
 
 .icon-attach:before {
-  content: "\e90c";
+  content: "\e90d";
 }
 
 .ui-datepicker {
@@ -2261,6 +2261,9 @@ a {
     width: 342px;
     pointer-events: all;
   }
+  .day_mode .day_info_block .patient_card_controls {
+    border-radius: 0;
+  }
   .day_mode .day_info_block .ui-dialog.dialog_v1 {
     display: block !important;
     position: relative !important;
@@ -2333,6 +2336,7 @@ a {
 .popup_form.popup_v2 {
   padding: 0;
 }
+.popup_form.popup_v2 .patient_overview,
 .popup_form.popup_v2 .patient_card {
   border: none;
   box-shadow: none;
