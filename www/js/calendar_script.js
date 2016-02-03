@@ -130,28 +130,27 @@ $(function ($) {
             newEventDate = date;
 
             add_patient_form.dialog("option", "position", {
-                my: "left+20 top-150",
+                my: "left+15 top-150",
                 of: jsEvent,
-                collision: "flip",
+                collision: "flip fit",
                 within: '.fc-view-container',
                 using: function (obj, info) {
 
-                    //console.log(obj, info);
+                    var dialog_form = $(this), cornerY = jsEvent.pageY - obj.top - 40;
 
-                    if (info.vertical != "top") {
-                        $(this).addClass("flipped_top");
-                    } else {
-                        $(this).removeClass("flipped_top");
-                    }
+                    console.log(dialog_form.height());
+
                     if (info.horizontal != "left") {
-                        $(this).addClass("flipped_left");
+                        dialog_form.addClass("flipped_left");
                     } else {
-                        $(this).removeClass("flipped_left");
+                        dialog_form.removeClass("flipped_left");
                     }
 
-                    $(this).css({
+                    dialog_form.css({
                         left: obj.left + 'px',
                         top: obj.top + 'px'
+                    }).find('.form_corner').css({
+                        top: Math.min(Math.max(cornerY, -20), dialog_form.height() - 55) + 'px'
                     });
                 }
             }).dialog('open');
@@ -462,7 +461,7 @@ function setTimeline() {
         dayEnd = (moment(0, 'HH')._d).toString().replace(/00:00:00/i, slats.find('tr:last').attr('data-time')),
         dayStart = (moment(0, 'HH')._d).toString().replace(/00:00:00/g, slats.find('tr:first').attr('data-time'));
 
-    console.log(curCalView.start._d, curCalView.end._d);
+    //console.log(curCalView.start._d, curCalView.end._d);
 
     //console.log(dayStart, dayEnd, curTime, regDate.day());
 

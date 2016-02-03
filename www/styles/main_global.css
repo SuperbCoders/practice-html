@@ -2270,6 +2270,7 @@ a {
     top: auto !important;
     box-shadow: none !important;
   }
+  .day_mode .day_info_block .form_corner,
   .day_mode .day_info_block .ui-dialog-titlebar {
     display: none !important;
   }
