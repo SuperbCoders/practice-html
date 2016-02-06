@@ -1,4 +1,4 @@
-mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, public_profile, patient_card)
+mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, public_profile, patient_card, edit_card)
     head
         title=page_title
         | <!-- saved from url=(0014)about:internet -->
@@ -19,7 +19,16 @@ mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, publ
             //script(src='js/swiper.js')
             script(src='js/chosen.jquery.js')
             script(src='js/jquery.nicescroll.js')
+            script(src='js/jquery.fancybox.js')
             script(src='js/patients_script.js?no_cache')
+        - if (edit_card)
+            script(src='js/jquery-ui.js')
+            //script(src='js/swiper.js')
+            script(src='js/chosen.jquery.js')
+            script(src='js/jquery.nicescroll.js')
+            script(src='js/jquery.fancybox.js')
+            script(src='js/notify.js')
+            script(src='js/edit_patient_script.js?no_cache')
         - if (public_profile)
             link(href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css')
             script(src='js/jquery-ui.js')
@@ -76,7 +85,7 @@ mixin patient_info_table()
         p +7 927 026 10 22
         p yaosamo@gmail.com
             
-mixin header(active_menu, sub_header, profile_sub_header, card_sub_header)
+mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_patient)
     div.header
         .section_inner.clearfix
             .fl.mob_hidden
@@ -87,12 +96,36 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header)
                     li.main_m_item(class= active_menu == 2 ? 'active' : ''): a.gl_link(href='patients.html'): span Пациенты
             .fr
                 .mb.mob_hidden: .user_m_item
-                    a.notifications.white_transp_2_btn.new_notification(href='#') 2
+                    a.notifications.white_transp_2_btn.new_notification.notificationBtn(href='#') 2
+                    .notification_holder: .notification_dropdown.notificationDropdown
+                        ul.notification_list
+                            +loop_while(2)
+                                li.notification_item
+                                    .notification_img
+                                        img(src='i/notify_img.jpg')
+                                    .notification_event
+                                        p Фотография  
+                                            b rentgen-10-12-2015.jpg 
+                                            |  удалена, 
+                                            a.gl_link.gray_link_3(href='#'): span отменить
+                            +loop_while(3)
+                                li.notification_item
+                                    .notification_img
+                                        .user_photo
+                                            .user_initials К
+                                    .notification_event
+                                        p Новая не подтвержденная запись на 15 февраля в 14:00, 
+                                            a.gl_link.gray_link_3(href='#'): span подтвердить
 
+                        .text_center
+                            a.gl_link.blue_link(href='#'): span Все уведомления
+                            
+                                        
                 .mb.mob_hidden: .user_m_item
                     a.btn_v1.white_transp_btn.quick_reg_btn(href='#') Быстрая запись
 
                 a.menu_humburger.openMenu(href='#'): span Меню
+                
     - if (sub_header)
         .sub_header_holder
             .section_inner.clearfix
@@ -107,7 +140,7 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header)
                     a.btn_v1.add_card_btn.yellow_black_btn(href='add_patient.html') Создать новую карточку
 
                 .patient_edit_controls.edit_mode
-                    a.btn_v1.green_btn.save_card_btn.saveCard(href='#') Написать в карту
+                    a.btn_v1.green_btn.save_card_btn.saveCard_(href='card_edit.html') Написать в карту
                     
                 .fr.filter_toggle_holder
                     .mb.read_mode: form(action='#')
@@ -132,6 +165,18 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header)
                     .mb.edit_mode
                         ul.avatar_catcher.avatarCatcher
     
+    - if (edit_patient)
+        .sub_header_holder
+            .section_inner.clearfix: .patient_controls
+                .fl: .mb.rel_holder
+                    a.go_back_btn.middle_mod(href='patients.html')
+
+                .patient_edit_controls
+                    .page_title Написать в карту
+                    
+                .fr.filter_toggle_holder
+                    .mb.edit_mode
+                        ul.avatar_catcher.avatarCatcher
     
     - if (profile_sub_header)
         //- just spacer       

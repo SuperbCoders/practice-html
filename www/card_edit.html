@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Practic написать в карту</title><!-- saved from url=(0014)about:internet -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles/main_global.css?no_cache" media="all"/>
+    <script src="js/jquery1.10.js"></script>
+    <script src="js/chosen.jquery.js"></script>
+    <script src="js/script.js?no_cache"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--script(src='js/swiper.js')-->
+    <script src="js/chosen.jquery.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/notify.js"></script>
+    <script src="js/edit_patient_script.js?no_cache"></script>
+  </head>
+  <body class="sub_header_mod">
+    <div class="wrapper">
+      <!--.rect_1024-->
+      <div class="base load_more_mod">
+        <div class="header">
+          <div class="section_inner clearfix">
+            <div class="fl mob_hidden"><a href="profile.html" class="logo"></a></div>
+            <div class="menu_holder">
+              <ul class="main_menu">
+                <li class="main_m_item"><a href="schedule.html" class="gl_link"><span>Расписание</span></a></li>
+                <li class="main_m_item active"><a href="patients.html" class="gl_link"><span>Пациенты</span></a></li>
+              </ul>
+            </div>
+            <div class="fr">
+              <div class="mb mob_hidden">
+                <div class="user_m_item"><a href="#" class="notifications white_transp_2_btn new_notification notificationBtn">2</a>
+                  <div class="notification_holder">
+                    <div class="notification_dropdown notificationDropdown">
+                      <ul class="notification_list">
+                        <li class="notification_item">
+                          <div class="notification_img"><img src="i/notify_img.jpg"/></div>
+                          <div class="notification_event">
+                            <p>Фотография  <b>rentgen-10-12-2015.jpg </b> удалена, <a href="#" class="gl_link gray_link_3"><span>отменить</span></a></p>
+                          </div>
+                        </li>
+                        <li class="notification_item">
+                          <div class="notification_img"><img src="i/notify_img.jpg"/></div>
+                          <div class="notification_event">
+                            <p>Фотография  <b>rentgen-10-12-2015.jpg </b> удалена, <a href="#" class="gl_link gray_link_3"><span>отменить</span></a></p>
+                          </div>
+                        </li>
+                        <li class="notification_item">
+                          <div class="notification_img">
+                            <div class="user_photo">
+                              <div class="user_initials">К</div>
+                            </div>
+                          </div>
+                          <div class="notification_event">
+                            <p>Новая не подтвержденная запись на 15 февраля в 14:00, <a href="#" class="gl_link gray_link_3"><span>подтвердить</span></a></p>
+                          </div>
+                        </li>
+                        <li class="notification_item">
+                          <div class="notification_img">
+                            <div class="user_photo">
+                              <div class="user_initials">К</div>
+                            </div>
+                          </div>
+                          <div class="notification_event">
+                            <p>Новая не подтвержденная запись на 15 февраля в 14:00, <a href="#" class="gl_link gray_link_3"><span>подтвердить</span></a></p>
+                          </div>
+                        </li>
+                        <li class="notification_item">
+                          <div class="notification_img">
+                            <div class="user_photo">
+                              <div class="user_initials">К</div>
+                            </div>
+                          </div>
+                          <div class="notification_event">
+                            <p>Новая не подтвержденная запись на 15 февраля в 14:00, <a href="#" class="gl_link gray_link_3"><span>подтвердить</span></a></p>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="text_center"><a href="#" class="gl_link blue_link"><span>Все уведомления</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb mob_hidden">
+                <div class="user_m_item"><a href="#" class="btn_v1 white_transp_btn quick_reg_btn">Быстрая запись</a></div>
+              </div><a href="#" class="menu_humburger openMenu"><span>Меню</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="sub_header_holder">
+          <div class="section_inner clearfix">
+            <div class="patient_controls">
+              <div class="fl">
+                <div class="mb rel_holder"><a href="patients.html" class="go_back_btn middle_mod"></a></div>
+              </div>
+              <div class="patient_edit_controls">
+                <div class="page_title">Написать в карту</div>
+              </div>
+              <div class="fr filter_toggle_holder">
+                <div class="mb edit_mode">
+                  <ul class="avatar_catcher avatarCatcher"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main_content">
+          <div class="section_inner">
+            <div class="patient_write_block">
+              <div class="write_controls">
+                <div class="write_control_item">
+                  <div class="chosen_v3 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="Ознакомление" selected>Ознакомление</option>
+                      <option value="1" data-title="Ознакомление 2">Ознакомление 2</option>
+                      <option value="2" data-title="Ознакомление 3">Ознакомление 3</option>
+                      <option value="3" data-title="Ознакомление 4">Ознакомление 4</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="write_control_item"><a href="#" class="gl_link red_link"><span>Удалить запись</span></a></div>
+              </div>
+              <div class="write_content"><textarea placeholder="Выберите назначение и введите текст" class="form_input input_v7">Это карточка вашего пациента, для добавления первой записи выберите назначение и напишите сообщение в этом поле. 
+                 
+                Если вам потребуется, вы можете добавить любой файл с помощью кнопки справа “Прикрепить файл. 
+                </textarea>
+              </div>
+              <div class="attach_block">
+                <label class="attach_btn gl_link gray_link_3">
+                  <input type="file" class="hidden_input"><span>Прикрепить файл</span>
+                </label>
+                <ul class="attach_list">
+                  <li class="attach_item"><img src="i/attach_1.jpg">
+                    <div class="rm_attach_btn rmAttachBtn"></div>
+                    <div class="attach_name">rentgen-10-12-2015</div>
+                  </li>
+                  <li class="attach_item"><img src="i/attach_1.jpg">
+                    <div class="rm_attach_btn rmAttachBtn"></div>
+                    <div class="attach_name">rentgen-10-12-2015</div>
+                  </li>
+                  <li class="attach_item"><img src="i/attach_1.jpg">
+                    <div class="rm_attach_btn rmAttachBtn"></div>
+                    <div class="attach_name">rentgen-10-12-2015</div>
+                  </li>
+                  <li class="attach_item"><img src="i/attach_1.jpg">
+                    <div class="rm_attach_btn rmAttachBtn"></div>
+                    <div class="attach_name">rentgen-10-12-2015</div>
+                  </li>
+                  <li class="attach_item"><img src="i/attach_1.jpg">
+                    <div class="rm_attach_btn rmAttachBtn"></div>
+                    <div class="attach_name">rentgen-10-12-2015</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="patient_write_block">
+              <div class="write_controls">
+                <div class="write_control_item">
+                  <div class="chosen_v3 no_search">
+                    <select class="chosen-select">
+                      <option value="0" data-title="Назначение" selected>Назначение</option>
+                      <option value="1" data-title="Ознакомление 3">Ознакомление 2</option>
+                      <option value="2" data-title="Ознакомление 4">Ознакомление 3</option>
+                      <option value="3" data-title="Ознакомление 4">Ознакомление 4</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="write_content">
+                <textarea placeholder="Выберите назначение и введите текст" class="form_input input_v7"></textarea>
+              </div>
+              <div class="attach_block">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+        <div class="aside_menu_overlay closeMenu"></div>
+        <div class="aside_menu_holder">
+          <div class="aside_menu"><a href="#" class="aside_close_btn closeMenu"></a>
+            <div class="user_info">
+              <div class="user_avatar"><img src="i/user_small_1.png"/></div>
+              <div class="user_name"><b>Ярослав Самойлов</b></div>
+              <p> <a href="#" class="gl_link blue_link"><span>Перейти на сайт</span></a></p>
+            </div>
+            <div class="aside_m_scroller">
+              <ul class="aside_m_list">
+                <li class="aside_m_item"><a href="#" class="gl_link">Поделиться моей страницей</a></li>
+                <li class="aside_m_item"><a href="#" class="gl_link">Настройки</a></li>
+                <li class="aside_m_item"><a href="#" class="gl_link">Выход из учетной записи</a></li>
+                <li class="aside_m_item aside_m_last"><a href="#" class="gl_link">Техническая поддержка</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="aside_card_holder card_mod">
+          <div class="aside_menu">
+            <!--a.aside_close_btn.closeMenu(href='#')-->
+            <div class="patient_aside_overview">
+              <div class="patient_card cardOverview"><a href="#" class="go_back_btn card_mod closeMenu"></a>
+                <div class="patient_menu_w skipOpen">
+                  <div class="drop_down_btn"><span></span></div>
+                  <div class="drop_down_w">
+                    <ul class="drop_down_menu">
+                      <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                      <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                      <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                      <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                      <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                      <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                    </ul>
+                  </div>
+                </div><a href="#" class="patient_avatar"><img src="i/user_2.png"/></a>
+                <div class="patient_info">
+                  <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Осинцев Константин</span></a></div>
+                  <textarea class="input_v5 form_input skipOpen">Болят карманы, ломит штаны, от водки тошнит, вылечите скорей меня</textarea>
+                </div>
+                <div class="patient_info_table">
+                  <div class="other_info_cell">
+                    <p>+7 927 026 10 22</p>
+                    <p>yaosamo@gmail.com</p>
+                  </div>
+                </div>
+                <div class="patient_card_controls skipOpen patient_warn">
+                  <div class="patient_info_table">
+                    <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
+                      <p><a href="#" class="gl_link">Изменить время приема</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+                  <ul class="patient_overview_list">
+                    <li class="patient_overview_line">
+                      <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                      <dl class="overview_info">
+                        <dt>Рост:</dt>
+                        <dd>185</dd>
+                        <dt>Вес</dt>
+                        <dd>78 кг</dd>
+                        <dt>Возраст</dt>
+                        <dd>18 лет</dd>
+                      </dl>
+                    </li>
+                    <li class="patient_overview_line">
+                      <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                      <p>Есть хвост</p>
+                    </li>
+                    <li class="patient_overview_line">
+                      <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                      <p>Договор №000099</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

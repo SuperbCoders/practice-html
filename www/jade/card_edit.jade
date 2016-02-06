@@ -1,0 +1,67 @@
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Practic написать в карту', false, false, false, false, false, false, true)
+
+    body.sub_header_mod
+        .wrapper
+            //.rect_1024
+            .base.load_more_mod
+                +header(2, false, false, false, true)
+
+                div.main_content
+                    .section_inner
+                        .patient_write_block
+                            .write_controls
+                                .write_control_item
+                                    .chosen_v3.no_search
+                                        select.chosen-select
+                                            option(value=0 data-title='Ознакомление' selected) Ознакомление
+                                            option(value=1 data-title='Ознакомление 2') Ознакомление 2
+                                            option(value=2 data-title='Ознакомление 3') Ознакомление 3
+                                            option(value=3 data-title='Ознакомление 4') Ознакомление 4
+                                            
+                                .write_control_item
+                                    a.gl_link.red_link(href='#'): span Удалить запись
+                                            
+                            .write_content
+                                //-p Это карточка вашего пациента, для добавления первой записи выберите назначение и напишите сообщение в этом поле. 
+                                //-p Если вам потребуется, вы можете добавить любой файл с помощью кнопки справа “Прикрепить файл. 
+                                | <textarea placeholder="Выберите назначение и введите текст" class="form_input input_v7">Это карточка вашего пациента, для добавления первой записи выберите назначение и напишите сообщение в этом поле. 
+                                | 
+                                | Если вам потребуется, вы можете добавить любой файл с помощью кнопки справа “Прикрепить файл. 
+                                | </textarea>
+                                
+                            .attach_block
+                                label.attach_btn.gl_link.gray_link_3
+                                    input.hidden_input(type='file')
+                                    span Прикрепить файл
+                                    
+                                ul.attach_list
+                                    +loop_while(5)
+                                        li.attach_item
+                                            img(src='i/attach_1.jpg')
+                                            .rm_attach_btn.rmAttachBtn
+                                            .attach_name rentgen-10-12-2015
+                                                
+                        .patient_write_block
+                            .write_controls
+                                .write_control_item
+                                    .chosen_v3.no_search
+                                        select.chosen-select
+                                            option(value=0 data-title='Назначение' selected) Назначение
+                                            option(value=1 data-title='Ознакомление 3') Ознакомление 2
+                                            option(value=2 data-title='Ознакомление 4') Ознакомление 3
+                                            option(value=3 data-title='Ознакомление 4') Ознакомление 4
+
+                            .write_content
+                                textarea.form_input.input_v7(placeholder='Выберите назначение и введите текст')
+                                
+                            .attach_block &nbsp;
+                                
+                                                
+                                                
+                                                
+                                    
+                +aside_menu()
+                +aside_card()

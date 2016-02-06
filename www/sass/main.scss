@@ -131,6 +131,14 @@ a {
 
 }
 
+.rel_holder {
+  position: relative;
+
+  @include respond-to-min($desktop) {
+    margin-left: -16px;
+  }
+}
+
 //*************************** header
 
 .header {
@@ -179,6 +187,7 @@ a {
 
     .section_inner {
       padding: 0 40px;
+      height: 100%;
     }
   }
 }
@@ -367,6 +376,15 @@ a {
 
 .gl_link {
 
+  &.inherit_link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   &.blue_link {
     @include transition_all(color .3s);
 
@@ -385,6 +403,42 @@ a {
     }
   }
 
+  &.red_link {
+    @include transition_all(color .3s);
+
+    color: rgba(244, 26, 26, .2);
+    text-decoration: underline;
+
+    span {
+      color: #f41a1a;
+    }
+
+    &:hover {
+      color: rgba(244, 26, 26, .6);
+
+      span {
+        color: #df1a1a;
+      }
+    }
+
+  }
+
+  &.white_link {
+    @include transition_all(color .3s);
+
+    color: rgba(255, 255, 255, .2);
+    text-decoration: underline;
+
+    span {
+      color: #fff;
+    }
+
+    &:hover {
+      color: rgba(255, 255, 255, .8);
+    }
+
+  }
+
   &.gray_link_2 {
     @include transition_all(color .3s);
     color: rgba(0, 0, 0, .2);
@@ -396,6 +450,25 @@ a {
 
     &:hover {
       color: rgba(0, 0, 0, .6);
+    }
+  }
+
+  &.gray_link_3 {
+    @include transition_all(color .3s);
+    color: rgba(0, 0, 0, .2);
+    text-decoration: underline;
+
+    span {
+      @include transition_all(color .3s);
+      color: #6f6f6f;
+    }
+
+    &:hover {
+      color: rgba(0, 0, 0, .6);
+
+      span {
+        color: #151515;
+      }
     }
   }
 
@@ -544,6 +617,99 @@ a {
       }
     }
   }
+}
+
+.notification_holder {
+  position: relative;
+}
+
+.notification_dropdown {
+  @extend %hor_centr;
+  display: none;
+  position: absolute;
+  top: 100%;
+  min-width: 280px;
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 22px 20px 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .19);
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+  }
+
+  &.open,
+  .notification_open & {
+    display: block;
+  }
+
+}
+
+.notification_list {
+
+}
+
+.notification_item {
+  @extend %clearfix;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid #e1e1e1;
+
+  &:last-child {
+    margin-bottom: 8px;
+  }
+}
+
+.notification_img {
+  float: left;
+  width: 40px;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.notification_event {
+  color: #151515;
+  text-decoration: none;
+  padding-left: 50px;
+
+  b {
+    font-family: $HelveticaNeueMedium;
+  }
+
+}
+
+.user_photo {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #e9e7e5;
+  overflow: hidden;
+
+  img {
+    display: block;
+    border-radius: 100%;
+    max-width: 100%;
+  }
+
+}
+
+.user_initials {
+  @extend %hor_vert_centr;
+  position: absolute;
+  color: #888;
+  text-transform: uppercase;
 }
 
 .notifications {
@@ -2322,6 +2488,170 @@ $patient_scale_time: 1s;
   padding: 40px 10px 10px;
 }
 
+.patient_write_block {
+  @extend %clearfix;
+  padding: 20px 10px 0;
+  border-top: 1px solid #d8d8d8;
+
+  &:first-child {
+    border-top: none;
+    padding-top: 32px;
+  }
+}
+
+.write_controls {
+  @include respond-to-min($desktop) {
+    float: left;
+    width: 17%;
+    padding-right: 3.3%;
+  }
+}
+
+.write_control_item {
+  position: relative;
+  margin-bottom: 10px;
+  line-height: 24px;
+
+  .gl_link {
+    font-size: 12px;
+  }
+
+  @include respond-to-max($desktop) {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.write_content {
+
+  p {
+    margin: 5px 0 16px;
+    line-height: 1.25;
+  }
+
+  @include respond-to-min($desktop) {
+    float: left;
+    width: 48%;
+  }
+}
+
+.attach_block {
+  padding-top: 10px;
+
+  @include respond-to-min($desktop) {
+    float: left;
+    width: 35%;
+    padding-left: 8px;
+  }
+}
+
+.attach_list {
+  @extend %clearfix;
+
+}
+
+.attach_item {
+  float: left;
+  position: relative;
+  padding-right: 30px;
+  margin-bottom: 20px;
+  width: 130px;
+
+  &:before {
+    @include transition_all(opacity .3s);
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 30px;
+    background: rgba(0, 0, 0, .7);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+
+    .attach_name {
+      opacity: 1;
+    }
+
+  }
+
+}
+
+.attach_name {
+  @include transition_all(opacity .3s);
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 40px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.rm_attach_btn {
+  @extend .icon-before;
+  @extend .icon-close;
+  cursor: pointer;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  right: 7px;
+
+  &:before {
+    @extend %hor_vert_centr;
+    position: absolute;
+    font-size: 12px;
+    color: #ababab;
+  }
+
+  &:hover {
+    &:before {
+      color: #000;
+    }
+  }
+
+}
+
+.attach_btn {
+  @extend .icon-before;
+  @extend .icon-attach;
+  position: relative;
+  color: #8d8d8d;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 25px;
+  margin-bottom: 20px;
+
+  &:before {
+    @extend %vert_centr;
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+    color: #000;
+  }
+
+}
+
+.patient_controls {
+  position: relative;
+  height: 100%;
+}
+
 .patient_edit_controls {
   position: absolute;
   right: 10px;
@@ -2337,6 +2667,12 @@ $patient_scale_time: 1s;
     transform: translate(-50%, -50%);
   }
 
+}
+
+.page_title {
+  color: #000;
+  font-size: 20px;
+  letter-spacing: -.5px;
 }
 
 .patient_note_date {
@@ -2608,6 +2944,22 @@ $patient_scale_time: 1s;
 
     &:focus {
       border-color: #ffdd4a;
+    }
+  }
+
+  &.input_v7 {
+    border: none;
+    padding: 5px;
+    line-height: 1.25;
+    min-height: 150px;
+    letter-spacing: -.35px;
+
+    &::-webkit-input-placeholder {
+      color: rgba(0, 0, 0, .4);
+    }
+
+    &::-moz-placeholder, {
+      color: rgba(0, 0, 0, .4);
     }
   }
 
@@ -2956,7 +3308,51 @@ textarea.form_input.input_v3 {
     }
   }
 
+  .chosen_v3 & {
+    @include transition_all(border-color .3s);
+    @extend .icon-before;
+    @extend .icon-chevron_left;
+    display: block;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 1px solid #cacaca;
+    padding: 5px 35px 5px 10px;
+    height: 24px;
+    font: 14px/1 $HelveticaNeueMedium;
+    color: #1d1d1d;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    letter-spacing: .85px;
+
+    &:before {
+      @include transition_all(transform .3s);
+      @include transform_rotate(-90);
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      right: 10px;
+      font-size: 18px;
+      color: #111;
+    }
+
+    &.chzn-default {
+      color: #969696;
+    }
+  }
+
   .chosen_v1 .chzn-with-drop & {
+    border-color: #4c88fd;
+    z-index: 7;
+
+    &:before {
+      @include transform_rotate(90);
+    }
+  }
+
+  .chosen_v3 .chzn-with-drop & {
     border-color: #4c88fd;
     z-index: 7;
 
@@ -3014,6 +3410,7 @@ textarea.form_input.input_v3 {
     }
   }
 
+  .patient_photo_block:hover &,
   .ui-dialog:hover &,
   .patient_card:hover &,
   .chosen_v2 .chzn-with-drop & {
@@ -3142,7 +3539,19 @@ textarea.form_input.input_v3 {
     border: 1px solid #d4d4d4;
   }
 
-  .chosen_v1 .chzn-with-drop & {
+  .chosen_v3 & {
+    @include transition_all(border-color .3s);
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    margin-top: -10px;
+    padding-top: 22px;
+    padding-bottom: 12px;
+    line-height: 29px;
+    border: 1px solid #a7a69c;
+  }
+
+  .chosen_v1 .chzn-with-drop &,
+  .chosen_v3 .chzn-with-drop & {
     border-color: #4c88fd;
   }
 }
@@ -3155,6 +3564,22 @@ textarea.form_input.input_v3 {
     @include transition_all(color .3s);
     color: #000;
     padding: 0 20px;
+    letter-spacing: .2px;
+
+    &:hover {
+      color: #4c88fd;
+    }
+
+    &.result-selected {
+      cursor: default;
+      color: #4c88fd;
+    }
+  }
+
+  .chosen_v3 & {
+    @include transition_all(color .3s);
+    color: #000;
+    padding: 0 10px;
     letter-spacing: .2px;
 
     &:hover {
@@ -3303,6 +3728,10 @@ textarea.form_input.input_v3 {
   &.card_mod {
     left: 25px;
     top: 12px;
+  }
+
+  &.middle_mod {
+    @extend %vert_centr;
   }
 
 }

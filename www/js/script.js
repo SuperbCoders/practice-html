@@ -3,12 +3,17 @@ var html_var,
     doc,
     global_window_Height,
     popupOrderItem,
+    notificationTimer,
+    notificationBtn,
+    notificationDropdown,
     controlPanelBtn;
 
 $(function ($) {
 
     body_var = $('body');
     html_var = $('html');
+    notificationBtn = $('.notificationBtn');
+    notificationDropdown = $('.notificationDropdown');
     doc = $(document);
     global_window_Height = $(window).height();
     popupOrderItem = $('.popup_order_item');
@@ -24,6 +29,30 @@ $(function ($) {
      header.css('marginLeft', (scrollLeft > 0 ? -scrollLeft : 0));
      });
      */
+
+    notificationBtn.on('mousemove', function () {
+        notificationBtn.parent().addClass('notification_open');
+    }).on('mouseleave', function () {
+        clearTimeout(notificationTimer);
+
+        notificationTimer = setTimeout(function () {
+            notificationBtn.parent().removeClass('notification_open');
+        }, 1000);
+
+    });
+
+    notificationDropdown.on('mousemove', function () {
+        clearTimeout(notificationTimer);
+        notificationBtn.parent().removeClass('notification_open');
+        notificationDropdown.addClass('open');
+    }).on('mouseleave', function () {
+        clearTimeout(notificationTimer);
+
+        notificationTimer = setTimeout(function () {
+            notificationDropdown.removeClass('open');
+        }, 300);
+
+    });
 
     $('.passBtn').on('click', function () {
         $(this).hide().next('.passInput').show().focus();
