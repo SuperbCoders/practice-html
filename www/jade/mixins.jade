@@ -85,7 +85,7 @@ mixin patient_info_table()
         p +7 927 026 10 22
         p yaosamo@gmail.com
             
-mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_patient)
+mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_patient, notification_center)
     div.header
         .section_inner.clearfix
             .fl.mob_hidden
@@ -171,8 +171,19 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                 .fl: .mb.rel_holder
                     a.go_back_btn.middle_mod(href='patients.html')
 
-                .patient_edit_controls
-                    .page_title Написать в карту
+                .page_title Написать в карту
+                    
+                .fr.filter_toggle_holder
+                    .mb.edit_mode
+                        ul.avatar_catcher.avatarCatcher    
+    
+    - if (notification_center)
+        .sub_header_holder
+            .section_inner.clearfix: .patient_controls
+                .fl: .mb.rel_holder
+                    a.go_back_btn.middle_mod(href='patients.html')
+
+                .page_title Уведомления
                     
                 .fr.filter_toggle_holder
                     .mb.edit_mode

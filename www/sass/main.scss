@@ -653,10 +653,6 @@ a {
 
 }
 
-.notification_list {
-
-}
-
 .notification_item {
   @extend %clearfix;
   padding-bottom: 10px;
@@ -2488,6 +2484,42 @@ $patient_scale_time: 1s;
   padding: 40px 10px 10px;
 }
 
+.notification_center_holder {
+  padding: 45px 10px 0;
+
+  .notification_item {
+    max-width: 527px;
+  }
+
+  .notification_img {
+    line-height: 40px;
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .notification_event {
+    line-height: 40px;
+
+    p {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+      width: 100%;
+    }
+  }
+
+  @include respond-to-min($desktop) {
+    padding-left: 80px;
+
+    .notification_item {
+      padding-bottom: 15px;
+    }
+  }
+}
+
 .patient_write_block {
   @extend %clearfix;
   padding: 20px 10px 0;
@@ -2650,6 +2682,7 @@ $patient_scale_time: 1s;
 .patient_controls {
   position: relative;
   height: 100%;
+  min-height: 40px;
 }
 
 .patient_edit_controls {
@@ -2673,6 +2706,14 @@ $patient_scale_time: 1s;
   color: #000;
   font-size: 20px;
   letter-spacing: -.5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  line-height: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .patient_note_date {

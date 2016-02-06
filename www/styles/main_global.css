@@ -2913,6 +2913,37 @@ a {
   padding: 40px 10px 10px;
 }
 
+.notification_center_holder {
+  padding: 45px 10px 0;
+}
+.notification_center_holder .notification_item {
+  max-width: 527px;
+}
+.notification_center_holder .notification_img {
+  line-height: 40px;
+}
+.notification_center_holder .notification_img img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.notification_center_holder .notification_event {
+  line-height: 40px;
+}
+.notification_center_holder .notification_event p {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  width: 100%;
+}
+@media only screen and (min-width: 1200px) {
+  .notification_center_holder {
+    padding-left: 80px;
+  }
+  .notification_center_holder .notification_item {
+    padding-bottom: 15px;
+  }
+}
+
 .patient_write_block {
   padding: 20px 10px 0;
   border-top: 1px solid #d8d8d8;
@@ -3050,6 +3081,7 @@ a {
 .patient_controls {
   position: relative;
   height: 100%;
+  min-height: 40px;
 }
 
 .patient_edit_controls {
@@ -3073,6 +3105,14 @@ a {
   color: #000;
   font-size: 20px;
   letter-spacing: -.5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  line-height: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .patient_note_date {
