@@ -6,7 +6,7 @@ html(lang='ru')
     body.sub_header_mod
         .wrapper
             //.rect_1024
-            .base.load_more_mod
+            .base.controls_mod
                 +header(2, false, false, false, true)
 
                 div.main_content
@@ -58,10 +58,12 @@ html(lang='ru')
                                 textarea.form_input.input_v7(placeholder='Выберите назначение и введите текст')
                                 
                             .attach_block &nbsp;
-                                
-                                                
-                                                
-                                                
+
+                        .profile_tab_controls
+                            .section_inner
+                                .write_controls
+                                    .fl: .mb: a.btn_v2.save_btn.green_btn(href='#'): span.mb  Написать                                            
+                                            
                                     
                 +aside_menu()
                 +aside_card()

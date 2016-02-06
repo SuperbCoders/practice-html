@@ -4299,6 +4299,11 @@ textarea.form_input.input_v3 {
   padding-right: 20px;
 }
 
+.write_controls {
+  padding: 0 10px;
+  line-height: 50px;
+}
+
 @media only screen and (max-width: 1199px) {
   .mob_hidden {
     display: none !important;
