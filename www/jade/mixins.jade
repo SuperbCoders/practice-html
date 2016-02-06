@@ -80,6 +80,15 @@ mixin patient_menu()
                 li.drop_down_item: a.gl_link(href='#'): span Отправить в архив
                 li.drop_down_item: a.gl_link(href='#'): span Удалить
             
+mixin card_menu()
+    .card_menu_w
+        .drop_down_btn: span
+        .drop_down_w
+            ul.drop_down_menu
+                li.drop_down_item: a.gl_link(href='#'): span Редактировать
+                li.drop_down_item: a.gl_link(href='#'): span Добавить файл
+                li.drop_down_item: a.gl_link(href='#'): span Удалить
+            
 mixin patient_info_table()
     .patient_info_table: .other_info_cell
         p +7 927 026 10 22

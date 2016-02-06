@@ -2225,6 +2225,16 @@ a {
   display: block;
 }
 
+.card_menu_w {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 20px;
+}
+.card_menu_w:hover .drop_down_menu {
+  display: block;
+}
+
 .drop_down_w {
   overflow: hidden;
   position: absolute;
@@ -2236,6 +2246,9 @@ a {
 }
 
 .drop_down_btn {
+  -webkit-transition: background 0.3s;
+  -ms-transition: background 0.3s;
+  transition: background 0.3s;
   display: block;
   width: 18px;
   height: 18px;
@@ -2245,6 +2258,9 @@ a {
 }
 .drop_down_btn:after, .drop_down_btn:before,
 .drop_down_btn span {
+  -webkit-transition: background 0.3s;
+  -ms-transition: background 0.3s;
+  transition: background 0.3s;
   position: absolute;
   top: 50%;
   margin-top: -1px;
@@ -2265,6 +2281,13 @@ a {
 }
 .drop_down_btn:before {
   left: 4px;
+}
+.drop_down_btn:hover {
+  background: #656565;
+}
+.drop_down_btn:hover:after, .drop_down_btn:hover:before,
+.drop_down_btn:hover span {
+  background: #fff;
 }
 
 .drop_down_menu {
@@ -3038,12 +3061,13 @@ a {
   position: absolute;
   z-index: 1;
   top: 10px;
-  bottom: 10px;
+  bottom: 12px;
   left: 10px;
   right: 40px;
   color: #fff;
   font-size: 12px;
   line-height: 16px;
+  overflow: hidden;
 }
 
 .rm_attach_btn {
@@ -3124,6 +3148,7 @@ a {
 }
 
 .patient_note_block {
+  position: relative;
   border-radius: 10px;
   padding: 0 18px;
   border: 1px solid #d3d3d3;
@@ -3164,6 +3189,7 @@ a {
 .note_lines dd {
   width: 74%;
   color: #000;
+  padding-right: 20px;
 }
 .note_lines p {
   margin-top: 15px;

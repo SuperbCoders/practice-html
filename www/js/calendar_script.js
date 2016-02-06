@@ -49,6 +49,14 @@ $(function ($) {
             return false;
         }
 
+    }).delegate('.fc-widget-content', 'mouseenter', function (e) {
+        var firedEl = $(e.target), patient_card = $(this);
+        console.log(e, firedEl);
+
+    }).delegate('.fc-widget-content', 'mouseleave', function (e) {
+        var firedEl = $(e.target), patient_card = $(this);
+        console.log(e, firedEl);
+
     });
 
     patient_info_form = $('#patient_info_form').dialog({
@@ -119,6 +127,10 @@ $(function ($) {
 
             if (timelineInterval !== void 0) setTimeline();
 
+        },
+
+        eventMouseover: function (event, jsEvent, view) {
+            //console.log(event, jsEvent, view);
         },
 
         dayClick: function (date, jsEvent, view) {
@@ -367,8 +379,8 @@ $(function ($) {
 
                 var dialog_form = $(this), cornerY = e.pageY - obj.top - 40;
 
-                console.log(e.pageY , obj.top);
-                
+                console.log(e.pageY, obj.top);
+
                 if (info.horizontal != "left") {
                     dialog_form.addClass("flipped_left");
                 } else {
@@ -428,7 +440,7 @@ $(function ($) {
 
 $(window).resize(function () {
     clearTimeout(calTimer);
-    
+
     calTimer = setTimeout(function () {
         console.log(getCalendarHeight());
         calendar.fullCalendar('option', 'height', getCalendarHeight());

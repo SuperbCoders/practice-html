@@ -1660,7 +1660,19 @@ $patient_scale_time: 1s;
       display: block;
     }
   }
+}
 
+.card_menu_w {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 20px;
+
+  &:hover {
+    .drop_down_menu {
+      display: block;
+    }
+  }
 }
 
 .drop_down_w {
@@ -1674,6 +1686,7 @@ $patient_scale_time: 1s;
 }
 
 .drop_down_btn {
+  @include transition_all(background .3s);
   display: block;
   width: 18px;
   height: 18px;
@@ -1684,6 +1697,7 @@ $patient_scale_time: 1s;
   &:after,
   &:before,
   span {
+    @include transition_all(background .3s);
     position: absolute;
     top: 50%;
     margin-top: -1px;
@@ -1709,6 +1723,16 @@ $patient_scale_time: 1s;
 
   &:before {
     left: 4px;
+  }
+
+  &:hover {
+    background: #656565;
+
+    &:after,
+    &:before,
+    span {
+      background: #fff;
+    }
   }
 
 }
@@ -2626,12 +2650,13 @@ $patient_scale_time: 1s;
   position: absolute;
   z-index: 1;
   top: 10px;
-  bottom: 10px;
+  bottom: 12px;
   left: 10px;
   right: 40px;
   color: #fff;
   font-size: 12px;
   line-height: 16px;
+  overflow: hidden;
 }
 
 .rm_attach_btn {
@@ -2725,6 +2750,7 @@ $patient_scale_time: 1s;
 }
 
 .patient_note_block {
+  position: relative;
   border-radius: 10px;
   padding: 0 18px;
   border: 1px solid #d3d3d3;
@@ -2770,7 +2796,7 @@ $patient_scale_time: 1s;
   dd {
     width: 74%;
     color: #000;
-
+    padding-right: 20px;
   }
 
   p {
