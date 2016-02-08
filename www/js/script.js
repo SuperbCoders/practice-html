@@ -1,6 +1,7 @@
 var html_var,
     body_var,
     doc,
+    login_form,
     global_window_Height,
     popupOrderItem,
     notificationTimer,
@@ -29,6 +30,30 @@ $(function ($) {
      header.css('marginLeft', (scrollLeft > 0 ? -scrollLeft : 0));
      });
      */
+
+
+    login_form = $('#login_form').dialog({
+        autoOpen: false,
+        modal: true,
+        width: 400,
+        dialogClass: "dialog_v1 no_close_mod login_form",
+        open: function (event, ui) {
+          
+            console.log('open');
+        },
+        close: function (event, ui) {
+
+            console.log('close');
+        }
+    });
+
+    $('.openLogin').on('click', function () {
+        var firedEl = $(this);
+
+        login_form.dialog('open');
+
+        return false;
+    });
 
     notificationBtn.on('mousemove', function () {
         notificationBtn.parent().addClass('notification_open');

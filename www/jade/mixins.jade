@@ -4,25 +4,25 @@ mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, publ
         | <!-- saved from url=(0014)about:internet -->
         meta(charset='utf-8')
         meta(name='viewport', content="width=device-width, initial-scale=1.0")
+        - if (patients)
+            link(rel='stylesheet', href='styles/jquery.fancybox.css')
         link(rel='stylesheet', href='styles/main_global.css?no_cache', media='all')
         script(src='js/jquery1.10.js')
+        script(src='js/jquery-ui.js')
         script(src='js/chosen.jquery.js')
         script(src='js/script.js?no_cache')
         - if (edit_profile)
-            script(src='js/jquery-ui.js')
             script(src='js/swiper.js')
             script(src='js/chosen.jquery.js')
             script(src='js/jquery.nicescroll.js')
             script(src='js/edit_profile.js?no_cache')
         - if (patients)
-            script(src='js/jquery-ui.js')
             //script(src='js/swiper.js')
             script(src='js/chosen.jquery.js')
             script(src='js/jquery.nicescroll.js')
             script(src='js/jquery.fancybox.js')
             script(src='js/patients_script.js?no_cache')
         - if (edit_card)
-            script(src='js/jquery-ui.js')
             //script(src='js/swiper.js')
             script(src='js/chosen.jquery.js')
             script(src='js/jquery.nicescroll.js')
@@ -31,7 +31,6 @@ mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, publ
             script(src='js/edit_patient_script.js?no_cache')
         - if (public_profile)
             link(href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css')
-            script(src='js/jquery-ui.js')
             //script(src='js/swiper.js')
             script(src='js/chosen.jquery.js')
             script(src='js/jquery.nicescroll.js')
@@ -40,14 +39,12 @@ mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, publ
             script(src='js/public_profile_script.js?no_cache')
         - if (add_patient)
             link(href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css')
-            script(src='js/jquery-ui.js')
             //script(src='js/swiper.js')
             script(src='js/chosen.jquery.js')
             script(src='js/jquery.nicescroll.js')
             script(src='js/add_patient_script.js?no_cache')
         - if (scheduller)
             //link(href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css')
-            script(src='js/jquery-ui.js')
             script(src='js/moment.min.js')
             script(src='js/jquery.nicescroll.js')
             script(src='js/fullcalendar.js')
@@ -242,22 +239,22 @@ mixin popup()
             .form_row
                 .input_w.placeholder_mod
                     input#new_patient_name.form_input.input_v4.checkEmpty(type='text', name='new_patient_name', value='')
-                    span.form_label.fz_20_(for='new_patient_name') Имя пациента
+                    label.form_label.fz_20_(for='new_patient_name') Имя пациента
     
             .form_row
                 .input_w.placeholder_mod
                     input#new_patient_phone.form_input.input_v4.checkEmpty(type='tel', name='new_patient_phone')
-                    span.form_label(for='new_patient_phone') Телефон
+                    label.form_label(for='new_patient_phone') Телефон
     
             .form_row
                 .input_w.placeholder_mod
                     input#new_patient_email.form_input.input_v4.checkEmpty(type='email', name='new_patient_email')
-                    span.form_label(for='new_patient_email') Email
+                    label.form_label(for='new_patient_email') Email
     
             .form_row
                 .input_w.placeholder_mod
                     input#new_patient_describe.form_input.input_v4.checkEmpty(type='email', name='new_patient_describe')
-                    span.form_label(for='new_patient_describe') Краткое описание (только для вас)
+                    label.form_label(for='new_patient_describe') Краткое описание (только для вас)
     
             button.btn_v2.new_patient_btn.newPatientBtn.yellow_black_btn() Записать на 30 декабря, в 12:00
         
@@ -287,17 +284,17 @@ mixin appointments()
             .form_row
                 .input_w.placeholder_mod
                     input#new_patient_name.form_input.input_v4.checkEmpty(type='text', name='new_patient_name', value='')
-                    span.form_label.fz_20(for='new_patient_name') Ваше имя и фамилия
+                    label.form_label.fz_20(for='new_patient_name') Ваше имя и фамилия
 
             .form_row
                 .input_w.placeholder_mod
                     input#new_patient_phone.form_input.input_v4.checkEmpty(type='tel', name='new_patient_phone')
-                    span.form_label(for='new_patient_phone') Телефон
+                    label.form_label(for='new_patient_phone') Телефон
 
             .form_row
                 .input_w.placeholder_mod
                     input#new_patient_email.form_input.input_v4.checkEmpty(type='email', name='new_patient_email')
-                    span.form_label(for='new_patient_email') Email (если есть, чтобы получить мед. карту)
+                    label.form_label(for='new_patient_email') Email (если есть, чтобы получить мед. карту)
 
         .form_footer: a.btn_v4.appointment_btn.appointmentTimeBtn.yellow_black_btn(href='#form_page_1') Выбрать время записи
         
@@ -348,11 +345,44 @@ mixin aside_menu()
                 p 
                     a.gl_link.blue_link(href='#'): span Перейти на сайт
             .aside_m_scroller: ul.aside_m_list
-                li.aside_m_item: a.gl_link(href='#') Поделиться моей страницей
+                li.aside_m_item: a.gl_link.openLogin(href='#') Поделиться моей страницей
                 li.aside_m_item: a.gl_link(href='#') Настройки
                 li.aside_m_item: a.gl_link(href='#') Выход из учетной записи
                 li.aside_m_item.aside_m_last: a.gl_link(href='#') Техническая поддержка
                     
+                
+    .popup_form#login_form(style='display:none')
+        form(action='#')
+            .form_caption Вход
+            
+            .form_row
+                ul.soc_auth
+                    li.soc_auth_item
+                        a.btn_v4.soc_auth_btn.s_auth_vk.vk_btn(href='#') Вконтакте
+                    li.soc_auth_item
+                        a.btn_v4.soc_auth_btn.s_auth_fb.fb_btn(href='#') Facebook 
+    
+            .form_row.text_center
+                .login_tips
+                    .mb Вход через email
+    
+            .form_row
+                label.hidden_input(for='new_patient_email') Email
+                .input_w
+                    input#new_patient_email.form_input.input_v3.blue_mod.text_center(type='email', name='new_patient_email', placeholder='Email')
+    
+            .form_row
+                label.hidden_input(for='new_patient_describe') Краткое описание (только для вас)
+                .input_w
+                    input#new_patient_describe.form_input.input_v3.blue_mod.text_center(type='password', name='new_patient_describe', placeholder='Пароль')
+    
+            .form_row
+                button.btn_v4.login_btn.gray_yellow_btn() Войти или зарегистрироваться
+        
+            .form_row.text_center
+                a.gl_link.gray_link_4(href='#') Забыли пароль?
+
+
 mixin aside_card()
     .aside_card_holder.card_mod
         .aside_menu

@@ -18,6 +18,34 @@ $(function ($) {
         }
     });
 
+    $(document).ready(function () {
+        $(".fancybox").fancybox({
+            //openEffect: 'none',
+            //closeEffect: 'none',
+            padding: 0,
+            //width : 500,
+            //height : 500
+
+            fitToView: true,
+            autoSize: true,
+            closeClick: true,
+
+            helpers: {
+                title: {
+                    type: 'inside'
+                },
+                overlay: {
+                    locked: false
+
+                    //showEarly: false
+                }
+            },
+            afterLoad: function () {
+                this.title =  (this.index + 1) + '/' + this.group.length + (this.title ? ' - ' + this.title : '');
+            }
+        });
+    });
+
     $('.openMenu').on('click', function () {
         html_var.addClass('menu_open');
         return false;

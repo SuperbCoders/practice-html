@@ -4,11 +4,12 @@
     <title>Practic пациенты</title><!-- saved from url=(0014)about:internet -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles/jquery.fancybox.css"/>
     <link rel="stylesheet" href="styles/main_global.css?no_cache" media="all"/>
     <script src="js/jquery1.10.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script src="js/chosen.jquery.js"></script>
     <script src="js/script.js?no_cache"></script>
-    <script src="js/jquery-ui.js"></script>
     <!--script(src='js/swiper.js')-->
     <script src="js/chosen.jquery.js"></script>
     <script src="js/jquery.nicescroll.js"></script>
@@ -716,54 +717,11 @@
                           <dt>Анализы</dt>
                           <dd>
                             <p>Заболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работыЗаболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работыЗаболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работы</p>
-                            <div class="note_img"><img src="i/note_img_1.jpg"></div>
-                          </dd>
-                        </dl>
-                      </div>
-                    </li>
-                    <li class="patient_note">
-                      <div class="patient_note_date">12 ЯНВАРЯ 2015</div>
-                      <div class="patient_note_block">
-                        <div class="card_menu_w">
-                          <div class="drop_down_btn"><span></span></div>
-                          <div class="drop_down_w">
-                            <ul class="drop_down_menu">
-                              <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                              <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить файл</span></a></li>
-                              <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                            <ul class="note_img_list">
+                              <li><a href="i/big_note_img_1.jpg" rel="gallery1" class="note_img fancybox"><img src="i/note_img_1.jpg"></a></li>
+                              <li><a href="i/big_note_img_1.jpg" rel="gallery1" class="note_img fancybox"><img src="i/note_img_1.jpg"></a></li>
+                              <li><a href="i/big_note_img_1.jpg" rel="gallery1" class="note_img fancybox"><img src="i/note_img_1.jpg"></a></li>
                             </ul>
-                          </div>
-                        </div>
-                        <dl class="note_lines">
-                          <dt>Совет</dt>
-                          <dd>
-                            <p>Покурить</p>
-                          </dd>
-                          <dt>Анамнез</dt>
-                          <dd>
-                            <p>Заболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работы</p>
-                          </dd>
-                        </dl>
-                      </div>
-                    </li>
-                    <li class="patient_note">
-                      <div class="patient_note_date">20 ДЕКАБРЯ 2015</div>
-                      <div class="patient_note_block">
-                        <div class="card_menu_w">
-                          <div class="drop_down_btn"><span></span></div>
-                          <div class="drop_down_w">
-                            <ul class="drop_down_menu">
-                              <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                              <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить файл</span></a></li>
-                              <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <dl class="note_lines">
-                          <dt>Анализы</dt>
-                          <dd>
-                            <p>Заболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работыЗаболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работыЗаболел дома ребенок, на работе все чихают, ноги промочила пока шла домой накануне с работы</p>
-                            <div class="note_img"><img src="i/note_img_1.jpg"></div>
                           </dd>
                         </dl>
                       </div>
@@ -784,13 +742,45 @@
             </div>
             <div class="aside_m_scroller">
               <ul class="aside_m_list">
-                <li class="aside_m_item"><a href="#" class="gl_link">Поделиться моей страницей</a></li>
+                <li class="aside_m_item"><a href="#" class="gl_link openLogin">Поделиться моей страницей</a></li>
                 <li class="aside_m_item"><a href="#" class="gl_link">Настройки</a></li>
                 <li class="aside_m_item"><a href="#" class="gl_link">Выход из учетной записи</a></li>
                 <li class="aside_m_item aside_m_last"><a href="#" class="gl_link">Техническая поддержка</a></li>
               </ul>
             </div>
           </div>
+        </div>
+        <div id="login_form" style="display:none" class="popup_form">
+          <form action="#">
+            <div class="form_caption">Вход</div>
+            <div class="form_row">
+              <ul class="soc_auth">
+                <li class="soc_auth_item"><a href="#" class="btn_v4 soc_auth_btn s_auth_vk vk_btn">Вконтакте</a></li>
+                <li class="soc_auth_item"><a href="#" class="btn_v4 soc_auth_btn s_auth_fb fb_btn">Facebook </a></li>
+              </ul>
+            </div>
+            <div class="form_row text_center">
+              <div class="login_tips">
+                <div class="mb">Вход через email</div>
+              </div>
+            </div>
+            <div class="form_row">
+              <label for="new_patient_email" class="hidden_input">Email</label>
+              <div class="input_w">
+                <input id="new_patient_email" type="email" name="new_patient_email" placeholder="Email" class="form_input input_v3 blue_mod text_center"/>
+              </div>
+            </div>
+            <div class="form_row">
+              <label for="new_patient_describe" class="hidden_input">Краткое описание (только для вас)</label>
+              <div class="input_w">
+                <input id="new_patient_describe" type="password" name="new_patient_describe" placeholder="Пароль" class="form_input input_v3 blue_mod text_center"/>
+              </div>
+            </div>
+            <div class="form_row">
+              <button class="btn_v4 login_btn gray_yellow_btn">Войти или зарегистрироваться</button>
+            </div>
+            <div class="form_row text_center"><a href="#" class="gl_link gray_link_4">Забыли пароль?</a></div>
+          </form>
         </div>
         <div class="aside_card_holder card_mod">
           <div class="aside_menu">
