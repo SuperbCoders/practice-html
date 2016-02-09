@@ -346,10 +346,9 @@ mixin aside_menu()
                     a.gl_link.blue_link(href='#'): span Перейти на сайт
             .aside_m_scroller: ul.aside_m_list
                 li.aside_m_item: a.gl_link.openLogin(href='#') Поделиться моей страницей
-                li.aside_m_item: a.gl_link(href='#') Настройки
-                li.aside_m_item: a.gl_link(href='#') Выход из учетной записи
-                li.aside_m_item.aside_m_last: a.gl_link(href='#') Техническая поддержка
-                    
+                li.aside_m_item: a.gl_link.openRecovery(href='#') Настройки
+                li.aside_m_item: a.gl_link.openRecoverySuccess(href='#') Выход из учетной записи
+                li.aside_m_item.aside_m_last: a.gl_link.openRegSuccess(href='#') Техническая поддержка
                 
     .popup_form#login_form(style='display:none')
         form(action='#')
@@ -381,6 +380,40 @@ mixin aside_menu()
         
             .form_row.text_center
                 a.gl_link.gray_link_4(href='#') Забыли пароль?
+                
+    .popup_form#recovery_form(style='display:none')
+        form(action='#')
+            .recovery_block
+                .form_caption Восстановление пароля
+                        
+                .form_row
+                    label.hidden_input(for='new_patient_email') Email
+                    .input_w
+                        input#new_patient_email.form_input.input_v3.blue_mod.text_center(type='email', name='new_patient_email', placeholder='Email')
+            
+                .form_row
+                    button.btn_v4.login_btn.gray_yellow_btn() Восстановить
+            
+                .form_row.text_center
+                    a.gl_link.gray_link_4(href='#') Назад
+                                
+    .popup_form#recovery_success_form(style='display:none')
+        form(action='#')
+            .recovery_block
+                .form_caption Пароль отправлен на почту yaosamo@gmail.com
+
+                .form_row
+                    button.btn_v4.login_btn.yellow_black_btn() Вход в профиль
+
+    #reg_success_form(action='#' style='display:none' title=''): .popup_form.popup_v1.text_center
+        .msg_header
+            .form_caption Если врач Kanye West не перезвонил вам, уточните время запсии по телефону  <br>  +7 (927) 026-10-20
+            
+            .text_center: a.btn_v4.white_green_btn.cancel_btn(href='#') Отменить приём
+        
+        .msg_footer
+            .form_caption Зарегистрируйтесь, чтобы читать записи врача в вашей мед. карте онлайн
+            .text_center: a.btn_v4.black_blue_btn.cancel_btn(href='#') Перейти в профиль
 
 
 mixin aside_card()

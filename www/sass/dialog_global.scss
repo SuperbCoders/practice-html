@@ -87,6 +87,10 @@
     border-radius: 10px 10px 0 0;
   }
 
+  .form_success & {
+    background: #6ccc7f;
+  }
+
   .dialog_title_v1 & {
     font-size: 24px;
     text-align: center;

@@ -756,12 +756,14 @@ a {
   opacity: 0;
   visibility: hidden;
 
-  .aside_open & {
-    z-index: 11;
-  }
+  @include respond-to-min($desktop) {
+    .aside_open & {
+      z-index: 11;
+    }
 
-  .menu_open & {
-    z-index: 16;
+    .menu_open & {
+      z-index: 16;
+    }
   }
 
   .aside_open &,
@@ -832,12 +834,17 @@ a {
     @include transform_translate(0, 0);
   }
 
+  &.card_mod {
+    top: 90px;
+  }
+
   @include respond-to-min($desktop) {
     bottom: 0;
     max-width: 320px;
 
     &.card_mod {
       max-width: 340px;
+      top: 60px;
     }
   }
 }
@@ -2164,6 +2171,10 @@ $patient_scale_time: 1s;
   padding: 0 30px 30px;
   border-radius: 0 0 10px 10px;
 
+  .form_success & {
+    background: #6ccc7f;
+  }
+
   &.popup_v1 {
     @extend %global_flex_block_column_nowrap_space_between_stretch;
     min-height: 570px;
@@ -2197,6 +2208,39 @@ $patient_scale_time: 1s;
     }
   }
 
+  .msg_form & {
+    @include respond-to-min($desktop) {
+      padding: 0 40px 300px;
+      position: relative;
+    }
+  }
+
+}
+
+.msg_header {
+  @extend %global_flex_block_column_nowrap_space_around_stretch;
+  padding: 10px 20px;
+  min-height: 250px;
+}
+
+.msg_footer {
+  @extend %global_flex_block_column_nowrap_space_around_stretch;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 290px;
+  padding: 35px 60px 40px;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+}
+
+.form_msg_holder {
+
+}
+
+.reg_success_tip {
+
 }
 
 .form_corner {
@@ -2221,6 +2265,25 @@ $patient_scale_time: 1s;
   line-height: 1.25;
   text-align: center;
   padding: 10px 0 10px;
+
+  .recovery_block & {
+    margin-bottom: 10px;
+  }
+
+  .form_success .msg_header & {
+    color: #fff;
+  }
+
+}
+
+.recovery_block {
+  @extend %global_flex_block_column_nowrap_space_around_stretch;
+  min-height: 230px;
+
+  .btn_v4.login_btn {
+    margin: 12px auto;
+  }
+
 }
 
 .form_content {
@@ -4065,6 +4128,18 @@ textarea.form_input.input_v3 {
     border-radius: 25px;
   }
 
+  &.cancel_btn {
+    max-width: 260px;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    font: 16px/48px $HelveticaNeueReg;
+    text-align: center;
+    border-radius: 25px;
+    letter-spacing: .5px;
+  }
+
 }
 
 .yellow_black_btn {
@@ -4164,6 +4239,18 @@ textarea.form_input.input_v3 {
   &:hover {
     background: #50bf66;
 
+  }
+}
+
+.white_green_btn {
+  @include transition_all(color .3s, background .3s, border-color .3s);
+  color: #fff;
+  border: 1px solid #fff;
+  background: #6ccc7f;
+
+  &:hover {
+    background: #50bf66;
+    border-color: #50bf66;
   }
 }
 

@@ -2,6 +2,9 @@ var html_var,
     body_var,
     doc,
     login_form,
+    recovery_form,
+    recovery_success_form,
+    reg_success_form,
     global_window_Height,
     popupOrderItem,
     notificationTimer,
@@ -38,7 +41,52 @@ $(function ($) {
         width: 400,
         dialogClass: "dialog_v1 no_close_mod login_form",
         open: function (event, ui) {
-          
+
+            console.log('open');
+        },
+        close: function (event, ui) {
+
+            console.log('close');
+        }
+    });
+
+    recovery_form = $('#recovery_form').dialog({
+        autoOpen: false,
+        modal: true,
+        width: 400,
+        dialogClass: "dialog_v1 no_close_mod login_form",
+        open: function (event, ui) {
+
+            console.log('open');
+        },
+        close: function (event, ui) {
+
+            console.log('close');
+        }
+    });
+
+    recovery_success_form = $('#recovery_success_form').dialog({
+        autoOpen: false,
+        modal: true,
+        width: 400,
+        dialogClass: "dialog_v1 no_close_mod login_form",
+        open: function (event, ui) {
+
+            console.log('open');
+        },
+        close: function (event, ui) {
+
+            console.log('close');
+        }
+    });
+
+    reg_success_form = $('#reg_success_form').dialog({
+        autoOpen: false,
+        modal: true,
+        width: 480,
+        dialogClass: "dialog_v1 no_close_mod msg_form form_success",
+        open: function (event, ui) {
+
             console.log('open');
         },
         close: function (event, ui) {
@@ -48,9 +96,29 @@ $(function ($) {
     });
 
     $('.openLogin').on('click', function () {
-        var firedEl = $(this);
 
         login_form.dialog('open');
+
+        return false;
+    });
+
+    $('.openRegSuccess').on('click', function () {
+
+        reg_success_form.dialog('open');
+
+        return false;
+    });
+
+    $('.openRecovery').on('click', function () {
+
+        recovery_form.dialog('open');
+
+        return false;
+    });
+
+    $('.openRecoverySuccess').on('click', function () {
+
+        recovery_success_form.dialog('open');
 
         return false;
     });
@@ -86,11 +154,14 @@ $(function ($) {
 
     $('.openMenu').on('click', function () {
         html_var.addClass('menu_open');
+        console.log('openMenu');
         return false;
     });
 
     $('.closeMenu').on('click', function () {
         html_var.removeClass('menu_open aside_open');
+        console.log('closeMenu');
+
         return false;
     });
 

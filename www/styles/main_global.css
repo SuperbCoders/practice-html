@@ -78,6 +78,21 @@
   -webkit-box-align: stretch;
 }
 
+.msg_header, .msg_footer, .recovery_block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-box-align: stretch;
+}
+
 .clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .soc_auth:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after {
   position: static;
   display: block;
@@ -766,6 +781,9 @@ textarea:focus::-moz-placeholder {
   height: 28px;
   border-radius: 10px 10px 0 0;
 }
+.form_success .ui-dialog-titlebar {
+  background: #6ccc7f;
+}
 .dialog_title_v1 .ui-dialog-titlebar {
   font-size: 24px;
   text-align: center;
@@ -1416,11 +1434,13 @@ a {
   opacity: 0;
   visibility: hidden;
 }
-.aside_open .aside_menu_overlay {
-  z-index: 11;
-}
-.menu_open .aside_menu_overlay {
-  z-index: 16;
+@media only screen and (min-width: 1200px) {
+  .aside_open .aside_menu_overlay {
+    z-index: 11;
+  }
+  .menu_open .aside_menu_overlay {
+    z-index: 16;
+  }
 }
 .aside_open .aside_menu_overlay, .menu_open .aside_menu_overlay {
   visibility: visible;
@@ -1495,6 +1515,9 @@ a {
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
+.aside_card_holder.card_mod {
+  top: 90px;
+}
 @media only screen and (min-width: 1200px) {
   .aside_card_holder {
     bottom: 0;
@@ -1502,6 +1525,7 @@ a {
   }
   .aside_card_holder.card_mod {
     max-width: 340px;
+    top: 60px;
   }
 }
 
@@ -2651,6 +2675,9 @@ a {
   padding: 0 30px 30px;
   border-radius: 0 0 10px 10px;
 }
+.form_success .popup_form {
+  background: #6ccc7f;
+}
 .popup_form.popup_v1 {
   min-height: 570px;
   padding: 0 60px 20px;
@@ -2677,6 +2704,28 @@ a {
     padding: 0 40px 30px;
   }
 }
+@media only screen and (min-width: 1200px) {
+  .msg_form .popup_form {
+    padding: 0 40px 300px;
+    position: relative;
+  }
+}
+
+.msg_header {
+  padding: 10px 20px;
+  min-height: 250px;
+}
+
+.msg_footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 290px;
+  padding: 35px 60px 40px;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+}
 
 .form_corner {
   z-index: 1;
@@ -2699,6 +2748,19 @@ a {
   line-height: 1.25;
   text-align: center;
   padding: 10px 0 10px;
+}
+.recovery_block .form_caption {
+  margin-bottom: 10px;
+}
+.form_success .msg_header .form_caption {
+  color: #fff;
+}
+
+.recovery_block {
+  min-height: 230px;
+}
+.recovery_block .btn_v4.login_btn {
+  margin: 12px auto;
 }
 
 .form_content {
@@ -3365,7 +3427,7 @@ html:not(.edit_patient) .edit_mode {
   border-color: #ffdd4a;
 }
 .form_input.input_v3.blue_mod:focus {
-  border-color: #2670FF;
+  border-color: #2670ff;
 }
 .form_input.input_v4 {
   -webkit-transition: border-color 0.3s;
@@ -4230,6 +4292,17 @@ textarea.form_input.input_v3 {
   text-align: center;
   border-radius: 25px;
 }
+.btn_v4.cancel_btn {
+  max-width: 260px;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  font: 16px/48px "HelveticaNeue", sans-serif;
+  text-align: center;
+  border-radius: 25px;
+  letter-spacing: .5px;
+}
 
 .yellow_black_btn {
   -webkit-transition: color 0.3s, background 0.3s;
@@ -4337,6 +4410,19 @@ textarea.form_input.input_v3 {
 }
 .green_btn:hover {
   background: #50bf66;
+}
+
+.white_green_btn {
+  -webkit-transition: color 0.3s, background 0.3s, border-color 0.3s;
+  -ms-transition: color 0.3s, background 0.3s, border-color 0.3s;
+  transition: color 0.3s, background 0.3s, border-color 0.3s;
+  color: #fff;
+  border: 1px solid #fff;
+  background: #6ccc7f;
+}
+.white_green_btn:hover {
+  background: #50bf66;
+  border-color: #50bf66;
 }
 
 .white_white_btn {
@@ -6191,10 +6277,20 @@ be a descendant of the grid when it is being dragged.
   color: #fff;
 }
 .fancybox-nav.fancybox-next {
-  right: 177px;
+  right: 77px;
+}
+@media only screen and (min-width: 1200px) {
+  .fancybox-nav.fancybox-next {
+    right: 177px;
+  }
 }
 .fancybox-nav.fancybox-prev {
-  left: 177px;
+  left: 77px;
+}
+@media only screen and (min-width: 1200px) {
+  .fancybox-nav.fancybox-prev {
+    left: 177px;
+  }
 }
 
 .fancybox-title-inside-wrap {

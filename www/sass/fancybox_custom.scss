@@ -36,12 +36,20 @@
 
   &.fancybox-next {
     @extend .icon-chevron_right;
-    right: 177px;
+    right: 77px;
+
+    @include respond-to-min($desktop) {
+      right: 177px;
+    }
   }
 
   &.fancybox-prev {
     @extend .icon-chevron_left;
-    left: 177px;
+    left: 77px;
+
+    @include respond-to-min($desktop) {
+      left: 177px;
+    }
   }
 
 }
