@@ -3358,6 +3358,7 @@ textarea.form_input.input_v3 {
   }
 }
 
+.chosen-drop,
 .chzn-drop {
   z-index: 4;
   position: absolute;
@@ -3371,6 +3372,7 @@ textarea.form_input.input_v3 {
 
 }
 
+.chosen-search,
 .chzn-search {
 
   .no_search & {
@@ -3407,12 +3409,33 @@ textarea.form_input.input_v3 {
   }
 }
 
+.chzn-choices-arrow {
+  cursor: pointer;
+
+  .chosen_multiple_v1 & {
+    @extend .icon-before;
+    @extend .icon-chevron_left;
+    @include transition_all(transform .3s);
+    @include transform_rotate(-90);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -10px;
+    height: 18px;
+    font-size: 18px;
+    color: #111;
+  }
+
+  .chosen_v1 .chzn-with-drop & {
+    @include transform_rotate(90);
+  }
+}
+
 .chzn-choices {
 
   .chosen_multiple_v1 & {
     @include transition_all(border-color .3s);
-    @extend .icon-before;
-    @extend .icon-chevron_left;
+    cursor: pointer;
     display: block;
     text-decoration: none;
     border-radius: 8px;
@@ -3426,12 +3449,7 @@ textarea.form_input.input_v3 {
     background: #fff;
 
     &:before {
-      @include transition_all(transform .3s);
-      @include transform_rotate(-90);
-      position: absolute;
-      right: 20px;
-      font-size: 18px;
-      color: #111;
+
     }
 
     &.chzn-default {
@@ -3447,12 +3465,12 @@ textarea.form_input.input_v3 {
     &:before {
       @include transform_rotate(90);
     }
-
   }
-
 }
 
+.chosen-single,
 .chzn-single {
+  cursor: pointer;
 
   .chosen_v1 & {
     @include transition_all(border-color .3s);
@@ -3660,10 +3678,12 @@ textarea.form_input.input_v3 {
 
 }
 
+.chosen-container,
 .chzn-container {
   position: relative;
   display: block;
 
+  &.chosen-with-drop .chosen-drop,
   &.chzn-with-drop .chzn-drop {
     display: block;
   }
@@ -3696,6 +3716,7 @@ textarea.form_input.input_v3 {
 
 }
 
+.chosen-results,
 .chzn-results {
   display: block;
   background: #fff;

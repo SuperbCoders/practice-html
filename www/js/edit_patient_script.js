@@ -1,9 +1,10 @@
 $(function ($) {
 
     $('.chosen-select').chosen({
+        //allow_single_deselect: true,
         width: "100%",
         disable_search_threshold: 3
-    }).on('liszt:showing_dropdown', function (evt, params) {
+    }).on('chosen:showing_dropdown', function (evt, params) {
 
         $('.chosen-select');
 
@@ -27,7 +28,7 @@ $(function ($) {
             });
         }
 
-    }).on('liszt:hiding_dropdown', function (evt, params) {
+    }).on('chosen:hiding_dropdown', function (evt, params) {
         var firedEl = $(evt.currentTarget);
 
         var niceScrollBlock = firedEl.next('.chzn-container').find('.chzn-results');

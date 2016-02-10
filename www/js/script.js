@@ -165,20 +165,6 @@ $(function ($) {
         return false;
     });
 
-    body_var.delegate('.chosen_multiple_v1 .result-selected', 'click', function () {
-        var firedEl = $(this);
-
-        console.log(firedEl.attr('class'));
-
-        var link = firedEl.closest('.chzn-container ').find('.chzn-choices .search-choice-close[rel=' + (1 + firedEl.index()) + ']');
-
-        console.log(link);
-
-        //link.click();
-
-
-    });
-
     all_dialog_close();
 
 });

@@ -356,7 +356,10 @@ textarea:focus::-moz-placeholder {
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices:before, .chosen_v1 .chzn-single:before, .chosen_v3 .chzn-single:before, .chosen_v2 .chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
+[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v1 .chosen-single:before, .chosen_v1
+.chzn-single:before, .chosen_v3 .chosen-single:before, .chosen_v3
+.chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
+.chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .fancybox-nav:before {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -414,7 +417,10 @@ textarea:focus::-moz-placeholder {
   content: "\e910";
 }
 
-.icon-chevron_left:before, .pagination_item.pagination_prev .gl_link:before, .chosen_multiple_v1 .chzn-choices:before, .chosen_v1 .chzn-single:before, .chosen_v3 .chzn-single:before, .chosen_v2 .chzn-single:before, .go_back_btn:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .fancybox-nav.fancybox-prev:before {
+.icon-chevron_left:before, .pagination_item.pagination_prev .gl_link:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v1 .chosen-single:before, .chosen_v1
+.chzn-single:before, .chosen_v3 .chosen-single:before, .chosen_v3
+.chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
+.chzn-single:before, .go_back_btn:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .fancybox-nav.fancybox-prev:before {
   content: "\e601";
 }
 
@@ -3646,6 +3652,7 @@ textarea.form_input.input_v3 {
   margin-top: -1px;
 }
 
+.chosen-drop,
 .chzn-drop {
   z-index: 4;
   position: absolute;
@@ -3653,11 +3660,13 @@ textarea.form_input.input_v3 {
   display: none;
   width: 100%;
 }
-.chosen_v2 .chzn-drop {
+.chosen_v2 .chosen-drop, .chosen_v2
+.chzn-drop {
   margin-top: 4px;
 }
 
-.no_search .chzn-search {
+.no_search .chosen-search, .no_search
+.chzn-search {
   display: none;
 }
 
@@ -3680,10 +3689,35 @@ textarea.form_input.input_v3 {
   display: none;
 }
 
+.chzn-choices-arrow {
+  cursor: pointer;
+}
+.chosen_multiple_v1 .chzn-choices-arrow {
+  -webkit-transition: transform 0.3s;
+  -ms-transition: transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  margin-top: -10px;
+  height: 18px;
+  font-size: 18px;
+  color: #111;
+}
+.chosen_v1 .chzn-with-drop .chzn-choices-arrow {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 .chosen_multiple_v1 .chzn-choices {
   -webkit-transition: border-color 0.3s;
   -ms-transition: border-color 0.3s;
   transition: border-color 0.3s;
+  cursor: pointer;
   display: block;
   text-decoration: none;
   border-radius: 8px;
@@ -3695,18 +3729,6 @@ textarea.form_input.input_v3 {
   color: #000;
   position: relative;
   background: #fff;
-}
-.chosen_multiple_v1 .chzn-choices:before {
-  -webkit-transition: transform 0.3s;
-  -ms-transition: transform 0.3s;
-  transition: transform 0.3s;
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  position: absolute;
-  right: 20px;
-  font-size: 18px;
-  color: #111;
 }
 .chosen_multiple_v1 .chzn-choices.chzn-default {
   color: #969696;
@@ -3721,7 +3743,12 @@ textarea.form_input.input_v3 {
   transform: rotate(90deg);
 }
 
-.chosen_v1 .chzn-single {
+.chosen-single,
+.chzn-single {
+  cursor: pointer;
+}
+.chosen_v1 .chosen-single, .chosen_v1
+.chzn-single {
   -webkit-transition: border-color 0.3s;
   -ms-transition: border-color 0.3s;
   transition: border-color 0.3s;
@@ -3740,7 +3767,8 @@ textarea.form_input.input_v3 {
   position: relative;
   background: #fff;
 }
-.chosen_v1 .chzn-single:before {
+.chosen_v1 .chosen-single:before, .chosen_v1
+.chzn-single:before {
   -webkit-transition: transform 0.3s;
   -ms-transition: transform 0.3s;
   transition: transform 0.3s;
@@ -3752,10 +3780,12 @@ textarea.form_input.input_v3 {
   font-size: 18px;
   color: #111;
 }
-.chosen_v1 .chzn-single.chzn-default {
+.chosen_v1 .chosen-single.chzn-default, .chosen_v1
+.chzn-single.chzn-default {
   color: #969696;
 }
-.chosen_v3 .chzn-single {
+.chosen_v3 .chosen-single, .chosen_v3
+.chzn-single {
   -webkit-transition: border-color 0.3s;
   -ms-transition: border-color 0.3s;
   transition: border-color 0.3s;
@@ -3774,7 +3804,8 @@ textarea.form_input.input_v3 {
   background: #fff;
   letter-spacing: .85px;
 }
-.chosen_v3 .chzn-single:before {
+.chosen_v3 .chosen-single:before, .chosen_v3
+.chzn-single:before {
   -webkit-transition: transform 0.3s;
   -ms-transition: transform 0.3s;
   transition: transform 0.3s;
@@ -3788,28 +3819,34 @@ textarea.form_input.input_v3 {
   font-size: 18px;
   color: #111;
 }
-.chosen_v3 .chzn-single.chzn-default {
+.chosen_v3 .chosen-single.chzn-default, .chosen_v3
+.chzn-single.chzn-default {
   color: #969696;
 }
-.chosen_v1 .chzn-with-drop .chzn-single {
+.chosen_v1 .chzn-with-drop .chosen-single, .chosen_v1 .chzn-with-drop
+.chzn-single {
   border-color: #4c88fd;
   z-index: 7;
 }
-.chosen_v1 .chzn-with-drop .chzn-single:before {
+.chosen_v1 .chzn-with-drop .chosen-single:before, .chosen_v1 .chzn-with-drop
+.chzn-single:before {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.chosen_v3 .chzn-with-drop .chzn-single {
+.chosen_v3 .chzn-with-drop .chosen-single, .chosen_v3 .chzn-with-drop
+.chzn-single {
   border-color: #4c88fd;
   z-index: 7;
 }
-.chosen_v3 .chzn-with-drop .chzn-single:before {
+.chosen_v3 .chzn-with-drop .chosen-single:before, .chosen_v3 .chzn-with-drop
+.chzn-single:before {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.chosen_v2 .chzn-single {
+.chosen_v2 .chosen-single, .chosen_v2
+.chzn-single {
   -webkit-transition: border-color 0.3s;
   -ms-transition: border-color 0.3s;
   transition: border-color 0.3s;
@@ -3822,7 +3859,8 @@ textarea.form_input.input_v3 {
   position: relative;
   background: #fff;
 }
-.chosen_v2 .chzn-single:before {
+.chosen_v2 .chosen-single:before, .chosen_v2
+.chzn-single:before {
   -webkit-transition: transform 0.3s, opacity 0.3s;
   -ms-transition: transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s;
@@ -3836,31 +3874,44 @@ textarea.form_input.input_v3 {
   color: #6c6c6c;
   opacity: 0;
 }
-.chosen_v2 .chzn-single span {
+.chosen_v2 .chosen-single span, .chosen_v2
+.chzn-single span {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
 }
-.chosen_v2 .chzn-single.chzn-default span:before {
+.chosen_v2 .chosen-single.chzn-default span:before, .chosen_v2
+.chzn-single.chzn-default span:before {
   background: #3eb6e3;
   border-color: #2d90b6;
 }
-.chosen_v2 .chzn-single:hover {
+.chosen_v2 .chosen-single:hover, .chosen_v2
+.chzn-single:hover {
   border-color: #d4d4d4;
 }
-.chosen_v2 .chzn-single:hover:before {
+.chosen_v2 .chosen-single:hover:before, .chosen_v2
+.chzn-single:hover:before {
   opacity: 1;
 }
-.patient_photo_block:hover .chzn-single, .ui-dialog:hover .chzn-single, .patient_card:hover .chzn-single, .chosen_v2 .chzn-with-drop .chzn-single {
+.patient_photo_block:hover .chosen-single, .ui-dialog:hover .chosen-single, .patient_card:hover .chosen-single, .chosen_v2 .chzn-with-drop .chosen-single, .patient_photo_block:hover
+.chzn-single, .ui-dialog:hover
+.chzn-single, .patient_card:hover
+.chzn-single, .chosen_v2 .chzn-with-drop
+.chzn-single {
   border-color: #d4d4d4;
   z-index: 7;
 }
-.patient_photo_block:hover .chzn-single:before, .ui-dialog:hover .chzn-single:before, .patient_card:hover .chzn-single:before, .chosen_v2 .chzn-with-drop .chzn-single:before {
+.patient_photo_block:hover .chosen-single:before, .ui-dialog:hover .chosen-single:before, .patient_card:hover .chosen-single:before, .chosen_v2 .chzn-with-drop .chosen-single:before, .patient_photo_block:hover
+.chzn-single:before, .ui-dialog:hover
+.chzn-single:before, .patient_card:hover
+.chzn-single:before, .chosen_v2 .chzn-with-drop
+.chzn-single:before {
   opacity: 1;
 }
-.chosen_v2 .chzn-with-drop .chzn-single:before {
+.chosen_v2 .chzn-with-drop .chosen-single:before, .chosen_v2 .chzn-with-drop
+.chzn-single:before {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -3904,10 +3955,13 @@ textarea.form_input.input_v3 {
   border-color: #c4a417;
 }
 
+.chosen-container,
 .chzn-container {
   position: relative;
   display: block;
 }
+.chosen-container.chosen-with-drop .chosen-drop, .chosen-container.chzn-with-drop .chzn-drop,
+.chzn-container.chosen-with-drop .chosen-drop,
 .chzn-container.chzn-with-drop .chzn-drop {
   display: block;
 }
@@ -3937,11 +3991,13 @@ textarea.form_input.input_v3 {
   background: #ccc;
 }
 
+.chosen-results,
 .chzn-results {
   display: block;
   background: #fff;
 }
-.chosen_v1 .chzn-results {
+.chosen_v1 .chosen-results, .chosen_v1
+.chzn-results {
   -webkit-transition: border-color 0.3s;
   -ms-transition: border-color 0.3s;
   transition: border-color 0.3s;
@@ -3953,7 +4009,8 @@ textarea.form_input.input_v3 {
   line-height: 29px;
   border: 1px solid #a7a69c;
 }
-.chosen_v2 .chzn-results {
+.chosen_v2 .chosen-results, .chosen_v2
+.chzn-results {
   -webkit-transition: border-color 0.3s;
   -ms-transition: border-color 0.3s;
   transition: border-color 0.3s;
@@ -3961,7 +4018,8 @@ textarea.form_input.input_v3 {
   overflow: hidden;
   border: 1px solid #d4d4d4;
 }
-.chosen_v3 .chzn-results {
+.chosen_v3 .chosen-results, .chosen_v3
+.chzn-results {
   -webkit-transition: border-color 0.3s;
   -ms-transition: border-color 0.3s;
   transition: border-color 0.3s;
@@ -3973,7 +4031,9 @@ textarea.form_input.input_v3 {
   line-height: 29px;
   border: 1px solid #a7a69c;
 }
-.chosen_v1 .chzn-with-drop .chzn-results, .chosen_v3 .chzn-with-drop .chzn-results {
+.chosen_v1 .chzn-with-drop .chosen-results, .chosen_v3 .chzn-with-drop .chosen-results, .chosen_v1 .chzn-with-drop
+.chzn-results, .chosen_v3 .chzn-with-drop
+.chzn-results {
   border-color: #4c88fd;
 }
 

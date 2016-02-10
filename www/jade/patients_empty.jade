@@ -1,0 +1,35 @@
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Practic пациенты', false, true)
+
+    body.body_gray.sub_header_mod
+        .wrapper
+            //.rect_1024
+            .base.load_more_mod
+                +header(2, true)
+
+                div.main_content
+                    .section_inner
+                        .patient_tip
+                                
+                            li.patient_unit
+                                
+                                .patient_card.cardAsideOverview
+                                    +patient_status()
+                                    +patient_menu()
+                                    .patient_info
+                                        .patient_name: a.skipOpen.gl_link.gray_link.write2Card(href='#'): span Самойлов Ярослав Георгиевич
+                                        p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
+                                    +patient_info_table()
+                                    .patient_card_controls.skipOpen: .patient_info_table
+                                        .controls_cell
+                                            a.btn_v2.patient_btn.black_yellow_btn(href='#'): span.mb Записать на прием
+                                    //+patient_overview()
+
+                                .avatar_clone
+                                    a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_1.png')
+                                        
+
+                +aside_menu()
+                +aside_card()
