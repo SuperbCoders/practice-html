@@ -3387,6 +3387,7 @@ textarea.form_input.input_v3 {
 
     input {
       color: #969696;
+      width: 100% !important;
     }
   }
 }
@@ -3754,6 +3755,24 @@ textarea.form_input.input_v3 {
   .chosen_v3 .chzn-with-drop & {
     border-color: #4c88fd;
   }
+}
+
+.extra_control {
+  display: none;
+}
+
+.chosen_multiple_v1 {
+
+  .result-selected .extra_control {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
 }
 
 .chzn_item {
@@ -4174,14 +4193,17 @@ textarea.form_input.input_v3 {
   }
 }
 
-.gray_yellow_btn {
-  @include transition_all(color .3s, background .3s);
-  background: #e4e4e4;
-  color: #494949;
+.disabled_btn_gray {
+  @include transition_all(none);
+  @extend %no-user-select;
+  background: #e4e4e4 !important;
+  color: #494949 !important;
+  cursor: default !important;
+  pointer-events: none !important;
 
   &:hover {
-    background: #ffdd4a;
-    color: #000;
+    background: #e4e4e4 !important;
+    color: #494949 !important;
   }
 }
 
@@ -4244,12 +4266,20 @@ textarea.form_input.input_v3 {
   @include transition_all(color .3s, background .3s);
   color: #fff;
   background: #4d75a3;
+
+  &:hover {
+    background: #538cce;
+  }
 }
 
 .fb_btn {
   @include transition_all(color .3s, background .3s);
   color: #fff;
   background: #3c5a99;
+
+  &:hover {
+    background: #3964bf;
+  }
 }
 
 .green_btn {

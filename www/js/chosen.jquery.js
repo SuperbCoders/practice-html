@@ -289,6 +289,7 @@
             if (option.title) {
                 option_el.title = option.title;
             }
+            option_el = $(option_el).append($("<span class='extra_control' />"))[0];
             return this.outerHTML(option_el);
         };
 

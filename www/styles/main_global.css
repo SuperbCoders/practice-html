@@ -115,6 +115,14 @@
   backface-visibility: hidden;
 }
 
+.disabled_btn_gray {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 .patient_info_block .add_btn_holder, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon, .input_w.soc_input:before, .go_back_btn.middle_mod {
   top: 50%;
   -webkit-transform: translate(0, -50%);
@@ -3675,6 +3683,7 @@ textarea.form_input.input_v3 {
 }
 .chosen_multiple_v1 .search-field input {
   color: #969696;
+  width: 100% !important;
 }
 
 .chosen_multiple_v1 .chzn_rzlts {
@@ -4037,6 +4046,20 @@ textarea.form_input.input_v3 {
   border-color: #4c88fd;
 }
 
+.extra_control {
+  display: none;
+}
+
+.chosen_multiple_v1 .result-selected .extra_control {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
 .chzn_item {
   cursor: pointer;
   display: block;
@@ -4376,16 +4399,18 @@ textarea.form_input.input_v3 {
   color: #fff;
 }
 
-.gray_yellow_btn {
-  -webkit-transition: color 0.3s, background 0.3s;
-  -ms-transition: color 0.3s, background 0.3s;
-  transition: color 0.3s, background 0.3s;
-  background: #e4e4e4;
-  color: #494949;
+.disabled_btn_gray {
+  -webkit-transition: none;
+  -ms-transition: none;
+  transition: none;
+  background: #e4e4e4 !important;
+  color: #494949 !important;
+  cursor: default !important;
+  pointer-events: none !important;
 }
-.gray_yellow_btn:hover {
-  background: #ffdd4a;
-  color: #000;
+.disabled_btn_gray:hover {
+  background: #e4e4e4 !important;
+  color: #494949 !important;
 }
 
 .black_yellow_btn {
@@ -4452,6 +4477,9 @@ textarea.form_input.input_v3 {
   color: #fff;
   background: #4d75a3;
 }
+.vk_btn:hover {
+  background: #538cce;
+}
 
 .fb_btn {
   -webkit-transition: color 0.3s, background 0.3s;
@@ -4459,6 +4487,9 @@ textarea.form_input.input_v3 {
   transition: color 0.3s, background 0.3s;
   color: #fff;
   background: #3c5a99;
+}
+.fb_btn:hover {
+  background: #3964bf;
 }
 
 .green_btn {

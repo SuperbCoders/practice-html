@@ -67,7 +67,7 @@ html(lang='ru')
                                                 .input_w.size_27.chosen_v1.no_search.chosen_multiple_v1
                                                     select#doctor_work_days.chosen-select(multiple data-placeholder='Выберите день')
                                                         option(value=0)
-                                                        option(value=1 data-title='Понедельнк' data-short='Пн') Понедельнк
+                                                        option(value=1 data-title='Понедельник' data-short='Пн') Понедельник
                                                         option(value=2 data-title='Вторник' data-short='В') Вторник
                                                         option(value=3 data-title='Среда' data-short='С') Среда
                                                         option(value=4 data-title='Четверг' data-short='Ч') Четверг
@@ -83,9 +83,9 @@ html(lang='ru')
                                             .form_row.mt_-10
                                                 .label_holder: .form_label
                                                 .input_w.size_27.chosen_v1.no_search.chosen_multiple_v1
-                                                    select#doctor_work_days.chosen-select(multiple data-placeholder='Выберите день')
+                                                    select.chosen-select(multiple data-placeholder='Выберите день')
                                                         option(value=0)
-                                                        option(value=1 data-title='Понедельнк' data-short='Пн') Понедельнк
+                                                        option(value=1 data-title='Понедельник' data-short='Пн') Понедельник
                                                         option(value=2 data-title='Вторник' data-short='В') Вторник
                                                         option(value=3 data-title='Среда' data-short='С') Среда
                                                         option(value=4 data-title='Четверг' data-short='Ч') Четверг
@@ -181,15 +181,15 @@ html(lang='ru')
                                             .form_row
                                                 .label_holder: .form_label Социальные сети
                                                 label.input_w.size_59.soc_input.soc_i_vk
-                                                    input.form_input.input_v1(value='vk.com/')
+                                                    input.form_input.input_v1.socPrefix(value='vk.com/', data-prefix='vk.com/')
                                             .form_row
                                                 .mob_hidden.label_holder: .form_label 
                                                 label.input_w.size_59.soc_input.soc_i_tw
-                                                    input.form_input.input_v1(value='twitter.com/')
+                                                    input.form_input.input_v1.socPrefix(value='twitter.com/', data-prefix='twitter.com/')
                                             .form_row
                                                 .mob_hidden.label_holder: .form_label 
                                                 label.input_w.size_59.soc_input.soc_i_fb
-                                                    input.form_input.input_v1(value='facebook.com/')
+                                                    input.form_input.input_v1.socPrefix(value='facebook.com/', data-prefix='facebook.com/')
                                             .form_row
                                                 .label_holder: .form_label 
                                                 .input_w.size_59

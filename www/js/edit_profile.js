@@ -41,35 +41,43 @@ $(function ($) {
         return false;
     });
 
+    var inputEvents = 'keyup,keypress,focus,blur,change'.split(',');
+
+    for (var i in inputEvents) $('.socPrefix').on(inputEvents[i], function (e) {
+
+        //console.log(e.shiftKey, e.metaKey, e.altKey, e.ctrlKey, e);
+
+        if (!(e.shiftKey || e.altKey || e.ctrlKey)) {
+            var inp = $(this), inp_val = inp.val(), inp_prefix = inp.attr('data-prefix');
+            var expr = new RegExp('^' + inp_prefix, 'ig');
+
+            inp_val = inp_val.replace(expr, '');
+            inp_val = inp_val.replace(/ /g, '');
+
+            inp.val(inp_prefix + inp_val);
+        }
+    });
+
 
     if ($('.chosen-select').length) {
 
         body_var
-            .delegate('.chosen_multiple_v1 .result-selected', 'click', function () {
+            .delegate('.chosen_multiple_v1 .extra_control', 'click', function (e) {
                 var firedEl = $(this);
 
-                if (!firedEl.hasClass('highlighted')) {
-                    var link = firedEl.closest('.chzn-container ').find('.chzn-choices .search-choice-close[data-option-array-index=' + (1 + firedEl.index()) + ']');
+                e.preventDefault();
 
-                    //firedEl.closest('.chzn-container').prev('.chosen-select').find('option').eq(1 + firedEl.index()).removeAttr('selected');
+                var chzn_container = firedEl.closest('.chzn-container '),
+                    option_ind = firedEl.parents('.chzn_item').attr('data-option-array-index') * 1;
 
-                    //firedEl.closest('.chzn-container').prev('.chosen-select').trigger('chosen:updated').trigger('chosen:open');
+                firedEl.closest('.chzn-container').prev('.chosen-select')
+                    .find('option[value=' + option_ind + ']').removeAttr('selected');
 
-                    //console.log(link);
+                updateDaysRow(chzn_container.prev('.chosen-select').trigger('chosen:updated'));
 
-                    //link.click();
+                return false;
 
-                }
-
-
-            })
-            .delegate('.chzn-choices-arrow', 'click', function (e) {
-                //e.stopPropagation();
-                //e.preventDefault();
-                
-                //return false;
             });
-
 
         $('.chosen-select')
             .on('chosen:ready', function (evt, params) {
@@ -118,33 +126,10 @@ $(function ($) {
 
             })
             .change(function (e) {
-                var slct = $(e.target), slct_val = slct.val(), chzn_container = slct.next('.chzn-container').find('.chzn-choices'), days = '';
-
-                //slct.find('option').each(function (ind) {
-                //    console.log(this.value);
-                //    if (!$.inArray(this.value.toString(), slct_val)) {
-                //        console.log($(this).data('title'));
-                //    }
-                //});
-
-                if (slct_val) {
-                    for (var i = 0; i < slct_val.length; i++) {
-                        days += ',' + slct.find('option[value=' + slct_val[i] + ']').attr('data-short')
-                    }
-
-                    days = days.replace(/^,/i, '');
-
-                    if (chzn_container.find('.chzn_rzlts').length) {
-                        chzn_container.find('.chzn_rzlts').text(days);
-                    } else {
-                        chzn_container.prepend($('<li class="chzn_rzlts" />').text(days));
-                    }
-                }
-
-
+                updateDaysRow($(e.target));
             }).chosen({
                 autohide_results_multiple: false,
-                //allow_single_deselect: true,
+                allow_single_deselect: true,
                 width: "100%",
                 className: "form_o_b_item form_o_b_value_edit_mode"
             });
@@ -155,6 +140,26 @@ $(function ($) {
 
 });
 
+function updateDaysRow(slct) {
+    var slct_val = slct.val(), chzn_container = slct.next('.chzn-container').find('.chzn-choices'), days = '';
+
+    if (slct_val) {
+        for (var i = 0; i < slct_val.length; i++) {
+            days += ',' + slct.find('option[value=' + slct_val[i] + ']').attr('data-short')
+        }
+
+        days = days.replace(/^,/i, '');
+
+        if (chzn_container.find('.chzn_rzlts').length) {
+            chzn_container.find('.chzn_rzlts').text(days);
+        } else {
+            chzn_container.prepend($('<li class="chzn_rzlts" />').text(days));
+        }
+    } else {
+        chzn_container.find('.chzn_rzlts').remove();
+    }
+
+}
 
 function fix_tab_header() {
 
