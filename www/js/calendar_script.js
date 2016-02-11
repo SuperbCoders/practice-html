@@ -34,7 +34,8 @@ $(function ($) {
 
     });
 
-    $('body').delegate('.patient_card', 'click', function (e) {
+    
+    body_var.delegate('.patient_card', 'click', function (e) {
         var firedEl = $(e.target), patient_card = $(this);
 
         if (firedEl.hasClass('skipOpen') || !!firedEl.parents('.skipOpen').length) {
@@ -51,11 +52,11 @@ $(function ($) {
 
     }).delegate('.fc-widget-content', 'mouseenter', function (e) {
         var firedEl = $(e.target), patient_card = $(this);
-        console.log(e, firedEl);
+        //console.log(e, firedEl);
 
     }).delegate('.fc-widget-content', 'mouseleave', function (e) {
         var firedEl = $(e.target), patient_card = $(this);
-        console.log(e, firedEl);
+        //console.log(e, firedEl);
 
     });
 
@@ -135,6 +136,8 @@ $(function ($) {
 
         dayClick: function (date, jsEvent, view) {
 
+            console.log(date, jsEvent, view);
+            
             $(add_patient_form[0]).find('form')[0].reset();
             $(add_patient_form[0]).find('.newPatientBtn').text('Записать на ' +
                 date.format('DD') + ' ' + (date.format('MMMM')).toString().toLowerCase().replace(/.$/, 'я') + ', в ' + date.format('HH:mm'));
@@ -367,7 +370,7 @@ $(function ($) {
         return false;
     });
 
-    $('body').delegate('.fc-event', 'click', function (e) {
+    body_var.delegate('.fc-event', 'click', function (e) {
         var btn = $(this);
 
         patient_info_form.dialog("option", "position", {
@@ -397,7 +400,7 @@ $(function ($) {
         }).dialog('open');
     });
 
-    /*$('body').delegate('.fc-event', 'click', function (e) {
+    /*body_var.delegate('.fc-event', 'click', function (e) {
      var btn = $(this), form = $(add_patient_form[0]).find('form');
 
      form[0].reset();

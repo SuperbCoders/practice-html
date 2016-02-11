@@ -24,7 +24,7 @@ $(function ($) {
                 active: 0,
                 tabContext: tabBlock.data('tab-context'),
                 activate: function (e, u) {
-  
+
                     var tab = u.newTab, tabs = tab.parents('.tab_list'),
                         tabCursor = tabs.find('.tab_active_cursor');
 
@@ -49,13 +49,22 @@ $(function ($) {
         }
     });
 
-    $('body').delegate('.cloneRowBtn', 'click', function () {
+    body_var.delegate('.rmRowBtn', 'click', function () {
+        $(this).closest('.form_row').remove();
+        return false;
+    });
+
+    body_var.delegate('.cloneRowBtn', 'click', function () {
         var row = $(this).closest('.form_row'), clone = row.clone();
 
         row.after(clone);
 
         clone.find('input').val('');
         clone.find('label').text('');
+        clone.find('.add_row_btn').removeClass('cloneRowBtn add_row_btn').addClass('rmRowBtn rm_row_btn');
+        clone.find('.chzn-container').remove();
+
+        init_chosen();
 
         return false;
     });
@@ -77,6 +86,13 @@ $(function ($) {
         }
     });
 
+    init_chosen();
+
+    fix_tab_header();
+
+});
+
+function init_chosen() {
 
     if ($('.chosen-select').length) {
 
@@ -154,10 +170,7 @@ $(function ($) {
             });
 
     }
-
-    fix_tab_header();
-
-});
+}
 
 function updateDaysRow(slct) {
     var slct_val = slct.val(), chzn_container = slct.next('.chzn-container').find('.chzn-choices'), days = '';

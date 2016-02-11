@@ -3986,6 +3986,24 @@ textarea.form_input.input_v3 {
     position: absolute;
     font-size: 15px;
   }
+
+}
+
+.rm_row_btn {
+  @extend .icon-before;
+  @extend .icon-minus;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  display: block;
+  border-radius: 100%;
+
+  &:before {
+    @extend %hor_vert_centr;
+    position: absolute;
+    font-size: 15px;
+  }
+
 }
 
 .btn_v1 {
