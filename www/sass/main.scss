@@ -83,7 +83,6 @@ a {
   &.no_header {
     padding: 0;
   }
-
 }
 
 .base {
@@ -2654,6 +2653,8 @@ $patient_scale_time: 1s;
 }
 
 .write_controls {
+  @extend %clearfix;
+
   @include respond-to-min($desktop) {
     float: left;
     width: 17%;
@@ -2706,6 +2707,7 @@ $patient_scale_time: 1s;
 }
 
 .attach_item {
+  @include transition_all(transform .7s);
   float: left;
   position: relative;
   padding-right: 30px;
@@ -2738,6 +2740,10 @@ $patient_scale_time: 1s;
       opacity: 1;
     }
 
+  }
+
+  &.removed {
+    @include transform_scale(0);
   }
 
 }

@@ -6,3 +6,27 @@
   color: #fff;
   border-radius: 10px;
 }
+
+.notifyjs-wrapper {
+  @include transition_all(transform .5s, opacity .5s);
+  @include transform_translate(0, 50px);
+  opacity: 0;
+  height: auto !important;
+  width: auto !important;
+
+  .notifyjs-container {
+    height: auto !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  &.opened {
+    opacity: 1;
+    @include transform_translate(0, 0);
+  }
+
+  &.closed {
+    opacity: 0;
+  }
+
+}
