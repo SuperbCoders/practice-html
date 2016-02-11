@@ -1660,6 +1660,7 @@ $patient_scale_time: 1s;
   position: absolute;
   top: 11px;
   left: 18px;
+  z-index: 1;
 
   &.right_mod {
     left: auto;
@@ -2065,33 +2066,34 @@ $patient_scale_time: 1s;
 }
 
 .day_info_block {
-  .day_mode & {
-    @include transition_all(transform .3s, opacity .3s);
-    @include transform_translate(100%, 0);
-    position: absolute;
-    top: 3px;
-    right: 0;
-    bottom: 0;
-    background: #fff;
-    //z-index: 1;
-    overflow-x: hidden;
-    overflow-y: auto;
-    opacity: 0;
-    pointer-events: none;
-    border-left: 1px solid #e1e1e1;
-
-    .patient_overview,
-    .patient_card {
-      border: none;
-    }
-  }
-
+ 
   @include respond-to-min($desktop) {
     .day_mode & {
-      @include transform_translate(0, 0);
-      opacity: 1;
+      @include transition_all(transform .3s, opacity .3s);
+      //@include transform_translate(100%, 0);
+      position: absolute;
+      top: 3px;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      //z-index: 1;
+      border-left: 1px solid #e1e1e1;
+      overflow-x: hidden;
+      overflow-y: auto;
+      //opacity: 0;
+      //pointer-events: none;
+
+      .patient_overview,
+      .patient_card {
+        border: none;
+      }
+    }
+
+    .day_mode & {
+      //@include transform_translate(0, 0);
+      //opacity: 1;
+      //pointer-events: all;
       width: 342px;
-      pointer-events: all;
 
       .patient_card_controls {
         border-radius: 0;
@@ -2261,6 +2263,10 @@ $patient_scale_time: 1s;
     right: auto;
     border-right: 0;
     border-left: 10px solid #fff;
+  }
+
+  @include respond-to-max($tablet) {
+    display: none;
   }
 }
 

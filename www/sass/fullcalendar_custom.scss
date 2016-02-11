@@ -161,7 +161,7 @@ $axisWidth: 60px;
     .fc-agendaWeek-view & {
       color: #f00;
     }
-    
+
     .fc-agenda-view & {
       @extend %hor_centr;
       position: absolute;
@@ -313,7 +313,7 @@ $axisWidth: 60px;
     border: none;
 
     &:before {
-      @include transition_all(background .3s);
+      @include transition_all(background .3s, width .3s);
       content: '';
       position: absolute;
       left: 0;
@@ -338,6 +338,10 @@ $axisWidth: 60px;
         background: #3eb6e5;
       }
 
+      &.event_open {
+        //background: #3eb6e5;
+      }
+
       .fc-time {
 
       }
@@ -353,6 +357,10 @@ $axisWidth: 60px;
 
       &:before {
         background: #30c36d;
+      }
+
+      &.event_open {
+        //background: #30c36d;
       }
 
       .fc-time {
@@ -415,8 +423,14 @@ $axisWidth: 60px;
       }
     }
 
-  }
+    &.event_open {
+      color: #fff;
 
+      &:before {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .calendar_v2 {

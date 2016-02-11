@@ -34,7 +34,7 @@ $(function ($) {
 
     });
 
-    
+
     body_var.delegate('.patient_card', 'click', function (e) {
         var firedEl = $(e.target), patient_card = $(this);
 
@@ -65,7 +65,10 @@ $(function ($) {
         modal: true,
         width: 360,
         appendTo: '.dayInfoBlock',
-        dialogClass: "dialog_v1 no_close_mod no_title_mod"
+        dialogClass: "dialog_v1 no_close_mod no_title_mod",
+        close: function (event, ui) {
+            $('.event_open').removeClass('event_open');
+        }
     });
 
     calendar = $('#calendar').fullCalendar({
@@ -136,14 +139,14 @@ $(function ($) {
 
         dayClick: function (date, jsEvent, view) {
 
-            console.log(date, jsEvent, view);
-            
+            //console.log(date, jsEvent, view);
+
             $(add_patient_form[0]).find('form')[0].reset();
-            $(add_patient_form[0]).find('.newPatientBtn').text('Записать на ' +
+            $(add_patient_form[0]).find('.newPatientBtn span').text('Записать на ' +
                 date.format('DD') + ' ' + (date.format('MMMM')).toString().toLowerCase().replace(/.$/, 'я') + ', в ' + date.format('HH:mm'));
 
             newEventDate = date;
-
+            console.log(jsEvent);
             add_patient_form.dialog("option", "position", {
                 my: "left+15 top-150",
                 of: jsEvent,
@@ -151,7 +154,8 @@ $(function ($) {
                 within: '.fc-view-container',
                 using: function (obj, info) {
 
-                    var dialog_form = $(this), cornerY = jsEvent.pageY - obj.top - 40;
+                    var dialog_form = $(this),
+                        cornerY = jsEvent.pageY - obj.top - 40;
 
                     if (info.horizontal != "left") {
                         dialog_form.addClass("flipped_left");
@@ -321,7 +325,7 @@ $(function ($) {
         disable_search_threshold: 3
     }).on('chosen:showing_dropdown', function (evt, params) {
 
-        $('.chosen-select');
+        //$('.chosen-select');
 
         var firedEl = $(evt.currentTarget);
 
@@ -373,6 +377,8 @@ $(function ($) {
     body_var.delegate('.fc-event', 'click', function (e) {
         var btn = $(this);
 
+        btn.addClass('event_open');
+        console.log(e);
         patient_info_form.dialog("option", "position", {
             my: "left+15 top-150",
             of: e,
@@ -380,9 +386,10 @@ $(function ($) {
             within: '.fc-view-container',
             using: function (obj, info) {
 
-                var dialog_form = $(this), cornerY = e.pageY - obj.top - 40;
-
-                console.log(e.pageY, obj.top);
+                console.log(obj, info);
+                
+                var dialog_form = $(this),
+                    cornerY = e.pageY - obj.top - 190;
 
                 if (info.horizontal != "left") {
                     dialog_form.addClass("flipped_left");
@@ -391,7 +398,7 @@ $(function ($) {
                 }
 
                 dialog_form.css({
-                    left: obj.left + 'px',
+                    left: (obj.left || 0) + 'px',
                     top: obj.top + 'px'
                 }).find('.form_corner').css({
                     top: Math.min(Math.max(cornerY, -20), dialog_form.height() - 55) + 'px'

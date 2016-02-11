@@ -734,93 +734,6 @@ textarea:focus::-moz-placeholder {
   box-shadow: inset 0.4px -1px 0.1px 0.1px #1e8dad;
 }
 
-.ui-helper-hidden {
-  display: none;
-}
-
-.ui-helper-hidden-accessible {
-  z-index: 5000;
-  position: absolute;
-  opacity: 0;
-  left: 0;
-  color: transparent;
-  visibility: hidden;
-}
-
-.ui-dialog {
-  z-index: 1000;
-  position: absolute;
-  display: none;
-  outline: 0;
-}
-.ui-dialog.dialog_v1 {
-  border-radius: 10px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.31);
-}
-.no_animation .ui-dialog {
-  display: none !important;
-}
-
-.ui-resizable-handle {
-  display: none !important;
-}
-
-.ui-widget-overlay {
-  z-index: 500;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: rgba(255, 255, 255, 0.01);
-}
-.overlay_v1 .ui-widget-overlay {
-  background: rgba(56, 56, 56, 0.75);
-}
-
-.ui-helper-clearfix {
-  display: block;
-}
-.ui-helper-clearfix:after {
-  display: block;
-  height: 0;
-  clear: both;
-  content: "";
-  visibility: hidden;
-}
-
-.no_close_mod .ui-dialog-titlebar-close {
-  display: none !important;
-}
-
-.dialog_v1 .ui-dialog-titlebar {
-  cursor: move;
-  background: #fff;
-  height: 28px;
-  border-radius: 10px 10px 0 0;
-}
-.form_success .ui-dialog-titlebar {
-  background: #6ccc7f;
-}
-.dialog_title_v1 .ui-dialog-titlebar {
-  font-size: 24px;
-  text-align: center;
-}
-.no_title_mod .ui-dialog-titlebar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-}
-
-.no_title_mod .ui-dialog-title {
-  font-size: 0 !important;
-}
-
-.ui-dialog-content {
-  position: relative;
-}
-
 html, body {
   height: 100%;
 }
@@ -2264,6 +2177,7 @@ a {
   position: absolute;
   top: 11px;
   left: 18px;
+  z-index: 1;
 }
 .patient_status_w.right_mod {
   left: auto;
@@ -2590,36 +2504,26 @@ a {
   position: relative;
 }
 
-.day_mode .day_info_block {
-  -webkit-transition: transform 0.3s, opacity 0.3s;
-  -ms-transition: transform 0.3s, opacity 0.3s;
-  transition: transform 0.3s, opacity 0.3s;
-  -webkit-transform: translate(100%, 0);
-  -ms-transform: translate(100%, 0);
-  transform: translate(100%, 0);
-  position: absolute;
-  top: 3px;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  overflow-x: hidden;
-  overflow-y: auto;
-  opacity: 0;
-  pointer-events: none;
-  border-left: 1px solid #e1e1e1;
-}
-.day_mode .day_info_block .patient_overview,
-.day_mode .day_info_block .patient_card {
-  border: none;
-}
 @media only screen and (min-width: 1200px) {
   .day_mode .day_info_block {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-    opacity: 1;
+    -webkit-transition: transform 0.3s, opacity 0.3s;
+    -ms-transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    border-left: 1px solid #e1e1e1;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .day_mode .day_info_block .patient_overview,
+  .day_mode .day_info_block .patient_card {
+    border: none;
+  }
+  .day_mode .day_info_block {
     width: 342px;
-    pointer-events: all;
   }
   .day_mode .day_info_block .patient_card_controls {
     border-radius: 0;
@@ -2764,6 +2668,11 @@ a {
   right: auto;
   border-right: 0;
   border-left: 10px solid #fff;
+}
+@media only screen and (max-width: 719px) {
+  .form_corner {
+    display: none;
+  }
 }
 
 .form_caption {
@@ -4679,6 +4588,103 @@ textarea.form_input.input_v3 {
   display: none !important;
 }
 
+.ui-helper-hidden {
+  display: none;
+}
+
+.ui-helper-hidden-accessible {
+  z-index: 5000;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  color: transparent;
+  visibility: hidden;
+}
+
+.ui-dialog {
+  z-index: 1000;
+  position: absolute;
+  display: none;
+  outline: 0;
+}
+.ui-dialog.dialog_v1 {
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.31);
+}
+@media only screen and (max-width: 719px) {
+  .ui-dialog.dialog_v1 {
+    top: 10px !important;
+    width: 100% !important;
+    max-width: 95%;
+    left: 0 !important;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+.no_animation .ui-dialog {
+  display: none !important;
+}
+
+.ui-resizable-handle {
+  display: none !important;
+}
+
+.ui-widget-overlay {
+  z-index: 500;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.01);
+}
+.overlay_v1 .ui-widget-overlay {
+  background: rgba(56, 56, 56, 0.75);
+}
+
+.ui-helper-clearfix {
+  display: block;
+}
+.ui-helper-clearfix:after {
+  display: block;
+  height: 0;
+  clear: both;
+  content: "";
+  visibility: hidden;
+}
+
+.no_close_mod .ui-dialog-titlebar-close {
+  display: none !important;
+}
+
+.dialog_v1 .ui-dialog-titlebar {
+  cursor: move;
+  background: #fff;
+  height: 28px;
+  border-radius: 10px 10px 0 0;
+}
+.form_success .ui-dialog-titlebar {
+  background: #6ccc7f;
+}
+.dialog_title_v1 .ui-dialog-titlebar {
+  font-size: 24px;
+  text-align: center;
+}
+.no_title_mod .ui-dialog-titlebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.no_title_mod .ui-dialog-title {
+  font-size: 0 !important;
+}
+
+.ui-dialog-content {
+  position: relative;
+}
+
 /*!
  * FullCalendar v2.6.0 Stylesheet
  * Docs & License: http://fullcalendar.io/
@@ -6030,9 +6036,9 @@ be a descendant of the grid when it is being dragged.
   border: none;
 }
 .calendar_v1 .fc-event:before {
-  -webkit-transition: background 0.3s;
-  -ms-transition: background 0.3s;
-  transition: background 0.3s;
+  -webkit-transition: background 0.3s, width 0.3s;
+  -ms-transition: background 0.3s, width 0.3s;
+  transition: background 0.3s, width 0.3s;
   content: '';
   position: absolute;
   left: 0;
@@ -6077,6 +6083,12 @@ be a descendant of the grid when it is being dragged.
 }
 .calendar_v1 .fc-event.status_violet:before {
   background: #ca97fc;
+}
+.calendar_v1 .fc-event.event_open {
+  color: #fff;
+}
+.calendar_v1 .fc-event.event_open:before {
+  width: 100%;
 }
 
 .calendar_v2 .fc-toolbar {
