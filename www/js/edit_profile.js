@@ -24,6 +24,25 @@ $(function ($) {
                 active: 0,
                 tabContext: tabBlock.data('tab-context'),
                 activate: function (e, u) {
+  
+                    var tab = u.newTab, tabs = tab.parents('.tab_list'),
+                        tabCursor = tabs.find('.tab_active_cursor');
+
+                    tabCursor.css({
+                        width: tab.find('.tab_link').width(),
+                        left: tab.offset().left - tabs.offset().left
+                    });
+                },
+                create: function (event, ui) {
+                    var tab = ui.tab, tabs = tab.parents('.tab_list'),
+                        tabCursor = $('<li class="tab_active_cursor" />');
+
+                    tabCursor.css({
+                        width: tab.find('.tab_link').width(),
+                        left: tab.offset().left - tabs.offset().left
+                    });
+
+                    tabs.append(tabCursor);
 
                 }
             });

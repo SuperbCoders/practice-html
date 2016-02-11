@@ -103,7 +103,7 @@
 }
 
 .ui-datepicker th,
-.ui-datepicker td, .profile_tab_header {
+.ui-datepicker td, .profile_tab_header, .tab_active_cursor, .tab_list {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   transform: translateZ(0);
@@ -1746,21 +1746,26 @@ a {
   display: block;
   position: relative;
 }
-.tab_link:before {
-  -webkit-transition: bottom 0.3s, opacity 0.3s;
-  -ms-transition: bottom 0.3s, opacity 0.3s;
-  transition: bottom 0.3s, opacity 0.3s;
-  opacity: 0;
-  content: '';
+.tab_link:hover {
+  color: #2670ff;
+}
+
+.tab_active_cursor {
+  -webkit-transition: transform 0.3s, left 0.3s, width 0.3s;
+  -ms-transition: transform 0.3s, left 0.3s, width 0.3s;
+  transition: transform 0.3s, left 0.3s, width 0.3s;
   position: absolute;
-  bottom: 15px;
+  bottom: -2px;
   right: 0;
   left: 0;
   height: 2px;
+  margin-left: 41px;
   background: #000;
 }
-.tab_link:hover {
-  color: #2670ff;
+@media only screen and (max-width: 1199px) {
+  .tab_active_cursor {
+    bottom: 0;
+  }
 }
 
 .tab_list {

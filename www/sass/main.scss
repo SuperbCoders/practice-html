@@ -1073,25 +1073,30 @@ a {
   display: block;
   position: relative;
 
-  &:before {
-    @include transition_all(bottom .3s, opacity .3s);
-    opacity: 0;
-    content: '';
-    position: absolute;
-    bottom: 15px;
-    right: 0;
-    left: 0;
-    height: 2px;
-    background: #000;
-  }
-
   &:hover {
     color: #2670ff;
   }
 }
 
+.tab_active_cursor {
+  @extend %translate3d;
+  @include transition_all(transform .3s, left .3s, width .3s);
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  left: 0;
+  height: 2px;
+  margin-left: 41px;
+  background: #000;
+
+  @include respond-to-max($desktop) {
+    bottom: 0;
+  }
+}
+
 .tab_list {
   @extend %clearfix;
+  @extend %translate3d;
   margin-left: -40px;
 }
 
