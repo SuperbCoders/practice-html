@@ -11,25 +11,38 @@ html(lang='ru')
 
                 div.main_content
                     .section_inner
-                        .patient_tip
-                                
-                            li.patient_unit
-                                
-                                .patient_card.cardAsideOverview
-                                    +patient_status()
-                                    +patient_menu()
-                                    .patient_info
-                                        .patient_name: a.skipOpen.gl_link.gray_link.write2Card(href='#'): span Самойлов Ярослав Георгиевич
-                                        p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
-                                    +patient_info_table()
-                                    .patient_card_controls.skipOpen: .patient_info_table
-                                        .controls_cell
-                                            a.btn_v2.patient_btn.black_yellow_btn(href='#'): span.mb Записать на прием
-                                    //+patient_overview()
-
-                                .avatar_clone
-                                    a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_1.png')
-                                        
+                        .patient_tip_holder
+                            .patient_tip
+                                .patient_tip_arrow
+                                    | <svg width="29px" height="138px" viewBox="0 0 29 138" version="1.1" >
+                                    | <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                    | <g id="Patients" sketch:type="MSArtboardGroup" transform="translate(-387.000000, -157.000000)" stroke="#979797">
+                                    | <path d="M413.558594,293.742188 C354.742188,215.386719 415.324219,158.007812 415.324219,158.007812" id="arrow" sketch:type="MSShapeGroup" transform="translate(401.596109, 225.875000) scale(1, -1) translate(-401.596109, -225.875000) "></path>
+                                    | <path id="arrow-decoration-1" d="M409.474348,283.303848 L413.558594,293.742188 L404.675813,286.905799"></path>
+                                    | </g>
+                                    |    </g>
+                                    | </svg>
+                                    
+                                .tip_title Здесь будут карточки ваших пациентов, выглядеть будут примерно так
+                                p Чтобы создать карточку клиента нажмите на желтую кнопку “создать новую карточку”
+                            
+                            ul.patients_list
+                                li.patient_unit
+                                    .patient_card
+                                        +patient_status()
+                                        +patient_menu()
+                                        .patient_info
+                                            .patient_name: a.skipOpen.gl_link.gray_link.write2Card(href='#'): span Самойлов Ярослав Георгиевич
+                                            p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
+                                        +patient_info_table()
+                                        .patient_card_controls.skipOpen: .patient_info_table
+                                            .controls_cell
+                                                a.btn_v2.patient_btn.black_yellow_btn(href='#'): span.mb Записать на прием
+                                        //+patient_overview()
+    
+                                    .avatar_clone
+                                        a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_1.png')
+                            
 
                 +aside_menu()
-                +aside_card()
+                //+aside_card()

@@ -1825,6 +1825,36 @@ a {
   background: #4c88fd;
 }
 
+.patient_tip_holder .patients_list {
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.patient_tip {
+  position: relative;
+  text-align: center;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 66px 40px 16px;
+}
+.patient_tip p {
+  color: #606060;
+  font-size: 15px;
+  line-height: 17px;
+}
+
+.patient_tip_arrow {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
+
+.tip_title {
+  position: relative;
+  font: 24px "HelveticaNeueLight", sans-serif;
+  margin-bottom: 20px;
+}
+
 .patients_list {
   position: relative;
 }
