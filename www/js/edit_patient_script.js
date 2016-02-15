@@ -1,10 +1,26 @@
 $(function ($) {
 
-    $('.chosen-select').chosen({
-        //allow_single_deselect: true,
-        width: "100%",
-        disable_search_threshold: 3
-    }).on('chosen:showing_dropdown', function (evt, params) {
+
+    $('.addTolist').on('click', function () {
+        var firedEl = $(this), newValInput = firedEl.closest('.writeCtrl').removeClass('show_custom_field').find('.addParamVal');
+
+        var newVal = newValInput.val();
+
+        newValInput.val('');
+
+        if (newVal.length) {
+            var slct = firedEl.closest('.writeCtrl').find(".paramSelect");
+
+            slct.find("option[data-action='custom']").before($('<option value="' + newVal + '">' + newVal + '</option>'));
+
+            slct.trigger('chosen:updated');
+        }
+
+        return false;
+    });
+
+
+    $('.chosen-select').on('chosen:showing_dropdown', function (evt, params) {
 
         $('.chosen-select');
 
@@ -37,6 +53,16 @@ $(function ($) {
 
         //if (firedEl.parents('.form_validate').length) firedEl.validationEngine('validate');
 
+    }).on('change', function () {
+        var firedEl = $(this);
+
+        firedEl.closest('.writeCtrl').toggleClass('show_custom_field', firedEl.find('option:selected').attr('data-action') == 'custom');
+
+        return false;
+    }).chosen({
+        //allow_single_deselect: true,
+        width: "100%",
+        disable_search_threshold: 3
     });
 
     $.notify.addStyle('attach', {
@@ -76,6 +102,8 @@ $(function ($) {
                 autoHideDelay: 5000,
                 destroyDelay: 500,
                 onShow: function (e) {
+                    e.wrapper.parent().find('.notifyjs-wrapper:gt(2)').addClass('closed');
+
                     setTimeout(function () {
                         e.wrapper.addClass('opened');
                     }, 3);

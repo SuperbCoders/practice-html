@@ -1,3 +1,7 @@
+.notifyjs-corner {
+  padding: 85px 5px 0 0;
+}
+
 .notifyjs-attach-removed {
   max-width: 280px;
   padding: 20px;
@@ -27,6 +31,10 @@
 
   &.closed {
     opacity: 0;
+  }
+
+  &:nth-last-child(n+4) {
+    //display: none !important;
   }
 
 }

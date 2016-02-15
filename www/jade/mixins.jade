@@ -277,6 +277,26 @@ mixin popup()
                         p: a.gl_link(href='#') Изменить время приема
                 +patient_overview()
         
+mixin write_control()
+    .writeCtrl
+        .write_control_item
+            .chosen_v3.no_search
+                select.chosen-select.paramSelect
+                    option(value=0 data-title='Ознакомление' selected) Ознакомление
+                    option(value=1 data-title='Ознакомление 2') Ознакомление 2
+                    option(value=2 data-title='Ознакомление 3') Ознакомление 3
+                    option(value=3 data-title='Ознакомление 4') Ознакомление 4
+                    option(value=4 data-title='Свое назначение' data-action='custom') Свое назначение
+
+            .write_state_control
+                .write_state_btn.mod_rm
+
+        .write_control_item.custom_field
+            .input_w
+                input.form_input.input_v8.addParamVal(placeholder='Введите название')
+            .write_state_control
+                .write_state_btn.mod_ok.addTolist
+
 mixin appointments()
     form#appointments_form(action='#' style='display:none' title=''): .popup_form.popup_v1
         .form_caption Для записи заполните  <br>  три поля ниже

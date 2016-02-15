@@ -154,7 +154,14 @@ $(function ($) {
     });
 
     $('.passBtn').on('click', function () {
-        $(this).hide().next('.passInput').show().focus();
+        $(this).hide();
+        $('.passForm').show().find('.passInput').focus();
+        return false;
+    });
+
+    $('.passCancelBtn , .passSaveBtn').on('click', function () {
+        $('.passForm').hide();
+        $('.passBtn').show();
         return false;
     });
 

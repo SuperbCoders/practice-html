@@ -13,17 +13,8 @@ html(lang='ru')
                     .section_inner
                         .patient_write_block
                             .write_controls
-                                .write_control_item
-                                    .chosen_v3.no_search
-                                        select.chosen-select
-                                            option(value=0 data-title='Ознакомление' selected) Ознакомление
-                                            option(value=1 data-title='Ознакомление 2') Ознакомление 2
-                                            option(value=2 data-title='Ознакомление 3') Ознакомление 3
-                                            option(value=3 data-title='Ознакомление 4') Ознакомление 4
-                                            
-                                .write_control_item
-                                    a.gl_link.red_link(href='#'): span Удалить запись
-                                            
+                                +write_control()
+
                             .write_content
                                 //-p Это карточка вашего пациента, для добавления первой записи выберите назначение и напишите сообщение в этом поле. 
                                 //-p Если вам потребуется, вы можете добавить любой файл с помощью кнопки справа “Прикрепить файл. 
@@ -46,22 +37,19 @@ html(lang='ru')
                                                 
                         .patient_write_block
                             .write_controls
-                                .write_control_item
-                                    .chosen_v3.no_search
-                                        select.chosen-select
-                                            option(value=0 data-title='Назначение' selected) Назначение
-                                            option(value=1 data-title='Ознакомление 3') Ознакомление 2
-                                            option(value=2 data-title='Ознакомление 4') Ознакомление 3
-                                            option(value=3 data-title='Ознакомление 4') Ознакомление 4
+                                +write_control()
 
                             .write_content
                                 textarea.form_input.input_v7(placeholder='Выберите назначение и введите текст')
                                 
                             .attach_block &nbsp;
 
+                        .text_center
+                            a.yellow_black_btn.btn_v5.add_write_block_btn(href='#')
+                                
                         .profile_tab_controls
                             .section_inner
-                                .write_controls
+                                .write_form_controls
                                     .fl: .mb: a.btn_v2.save_btn.green_btn(href='#'): span.mb  Написать                                            
                                             
                                     

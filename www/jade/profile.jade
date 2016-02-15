@@ -50,7 +50,17 @@ html(lang='ru')
                                                 .label_holder: label.form_label(for='doctor_pass') Пароль
                                                 .input_w.size_27
                                                     a.btn_v2.black_blue_btn.change_btn.passBtn(href='#') Изменить
-                                                    input.form_input.input_v1.passInput(type='password' style='display:none')
+                                                .pass_change_form.passForm
+                                                    form(action='#')
+                                                        .input_w.size_27
+                                                            input.form_input.input_v1.passInput(type='password')
+                                                        
+                                                        .input_w.mob_size_43
+                                                            button.btn_v2.black_blue_btn.change_btn.passSaveBtn Сохранить
+                                                            
+                                                        .input_w.mob_size_43
+                                                            a.btn_v2.black_blue_btn.change_btn.passCancelBtn(href='#') Отмена
+                                                                
 
                                             .form_row
                                                 .label_holder: label.form_label(for='doctor_photo') Портрет врача

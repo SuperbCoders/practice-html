@@ -108,17 +108,30 @@
           <div class="section_inner">
             <div class="patient_write_block">
               <div class="write_controls">
-                <div class="write_control_item">
-                  <div class="chosen_v3 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="Ознакомление" selected>Ознакомление</option>
-                      <option value="1" data-title="Ознакомление 2">Ознакомление 2</option>
-                      <option value="2" data-title="Ознакомление 3">Ознакомление 3</option>
-                      <option value="3" data-title="Ознакомление 4">Ознакомление 4</option>
-                    </select>
+                <div class="writeCtrl">
+                  <div class="write_control_item">
+                    <div class="chosen_v3 no_search">
+                      <select class="chosen-select paramSelect">
+                        <option value="0" data-title="Ознакомление" selected="selected">Ознакомление</option>
+                        <option value="1" data-title="Ознакомление 2">Ознакомление 2</option>
+                        <option value="2" data-title="Ознакомление 3">Ознакомление 3</option>
+                        <option value="3" data-title="Ознакомление 4">Ознакомление 4</option>
+                        <option value="4" data-title="Свое назначение" data-action="custom">Свое назначение</option>
+                      </select>
+                    </div>
+                    <div class="write_state_control">
+                      <div class="write_state_btn mod_rm"></div>
+                    </div>
+                  </div>
+                  <div class="write_control_item custom_field">
+                    <div class="input_w">
+                      <input placeholder="Введите название" class="form_input input_v8 addParamVal"/>
+                    </div>
+                    <div class="write_state_control">
+                      <div class="write_state_btn mod_ok addTolist"></div>
+                    </div>
                   </div>
                 </div>
-                <div class="write_control_item"><a href="#" class="gl_link red_link"><span>Удалить запись</span></a></div>
               </div>
               <div class="write_content"><textarea placeholder="Выберите назначение и введите текст" class="form_input input_v7">Это карточка вашего пациента, для добавления первой записи выберите назначение и напишите сообщение в этом поле. 
                  
@@ -155,14 +168,28 @@
             </div>
             <div class="patient_write_block">
               <div class="write_controls">
-                <div class="write_control_item">
-                  <div class="chosen_v3 no_search">
-                    <select class="chosen-select">
-                      <option value="0" data-title="Назначение" selected>Назначение</option>
-                      <option value="1" data-title="Ознакомление 3">Ознакомление 2</option>
-                      <option value="2" data-title="Ознакомление 4">Ознакомление 3</option>
-                      <option value="3" data-title="Ознакомление 4">Ознакомление 4</option>
-                    </select>
+                <div class="writeCtrl">
+                  <div class="write_control_item">
+                    <div class="chosen_v3 no_search">
+                      <select class="chosen-select paramSelect">
+                        <option value="0" data-title="Ознакомление" selected="selected">Ознакомление</option>
+                        <option value="1" data-title="Ознакомление 2">Ознакомление 2</option>
+                        <option value="2" data-title="Ознакомление 3">Ознакомление 3</option>
+                        <option value="3" data-title="Ознакомление 4">Ознакомление 4</option>
+                        <option value="4" data-title="Свое назначение" data-action="custom">Свое назначение</option>
+                      </select>
+                    </div>
+                    <div class="write_state_control">
+                      <div class="write_state_btn mod_rm"></div>
+                    </div>
+                  </div>
+                  <div class="write_control_item custom_field">
+                    <div class="input_w">
+                      <input placeholder="Введите название" class="form_input input_v8 addParamVal"/>
+                    </div>
+                    <div class="write_state_control">
+                      <div class="write_state_btn mod_ok addTolist"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -171,9 +198,10 @@
               </div>
               <div class="attach_block">&nbsp;</div>
             </div>
+            <div class="text_center"><a href="#" class="yellow_black_btn btn_v5 add_write_block_btn"></a></div>
             <div class="profile_tab_controls">
               <div class="section_inner">
-                <div class="write_controls">
+                <div class="write_form_controls">
                   <div class="fl">
                     <div class="mb"><a href="#" class="btn_v2 save_btn green_btn"><span class="mb"> Написать                                            </span></a></div>
                   </div>

@@ -93,7 +93,7 @@
   -webkit-box-align: stretch;
 }
 
-.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .soc_auth:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after {
+.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .soc_auth:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
   position: static;
   display: block;
   height: 0;
@@ -103,7 +103,7 @@
 }
 
 .ui-datepicker th,
-.ui-datepicker td, .profile_tab_header, .tab_active_cursor, .tab_list {
+.ui-datepicker td, .profile_tab_header, .tab_active_cursor, .tab_list, .write_state_btn {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   transform: translateZ(0);
@@ -123,7 +123,7 @@
   user-select: none;
 }
 
-.patient_info_block .add_btn_holder, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon, .input_w.soc_input:before, .go_back_btn.middle_mod {
+.patient_info_block .add_btn_holder, .write_state_control, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon, .input_w.soc_input:before, .go_back_btn.middle_mod {
   top: 50%;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -364,10 +364,10 @@ textarea:focus::-moz-placeholder {
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v1 .chosen-single:before, .chosen_v1
+[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v1 .chosen-single:before, .chosen_v1
 .chzn-single:before, .chosen_v3 .chosen-single:before, .chosen_v3
 .chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
-.chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
+.chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .btn_v5.add_write_block_btn:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .fancybox-nav:before {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -409,11 +409,11 @@ textarea:focus::-moz-placeholder {
   content: "\e902";
 }
 
-.icon-plus:before, .add_row_btn:before, .btn_v1.add_card_btn:before {
+.icon-plus:before, .add_row_btn:before, .btn_v1.add_card_btn:before, .btn_v5.add_write_block_btn:before {
   content: "\e903";
 }
 
-.icon-minus:before, .rm_row_btn:before {
+.icon-minus:before, .write_state_btn.mod_rm:before, .rm_row_btn:before {
   content: "\e90e";
 }
 
@@ -436,7 +436,7 @@ textarea:focus::-moz-placeholder {
   content: "\e601";
 }
 
-.icon-checkmark:before, .chosen_multiple_v1 .chzn_item.result-selected:before {
+.icon-checkmark:before, .write_state_btn.mod_ok:before, .chosen_multiple_v1 .chzn_item.result-selected:before {
   content: "\e906";
 }
 
@@ -1285,6 +1285,9 @@ a {
 .notification_item:last-child {
   margin-bottom: 8px;
 }
+.notification_dropdown .notification_item {
+  border-bottom-width: 1px;
+}
 
 .notification_img {
   float: left;
@@ -1780,7 +1783,7 @@ a {
   width: 50px;
   border-radius: 20px;
 }
-.doctor_photo .change_photo_btn {
+.patient_avatar_letter + .change_photo_btn, .doctor_photo .change_photo_btn {
   margin-top: -16px;
   margin-left: -20px;
   left: 100%;
@@ -2902,11 +2905,11 @@ a {
 .filter_toggle.filter_toggle_v2 {
   text-align: center;
   line-height: 40px;
-  border: 1px solid #b7b7b7;
   border-radius: 10px;
 }
 .filter_toggle.filter_toggle_v2 .filter_t_item .hidden_input:checked + .filter_t_name {
   background: #000;
+  border-color: #000;
   color: #fff;
 }
 
@@ -2933,13 +2936,16 @@ a {
 }
 .filter_toggle_v2 .filter_t_item {
   width: 50%;
-  border-radius: inherit;
 }
 .filter_toggle_v2 .filter_t_item:hover {
   background: #f5f5f5;
 }
+.filter_toggle_v2 .filter_t_item .filter_t_name {
+  border: 1px solid #b7b7b7;
+}
 .filter_toggle_v2 .filter_t_item:first-child .filter_t_name {
   border-radius: 9px 0 0 9px;
+  border-right: 0;
 }
 .filter_toggle_v2 .filter_t_item:last-child .filter_t_name {
   border-radius: 0 9px 9px 0;
@@ -3003,25 +3009,61 @@ a {
 @media only screen and (min-width: 1200px) {
   .write_controls {
     float: left;
-    width: 17%;
+    width: 20%;
     padding-right: 3.3%;
   }
+}
+
+.write_state_control {
+  position: absolute;
+  right: 0;
+}
+
+.write_state_btn {
+  -webkit-transition: background 0.3s;
+  -ms-transition: background 0.3s;
+  transition: background 0.3s;
+  display: block;
+  border-radius: 100%;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+}
+.write_state_btn:before {
+  color: #fff;
+  font-size: 20px;
+  line-height: 25px;
+}
+.write_state_btn.mod_rm {
+  background: #f62a2a;
+}
+.write_state_btn.mod_rm:hover {
+  background: #bb0909;
+}
+.write_state_btn.mod_ok {
+  background: #6ac87d;
+}
+.write_state_btn.mod_ok:hover {
+  background: #30a848;
 }
 
 .write_control_item {
   position: relative;
   margin-bottom: 10px;
   line-height: 24px;
+  padding-right: 35px;
 }
 .write_control_item .gl_link {
   font-size: 12px;
 }
-@media only screen and (max-width: 1199px) {
-  .write_control_item {
-    margin-right: 10px;
-    display: inline-block;
-    vertical-align: top;
-  }
+
+.custom_field {
+  display: none;
+}
+.show_custom_field .custom_field {
+  display: block;
 }
 
 .write_content p {
@@ -3031,7 +3073,7 @@ a {
 @media only screen and (min-width: 1200px) {
   .write_content {
     float: left;
-    width: 48%;
+    width: 45%;
   }
 }
 
@@ -3282,9 +3324,9 @@ html:not(.edit_patient) .edit_mode {
 }
 
 .filter_t_name {
-  -webkit-transition: background 0.3s, color 0.3s;
-  -ms-transition: background 0.3s, color 0.3s;
-  transition: background 0.3s, color 0.3s;
+  -webkit-transition: background 0.3s, color 0.3s, border-color 0.3s;
+  -ms-transition: background 0.3s, color 0.3s, border-color 0.3s;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
   display: block;
   cursor: pointer;
 }
@@ -3437,6 +3479,22 @@ html:not(.edit_patient) .edit_mode {
 .form_input.input_v7::-moz-placeholder {
   color: rgba(0, 0, 0, 0.4);
 }
+.form_input.input_v8 {
+  -webkit-transition: border-color 0.3s;
+  -ms-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+  border-radius: 4px;
+  border: 1px solid #cacaca;
+  padding: 6px 10px;
+  height: 34px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -.5px;
+  color: #1d1d1d;
+}
+.form_input.input_v8:focus {
+  border-color: #ffdd4a;
+}
 
 .header_search_form {
   display: inline-block;
@@ -3549,8 +3607,6 @@ html:not(.edit_patient) .edit_mode {
 }
 .input_w.soc_input .form_input {
   padding-left: 50px;
-  font-weight: bold;
-  color: #979797;
 }
 
 textarea.form_input.input_v1 {
@@ -3564,8 +3620,18 @@ textarea.form_input.input_v3 {
   height: 88px;
 }
 
+.pass_change_form,
 .hidden_input {
   display: none;
+}
+
+@media only screen and (max-width: 1199px) {
+  .pass_change_form .input_w {
+    margin-top: 10px;
+  }
+  .pass_change_form .input_w:first-child {
+    margin-top: 0;
+  }
 }
 
 .search_btn {
@@ -3726,9 +3792,9 @@ textarea.form_input.input_v3 {
   transition: border-color 0.3s;
   display: block;
   text-decoration: none;
-  border-radius: 12px;
+  border-radius: 4px;
   border: 1px solid #cacaca;
-  padding: 5px 35px 5px 10px;
+  padding: 4px 25px 4px 10px;
   height: 24px;
   font: 14px/1 "HelveticaNeueMedium", sans-serif;
   color: #1d1d1d;
@@ -3958,7 +4024,7 @@ textarea.form_input.input_v3 {
   -webkit-transition: border-color 0.3s;
   -ms-transition: border-color 0.3s;
   transition: border-color 0.3s;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 4px 4px;
   overflow: hidden;
   margin-top: -10px;
   padding-top: 22px;
@@ -4138,10 +4204,12 @@ textarea.form_input.input_v3 {
   position: relative;
   display: block;
   border-radius: 100%;
+  text-align: center;
 }
 .add_row_btn:before {
   position: absolute;
   font-size: 15px;
+  line-height: 25px;
 }
 
 .rm_row_btn {
@@ -4150,10 +4218,12 @@ textarea.form_input.input_v3 {
   position: relative;
   display: block;
   border-radius: 100%;
+  text-align: center;
 }
 .rm_row_btn:before {
   position: absolute;
   font-size: 15px;
+  line-height: 25px;
 }
 
 .btn_v1 {
@@ -4235,11 +4305,13 @@ textarea.form_input.input_v3 {
 }
 .btn_v2.change_btn {
   display: block;
+  width: 100%;
   line-height: 38px;
   text-align: center;
   padding: 0 25px;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .btn_v3 {
@@ -4325,6 +4397,23 @@ textarea.form_input.input_v3 {
   letter-spacing: .5px;
 }
 
+.btn_v5 {
+  height: 49px;
+  width: 49px;
+  text-align: center;
+}
+.btn_v5.add_write_block_btn {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  border-radius: 100%;
+  margin: 20px 0;
+}
+.btn_v5.add_write_block_btn:before {
+  font-size: 21px;
+  line-height: 49px;
+}
+
 .yellow_black_btn {
   -webkit-transition: color 0.3s, background 0.3s;
   -ms-transition: color 0.3s, background 0.3s;
@@ -4401,6 +4490,7 @@ textarea.form_input.input_v3 {
   -ms-transition: color 0.3s, border-color 0.3s;
   transition: color 0.3s, border-color 0.3s;
   color: #000;
+  background: #fff;
   border: 1px solid #000;
 }
 .black_blue_btn:hover {
@@ -4546,9 +4636,10 @@ textarea.form_input.input_v3 {
   padding-right: 20px;
 }
 
-.write_controls {
+.write_form_controls {
   padding: 0 10px;
-  line-height: 50px;
+  line-height: 48px;
+  min-height: 50px;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -6368,6 +6459,10 @@ be a descendant of the grid when it is being dragged.
   font-size: 12px;
   text-align: left;
   width: 57px;
+}
+
+.notifyjs-corner {
+  padding: 85px 5px 0 0;
 }
 
 .notifyjs-attach-removed {

@@ -2671,6 +2671,10 @@ $patient_scale_time: 1s;
     border-top: none;
     padding-top: 32px;
   }
+
+  @include respond-to-min($desktop) {
+    //padding: 20px 0 0;
+  }
 }
 
 .write_controls {
@@ -2678,8 +2682,51 @@ $patient_scale_time: 1s;
 
   @include respond-to-min($desktop) {
     float: left;
-    width: 17%;
+    width: 20%;
     padding-right: 3.3%;
+  }
+}
+
+.write_state_control {
+  @extend %vert_centr;
+  position: absolute;
+  right: 0;
+}
+
+.write_state_btn {
+  @include transition_all(background .3s);
+  @extend %translate3d;
+  @extend .icon-before;
+  display: block;
+  border-radius: 100%;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+
+  &:before {
+    color: #fff;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  &.mod_rm {
+    @extend .icon-minus;
+    background: #f62a2a;
+
+    &:hover {
+      background: #bb0909;
+    }
+  }
+
+  &.mod_ok {
+    @extend .icon-checkmark;
+    background: #6ac87d;
+
+    &:hover {
+      background: #30a848;
+    }
   }
 }
 
@@ -2687,15 +2734,24 @@ $patient_scale_time: 1s;
   position: relative;
   margin-bottom: 10px;
   line-height: 24px;
+  padding-right: 35px;
 
   .gl_link {
     font-size: 12px;
   }
 
   @include respond-to-max($desktop) {
-    margin-right: 10px;
-    display: inline-block;
-    vertical-align: top;
+    //margin-right: 10px;
+    //display: inline-block;
+    //vertical-align: top;
+  }
+}
+
+.custom_field {
+  display: none;
+
+  .show_custom_field & {
+    display: block;
   }
 }
 
@@ -2708,7 +2764,7 @@ $patient_scale_time: 1s;
 
   @include respond-to-min($desktop) {
     float: left;
-    width: 48%;
+    width: 45%;
   }
 }
 
@@ -3170,6 +3226,21 @@ $patient_scale_time: 1s;
     }
   }
 
+  &.input_v8 {
+    @include transition_all(border-color .3s);
+    border-radius: 4px;
+    border: 1px solid #cacaca;
+    padding: 6px 10px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.5px;
+    color: #1d1d1d;
+
+    &:focus {
+      border-color: #ffdd4a;
+    }
+  }
 }
 
 .header_search_form {
@@ -3340,8 +3411,8 @@ $patient_scale_time: 1s;
 
     .form_input {
       padding-left: 50px;
-      font-weight: bold;
-      color: #979797;
+      //font-weight: bold;
+      //color: #979797;
     }
   }
 }
@@ -3359,8 +3430,22 @@ textarea.form_input.input_v3 {
   height: 88px;
 }
 
+.pass_change_form,
 .hidden_input {
   display: none;
+}
+
+.pass_change_form {
+
+  @include respond-to-max($desktop) {
+    .input_w {
+      margin-top: 10px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .search_btn {
@@ -3539,9 +3624,9 @@ textarea.form_input.input_v3 {
     @extend .icon-chevron_left;
     display: block;
     text-decoration: none;
-    border-radius: 12px;
+    border-radius: 4px;
     border: 1px solid #cacaca;
-    padding: 5px 35px 5px 10px;
+    padding: 4px 25px 4px 10px;
     height: 24px;
     font: 14px/1 $HelveticaNeueMedium;
     color: #1d1d1d;
@@ -3769,7 +3854,7 @@ textarea.form_input.input_v3 {
 
   .chosen_v3 & {
     @include transition_all(border-color .3s);
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 4px 4px;
     overflow: hidden;
     margin-top: -10px;
     padding-top: 22px;
@@ -3996,11 +4081,13 @@ textarea.form_input.input_v3 {
   position: relative;
   display: block;
   border-radius: 100%;
+  text-align: center;
 
   &:before {
     @extend %hor_vert_centr;
     position: absolute;
     font-size: 15px;
+    line-height: 25px;
   }
 
 }
@@ -4013,11 +4100,13 @@ textarea.form_input.input_v3 {
   position: relative;
   display: block;
   border-radius: 100%;
+  text-align: center;
 
   &:before {
     @extend %hor_vert_centr;
     position: absolute;
     font-size: 15px;
+    line-height: 25px;
   }
 
 }
@@ -4112,11 +4201,13 @@ textarea.form_input.input_v3 {
 
   &.change_btn {
     display: block;
+    width: 100%;
     line-height: 38px;
     text-align: center;
     padding: 0 25px;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 14px;
   }
 }
 
@@ -4227,6 +4318,27 @@ textarea.form_input.input_v3 {
 
 }
 
+.btn_v5 {
+  height: 49px;
+  width: 49px;
+  text-align: center;
+
+  &.add_write_block_btn {
+    @extend .icon-before;
+    @extend .icon-plus;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    border-radius: 100%;
+    margin: 20px 0;
+
+    &:before {
+      font-size: 21px;
+      line-height: 49px;
+    }
+  }
+}
+
 .yellow_black_btn {
   @include transition_all(color .3s, background .3s);
   background: #ffdd4a;
@@ -4299,6 +4411,7 @@ textarea.form_input.input_v3 {
 .black_blue_btn {
   @include transition_all(color .3s, border-color .3s);
   color: #000;
+  background: #fff;
   border: 1px solid #000;
 
   &:hover {
@@ -4447,9 +4560,11 @@ $rectWidth: 1200px;
   }
 }
 
-.write_controls {
+.write_form_controls {
+  @extend %clearfix;
   padding: 0 10px;
-  line-height: 50px;
+  line-height: 48px;
+  min-height: 50px;
 }
 
 .mob_hidden {
