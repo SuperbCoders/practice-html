@@ -747,7 +747,7 @@ body {
   color: #000;
 }
 body.body_gray {
-  background: #e5e5e5;
+  background: #f5f5f5;
 }
 
 a {
@@ -1828,6 +1828,14 @@ a {
 .patient_tip_holder .patients_list {
   -webkit-justify-content: center;
   justify-content: center;
+}
+
+.calendar_tip {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
 .patient_tip {

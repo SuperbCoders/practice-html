@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Practic пациенты</title><!-- saved from url=(0014)about:internet -->
+    <title>Practic расписание  </title><!-- saved from url=(0014)about:internet -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="styles/jquery.fancybox.css?no_cache"/>
     <link rel="stylesheet" href="styles/main_global.css?no_cache" media="all"/>
     <script src="js/jquery1.10.js?no_cache"></script>
     <script src="js/jquery-ui.js?no_cache"></script>
     <script src="js/chosen.jquery.js?no_cache"></script>
     <script src="js/script.js?no_cache"></script>
-    <!--script(src='js/swiper.js')-->
-    <!--script(src='js/chosen.jquery.js')-->
+    <!--link(href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css')-->
+    <script src="js/moment.min.js"></script>
     <script src="js/jquery.nicescroll.js"></script>
-    <script src="js/jquery.fancybox.js"></script>
-    <script src="js/patients_script.js?no_cache"></script>
+    <script src="js/fullcalendar.js"></script>
+    <script src="js/calendar_script.js?no_cache"></script>
   </head>
-  <body class="body_gray sub_header_mod">
+  <body class="cal_header_mod cal_body_mod">
     <div class="wrapper">
-      <!--.rect_1024-->
-      <div class="base load_more_mod">
+      <!--//.rect_1024-->
+      <div class="base">
         <div class="header">
           <div class="section_inner clearfix">
             <div class="fl mob_hidden"><a href="profile.html" class="logo"></a></div>
             <div class="menu_holder">
               <ul class="main_menu">
-                <li class="main_m_item"><a href="schedule.html" class="gl_link"><span>Расписание</span></a></li>
-                <li class="main_m_item active"><a href="patients.html" class="gl_link"><span>Пациенты</span></a></li>
+                <li class="main_m_item active"><a href="schedule.html" class="gl_link"><span>Расписание</span></a></li>
+                <li class="main_m_item"><a href="patients.html" class="gl_link"><span>Пациенты</span></a></li>
               </ul>
             </div>
             <div class="fr">
@@ -89,109 +88,32 @@
             </div>
           </div>
         </div>
-        <div class="sub_header_holder">
-          <div class="section_inner clearfix">
-            <div class="fl header_search_form_holder">
-              <div class="header_search_form">
-                <form action="#" novalidate="novalidate">
-                  <label class="input_w search_input_w">
-                    <input placeholder="Поиск пациента" class="input_v2 form_input"/>
-                    <button class="search_btn"></button>
-                  </label>
-                </form>
-              </div>
-            </div>
-            <div class="fl mob_hidden read_mode"><a href="add_patient.html" class="btn_v1 add_card_btn yellow_black_btn">Создать новую карточку</a></div>
-            <div class="patient_edit_controls edit_mode"><a href="card_edit.html" class="btn_v1 green_btn save_card_btn saveCard_">Написать в карту</a></div>
-            <div class="fr filter_toggle_holder">
-              <div class="mb read_mode">
-                <form action="#" novalidate="novalidate">
-                  <ul class="filter_toggle filter_toggle_v1">
-                    <li class="filter_t_item">
-                      <label class="filter_t_box">
-                        <input type="radio" name="patient_filter" checked="checked" class="hidden_input"/><span class="filter_t_name">Все<span class="dt_hidden"> пациенты</span></span>
-                      </label>
-                    </li>
-                    <li class="filter_t_item">
-                      <label class="filter_t_box">
-                        <input type="radio" name="patient_filter" class="hidden_input"/><span class="filter_t_name"><span class="dt_hidden">Не подтвержденые</span><span class="mob_hidden">Ожидают подтверждения</span></span>
-                      </label>
-                    </li>
-                    <li class="filter_t_item mob_hidden">
-                      <label class="filter_t_box">
-                        <input type="radio" name="patient_filter" class="hidden_input"/><span class="filter_t_name">В архиве </span>
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-              <div class="mb edit_mode">
-                <ul class="avatar_catcher avatarCatcher"></ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="calendar_header_holder calendarSubHeader"></div>
         <div class="main_content">
-          <div class="section_inner">
-            <div class="patient_tip_holder">
+          <div class="section_inner calendarHolder">
+            <div class="calendar_tip">
               <div class="patient_tip">
-                <div class="patient_tip_arrow">
-                  <svg width="29px" height="138px" viewBox="0 0 29 138" version="1.1" >
-                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-                  <g id="Patients" sketch:type="MSArtboardGroup" transform="translate(-387.000000, -157.000000)" stroke="#979797">
-                  <path d="M413.558594,293.742188 C354.742188,215.386719 415.324219,158.007812 415.324219,158.007812" id="arrow" sketch:type="MSShapeGroup" transform="translate(401.596109, 225.875000) scale(1, -1) translate(-401.596109, -225.875000) "></path>
-                  <path id="arrow-decoration-1" d="M409.474348,283.303848 L413.558594,293.742188 L404.675813,286.905799"></path>
-                  </g>
-                  </g>
-                  </svg>
-                </div>
-                <div class="tip_title">Здесь будут карточки ваших пациентов, выглядеть будут примерно так</div>
-                <p>Чтобы создать карточку клиента нажмите на желтую кнопку “создать новую карточку”</p>
+                <div class="tip_title">Здесь вы можете добавить запись для пациента, нажав на пустую ячейку</div>
               </div>
-              <ul class="patients_list">
-                <li class="patient_unit">
-                  <div class="patient_card">
-                    <div class="patient_status_w chosen_v2 no_search skipOpen">
-                      <select class="chosen-select">
-                        <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
-                        <option value="1" data-title="status_green" class="state_pin status_green">2</option>
-                        <option value="2" data-title="status_red" class="state_pin status_red">3</option>
-                        <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
-                      </select>
-                    </div>
-                    <div class="patient_menu_w skipOpen">
-                      <div class="drop_down_btn"><span></span></div>
-                      <div class="drop_down_w">
-                        <ul class="drop_down_menu">
-                          <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
-                          <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
-                          <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
-                          <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
-                          <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
-                          <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="patient_info">
-                      <div class="patient_name"><a href="#" class="skipOpen gl_link gray_link write2Card"><span>Самойлов Ярослав Георгиевич</span></a></div>
-                      <p>Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд</p>
-                    </div>
-                    <div class="patient_info_table">
-                      <div class="other_info_cell">
-                        <p>+7 927 026 10 22</p>
-                        <p>yaosamo@gmail.com</p>
-                      </div>
-                    </div>
-                    <div class="patient_card_controls skipOpen">
-                      <div class="patient_info_table">
-                        <div class="controls_cell"><a href="#" class="btn_v2 patient_btn black_yellow_btn"><span class="mb">Записать на прием</span></a></div>
-                      </div>
-                    </div>
-                    <!--+patient_overview()-->
-                  </div>
-                  <div class="avatar_clone"><a href="#" class="patient_avatar skipOpen write2Card"><img src="i/user_1.png"></a></div>
-                </li>
-              </ul>
+            </div>
+            <div id="calendar" class="calendar_v1"></div>
+            <div class="day_info_block dayInfoBlock">
+              <!--.patient_card
+              +patient_status()
+              +patient_menu()
+              a.patient_avatar(href='#'): img(src='i/user_2.png')
+              .patient_info
+                  .patient_name: a.gl_link.gray_link(href='#'): span Осинцев Константин
+                  p Краткая информация о пациенте Первичный прием, возможно анализы...
+              +patient_info_table()
+              
+              .patient_card_controls.skipOpen.patient_warn: .patient_info_table
+                  .controls_cell
+                      a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
+                      p: a.gl_link(href='#') Изменить время приема
+              +patient_overview()
+              
+              -->
             </div>
           </div>
         </div>
@@ -284,7 +206,112 @@
             </div>
           </div>
         </div>
-        <!--+aside_card()-->
+      </div>
+      <div id="add_patient_form" style="display:none" class="popup_form">
+        <div class="form_corner"></div>
+        <form action="#" novalidate="novalidate">
+          <div class="patient_status_w chosen_v2 no_search skipOpen right_mod">
+            <select class="chosen-select newPatientState">
+              <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+              <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+              <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+              <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+            </select>
+          </div>
+          <div class="form_row">
+            <div class="input_w placeholder_mod">
+              <input id="new_patient_name" type="text" name="new_patient_name" value="" class="form_input input_v4 checkEmpty"/>
+              <label for="new_patient_name" class="form_label fz_20_">Имя пациента</label>
+            </div>
+          </div>
+          <div class="form_row">
+            <div class="input_w placeholder_mod">
+              <input id="new_patient_phone" type="tel" name="new_patient_phone" class="form_input input_v4 checkEmpty"/>
+              <label for="new_patient_phone" class="form_label">Телефон</label>
+            </div>
+          </div>
+          <div class="form_row">
+            <div class="input_w placeholder_mod">
+              <input id="new_patient_email" type="email" name="new_patient_email" class="form_input input_v4 checkEmpty"/>
+              <label for="new_patient_email" class="form_label">Email</label>
+            </div>
+          </div>
+          <div class="form_row">
+            <div class="input_w placeholder_mod">
+              <input id="new_patient_describe" type="email" name="new_patient_describe" class="form_input input_v4 checkEmpty"/>
+              <label for="new_patient_describe" class="form_label">Краткое описание (только для вас)</label>
+            </div>
+          </div>
+          <button class="btn_v2 new_patient_btn newPatientBtn yellow_black_btn"><span class="mb">Записать на 30 декабря, в 12:00</span></button>
+        </form>
+      </div>
+      <div id="patient_info_form" style="display:none" class="popup_form popup_v2">
+        <div class="form_corner"></div>
+        <form action="#" novalidate="novalidate">
+          <div class="patient_card cardOverview">
+            <div class="patient_status_w chosen_v2 no_search skipOpen">
+              <select class="chosen-select">
+                <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
+                <option value="1" data-title="status_green" class="state_pin status_green">2</option>
+                <option value="2" data-title="status_red" class="state_pin status_red">3</option>
+                <option value="3" data-title="status_orange" class="state_pin status_orange">4</option>
+              </select>
+            </div>
+            <div class="patient_menu_w skipOpen">
+              <div class="drop_down_btn"><span></span></div>
+              <div class="drop_down_w">
+                <ul class="drop_down_menu">
+                  <li class="drop_down_item active"><a href="#" class="gl_link"><span>Подтвердить прием</span></a></li>
+                  <li class="drop_down_item"><a href="#" class="gl_link"><span>Отказать в  приёме</span></a></li>
+                  <li class="drop_down_item"><a href="#" class="gl_link"><span>Добавить запись в карту</span></a></li>
+                  <li class="drop_down_item"><a href="#" class="gl_link"><span>Редактировать</span></a></li>
+                  <li class="drop_down_item"><a href="#" class="gl_link"><span>Отправить в архив</span></a></li>
+                  <li class="drop_down_item"><a href="#" class="gl_link"><span>Удалить</span></a></li>
+                </ul>
+              </div>
+            </div><a href="#" class="patient_avatar"><img src="i/user_2.png"/></a>
+            <div class="patient_info">
+              <div class="patient_name"><a href="#" class="gl_link gray_link"><span>Осинцев Константин</span></a></div>
+              <textarea class="input_v5 form_input skipOpen">Болят карманы, ломит штаны, от водки тошнит, вылечите скорей меня</textarea>
+            </div>
+            <div class="patient_info_table">
+              <div class="other_info_cell">
+                <p>+7 927 026 10 22</p>
+                <p>yaosamo@gmail.com</p>
+              </div>
+            </div>
+            <div class="patient_card_controls skipOpen patient_warn">
+              <div class="patient_info_table">
+                <div class="controls_cell"><a href="#" class="btn_v2 patient_btn white_white_btn"><span class="mb">Подтвердить прием на 29 декабря в 12:00</span></a>
+                  <p><a href="#" class="gl_link">Изменить время приема</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="patient_overview"><a href="#" class="btn_v3 add_patient_line white__btn">Добавить запись в карту</a>
+              <ul class="patient_overview_list">
+                <li class="patient_overview_line">
+                  <div class="overview_caption">ПОРТРЕТ ПАЦИЕНТА</div>
+                  <dl class="overview_info">
+                    <dt>Рост:</dt>
+                    <dd>185</dd>
+                    <dt>Вес</dt>
+                    <dd>78 кг</dd>
+                    <dt>Возраст</dt>
+                    <dd>18 лет</dd>
+                  </dl>
+                </li>
+                <li class="patient_overview_line">
+                  <div class="overview_caption">МЕДИЦИНСКИЕ ОСОБЕННОСТИ</div>
+                  <p>Есть хвост</p>
+                </li>
+                <li class="patient_overview_line">
+                  <div class="overview_caption">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</div>
+                  <p>Договор №000099</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </body>

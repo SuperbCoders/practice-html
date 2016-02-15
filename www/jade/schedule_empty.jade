@@ -1,0 +1,35 @@
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Practic расписание  ', false, false, false, true)
+
+    body.cal_header_mod.cal_body_mod
+        .wrapper
+            ////.rect_1024
+            .base
+                +header(1, false, true)
+
+                div.main_content
+                    .section_inner.calendarHolder
+                        .calendar_tip: .patient_tip
+                            .tip_title Здесь вы можете добавить запись для пациента, нажав на пустую ячейку
+                        #calendar.calendar_v1
+                       
+                        .day_info_block.dayInfoBlock
+                            //.patient_card
+                                +patient_status()
+                                +patient_menu()
+                                a.patient_avatar(href='#'): img(src='i/user_2.png')
+                                .patient_info
+                                    .patient_name: a.gl_link.gray_link(href='#'): span Осинцев Константин
+                                    p Краткая информация о пациенте Первичный прием, возможно анализы...
+                                +patient_info_table()
+
+                                .patient_card_controls.skipOpen.patient_warn: .patient_info_table
+                                    .controls_cell
+                                        a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
+                                        p: a.gl_link(href='#') Изменить время приема
+                                +patient_overview()
+                        
+                +aside_menu()
+            +popup()
