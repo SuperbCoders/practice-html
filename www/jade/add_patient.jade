@@ -22,15 +22,16 @@ html(lang='ru')
                                     .form_row
                                         .patient_photo_block
                                             +patient_status()
-                                            .patient_phone
+                                            //-.patient_phone
                                                 a.gl_link.blue_link(href='#')
                                                     span
                                                         | Телефон 
                                                         span.mob_hidden  клиента 
-                                            label.patient_add_avatar
+                                            input#patient_photo.hidden_input(type='file' )
+                                            .patient_add_avatar
                                                 span.patient_avatar_letter Ф
-                                                input.hidden_input(type='file')
-                                            
+                                                label.change_photo_btn.btn_v1(for='patient_photo')
+
                                     .form_row
                                         label.input_w
                                             input.form_input.input_v3(placeholder='ФИО')

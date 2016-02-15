@@ -123,27 +123,33 @@ $(function ($) {
         return false;
     });
 
-    notificationBtn.on('mousemove', function () {
-        notificationBtn.parent().addClass('notification_open');
-    }).on('mouseleave', function () {
-        clearTimeout(notificationTimer);
-
-        notificationTimer = setTimeout(function () {
+    body_var.on('click', function (e) {
+        if (!($(e.target).hasClass('notificationBtn') || $(e.target).hasClass('notificationDropdown') || $(e.target).closest('.notificationDropdown').length)) {
             notificationBtn.parent().removeClass('notification_open');
-        }, 1000);
+        }
+    });
+
+    notificationBtn.on('click', function () {
+        notificationBtn.parent().toggleClass('notification_open');
+    }).on('mouseleave', function () {
+        //clearTimeout(notificationTimer);
+        //
+        //notificationTimer = setTimeout(function () {
+        //    notificationBtn.parent().removeClass('notification_open');
+        //}, 1000);
 
     });
 
     notificationDropdown.on('mousemove', function () {
-        clearTimeout(notificationTimer);
-        notificationBtn.parent().removeClass('notification_open');
-        notificationDropdown.addClass('open');
+        //clearTimeout(notificationTimer);
+        //notificationBtn.parent().removeClass('notification_open');
+        //notificationDropdown.addClass('open');
     }).on('mouseleave', function () {
-        clearTimeout(notificationTimer);
-
-        notificationTimer = setTimeout(function () {
-            notificationDropdown.removeClass('open');
-        }, 300);
+        //clearTimeout(notificationTimer);
+        //
+        //notificationTimer = setTimeout(function () {
+        //    notificationDropdown.removeClass('open');
+        //}, 300);
 
     });
 
