@@ -34,6 +34,28 @@ $(function ($) {
      });
      */
 
+    var inputEvents = 'keyup,keypress,focus,blur,change'.split(',');
+
+    for (var i in inputEvents) $('.checkEmpty').on(inputEvents[i], function (e) {
+        var checkBlock = $(this).closest('.checkEmptyBlock'),
+            checkArr = checkBlock.find('.checkEmpty'), isReady = true;
+
+        for (var j = 0; j < checkArr.length; j++) {
+            if (!checkArr.eq(j).val().length) {
+                isReady = false;
+                break;
+            }
+        }
+
+        if (isReady) {
+            checkBlock.find('.disableEmpty').removeClass('disabled_btn_gray');
+            checkBlock.find('.disableEmpty').addClass('yellow_black_btn');
+        } else {
+            checkBlock.find('.disableEmpty').addClass('disabled_btn_gray');
+            checkBlock.find('.disableEmpty').removeClass('yellow_black_btn');
+        }
+
+    });
 
     login_form = $('#login_form').dialog({
         autoOpen: false,
@@ -87,11 +109,11 @@ $(function ($) {
         dialogClass: "dialog_v1 no_close_mod msg_form form_success",
         open: function (event, ui) {
 
-            console.log('open');
+            //console.log('open');
         },
         close: function (event, ui) {
 
-            console.log('close');
+            //console.log('close');
         }
     });
 

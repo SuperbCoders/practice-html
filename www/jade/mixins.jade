@@ -137,7 +137,7 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
             .section_inner.clearfix
                 .fl.header_search_form_holder
                     .header_search_form
-                        form(action='#')
+                        form(action='#' novalidate)
                             label.input_w.search_input_w
                                 input.input_v2.form_input(placeholder='Поиск пациента')
                                 button.search_btn
@@ -149,7 +149,7 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                     a.btn_v1.green_btn.save_card_btn.saveCard_(href='card_edit.html') Написать в карту
                     
                 .fr.filter_toggle_holder
-                    .mb.read_mode: form(action='#')
+                    .mb.read_mode: form(action='#' novalidate)
                         ul.filter_toggle.filter_toggle_v1
                             li.filter_t_item
                                 label.filter_t_box
@@ -204,7 +204,7 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
             .section_inner.clearfix
                 .fl.header_search_form_holder
                     .header_search_form
-                        form(action='#')
+                        form(action='#' novalidate)
                             label.input_w.search_input_w
                                 input.input_v2.form_input(placeholder='Поиск пациента')
                                 button.search_btn
@@ -212,7 +212,7 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                 .fl.mob_hidden
                     a.btn_v1.add_card_btn.yellow_black_btn(href='add_patient.html') Создать новую карточку
 
-                .fr.filter_toggle_holder: .mb: form(action='#')
+                .fr.filter_toggle_holder: .mb: form(action='#' novalidate)
                     ul.filter_toggle.filter_toggle_v1
                         li.filter_t_item
                             label.filter_t_box
@@ -234,7 +234,7 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
 mixin popup()
     .popup_form#add_patient_form(style='display:none')
         .form_corner
-        form(action='#')
+        form(action='#' novalidate)
             +patient_status('right_mod', 'newPatientState')
             .form_row
                 .input_w.placeholder_mod
@@ -261,7 +261,7 @@ mixin popup()
         
     .popup_form.popup_v2#patient_info_form(style='display:none')
         .form_corner
-        form(action='#')
+        form(action='#' novalidate)
             .patient_card.cardOverview
                 +patient_status()
                 +patient_menu()
@@ -304,7 +304,7 @@ mixin appointments()
             .form_row
                 .input_w.placeholder_mod
                     input#new_patient_name.form_input.input_v4.checkEmpty(type='text', name='new_patient_name', value='')
-                    label.form_label.fz_20(for='new_patient_name') Ваше имя и фамилия
+                    label.form_label.fz_20(for='new_patient_name') Введите имя и фамилию
 
             .form_row
                 .input_w.placeholder_mod
@@ -370,8 +370,8 @@ mixin aside_menu()
                 li.aside_m_item: a.gl_link.openRecoverySuccess(href='#') Выход из учетной записи
                 li.aside_m_item.aside_m_last: a.gl_link.openRegSuccess(href='#') Техническая поддержка
                 
-    .popup_form#login_form(style='display:none')
-        form(action='#')
+    #login_form.popup_form.checkEmptyBlock(style='display:none')
+        form(action='#' novalidate)
             .form_caption Вход
             
             .form_row
@@ -388,21 +388,21 @@ mixin aside_menu()
             .form_row
                 label.hidden_input(for='new_patient_email') Email
                 .input_w
-                    input#new_patient_email.form_input.input_v3.blue_mod.text_center(type='email', name='new_patient_email', placeholder='Email')
+                    input#new_patient_email.form_input.input_v3.blue_mod.text_center.checkEmpty(type='email', name='new_patient_email', placeholder='Email')
     
             .form_row
                 label.hidden_input(for='new_patient_describe') Краткое описание (только для вас)
                 .input_w
-                    input#new_patient_describe.form_input.input_v3.blue_mod.text_center(type='password', name='new_patient_describe', placeholder='Пароль')
+                    input#new_patient_describe.form_input.input_v3.blue_mod.text_center.checkEmpty(type='password', name='new_patient_describe', placeholder='Пароль')
     
             .form_row
-                button.btn_v4.login_btn.disabled_btn_gray() Войти или зарегистрироваться
+                button.btn_v4.login_btn.disabled_btn_gray.disableEmpty() Войти или зарегистрироваться
         
             .form_row.text_center
                 a.gl_link.gray_link_4(href='#') Забыли пароль?
                 
     .popup_form#recovery_form(style='display:none')
-        form(action='#')
+        form(action='#' novalidate)
             .recovery_block
                 .form_caption Восстановление пароля
                         
@@ -418,7 +418,7 @@ mixin aside_menu()
                     a.gl_link.gray_link_4(href='#') Назад
                                 
     .popup_form#recovery_success_form(style='display:none')
-        form(action='#')
+        form(action='#' novalidate)
             .recovery_block
                 .form_caption Пароль отправлен на почту yaosamo@gmail.com
 
@@ -441,7 +441,7 @@ mixin aside_card()
         .aside_menu
             //a.aside_close_btn.closeMenu(href='#')
             .patient_aside_overview
-                .patient_card.cardOverview
+                .patient_card.open_card
                     a.go_back_btn.card_mod.closeMenu(href='#')
                     +patient_menu()
                     a.patient_avatar(href='#'): img(src='i/user_2.png')

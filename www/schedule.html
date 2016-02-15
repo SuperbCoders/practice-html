@@ -130,8 +130,8 @@
             </div>
           </div>
         </div>
-        <div id="login_form" style="display:none" class="popup_form">
-          <form action="#">
+        <div id="login_form" style="display:none" class="popup_form checkEmptyBlock">
+          <form action="#" novalidate="novalidate">
             <div class="form_caption">Вход</div>
             <div class="form_row">
               <ul class="soc_auth">
@@ -147,23 +147,23 @@
             <div class="form_row">
               <label for="new_patient_email" class="hidden_input">Email</label>
               <div class="input_w">
-                <input id="new_patient_email" type="email" name="new_patient_email" placeholder="Email" class="form_input input_v3 blue_mod text_center"/>
+                <input id="new_patient_email" type="email" name="new_patient_email" placeholder="Email" class="form_input input_v3 blue_mod text_center checkEmpty"/>
               </div>
             </div>
             <div class="form_row">
               <label for="new_patient_describe" class="hidden_input">Краткое описание (только для вас)</label>
               <div class="input_w">
-                <input id="new_patient_describe" type="password" name="new_patient_describe" placeholder="Пароль" class="form_input input_v3 blue_mod text_center"/>
+                <input id="new_patient_describe" type="password" name="new_patient_describe" placeholder="Пароль" class="form_input input_v3 blue_mod text_center checkEmpty"/>
               </div>
             </div>
             <div class="form_row">
-              <button class="btn_v4 login_btn disabled_btn_gray">Войти или зарегистрироваться</button>
+              <button class="btn_v4 login_btn disabled_btn_gray disableEmpty">Войти или зарегистрироваться</button>
             </div>
             <div class="form_row text_center"><a href="#" class="gl_link gray_link_4">Забыли пароль?</a></div>
           </form>
         </div>
         <div id="recovery_form" style="display:none" class="popup_form">
-          <form action="#">
+          <form action="#" novalidate="novalidate">
             <div class="recovery_block">
               <div class="form_caption">Восстановление пароля</div>
               <div class="form_row">
@@ -180,7 +180,7 @@
           </form>
         </div>
         <div id="recovery_success_form" style="display:none" class="popup_form">
-          <form action="#">
+          <form action="#" novalidate="novalidate">
             <div class="recovery_block">
               <div class="form_caption">Пароль отправлен на почту yaosamo@gmail.com</div>
               <div class="form_row">
@@ -204,7 +204,7 @@
       </div>
       <div id="add_patient_form" style="display:none" class="popup_form">
         <div class="form_corner"></div>
-        <form action="#">
+        <form action="#" novalidate="novalidate">
           <div class="patient_status_w chosen_v2 no_search skipOpen right_mod">
             <select class="chosen-select newPatientState">
               <option value="0" data-title="status_blue" selected="selected" class="state_pin status_blue">1 </option>
@@ -242,7 +242,7 @@
       </div>
       <div id="patient_info_form" style="display:none" class="popup_form popup_v2">
         <div class="form_corner"></div>
-        <form action="#">
+        <form action="#" novalidate="novalidate">
           <div class="patient_card cardOverview">
             <div class="patient_status_w chosen_v2 no_search skipOpen">
               <select class="chosen-select">

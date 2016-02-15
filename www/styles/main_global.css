@@ -2538,6 +2538,7 @@ a {
     left: auto !important;
     top: auto !important;
     box-shadow: none !important;
+    z-index: 5 !important;
   }
   .day_mode .day_info_block .form_corner,
   .day_mode .day_info_block .ui-dialog-titlebar {
