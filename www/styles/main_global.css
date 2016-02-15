@@ -364,7 +364,7 @@ textarea:focus::-moz-placeholder {
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v1 .chosen-single:before, .chosen_v1
+[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .patient_tip_arrow:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v1 .chosen-single:before, .chosen_v1
 .chzn-single:before, .chosen_v3 .chosen-single:before, .chosen_v3
 .chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
 .chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .btn_v5.add_write_block_btn:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
@@ -397,6 +397,38 @@ textarea:focus::-moz-placeholder {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-donemark:before, .write_state_btn.mod_ok:before {
+  content: "\e90f";
+}
+
+.icon-tip_arrow:before, .patient_tip_arrow:before {
+  content: "\e911";
+}
+
+.icon-minus:before, .write_state_btn.mod_rm:before, .rm_row_btn:before {
+  content: "\e90e";
+}
+
+.icon-map_pin:before {
+  content: "\e90c";
+}
+
+.icon-attach:before, .attach_btn:before {
+  content: "\e90d";
+}
+
+.icon-search:before, .search_btn:before {
+  content: "\e909";
+}
+
+.icon-close:before, .aside_close_btn:before, .rm_attach_btn:before {
+  content: "\e908";
+}
+
+.icon-logogray:before, .logo:before {
+  content: "\e907";
+}
+
 .icon-pencil:before, .btn_v3.add_patient_line:before {
   content: "\e900";
 }
@@ -413,16 +445,27 @@ textarea:focus::-moz-placeholder {
   content: "\e903";
 }
 
-.icon-minus:before, .write_state_btn.mod_rm:before, .rm_row_btn:before {
-  content: "\e90e";
-}
-
 .icon-tw:before, .doc_soc_link.soc_i_tw:before, .input_w.soc_input.soc_i_tw:before {
   content: "\e904";
 }
 
 .icon-photo:before, .change_photo_btn:before {
   content: "\e905";
+}
+
+.icon-checkmark:before, .chosen_multiple_v1 .chzn_item.result-selected:before {
+  content: "\e906";
+}
+
+.icon-calendar_icon .path1:before, .input_w.datepicker_v1 .calendar_icon .path1:before {
+  content: "\e90a";
+  color: rgba(99, 99, 123, 0.4);
+}
+
+.icon-calendar_icon .path2:before, .input_w.datepicker_v1 .calendar_icon .path2:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: #63637b;
 }
 
 .icon-chevron_right:before, .pagination_item.pagination_next .gl_link:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before, .fancybox-nav.fancybox-next:before {
@@ -434,38 +477,6 @@ textarea:focus::-moz-placeholder {
 .chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
 .chzn-single:before, .go_back_btn:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .fancybox-nav.fancybox-prev:before {
   content: "\e601";
-}
-
-.icon-checkmark:before, .write_state_btn.mod_ok:before, .chosen_multiple_v1 .chzn_item.result-selected:before {
-  content: "\e906";
-}
-
-.icon-logogray:before, .logo:before {
-  content: "\e907";
-}
-
-.icon-close:before, .aside_close_btn:before, .rm_attach_btn:before {
-  content: "\e908";
-}
-
-.icon-search:before, .search_btn:before {
-  content: "\e909";
-}
-
-.icon-calendar_icon:before, .input_w.datepicker_v1 .calendar_icon:before {
-  content: "\e90a";
-}
-
-.icon-calendar_icon:after, .input_w.datepicker_v1 .calendar_icon:after {
-  content: "\e90b";
-}
-
-.icon-map_pin:before {
-  content: "\e90c";
-}
-
-.icon-attach:before, .attach_btn:before {
-  content: "\e90d";
 }
 
 .ui-datepicker {
@@ -1853,8 +1864,19 @@ a {
 
 .patient_tip_arrow {
   position: absolute;
-  top: 30px;
-  left: 10px;
+  top: 12px;
+  left: 0;
+  width: 35px;
+  overflow: hidden;
+  height: 165px;
+  text-align: center;
+}
+.patient_tip_arrow:before {
+  position: absolute;
+  top: 0;
+  left: -75px;
+  color: #979797;
+  font-size: 165px;
 }
 
 .tip_title {
@@ -3072,7 +3094,7 @@ a {
 }
 .write_state_btn:before {
   color: #fff;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 25px;
 }
 .write_state_btn.mod_rm {

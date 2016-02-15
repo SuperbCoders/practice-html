@@ -1289,9 +1289,24 @@ a {
 }
 
 .patient_tip_arrow {
+  @extend .icon-before;
+  @extend .icon-tip_arrow;
   position: absolute;
-  top: 30px;
-  left: 10px;
+  top: 12px;
+  left: 0;
+  width: 35px;
+  overflow: hidden;
+  height: 165px;
+  text-align: center;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: -75px;
+    color: #979797;
+    font-size: 165px;
+  }
+
 }
 
 .tip_title {
@@ -2751,7 +2766,7 @@ $patient_scale_time: 1s;
 
   &:before {
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 25px;
   }
 
@@ -2765,7 +2780,7 @@ $patient_scale_time: 1s;
   }
 
   &.mod_ok {
-    @extend .icon-checkmark;
+    @extend .icon-donemark;
     background: #6ac87d;
 
     &:hover {
