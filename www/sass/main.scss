@@ -2444,6 +2444,10 @@ $patient_scale_time: 1s;
         float: left;
         padding-right: 1.5%;
 
+        &.size_9 {
+          width: 9%;
+        }
+        
         &.size_8 {
           width: 14%;
         }
@@ -3169,7 +3173,7 @@ $patient_scale_time: 1s;
     height: 40px;
     line-height: 18px;
 
-    &:focus {
+    &:not([readonly]):focus {
       border-color: #4c88fd;
     }
   }
@@ -3185,7 +3189,7 @@ $patient_scale_time: 1s;
     letter-spacing: -.5px;
     color: #424242;
 
-    &:focus {
+    &:not([readonly]):focus {
       border-color: #ffdd4a;
     }
   }
@@ -3201,12 +3205,12 @@ $patient_scale_time: 1s;
     letter-spacing: -.5px;
     color: #424242;
 
-    &:focus {
+    &:not([readonly]):focus {
       border-color: #ffdd4a;
     }
 
     &.blue_mod {
-      &:focus {
+      &:not([readonly]):focus {
         border-color: #2670ff;
       }
     }
@@ -3223,7 +3227,7 @@ $patient_scale_time: 1s;
     color: #424242;
     box-shadow: none !important;
 
-    &:focus {
+    &:not([readonly]):focus {
       border-color: #ffdd4a;
     }
   }
@@ -3240,7 +3244,7 @@ $patient_scale_time: 1s;
     text-align: center;
     overflow-x: hidden;
 
-    &:focus {
+    &:not([readonly]):focus {
       border-color: #ffdd4a;
     }
   }
@@ -3264,7 +3268,7 @@ $patient_scale_time: 1s;
       color: #b5b5b5;
     }
 
-    &:focus {
+    &:not([readonly]):focus {
       border-color: #ffdd4a;
     }
   }
@@ -3296,7 +3300,7 @@ $patient_scale_time: 1s;
     letter-spacing: -.5px;
     color: #1d1d1d;
 
-    &:focus {
+    &:not([readonly]):focus {
       border-color: #ffdd4a;
     }
   }

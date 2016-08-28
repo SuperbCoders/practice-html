@@ -85,16 +85,6 @@
 			left: 0;
 			right: 0;
 		}
-
-		&:before {
-			background: url(../i/new_admin/close_blue.svg) no-repeat 0px 0px;
-		}
-		&:hover {
-			&:before {
-				background: url(../i/new_admin/close.svg) no-repeat 0px 0px;
-			}
-		}
-
 	}
 
 	.no_close_mod & {

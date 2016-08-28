@@ -52,7 +52,7 @@ html(lang='ru')
                                     h2.caption_v1 Портрет пациента
 
                                     .form_row
-                                        .label_holder: label.form_label(for='patient_gender') Пол
+                                        .label_holder: label.form_label(for='patient_gender_f') Пол
                                         .input_w.size_45.max_w_300
                                             ul.filter_toggle.filter_toggle_v2
                                                 li.filter_t_item
@@ -61,14 +61,17 @@ html(lang='ru')
                                                         span.filter_t_name Мужской
                                                 li.filter_t_item
                                                     label.filter_t_box
-                                                        input.hidden_input(type='radio' name='patient_filter')
+                                                        input#patient_gender_f.hidden_input(type='radio' name='patient_filter')
                                                         span.filter_t_name Женский
                                                 
                                     .form_row
-                                        .label_holder: label.form_label(for='patient_age') Возраст
+                                        .label_holder: label.form_label(for='patient_birthday') Возраст
                                         label.input_w.size_29.datepicker_v1.max_w_300
-                                            input#patient_age.form_input.input_v1()
+                                            input#patient_birthday.form_input.input_v1()
                                             span.calendar_icon
+                                        label.input_w.size_9 
+                                            input#patient_age.form_input.input_v1.text_center(maxlength=3 readonly)
+                                            
                                     .form_row
                                         .label_holder: label.form_label(for='patient_weight') Вес
                                         .input_w.size_59
@@ -89,7 +92,7 @@ html(lang='ru')
                                                 option(value=4 data-title='4 группа') 4 группа
                                             
                                         .input_w.size_27.mob_size_43.chosen_v1.no_search
-                                            select#doctor_stand_time.chosen-select(data-placeholder='Резус фактора')
+                                            select#doctor_rh_factor.chosen-select(data-placeholder='Резус фактора')
                                                 option(value='' data-title='')
                                                 option(value=0 data-title='+') -
                                                 option(value=1 data-title='-') +

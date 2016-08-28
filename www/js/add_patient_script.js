@@ -5,7 +5,7 @@ var profile_tabs,
 
 $(function ($) {
 
-    $("#patient_age").datepicker({
+    $("#patient_birthday").datepicker({
         firstDay: 1,
         changeMonth: true,
         changeYear: true,
