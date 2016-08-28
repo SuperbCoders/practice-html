@@ -65,13 +65,12 @@ html(lang='ru')
                                                         span.filter_t_name Женский
                                                 
                                     .form_row
-                                        .label_holder: label.form_label(for='patient_birthday') Возраст
+                                        .label_holder: label.form_label(for='patient_age') Возраст
                                         label.input_w.size_29.datepicker_v1.max_w_300
-                                            input#patient_birthday.form_input.input_v1()
+                                            input#patient_age.form_input.input_v1()
                                             span.calendar_icon
-                                        label.input_w.size_9 
-                                            input#patient_age.form_input.input_v1.text_center(maxlength=3 readonly)
-                                            
+                                        span.patient_age_val 22 года
+
                                     .form_row
                                         .label_holder: label.form_label(for='patient_weight') Вес
                                         .input_w.size_59

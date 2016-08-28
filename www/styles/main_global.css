@@ -115,7 +115,7 @@
   backface-visibility: hidden;
 }
 
-.disabled_btn_gray {
+.patient_age_val, .disabled_btn_gray {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2827,6 +2827,9 @@ a {
     float: left;
     padding-right: 1.5%;
   }
+  .form_row_v1 .form_row .input_w.size_9 {
+    width: 9%;
+  }
   .form_row_v1 .form_row .input_w.size_8 {
     width: 14%;
   }
@@ -2873,6 +2876,14 @@ a {
 }
 .login_form .form_row .input_w {
   margin-bottom: 0;
+}
+
+.patient_age_val {
+  border-radius: 8px;
+  border: 1px solid #b7b7b7;
+  padding: 10px;
+  height: 40px;
+  line-height: 18px;
 }
 
 .toggle_emul {
@@ -3434,7 +3445,7 @@ html:not(.edit_patient) .edit_mode {
   height: 40px;
   line-height: 18px;
 }
-.form_input.input_v1:focus {
+.form_input.input_v1:not([readonly]):focus {
   border-color: #4c88fd;
 }
 .form_input.input_v2 {
@@ -3450,7 +3461,7 @@ html:not(.edit_patient) .edit_mode {
   letter-spacing: -.5px;
   color: #424242;
 }
-.form_input.input_v2:focus {
+.form_input.input_v2:not([readonly]):focus {
   border-color: #ffdd4a;
 }
 .form_input.input_v3 {
@@ -3466,10 +3477,10 @@ html:not(.edit_patient) .edit_mode {
   letter-spacing: -.5px;
   color: #424242;
 }
-.form_input.input_v3:focus {
+.form_input.input_v3:not([readonly]):focus {
   border-color: #ffdd4a;
 }
-.form_input.input_v3.blue_mod:focus {
+.form_input.input_v3.blue_mod:not([readonly]):focus {
   border-color: #2670ff;
 }
 .form_input.input_v4 {
@@ -3485,7 +3496,7 @@ html:not(.edit_patient) .edit_mode {
   color: #424242;
   box-shadow: none !important;
 }
-.form_input.input_v4:focus {
+.form_input.input_v4:not([readonly]):focus {
   border-color: #ffdd4a;
 }
 .form_input.input_v5 {
@@ -3502,7 +3513,7 @@ html:not(.edit_patient) .edit_mode {
   text-align: center;
   overflow-x: hidden;
 }
-.form_input.input_v5:focus {
+.form_input.input_v5:not([readonly]):focus {
   border-color: #ffdd4a;
 }
 .form_input.input_v6 {
@@ -3524,7 +3535,7 @@ html:not(.edit_patient) .edit_mode {
 .form_input.input_v6::-moz-placeholder {
   color: #b5b5b5;
 }
-.form_input.input_v6:focus {
+.form_input.input_v6:not([readonly]):focus {
   border-color: #ffdd4a;
 }
 .form_input.input_v7 {
@@ -3553,7 +3564,7 @@ html:not(.edit_patient) .edit_mode {
   letter-spacing: -.5px;
   color: #1d1d1d;
 }
-.form_input.input_v8:focus {
+.form_input.input_v8:not([readonly]):focus {
   border-color: #ffdd4a;
 }
 

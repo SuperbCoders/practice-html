@@ -2511,6 +2511,15 @@ $patient_scale_time: 1s;
   }
 }
 
+.patient_age_val {
+  @extend %no-user-select;
+  border-radius: 8px;
+  border: 1px solid #b7b7b7;
+  padding: 10px;
+  height: 40px;
+  line-height: 18px;
+}
+
 .toggle_emul {
   position: relative;
   display: block;
