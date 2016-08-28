@@ -3,8 +3,8 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		watch  : {
 			templates: {
-				files  : ['jade/*.jade'],
-				tasks  : ['jade'],
+				files: ['jade/*.jade', 'jade/*.pug'],
+				tasks: ['pug'],
 				options: {
 					spawn: false
 				}
@@ -25,6 +25,24 @@ module.exports = function(grunt){
 				files  : {
 					'styles/main_global.css': 'sass/main_global.scss'
 				}
+			}
+		},
+		pug: {
+			release: {
+				options: {
+					data: {
+						client: true,
+						debug: false,
+						pretty: false
+					}
+				},
+				files: [{
+					cwd: "jade/",
+					src: "*.jade",
+					dest: "",
+					expand: true,
+					ext: ".html"
+				}]
 			}
 		},
 		jade   : {

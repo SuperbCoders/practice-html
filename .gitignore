@@ -6,4 +6,4 @@
 *.iml
 out
 gen
-
+www/node_modules
