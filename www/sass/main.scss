@@ -2518,6 +2518,7 @@ $patient_scale_time: 1s;
   padding: 10px;
   height: 40px;
   line-height: 18px;
+  float: left;
 }
 
 .toggle_emul {
@@ -2532,7 +2533,6 @@ $patient_scale_time: 1s;
     width: 70px;
     border-radius: 16px;
   }
-
 }
 
 .toggle_box {

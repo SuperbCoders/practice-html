@@ -2884,6 +2884,7 @@ a {
   padding: 10px;
   height: 40px;
   line-height: 18px;
+  float: left;
 }
 
 .toggle_emul {
