@@ -5982,8 +5982,8 @@
 
             return $('<a class="fc-more"/>')
                 .text(
-                this.getMoreLinkText(hiddenSegs.length)
-            )
+                    this.getMoreLinkText(hiddenSegs.length)
+                )
                 .on('click', function (ev) {
                     var clickOption = view.opt('eventLimitClick');
                     var date = _this.getCellDate(row, col);
@@ -6980,12 +6980,12 @@
                 ) +
                 '</div>' +
                 '<div class="fc-bg"/>' +
-                    /* TODO: write CSS for this
-                     (isResizableFromStart ?
-                     '<div class="fc-resizer fc-start-resizer" />' :
-                     ''
-                     ) +
-                     */
+                /* TODO: write CSS for this
+                 (isResizableFromStart ?
+                 '<div class="fc-resizer fc-start-resizer" />' :
+                 ''
+                 ) +
+                 */
                 (isResizableFromEnd ?
                         '<div class="fc-resizer fc-end-resizer" />' :
                         ''
@@ -7130,9 +7130,9 @@
         compareForwardSegs: function (seg1, seg2) {
             // put higher-pressure first
             return seg2.forwardPressure - seg1.forwardPressure ||
-                    // put segments that are closer to initial edge first (and favor ones with no coords yet)
+                // put segments that are closer to initial edge first (and favor ones with no coords yet)
                 (seg1.backwardCoord || 0) - (seg2.backwardCoord || 0) ||
-                    // do normal sorting...
+                // do normal sorting...
                 this.compareEventSegs(seg1, seg2);
         },
 
@@ -9369,6 +9369,7 @@
 
         //selectable: false,
         unselectAuto: true,
+        forceRigid: false,
 
         dropAccept: '*',
 
@@ -9779,21 +9780,21 @@
                                         button.removeClass(tm + '-state-down');
                                     })
                                     .hover(
-                                    function () {
-                                        // the *hover* effect.
-                                        // only on buttons that are not the "active" tab, or disabled
-                                        button
-                                            .not('.' + tm + '-state-active')
-                                            .not('.' + tm + '-state-disabled')
-                                            .addClass(tm + '-state-hover');
-                                    },
-                                    function () {
-                                        // undo the *hover* effect
-                                        button
-                                            .removeClass(tm + '-state-hover')
-                                            .removeClass(tm + '-state-down'); // if mouseleave happens before mouseup
-                                    }
-                                );
+                                        function () {
+                                            // the *hover* effect.
+                                            // only on buttons that are not the "active" tab, or disabled
+                                            button
+                                                .not('.' + tm + '-state-active')
+                                                .not('.' + tm + '-state-disabled')
+                                                .addClass(tm + '-state-hover');
+                                        },
+                                        function () {
+                                            // undo the *hover* effect
+                                            button
+                                                .removeClass(tm + '-state-hover')
+                                                .removeClass(tm + '-state-down'); // if mouseleave happens before mouseup
+                                        }
+                                    );
 
                                 groupChildren = groupChildren.add(button);
                             }
@@ -11082,7 +11083,7 @@
         // Determines whether each row should have a constant height
         hasRigidRows: function () {
             var eventLimit = this.opt('eventLimit');
-            return eventLimit && typeof eventLimit !== 'number';
+            return this.opt('forceRigid') || eventLimit && typeof eventLimit !== 'number';
         },
 
 
@@ -11105,7 +11106,8 @@
         // Adjusts the vertical dimensions of the view to the specified values
         setHeight: function (totalHeight, isAuto) {
             var eventLimit = this.opt('eventLimit');
-            var scrollerHeight;
+            var forceRigid = this.opt('forceRigid');
+            var scrollerHeight, forceLimit;
 
             // reset all heights to be natural
             unsetScroller(this.scrollerEl);
@@ -11113,17 +11115,23 @@
 
             this.dayGrid.removeSegPopover(); // kill the "more" popover if displayed
 
-            // is the event limit a constant level number?
-            if (eventLimit && typeof eventLimit === 'number') {
-                this.dayGrid.limitRows(eventLimit); // limit the levels first so the height can redistribute after
+            scrollerHeight = this.computeScrollerHeight(totalHeight);
+
+            if (forceRigid) {
+                forceLimit = Math.floor(scrollerHeight / this.dayGrid.rowEls.length / 40) - 1;
             }
 
-            scrollerHeight = this.computeScrollerHeight(totalHeight);
+            // is the event limit a constant level number?
+            if ((eventLimit && typeof eventLimit === 'number')) {
+                this.dayGrid.limitRows(Math.min(forceLimit, eventLimit)); // limit the levels first so the height can redistribute after
+            }
             this.setGridHeight(scrollerHeight, isAuto);
 
+            // console.log(totalHeight, scrollerHeight, forceLimit, this, $(this.dayGrid.cellEls[0]).height());
+
             // is the event limit dynamically calculated?
-            if (eventLimit && typeof eventLimit !== 'number') {
-                this.dayGrid.limitRows(eventLimit); // limit the levels after the grid's row heights have been set
+            if ((eventLimit && typeof eventLimit !== 'number')) {
+                this.dayGrid.limitRows(Math.min(forceLimit, eventLimit)); // limit the levels after the grid's row heights have been set
             }
 
             if (!isAuto && setPotentialScroller(this.scrollerEl, scrollerHeight)) { // using scrollbars?

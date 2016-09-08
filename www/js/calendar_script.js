@@ -6,7 +6,8 @@ var calendar,
     win,
     calTimer,
     calendarHolder,
-    regDate = moment('2016-01-12'),
+    calHeight = 0,
+    regDate = moment('01/12/2016'),
 //regDate = new Date(),
     dayArr = ['mon', 'tue', 'web', 'thu', 'fri', 'sat', 'sun']
     ;
@@ -93,7 +94,7 @@ $(function ($) {
 
         header: {
             left: 'title',
-            center: 'agendaDay,agendaWeek',
+            center: 'agendaDay,agendaWeek,month',
             right: 'prev,next'
         },
         columnFormat: {
@@ -101,10 +102,11 @@ $(function ($) {
             week: 'ddd, D',
             day: 'dddd, D'
         },
-        titleFormat: {
-            day: 'MMMM YYYY',
-            week: 'MMMM YYYY'
-        },
+        // titleFormat: {
+        //     day: 'MMMM YYYY',
+        //     week: 'MMMM YYYY',
+        //     month: 'MMMM YYYY'
+        // },
 
         //titleFormat: {
         //    twoweek: "MMM d[ yyyy]{ '&#8212;'[ MMM] d yyyy}"
@@ -121,15 +123,31 @@ $(function ($) {
         defaultDate: regDate,
         //businessHours: true, // display business hours
         editable: true,
+        forceRigid: true,
         allDaySlot: false,
+        handleWindowResize: false,
         slotLabelFormat: 'H:mm',
         timeFormat: 'H:mm',
         defaultEventMinutes: 60,
-
+        views: {
+            month: {
+                eventLimit: 7,
+                eventLimitClick: 'day',
+                eventLimitText: function (evt) {
+                    return 'Еще ' + plural(evt, 'запись', 'записи', 'записей');
+                }
+            }
+        },
         viewRender: function (view, element) {
             calendarHolder.toggleClass('day_mode', 'agendaDay' == view.name);
 
             if (timelineInterval !== void 0) setTimeline();
+
+            if (view.name == 'month') {
+                console.log(element);
+            }
+
+            // console.log(view, element);
 
         },
 
@@ -146,7 +164,9 @@ $(function ($) {
                 date.format('DD') + ' ' + (date.format('MMMM')).toString().toLowerCase().replace(/.$/, 'я') + ', в ' + date.format('HH:mm'));
 
             newEventDate = date;
-            console.log(jsEvent);
+
+            console.log(jsEvent, newEventDate);
+
             add_patient_form.dialog("option", "position", {
                 my: "left+15 top-150",
                 of: jsEvent,
@@ -378,7 +398,7 @@ $(function ($) {
         var btn = $(this);
 
         btn.addClass('event_open');
-        console.log(e);
+        // console.log(e);
         patient_info_form.dialog("option", "position", {
             my: "left+15 top-150",
             of: e,
@@ -386,8 +406,8 @@ $(function ($) {
             within: '.fc-view-container',
             using: function (obj, info) {
 
-                console.log(obj, info);
-                
+                // console.log(obj, info);
+
                 var dialog_form = $(this),
                     cornerY = e.pageY - obj.top - 190;
 
@@ -447,12 +467,14 @@ $(function ($) {
 
 });
 
+function plural(n, str1, str2, str5) {
+    return n + ' ' + ((((n % 10) == 1) && ((n % 100) != 11)) ? (str1) : (((((n % 10) >= 2) && ((n % 10) <= 4)) && (((n % 100) < 10) || ((n % 100) >= 20))) ? (str2) : (str5)))
+}
 
 $(window).resize(function () {
     clearTimeout(calTimer);
 
     calTimer = setTimeout(function () {
-        console.log(getCalendarHeight());
         calendar.fullCalendar('option', 'height', getCalendarHeight());
     }, 3);
 
@@ -460,9 +482,9 @@ $(window).resize(function () {
 
 function getCalendarHeight() {
 
-    var newHeight = (win.height() + (win.width() > 1200 ? 40 : -50) - $('.wrapper').css('paddingTop').replace('px', '') * 1);
+    calHeight = Math.max(300, (win.height() + (win.width() > 1200 ? 40 : -50) - $('.wrapper').css('paddingTop').replace('px', '') * 1));
 
-    return Math.max(newHeight, 300);
+    return calHeight;
 }
 
 function setTimeline() {
@@ -513,6 +535,6 @@ function switchToAgendaDay() {
 
 $(window).resize(function () {
 
-    switchToAgendaDay()
+    // switchToAgendaDay();
 
 });

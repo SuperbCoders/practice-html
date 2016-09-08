@@ -2240,7 +2240,7 @@ a {
   position: absolute;
   top: 11px;
   left: 18px;
-  z-index: 1;
+  z-index: 2;
 }
 .patient_status_w.right_mod {
   left: auto;
@@ -6019,6 +6019,22 @@ be a descendant of the grid when it is being dragged.
   .day_mode .calendar_v1 .fc-time-grid .fc-event-container {
     margin-right: 140px;
   }
+}
+.calendar_v1.fc-ltr .fc-basic-view .fc-day-number {
+  text-align: left;
+  font: 20px/1 "HelveticaNeueLight", sans-serif;
+  padding: 10px;
+  color: #000;
+}
+.calendar_v1 span.fc-day-number {
+  display: block;
+}
+.calendar_v1 .fc-more-cell {
+  padding: 11px 7px 10px;
+}
+.calendar_v1 .fc-more-cell .fc-more {
+  color: #868686;
+  font: 12px/1 "HelveticaNeue", sans-serif;
 }
 .calendar_v1 .fc-toolbar {
   position: fixed;

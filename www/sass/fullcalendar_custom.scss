@@ -16,6 +16,30 @@ $axisWidth: 60px;
     //overflow: hidden;
   }
 
+  &.fc-ltr .fc-basic-view .fc-day-number {
+    text-align: left;
+    font: 20px/1 $HelveticaNeueLight;
+    padding: 10px;
+    color: #000;
+  }
+
+  span.fc-day-number {
+    display: block;
+  }
+  
+  .fc-more-cell {
+    padding: 11px 7px 10px;
+
+    .fc-more {
+      color: #868686;
+      font: 12px/1 $HelveticaNeueReg;
+    }
+  }
+
+  .fc-basic-view .fc-body .fc-row {
+    //min-height: 0;
+  }
+  
   .fc-toolbar {
     position: fixed;
     top: 0;
