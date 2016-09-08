@@ -19,7 +19,7 @@ $(function ($) {
     add_patient_form = $('#add_patient_form').dialog({
         autoOpen: false,
         modal: true,
-        width: 360,
+        width: 340,
         dialogClass: "dialog_v1 no_close_mod"
     });
 

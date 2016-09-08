@@ -2682,6 +2682,35 @@ a {
   border: none;
   box-shadow: none;
 }
+.popup_form.popup_v3 {
+  padding: 0 23px 23px;
+}
+.popup_form.popup_v3 .btn_v2.new_patient_btn {
+  margin-top: 18px;
+}
+.popup_form.popup_v3 .input_w.placeholder_mod .form_label {
+  top: 7px;
+  font-size: 16px;
+}
+.popup_form.popup_v3 .input_w {
+  margin-bottom: 11px;
+}
+.popup_form.popup_v3 .input_w.placeholder_mod {
+  padding-top: 10px;
+}
+.popup_form.popup_v3 .input_w.placeholder_mod input.not_empty + .form_label,
+.popup_form.popup_v3 .input_w.placeholder_mod input:focus + .form_label {
+  top: -3px;
+  font-size: 12px;
+}
+.popup_form.popup_v3 .form_corner {
+  border-top-width: 8px;
+  border-bottom-width: 8px;
+  border-right-width: 8px;
+}
+.popup_form.popup_v3 .controls_block p {
+  margin-top: 15px;
+}
 .popup_form .input_w {
   margin-bottom: 32px;
 }

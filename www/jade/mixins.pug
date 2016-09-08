@@ -232,7 +232,7 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                                 span.filter_t_name В архиве 
 
 mixin popup()
-    .popup_form#add_patient_form(style='display:none')
+    .popup_form.popup_v3#add_patient_form(style='display:none')
         .form_corner
         form(action='#' novalidate)
             +patient_status('right_mod', 'newPatientState')
@@ -255,10 +255,11 @@ mixin popup()
                 .input_w.placeholder_mod
                     input#new_patient_describe.form_input.input_v4.checkEmpty(type='email', name='new_patient_describe')
                     label.form_label(for='new_patient_describe') Краткое описание (только для вас)
-    
-            button.btn_v2.new_patient_btn.newPatientBtn.yellow_black_btn(): span.mb Записать на 30 декабря, в 12:00
-        
-        
+            .controls_block
+                button.btn_v2.new_patient_btn.newPatientBtn.yellow_black_btn(): span.mb Записать на 30 декабря, в 12:00
+                p.text_center: a.gl_link(href='#') Изменить время приема
+
+
     .popup_form.popup_v2#patient_info_form(style='display:none')
         .form_corner
         form(action='#' novalidate)
