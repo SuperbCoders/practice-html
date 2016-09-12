@@ -11118,7 +11118,7 @@
             scrollerHeight = this.computeScrollerHeight(totalHeight);
 
             if (forceRigid) {
-                forceLimit = Math.floor(scrollerHeight / this.dayGrid.rowEls.length / 40) - 1;
+                forceLimit = Math.floor(scrollerHeight / this.dayGrid.rowEls.length / 40) - 1 || 1;
             }
 
             // is the event limit a constant level number?

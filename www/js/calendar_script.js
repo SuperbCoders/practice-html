@@ -482,7 +482,7 @@ $(window).resize(function () {
 
 function getCalendarHeight() {
 
-    calHeight = Math.max(300, (win.height() + (win.width() > 1200 ? 40 : -50) - $('.wrapper').css('paddingTop').replace('px', '') * 1));
+    calHeight = Math.max(500, (win.height() + (win.width() > 1200 ? 40 : -50) - $('.wrapper').css('paddingTop').replace('px', '') * 1));
 
     return calHeight;
 }
