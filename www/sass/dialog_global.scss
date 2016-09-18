@@ -88,6 +88,12 @@
 
 }
 
+.dialog-titlebar-close {
+  .no_close_mod & {
+    display: none !important;
+  }
+}
+
 .ui-dialog-titlebar {
   .dialog_v1 & {
     cursor: move;

@@ -7,6 +7,10 @@
   background: #63637b;
   border-radius: 10px;
 
+  &.change_time_mod {
+    border-top-left-radius: 0;
+  }
+
   //display: block !important;
 
   //	&:before {
@@ -167,6 +171,12 @@
 
       &:hover {
         color: #ffdd4a;
+      }
+      
+      &.ui-state-active {
+        cursor: default;
+        color: #000;
+        background: #ffdd4a;
       }
     }
   }

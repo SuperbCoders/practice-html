@@ -32,7 +32,7 @@ html(lang='ru')
                                                 .patient_card_controls.skipOpen.patient_warn: .patient_info_table
                                                     .controls_cell
                                                         a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
-                                                        p: a.gl_link(href='#') Изменить время приема
+                                                        p: a.gl_link.changeReceptionTime(href='#') Изменить время приема
                                                 //+patient_overview()
                                                     
                                             .avatar_clone
@@ -132,3 +132,6 @@ html(lang='ru')
                 
                 +aside_menu()
                 +aside_card()
+                
+        +time_switcher()
+        

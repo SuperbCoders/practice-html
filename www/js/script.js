@@ -200,6 +200,44 @@ $(function ($) {
         return false;
     });
 
+
+    $('.chosen-select').each(function (ind) {
+        $(this).chosen({
+            //allow_single_deselect: true,
+            width: "100%",
+            disable_search_threshold: 3
+        }).on('chosen:showing_dropdown', function (evt, params) {
+
+            var firedEl = $(evt.currentTarget);
+
+            var niceScrollBlock = firedEl.next('.chzn-container').find('.chzn-results');
+
+            if (niceScrollBlock.getNiceScroll().length) {
+                niceScrollBlock.getNiceScroll().resize().show();
+            } else {
+
+                console.log(firedEl.data('rails_class'));
+
+                niceScrollBlock.niceScroll({
+                    cursorwidth: 4,
+                    cursorborderradius: 2,
+                    cursorborder: 'none',
+                    bouncescroll: false,
+                    autohidemode: false,
+                    horizrailenabled: false,
+                    railsclass: firedEl.data('rails_class'),
+                    railpadding: {top: 0, right: firedEl.data('rails_r') || 0, left: 0, bottom: 0}
+                });
+            }
+        }).on('chosen:hiding_dropdown', function (evt, params) {
+            var firedEl = $(evt.currentTarget);
+
+            var niceScrollBlock = firedEl.next('.chzn-container').find('.chzn-results');
+
+            niceScrollBlock.getNiceScroll().hide();
+        });
+    });
+
     all_dialog_close();
 
 });

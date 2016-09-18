@@ -165,7 +165,7 @@ $(function ($) {
 
             newEventDate = date;
 
-            console.log(jsEvent, newEventDate);
+            // console.log(jsEvent, newEventDate);
 
             add_patient_form.dialog("option", "position", {
                 my: "left+15 top-150",

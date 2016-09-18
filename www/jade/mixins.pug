@@ -231,6 +231,75 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                                 input.hidden_input(type='radio' name='patient_filter')
                                 span.filter_t_name В архиве 
 
+mixin time_switcher()
+    form#change_reception_form(action='#' style='display:none' title='')
+        .time_switcher
+            .time_switcher_block
+                .form_row
+                    .form_cell
+                        .time_switch_term Дата:
+                    .form_cell
+                        .time_switch_val
+                            input#change_reception_time.form_input.input_v9(value='6 января' tabindex="-1")
+                            
+                .form_row
+                    .form_cell
+                        .time_switch_term Начало:
+                    .form_cell
+                        .time_switch_val.chosen_v4.no_search
+                            select.chosen-select(data-placeholder='время' data-rails_class='rails_v5' data-rails_r='20')
+                                option(value='' data-title='')
+                                option(value=1 data-title='') 6 : 00
+                                option(value=2 data-title='' disabled) 7:15—7:45
+                                option(value=3 data-title='') 7:45
+                                option(value=4 data-title='' disabled) 8:00—8:30
+                                option(value=5 data-title='') 8:30
+                                option(value=6 data-title='') 9:00
+                                option(value=7 data-title='') 10:00
+                                option(value=8 data-title='') 11:00
+                                option(value=9 data-title='') 12:00
+                                option(value=10 data-title='') 13:00
+                                option(value=11 data-title='') 14:00
+                                option(value=12 data-title='') 15:00
+                                option(value=13 data-title='') 16:00
+                                option(value=14 data-title='') 17:00
+                            
+                .form_row
+                    .form_cell
+                        .time_switch_term Конец:
+                    .form_cell
+                        .time_switch_val.chosen_v4.no_search
+                            select.chosen-select(data-placeholder='время' data-rails_class='rails_v5' data-rails_r='20')
+                                option(value='' data-title='')
+                                option(value=1 data-title='') 6 : 00
+                                option(value=2 data-title='' disabled) 7:15—7:45
+                                option(value=3 data-title='') 7:45
+                                option(value=4 data-title='' disabled) 8:00—8:30
+                                option(value=5 data-title='') 8:30
+                                option(value=6 data-title='') 9:00
+                                option(value=7 data-title='') 10:00
+                                option(value=8 data-title='') 11:00
+                                option(value=9 data-title='') 12:00
+                                option(value=10 data-title='') 13:00
+                                option(value=11 data-title='') 14:00
+                                option(value=12 data-title='') 15:00
+                                option(value=13 data-title='') 16:00
+                                option(value=14 data-title='') 17:00
+                            
+                .form_row
+                    .form_cell
+                        .time_switch_term Повторять:
+                    .form_cell
+                        .time_switch_val.chosen_v4.no_search
+                            select.chosen-select(data-rails_class='rails_v5' data-rails_r='20')
+                                option(value='' data-title='')
+                                option(value=0 data-title='' selected) Нет
+                                option(value=1 data-title='') Да
+                            
+                .form_row.text_center
+                    a.time_switcher_btn(href='#') Сохранить
+        
+        
 mixin popup()
     .popup_form.popup_v3#add_patient_form(style='display:none')
         .form_corner
@@ -257,7 +326,10 @@ mixin popup()
                     label.form_label(for='new_patient_describe') Краткое описание (только для вас)
             .controls_block
                 button.btn_v2.new_patient_btn.newPatientBtn.yellow_black_btn(): span.mb Записать на 30 декабря, в 12:00
-                p.text_center: a.gl_link(href='#') Изменить время приема
+                .time_switch_block
+                    
+                    .text_center
+                        a.gl_link(href='#') Изменить время приема
 
 
     .popup_form.popup_v2#patient_info_form(style='display:none')
@@ -275,7 +347,7 @@ mixin popup()
                 .patient_card_controls.skipOpen.patient_warn: .patient_info_table
                     .controls_cell
                         a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
-                        p: a.gl_link(href='#') Изменить время приема
+                        p: a.gl_link.changeReceptionTime(href='#') Изменить время приема
                 +patient_overview()
         
 mixin write_control()
@@ -454,5 +526,5 @@ mixin aside_card()
                     .patient_card_controls.skipOpen.patient_warn: .patient_info_table
                         .controls_cell
                             a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
-                            p: a.gl_link(href='#') Изменить время приема
+                            p: a.gl_link.changeReceptionTime(href='#') Изменить время приема
                     +patient_overview()

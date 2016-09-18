@@ -2326,6 +2326,96 @@ $patient_scale_time: 1s;
 
 }
 
+.time_switch_w {
+  margin-top: 10px;
+  position: relative;
+}
+
+.time_switcher {
+  //position: absolute;
+  //bottom: 100%;
+  //left: 50%;
+  //margin-left: -120px;
+  //margin-bottom: 25px;
+  //width: 240px;
+
+  position: relative;
+  border-radius: 10px;
+  background: #32323f;
+  text-align: left;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #32323f;
+  }
+
+  .flipped_top & {
+    &:before {
+      top: auto;
+      bottom: 100%;
+      border-top: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #32323f;
+    }
+  }
+}
+
+.time_switch_term {
+  color: #fff;
+  font: 13px $HelveticaNeueLight;
+  //float: left;
+  //width: 40%;
+}
+
+.time_switch_val {
+  margin-top: -18px;
+  //float: left;
+  //width: 60%;
+}
+
+.time_switcher_block {
+  padding: 20px 20px 10px;
+
+  .form_row {
+    @extend %clearfix;
+    padding: 10px 0 13px;
+    border-top: 1px solid #4f4c5a;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .form_cell {
+    float: left;
+    width: 58%;
+
+    &:first-child {
+      width: 42%;
+    }
+  }
+}
+
+.time_switcher_btn {
+  @include transition_all(color .3s);
+  display: inline-block;
+  vertical-align: top;
+  font: 14px $HelveticaNeueMedium;
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    color: #ffdd4a;
+  }
+}
+
 .msg_header {
   @extend %global_flex_block_column_nowrap_space_around_stretch;
   padding: 10px 20px;
@@ -3351,6 +3441,22 @@ $patient_scale_time: 1s;
       border-color: #ffdd4a;
     }
   }
+
+  &.input_v9 {
+    @include transition_all(border-color .3s);
+    border-radius: 10px 10px 0 0;
+    padding: 16px 20px 3px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+    width: 130px;
+
+    &.dp_opened,
+    &:focus {
+      background: #63637b;
+    }
+  }
 }
 
 .header_search_form {
@@ -3695,24 +3801,24 @@ textarea.form_input.input_v3 {
 .chzn-single {
   cursor: pointer;
 
-  .chosen_v1 & {
+  .chosen_v4 & {
     @include transition_all(border-color .3s);
     @extend .icon-before;
     @extend .icon-chevron_left;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 16px 36px 3px 20px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 18px;
+    width: 136px;
     display: block;
     text-decoration: none;
-    border-radius: 8px;
-    border: 1px solid #b7b7b7;
-    padding: 10px;
-    padding-right: 35px;
-    height: 40px;
-    line-height: 18px;
-    color: #000;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     position: relative;
-    background: #fff;
+    z-index: 0 !important;
 
     &:before {
       @include transition_all(transform .3s);
@@ -3720,11 +3826,11 @@ textarea.form_input.input_v3 {
       position: absolute;
       right: 20px;
       font-size: 18px;
-      color: #111;
+      color: #fff;
     }
 
     &.chzn-default {
-      color: #969696;
+      color: #fff;
     }
   }
 
@@ -3766,6 +3872,15 @@ textarea.form_input.input_v3 {
   .chosen_v1 .chzn-with-drop & {
     border-color: #4c88fd;
     z-index: 7;
+
+    &:before {
+      @include transform_rotate(90);
+    }
+  }
+
+  .chosen_v4 .chzn-with-drop & {
+    background: #63637b;
+    width: 150px;
 
     &:before {
       @include transform_rotate(90);
@@ -3848,7 +3963,16 @@ textarea.form_input.input_v3 {
       @include transform_rotate(90);
     }
   }
+}
 
+.nicescroll-rails {
+  &.rails_v5 {
+    z-index: 4000 !important;
+
+    div {
+      background: #8f8fa7 !important;
+    }
+  }
 }
 
 .state_pin {
@@ -3971,6 +4095,36 @@ textarea.form_input.input_v3 {
     padding-bottom: 12px;
     line-height: 29px;
     border: 1px solid #a7a69c;
+  }
+
+  .chosen_v4 & {
+    background: #63637b;
+    width: 150px;
+    max-height: 280px;
+    overflow-y: auto;
+    border-radius: 0 0 10px 10px;
+    padding-top: 12px;
+
+    .chzn_item {
+      padding: 12px 20px;
+      color: #fff;
+
+      &:hover {
+        color: #ffdd4a;
+      }
+
+      &.disabled-result {
+        color: #a3a3b9;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      &.result-selected {
+        cursor: default;
+        color: #000;
+        background: #ffdd4a;
+      }
+    }
   }
 
   .chosen_v1 .chzn-with-drop &,
