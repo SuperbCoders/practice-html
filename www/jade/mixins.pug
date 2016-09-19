@@ -230,6 +230,14 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                             label.filter_t_box
                                 input.hidden_input(type='radio' name='patient_filter')
                                 span.filter_t_name В архиве 
+        
+    .preloader
+        .fl.spinner6()
+            .rect1
+            .rect2
+            .rect3
+            .rect4
+            .rect5
 
 mixin time_switcher()
     form#change_reception_form(action='#' style='display:none' title='')

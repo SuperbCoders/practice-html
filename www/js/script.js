@@ -176,11 +176,11 @@ $(function ($) {
                     if (target.offset().top - obj.top < 25) {
                         dialog_form.addClass("flipped_top");
                         koef = 0;
-                        
+
                         if (target.hasClass('patient_btn')) {
                             koef = 40;
                         }
-                        
+
                     } else {
                         dialog_form.removeClass("flipped_top");
                     }
@@ -327,6 +327,13 @@ $(function ($) {
 
 });
 
+$(window).on('load', function () {
+
+    setTimeout(function () {
+        $('.preloader').fadeOut(800);
+    }, 800);
+
+});
 
 function all_dialog_close() {
     body_var.on('click', '.ui-widget-overlay', all_dialog_close_gl);
