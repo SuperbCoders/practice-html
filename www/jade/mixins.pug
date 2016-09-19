@@ -341,11 +341,7 @@ mixin popup()
                     label.form_label(for='new_patient_describe') Краткое описание (только для вас)
             .controls_block
                 button.btn_v2.new_patient_btn.newPatientBtn.yellow_black_btn(): span.mb Записать на 30 декабря, в 12:00
-                .time_switch_block
-                    
-                    .text_center
-                        a.gl_link(href='#') Изменить время приема
-
+                p.text_center: a.gl_link.changeReceptionTime(href='#') Изменить время приема
 
     .popup_form.popup_v2#patient_info_form(style='display:none')
         .form_corner
