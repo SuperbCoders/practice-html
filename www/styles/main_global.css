@@ -6971,6 +6971,13 @@ be a descendant of the grid when it is being dragged.
 .calendar_v1 .fc-event.status_red:before {
   background: #f63f3f;
 }
+.calendar_v1 .fc-event.status_red_2 {
+  background: rgba(244, 85, 51, 0.92);
+  color: #fff;
+}
+.calendar_v1 .fc-event.status_red_2:before {
+  background: #f63f3f;
+}
 .calendar_v1 .fc-event.status_orange {
   background: rgba(255, 245, 202, 0.92);
   color: #7c6a19;

@@ -413,6 +413,23 @@ $axisWidth: 60px;
       }
     }
 
+    &.status_red_2 {
+      background: rgba(244, 85, 51, .92);
+      color: #fff;
+
+      &:before {
+        background: #f63f3f;
+      }
+
+      .fc-time {
+
+      }
+
+      .fc-title {
+
+      }
+    }
+
     &.status_orange {
       background: rgba(255, 245, 202, .92);
       color: #7c6a19;

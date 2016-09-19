@@ -400,7 +400,8 @@ $(function ($) {
             title: $('#new_patient_name').val() || 'Test',
             start: newEventDate.subtract(30, 'minutes'),
             end: newEventDate,
-            className: newPatientState.find('option').eq(newPatientState.val()).attr('class').replace('state_pin', ''),
+            className: 'status_red_2',
+            // className: newPatientState.find('option').eq(newPatientState.val()).attr('class').replace('state_pin', ''),
             allDay: false
         });
 
