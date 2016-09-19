@@ -117,6 +117,91 @@ $(function ($) {
         }
     });
 
+    if ($("#change_reception_time").length) {
+        $("#change_reception_time").datepicker({
+            firstDay: 1,
+            // changeMonth: true,
+            // changeYear: true,
+            yearRange: '1920:2016',
+            dateFormat: 'd MM',
+            showOn: 'focus',
+            //changeYear: $changeYear,
+            defaultDate: +1,
+            numberOfMonths: 1,
+            showOtherMonths: true,
+            unifyNumRows: true,
+            //buttonImage: $buttonImage,
+            //showOn: "both",
+            nextText: '',
+            prevText: '',
+            monthNames: ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"],
+            monthNamesShort: ["Янв", "Фев", "Март", "Апр", "Май", "Июнь", "Июль", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+            dayNames: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+            dayNamesShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+            beforeShow: function (inp, dp) {
+                console.log(inp, dp);
+
+                $(inp).parent().addClass('dp_opened');
+
+                $(dp.dpDiv).addClass('change_time_mod');
+
+            },
+            onClose: function (inp, dp) {
+                console.log(inp, dp);
+                $(dp.input).parent().removeClass('dp_opened');
+            }
+        });
+
+
+        changeReceptionForm = $('#change_reception_form').dialog({
+            autoOpen: false,
+            modal: true,
+            width: 240,
+            dialogClass: "no_close_mod "
+        });
+
+        $('.changeReceptionTime').on('click', function (jsEvent) {
+            var firedEl = $(this), target = firedEl;
+
+            changeReceptionForm.dialog("option", "position", {
+                my: "left bottom-25",
+                at: 'right center',
+                of: target,
+                collision: "flip flip",
+                // within: firedEl.parent(),
+                using: function (obj, info) {
+                    var dialog_form = $(this), koef = 15;
+
+                    if (target.offset().top - obj.top < 25) {
+                        dialog_form.addClass("flipped_top");
+                        koef = 0;
+                        
+                        if (target.hasClass('patient_btn')) {
+                            koef = 40;
+                        }
+                        
+                    } else {
+                        dialog_form.removeClass("flipped_top");
+                    }
+
+                    dialog_form.css({
+                        opacity: 0,
+                        left: (target.offset().left + (target.width() - dialog_form.width()) / 2) + 'px',
+                        top: (obj.top - target.height() + koef + 20) + 'px'
+                    });
+
+                    setTimeout(function () {
+                        dialog_form.animate({opacity: 1, top: (obj.top - target.height() + koef + 10)}, 200);
+                    }, 5);
+
+                }
+            }).dialog('open');
+
+            return false;
+        });
+    }
+
     $('.openLogin').on('click', function () {
 
         login_form.dialog('open');

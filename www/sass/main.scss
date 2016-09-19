@@ -2390,6 +2390,20 @@ $patient_scale_time: 1s;
   margin-top: -18px;
   //float: left;
   //width: 60%;
+
+  position: relative;
+
+  &.dp_opened {
+    &:before {
+      content: '';
+      background: #63637b;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 10px;
+      height: 10px;
+    }
+  }
 }
 
 .time_switcher_block {
@@ -3491,7 +3505,7 @@ $patient_scale_time: 1s;
     color: #fff;
     width: 130px;
 
-    &.dp_opened,
+    .dp_opened &,
     &:focus {
       background: #63637b;
     }
