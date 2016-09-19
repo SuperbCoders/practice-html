@@ -77,6 +77,22 @@ $(function ($) {
         }
     });
 
+
+    $('#first_run_schedule').dialog({
+        autoOpen: true,
+        modal: true,
+        width: 325,
+        closeText: '',
+        appendTo: '.wrapper',
+        dialogClass: "dialog_v2 dialog_close_butt_mod_1 dialog_yellow",
+        open: function (event, ui) {
+            body_var.addClass('overlay_v2');
+        },
+        close: function (event, ui) {
+            body_var.removeClass('overlay_v2');
+        }
+    });
+    
     body_var.delegate('.write2Card', 'click', function (e) {
 
         html_var.addClass('edit_patient');

@@ -301,6 +301,14 @@ mixin time_switcher()
         
         
 mixin popup()
+    .popup_form.popup_v4#first_run_patients(style='display:none')
+        .first_run_tips
+            h3.first_run_caption Здесь находится карты ваших пациентов
+            p Пока у вас не заведено ниодной карты, чтобы создать нового нажмите на кнопку ниже
+            
+            .first_run_controls
+                a.first_run_btn.white_blue_btn.btn_v6(href='#') Создать запись
+        
     .popup_form.popup_v3#add_patient_form(style='display:none')
         .form_corner
         form(action='#' novalidate)

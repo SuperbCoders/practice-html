@@ -72,6 +72,21 @@ $(function ($) {
         }
     });
 
+    $('#first_run_patients').dialog({
+        autoOpen: true,
+        modal: true,
+        width: 325,
+        closeText: '',
+        appendTo: '.wrapper',
+        dialogClass: "dialog_v2 dialog_close_butt_mod_1 dialog_green",
+        open: function (event, ui) {
+            body_var.addClass('overlay_v2');
+        },
+        close: function (event, ui) {
+            body_var.removeClass('overlay_v2');
+        }
+    });
+
     calendar = $('#calendar').fullCalendar({
         firstDay: 1,
         height: getCalendarHeight(),

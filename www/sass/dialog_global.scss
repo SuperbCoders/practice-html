@@ -57,6 +57,7 @@
   //	background: #fff;
   background: transparentize(#fff, .99);
 
+  .overlay_v2 &,
   .overlay_v1 & {
     background: transparentize(#383838, .25);
   }
@@ -76,7 +77,27 @@
 
 .ui-dialog-titlebar-close {
   .dialog_close_butt_mod_1 & {
-    // виды крестиков закрытия
+    @extend .icon-before;
+    @extend .icon-close;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    background: none;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 20px;
+      line-height: 28px;
+      color: rgba(0, 0, 0, .5);
+    }
   }
 
   .no_close_mod & {
@@ -100,6 +121,20 @@
     background: #fff;
     height: 28px;
     border-radius: 10px 10px 0 0;
+  }
+
+  .dialog_v2 & {
+    cursor: move;
+    height: 45px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .dialog_green & {
+    background: #adffcb;
+  }
+
+  .dialog_yellow & {
+    background: #ffe977;
   }
 
   .form_success & {

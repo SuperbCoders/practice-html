@@ -2301,6 +2301,18 @@ $patient_scale_time: 1s;
     }
   }
 
+  &.popup_v4 {
+    padding: 0 40px 40px;
+  }
+
+  .dialog_green & {
+    background: #adffcb;
+  }
+
+  .dialog_yellow & {
+    background: #ffe977;
+  }
+
   .input_w {
     margin-bottom: 32px;
 
@@ -2414,6 +2426,33 @@ $patient_scale_time: 1s;
   &:hover {
     color: #ffdd4a;
   }
+}
+
+.first_run_tips {
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  padding-bottom: 50px;
+  min-height: 312px;
+
+  p {
+    margin-bottom: 20px;
+    font-size: 19px;
+    line-height: 22px;
+    color: #000;
+  }
+}
+
+.first_run_controls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.first_run_caption {
+  font: 26px $HelveticaNeueBold;
+  margin-bottom: 25px;
+
 }
 
 .msg_header {
@@ -4603,6 +4642,22 @@ textarea.form_input.input_v3 {
   }
 }
 
+.btn_v6 {
+  height: 46px;
+
+  &.first_run_btn {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 13px 20px;
+    min-width: 160px;
+    border-radius: 10px;
+  }
+}
+
 .yellow_black_btn {
   @include transition_all(color .3s, background .3s);
   background: #ffdd4a;
@@ -4681,6 +4736,16 @@ textarea.form_input.input_v3 {
   &:hover {
     border-color: #4c88fd;
     color: #4c88fd;
+  }
+}
+
+.white_blue_btn {
+  @include transition_all(color .3s, border-color .3s);
+  color: #fff;
+  background: #3f6ce2;
+
+  &:hover {
+    background: darken(#3f6ce2, 5%);
   }
 }
 

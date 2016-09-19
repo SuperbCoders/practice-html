@@ -1,4 +1,4 @@
-include mixins
+include mixins.pug
 doctype html
 html(lang='ru')
     +dev_head('Practic пациенты', false, true)
@@ -134,4 +134,11 @@ html(lang='ru')
                 +aside_card()
                 
         +time_switcher()
-        
+
+        .popup_form.popup_v4#first_run_schedule(style='display:none')
+            .first_run_tips
+                h3.first_run_caption Это ваше ежедневное расписание
+                p Составлять график приема, подтверждайте запись пациентов и начинать прием вы можете на экране расписания
+
+                .first_run_controls
+                    a.first_run_btn.white_blue_btn.btn_v6(href='#') Новый пациент

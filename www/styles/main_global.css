@@ -367,7 +367,7 @@ textarea:focus::-moz-placeholder {
 [class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .patient_tip_arrow:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v4 .chosen-single:before, .chosen_v4
 .chzn-single:before, .chosen_v3 .chosen-single:before, .chosen_v3
 .chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
-.chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .btn_v5.add_write_block_btn:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
+.chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .btn_v5.add_write_block_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .fancybox-nav:before {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -421,7 +421,7 @@ textarea:focus::-moz-placeholder {
   content: "\e909";
 }
 
-.icon-close:before, .aside_close_btn:before, .rm_attach_btn:before {
+.icon-close:before, .aside_close_btn:before, .rm_attach_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before {
   content: "\e908";
 }
 
@@ -2719,6 +2719,15 @@ a {
 .popup_form.popup_v3 .controls_block p {
   margin-top: 15px;
 }
+.popup_form.popup_v4 {
+  padding: 0 40px 40px;
+}
+.dialog_green .popup_form {
+  background: #adffcb;
+}
+.dialog_yellow .popup_form {
+  background: #ffe977;
+}
 .popup_form .input_w {
   margin-bottom: 32px;
 }
@@ -2808,6 +2817,31 @@ a {
 }
 .time_switcher_btn:hover {
   color: #ffdd4a;
+}
+
+.first_run_tips {
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  padding-bottom: 50px;
+  min-height: 312px;
+}
+.first_run_tips p {
+  margin-bottom: 20px;
+  font-size: 19px;
+  line-height: 22px;
+  color: #000;
+}
+
+.first_run_controls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.first_run_caption {
+  font: 26px "HelveticaNeueBold", sans-serif;
+  margin-bottom: 25px;
 }
 
 .msg_header {
@@ -4658,6 +4692,21 @@ textarea.form_input.input_v3 {
   line-height: 49px;
 }
 
+.btn_v6 {
+  height: 46px;
+}
+.btn_v6.first_run_btn {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 13px 20px;
+  min-width: 160px;
+  border-radius: 10px;
+}
+
 .yellow_black_btn {
   -webkit-transition: color 0.3s, background 0.3s;
   -ms-transition: color 0.3s, background 0.3s;
@@ -4740,6 +4789,17 @@ textarea.form_input.input_v3 {
 .black_blue_btn:hover {
   border-color: #4c88fd;
   color: #4c88fd;
+}
+
+.white_blue_btn {
+  -webkit-transition: color 0.3s, border-color 0.3s;
+  -ms-transition: color 0.3s, border-color 0.3s;
+  transition: color 0.3s, border-color 0.3s;
+  color: #fff;
+  background: #3f6ce2;
+}
+.white_blue_btn:hover {
+  background: #295bdf;
 }
 
 .vk_btn {
@@ -4973,7 +5033,7 @@ textarea.form_input.input_v3 {
   top: 0;
   background: rgba(255, 255, 255, 0.01);
 }
-.overlay_v1 .ui-widget-overlay {
+.overlay_v2 .ui-widget-overlay, .overlay_v1 .ui-widget-overlay {
   background: rgba(56, 56, 56, 0.75);
 }
 
@@ -4988,6 +5048,26 @@ textarea.form_input.input_v3 {
   visibility: hidden;
 }
 
+.dialog_close_butt_mod_1 .ui-dialog-titlebar-close {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  background: none;
+}
+.dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.5);
+}
 .no_close_mod .ui-dialog-titlebar-close {
   display: none !important;
 }
@@ -5001,6 +5081,17 @@ textarea.form_input.input_v3 {
   background: #fff;
   height: 28px;
   border-radius: 10px 10px 0 0;
+}
+.dialog_v2 .ui-dialog-titlebar {
+  cursor: move;
+  height: 45px;
+  border-radius: 10px 10px 0 0;
+}
+.dialog_green .ui-dialog-titlebar {
+  background: #adffcb;
+}
+.dialog_yellow .ui-dialog-titlebar {
+  background: #ffe977;
 }
 .form_success .ui-dialog-titlebar {
   background: #6ccc7f;
