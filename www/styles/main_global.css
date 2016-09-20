@@ -364,7 +364,7 @@ textarea:focus::-moz-placeholder {
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .patient_tip_arrow:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v4 .chosen-single:before, .chosen_v4
+[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .patient_tip_arrow:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .msg_check:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v4 .chosen-single:before, .chosen_v4
 .chzn-single:before, .chosen_v3 .chosen-single:before, .chosen_v3
 .chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
 .chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .btn_v5.add_write_block_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
@@ -453,7 +453,7 @@ textarea:focus::-moz-placeholder {
   content: "\e905";
 }
 
-.icon-checkmark:before, .chosen_multiple_v1 .chzn_item.result-selected:before {
+.icon-checkmark:before, .msg_check:before, .chosen_multiple_v1 .chzn_item.result-selected:before {
   content: "\e906";
 }
 
@@ -3278,6 +3278,12 @@ a {
 .popup_form.popup_v4 {
   padding: 0 40px 40px;
 }
+.dialog_green_2 .popup_form {
+  background: #2fce4f;
+}
+.msg_form_2 .popup_form {
+  border-radius: 0 0 20px 20px;
+}
 .dialog_green .popup_form {
   background: #adffcb;
 }
@@ -3424,6 +3430,42 @@ a {
   padding: 35px 60px 40px;
   background: #fff;
   border-radius: 0 0 10px 10px;
+}
+
+.msg_title {
+  text-align: center;
+  color: #fff;
+  font: 30px "HelveticaNeueMedium", sans-serif;
+  margin-bottom: 20px;
+}
+
+.msg_check {
+  position: relative;
+  margin: 30px auto;
+  background: #5be467;
+  width: 132px;
+  height: 132px;
+  text-align: center;
+  border-radius: 100%;
+}
+.msg_check:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 55px;
+  line-height: 135px;
+  color: #fff;
+}
+
+.msg_text {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0 auto 30px;
+  max-width: 280px;
 }
 
 .form_corner {
@@ -5111,6 +5153,17 @@ textarea.form_input.input_v3 {
 .btn_v2 {
   height: 40px;
 }
+.btn_v2.cancel_btn {
+  max-width: 220px;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  font: 16px/38px "HelveticaNeue", sans-serif;
+  text-align: center;
+  border-radius: 20px;
+  letter-spacing: .5px;
+}
 .btn_v2.new_patient_btn {
   width: 100%;
   display: block;
@@ -5329,6 +5382,17 @@ textarea.form_input.input_v3 {
   transition: color 0.3s, background 0.3s;
   color: #000;
   background: #fff;
+}
+
+.white_green_btn_2 {
+  -webkit-transition: color 0.3s, background 0.3s;
+  -ms-transition: color 0.3s, background 0.3s;
+  transition: color 0.3s, background 0.3s;
+  color: #2fce4f;
+  background: #fff;
+}
+.white_green_btn_2:hover {
+  color: #2ab947;
 }
 
 .white_transp_2_btn {
@@ -5663,6 +5727,13 @@ textarea.form_input.input_v3 {
 }
 .dialog_green .ui-dialog-titlebar {
   background: #adffcb;
+}
+.dialog_green_2 .ui-dialog-titlebar {
+  background: #2fce4f;
+}
+.msg_form_2 .ui-dialog-titlebar {
+  height: 45px;
+  border-radius: 20px 20px 0 0;
 }
 .dialog_yellow .ui-dialog-titlebar {
   background: #ffe977;

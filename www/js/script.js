@@ -102,18 +102,17 @@ $(function ($) {
         }
     });
 
-    reg_success_form = $('#reg_success_form').dialog({
+    reg_success_form = $('#reg_success_form_2').dialog({
         autoOpen: false,
+        // autoOpen: true,
         modal: true,
-        width: 480,
-        dialogClass: "dialog_v1 no_close_mod msg_form form_success",
+        width: 380,
+        dialogClass: "dialog_v1 no_close_mod dialog_green_2 msg_form_2 ",
         open: function (event, ui) {
-
-            //console.log('open');
+            body_var.addClass('overlay_v2');
         },
         close: function (event, ui) {
-
-            //console.log('close');
+            body_var.removeClass('overlay_v2');
         }
     });
 
@@ -281,7 +280,7 @@ $(function ($) {
 
     $('.userMenu').on('click', function () {
         html_var.toggleClass('user_menu_open');
-           return false;
+        return false;
     });
 
     $('.closeMenu').on('click', function () {

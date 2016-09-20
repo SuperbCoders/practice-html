@@ -137,12 +137,11 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                     
                     .user_m_down_w
                         ul.user_drop_down_menu
-                            li.user_drop_down_item: a.gl_link(href='#'): span Профиль
-                            li.user_drop_down_item: a.gl_link(href='#'): span Сайт
-                            li.user_drop_down_item: a.gl_link(href='#'): span Техподдержка
-                            li.user_drop_down_item: a.gl_link(href='#'): span Выход
-                        
-                        
+                            li.user_drop_down_item: a.gl_link.openRegSuccess(href='#'): span Профиль
+                            li.user_drop_down_item: a.gl_link.openLogin(href='#'): span Сайт
+                            li.user_drop_down_item: a.gl_link.openRecovery(href='#'): span Техподдержка
+                            li.user_drop_down_item: a.gl_link.openRecoverySuccess(href='#'): span Выход
+                            
                 //-a.menu_humburger.openMenu(href='#'): span Меню
                 
     - if (sub_header)
@@ -466,7 +465,8 @@ mixin aside_menu()
                 li.aside_m_item: a.gl_link.openRecovery(href='#') Настройки
                 li.aside_m_item: a.gl_link.openRecoverySuccess(href='#') Выход из учетной записи
                 li.aside_m_item.aside_m_last: a.gl_link.openRegSuccess(href='#') Техническая поддержка
-                
+
+mixin popups()
     #login_form.popup_form.checkEmptyBlock(style='display:none')
         form(action='#' novalidate)
             .form_caption Вход
@@ -533,6 +533,13 @@ mixin aside_menu()
             .text_center: a.btn_v4.black_blue_btn.cancel_btn(href='#') Перейти в профиль
 
 
+    #reg_success_form_2(action='#' style='display:none' title='')
+        .popup_form.popup_v4.text_center
+            .msg_title Запись <br> направлена врачу
+            .msg_check
+            .msg_text Запись на сайте является подтвержденной только после того как вам позвонят. Вы можете позвонить по номеру  <br>  8-800-322-33-21
+            .text_center: a.btn_v2.white_green_btn_2.cancel_btn(href='#') Отменить приём
+            
 mixin aside_card()
     .aside_card_holder.card_mod
         .aside_menu
