@@ -234,6 +234,8 @@ $(function ($) {
         if (!($(e.target).hasClass('notificationBtn') || $(e.target).hasClass('notificationDropdown') || $(e.target).closest('.notificationDropdown').length)) {
             notificationBtn.parent().removeClass('notification_open');
         }
+
+        html_var.removeClass('user_menu_open');
     });
 
     notificationBtn.on('click', function () {
@@ -274,8 +276,12 @@ $(function ($) {
 
     $('.openMenu').on('click', function () {
         html_var.addClass('menu_open');
-        console.log('openMenu');
         return false;
+    });
+
+    $('.userMenu').on('click', function () {
+        html_var.toggleClass('user_menu_open');
+           return false;
     });
 
     $('.closeMenu').on('click', function () {

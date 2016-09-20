@@ -414,6 +414,7 @@ $axisWidth: 60px;
     }
 
     &.status_red_2 {
+      //background: rgba(255, 90, 57, .92);
       background: rgba(244, 85, 51, .92);
       color: #fff;
 
@@ -472,6 +473,20 @@ $axisWidth: 60px;
       }
     }
   }
+
+  .fc-day:hover {
+    //background: lightblue;
+  }
+  .fc-slats,
+  .fc-content-skeleton,
+  .fc-bgevent-skeleton {
+    //pointer-events: none;
+  }
+  .fc-bgevent,
+  .fc-event-container {
+    //pointer-events: auto;
+  }
+
 }
 
 .calendar_v2 {

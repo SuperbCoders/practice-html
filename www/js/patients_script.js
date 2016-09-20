@@ -79,7 +79,7 @@ $(function ($) {
 
 
     $('#first_run_schedule').dialog({
-        autoOpen: true,
+        autoOpen: false,
         modal: true,
         width: 325,
         closeText: '',

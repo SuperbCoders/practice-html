@@ -130,7 +130,20 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                 .mb.mob_hidden: .user_m_item
                     a.btn_v1.white_transp_btn.quick_reg_btn(href='#') Быстрая запись
 
-                a.menu_humburger.openMenu(href='#'): span Меню
+                .mb: .user_m_item.wnw.user_menu_w.userMenu 
+                    .menu_avatar 
+                        img(src='i/user_2.png')
+                    .menu_user_name.mob_hidden Самойлов Я.
+                    
+                    .user_m_down_w
+                        ul.user_drop_down_menu
+                            li.user_drop_down_item: a.gl_link(href='#'): span Профиль
+                            li.user_drop_down_item: a.gl_link(href='#'): span Сайт
+                            li.user_drop_down_item: a.gl_link(href='#'): span Техподдержка
+                            li.user_drop_down_item: a.gl_link(href='#'): span Выход
+                        
+                        
+                //-a.menu_humburger.openMenu(href='#'): span Меню
                 
     - if (sub_header)
         .sub_header_holder

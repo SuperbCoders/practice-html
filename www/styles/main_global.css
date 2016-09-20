@@ -93,7 +93,7 @@
   -webkit-box-align: stretch;
 }
 
-.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
+.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
   position: static;
   display: block;
   height: 0;
@@ -1315,7 +1315,7 @@ a {
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 12;
+  z-index: 16;
   height: 50px;
   line-height: 50px;
   background: #677ad7;
@@ -1333,6 +1333,7 @@ a {
     height: 60px;
     top: 0;
     bottom: auto;
+    z-index: 12;
   }
 }
 
@@ -1358,6 +1359,27 @@ a {
     padding: 0 40px;
     height: 100%;
   }
+}
+
+.menu_avatar {
+  margin-right: 12px;
+  margin-left: 2px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.menu_avatar img {
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.menu_user_name {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  margin-right: 22px;
+  letter-spacing: .35px;
 }
 
 .calendar_header_holder {
@@ -2731,11 +2753,38 @@ a {
   border-radius: 0 0 10px 10px;
 }
 
+.user_menu_w {
+  cursor: pointer;
+  position: relative;
+}
+@media only screen and (max-width: 1199px) {
+  .user_menu_w {
+    position: absolute;
+    right: 0;
+    bottom: 55px;
+  }
+}
+
+.user_m_down_w {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  right: 10px;
+}
+@media only screen and (max-width: 1199px) {
+  .user_m_down_w {
+    top: auto;
+    bottom: 100%;
+    right: 5px;
+  }
+}
+
 .drop_down_btn {
   -webkit-transition: background 0.3s;
   -ms-transition: background 0.3s;
   transition: background 0.3s;
   display: block;
+  float: right;
   width: 18px;
   height: 18px;
   border-radius: 100%;
@@ -2795,6 +2844,43 @@ a {
   border-bottom: 10px solid #32323f;
 }
 
+.user_drop_down_menu {
+  background: #fff;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+  position: relative;
+  margin-top: 6px;
+  width: 178px;
+  padding: 9px 0;
+  display: none;
+  text-align: left;
+}
+.user_drop_down_menu:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 45px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+}
+.user_menu_open .user_drop_down_menu {
+  display: block;
+}
+@media only screen and (max-width: 1199px) {
+  .user_drop_down_menu {
+    margin: 0 0 6px;
+    width: 200px;
+  }
+  .user_drop_down_menu:before {
+    right: 17px;
+    bottom: auto;
+    top: 100%;
+    border-bottom: 0;
+    border-top: 6px solid #fff;
+  }
+}
+
 .drop_down_item .gl_link {
   -webkit-transition: background 0.3s;
   -ms-transition: background 0.3s;
@@ -2824,6 +2910,31 @@ a {
   background: #292933;
 }
 .drop_down_item.active .gl_link {
+  cursor: default;
+  font-family: "HelveticaNeueMedium", sans-serif;
+  letter-spacing: .3px;
+  background: none;
+}
+
+.user_drop_down_item .gl_link {
+  -webkit-transition: background 0.3s;
+  -ms-transition: background 0.3s;
+  transition: background 0.3s;
+  display: block;
+  position: relative;
+  color: #000;
+  padding: 0 20px;
+  line-height: 36px;
+}
+.user_drop_down_item .gl_link span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+.user_drop_down_item .gl_link:hover {
+  opacity: .5;
+}
+.user_drop_down_item.active .gl_link {
   cursor: default;
   font-family: "HelveticaNeueMedium", sans-serif;
   letter-spacing: .3px;
@@ -5315,6 +5426,10 @@ textarea.form_input.input_v3 {
   color: #000;
 }
 
+.wnw {
+  white-space: nowrap;
+}
+
 .text_center {
   text-align: center;
 }
@@ -5411,6 +5526,10 @@ textarea.form_input.input_v3 {
   .dt_hidden {
     display: none !important;
   }
+}
+
+#ui-datepicker-div {
+  display: none;
 }
 
 #chromeperfectpixel-panel {
