@@ -92,6 +92,21 @@ $(function ($) {
             body_var.removeClass('overlay_v2');
         }
     });
+
+    $('#promo').dialog({
+        autoOpen: true,
+        modal: true,
+        width: 380,
+        closeText: '',
+        appendTo: '.wrapper',
+        dialogClass: "dialog_v2 msg_form_2 dialog_close_butt_mod_1 dialog_blue",
+        open: function (event, ui) {
+            body_var.addClass('overlay_v2');
+        },
+        close: function (event, ui) {
+            body_var.removeClass('overlay_v2');
+        }
+    });
     
     body_var.delegate('.write2Card', 'click', function (e) {
 

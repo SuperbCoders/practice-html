@@ -532,13 +532,19 @@ mixin popups()
             .form_caption Зарегистрируйтесь, чтобы читать записи врача в вашей мед. карте онлайн
             .text_center: a.btn_v4.black_blue_btn.cancel_btn(href='#') Перейти в профиль
 
-
     #reg_success_form_2(action='#' style='display:none' title='')
         .popup_form.popup_v4.text_center
             .msg_title Запись <br> направлена врачу
             .msg_check
-            .msg_text Запись на сайте является подтвержденной только после того как вам позвонят. Вы можете позвонить по номеру  <br>  8-800-322-33-21
+            .msg_text: p Запись на сайте является подтвержденной только после того как вам позвонят. Вы можете позвонить по номеру  <br>  8-800-322-33-21
             .text_center: a.btn_v2.white_green_btn_2.cancel_btn(href='#') Отменить приём
+            
+    #promo(action='#' style='display:none' title='')
+        .popup_form.popup_v4.text_center
+            .promo_image
+                img(src='i/promo_1.png')
+            .promo_title Позвольте пациентам самим записываться к вам онлайн
+            .msg_text Вы сможете давать ссылку на ваш сайт вашим пациентам и они будут записываться сами, вам останется только подтвердить запись
             
 mixin aside_card()
     .aside_card_holder.card_mod

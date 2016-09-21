@@ -104,7 +104,6 @@ $(function ($) {
 
     reg_success_form = $('#reg_success_form_2').dialog({
         autoOpen: false,
-        // autoOpen: true,
         modal: true,
         width: 380,
         dialogClass: "dialog_v1 no_close_mod dialog_green_2 msg_form_2 ",

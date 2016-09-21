@@ -146,6 +146,14 @@
     background: #ffe977;
   }
 
+  .dialog_blue & {
+    background: #448eff;
+    background: -moz-linear-gradient(top, #448eff 0%, #4585ff 100%);
+    background: -webkit-linear-gradient(top, #448eff 0%, #4585ff 100%);
+    background: linear-gradient(to bottom, #448eff 0%, #4585ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#448eff', endColorstr='#4585ff', GradientType=0);
+  }
+
   .form_success & {
     background: #6ccc7f;
   }
