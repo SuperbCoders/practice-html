@@ -39,10 +39,6 @@
   }
 }
 
-.dialog_global {
-
-}
-
 .ui-resizable-handle {
   display: none !important;
 }
@@ -59,9 +55,8 @@
 
   .overlay_v2 &,
   .overlay_v1 & {
-    background: transparentize(#383838, .25);
+    background: transparentize(#000, .15);
   }
-
 }
 
 .ui-helper-clearfix {

@@ -5925,7 +5925,7 @@ textarea.form_input.input_v3 {
   background: rgba(255, 255, 255, 0.01);
 }
 .overlay_v2 .ui-widget-overlay, .overlay_v1 .ui-widget-overlay {
-  background: rgba(56, 56, 56, 0.75);
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .ui-helper-clearfix {
