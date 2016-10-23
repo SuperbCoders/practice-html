@@ -93,7 +93,7 @@
   -webkit-box-align: stretch;
 }
 
-.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
+.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
   position: static;
   display: block;
   height: 0;
@@ -364,7 +364,7 @@ textarea:focus::-moz-placeholder {
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .patient_tip_arrow:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .msg_check:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v4 .chosen-single:before, .chosen_v4
+[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .patient_tip_arrow:before, .appointment_menu_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .msg_check:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v4 .chosen-single:before, .chosen_v4
 .chzn-single:before, .chosen_v3 .chosen-single:before, .chosen_v3
 .chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
 .chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .btn_v5.add_write_block_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
@@ -472,7 +472,7 @@ textarea:focus::-moz-placeholder {
   content: "\e910";
 }
 
-.icon-chevron_left:before, .pagination_item.pagination_prev .gl_link:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v4 .chosen-single:before, .chosen_v4
+.icon-chevron_left:before, .appointment_menu_btn:before, .pagination_item.pagination_prev .gl_link:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v4 .chosen-single:before, .chosen_v4
 .chzn-single:before, .chosen_v3 .chosen-single:before, .chosen_v3
 .chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
 .chzn-single:before, .go_back_btn:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .fancybox-nav.fancybox-prev:before {
@@ -2134,6 +2134,17 @@ a {
   }
 }
 
+.caption_v2 {
+  font: 28px "HelveticaNeueBold", sans-serif;
+  color: #3b3e40;
+  margin-bottom: 33px;
+}
+@media only screen and (max-width: 1199px) {
+  .caption_v2 {
+    font-size: 20px;
+  }
+}
+
 .tab_holder {
   line-height: 60px;
 }
@@ -2558,6 +2569,11 @@ a {
   overflow: hidden;
 }
 
+.patient_city {
+  color: #898f9c;
+  font: 14px "HelveticaNeueLight", sans-serif;
+}
+
 .patient_info {
   max-width: 300px;
   margin: 0 auto;
@@ -2667,6 +2683,199 @@ a {
 }
 .overview_info dt {
   clear: both;
+}
+
+.patient_board {
+  padding-top: 40px;
+}
+
+.patient_preview {
+  line-height: 1.5;
+  letter-spacing: .5px;
+}
+.patient_preview p {
+  margin-bottom: 20px;
+}
+
+.patient_avatar_holder {
+  margin-bottom: 5px;
+}
+
+.appointments_list > li {
+  margin-bottom: 20px;
+}
+
+.appointment_menu {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border-radius: 10px;
+  z-index: 2;
+}
+.appointment_menu .drop_down_w {
+  display: none;
+}
+.appointment_menu:hover {
+  background: #454545;
+}
+.appointment_menu:hover .appointment_menu_list {
+  display: block;
+}
+
+.appointment_menu_list {
+  clear: both;
+  padding-bottom: 25px;
+  display: none;
+  white-space: nowrap;
+}
+.appointment_menu_list > li {
+  -webkit-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  transition: color 0.3s;
+  font-size: 14px;
+  padding: 7px 22px 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.appointment_menu_list > li:hover {
+  color: #828282;
+}
+
+.appointment_menu_btn {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+.appointment_menu_btn:before {
+  -webkit-transition: transform 0.3s, opacity 0.3s;
+  -ms-transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #979797;
+}
+
+.appointment_block {
+  position: relative;
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 600px;
+  background: #fff;
+  box-shadow: 0 2px 3px rgba(68, 80, 107, 0.12);
+}
+.appointment_block .patient_note_date {
+  padding-left: 0;
+  letter-spacing: .8px;
+}
+.appointment_block p {
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.appointment_caption {
+  font: 20px "HelveticaNeueBold", sans-serif;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+.appointment_caption .gl_link {
+  color: #3b3e40;
+}
+.appointment_caption .gl_link:hover {
+  color: #525cd5;
+}
+
+.patient_block {
+  margin: 0 auto;
+  width: 320px;
+  max-width: 100%;
+}
+.patient_block .patient_card_controls {
+  margin: 0;
+}
+.patient_block .controls_cell {
+  height: 80px;
+}
+.patient_block .patient_card {
+  text-align: left;
+}
+.patient_block .patient_info {
+  margin-top: 18px;
+  height: auto;
+}
+.patient_block .patient_name {
+  font-size: 22px;
+  margin-bottom: 3px;
+}
+.patient_block .patient_avatar {
+  float: left;
+  margin-top: 3px;
+  margin-right: 10px;
+}
+.patient_block .patient_status_w {
+  right: 1px;
+  top: 14px;
+  left: auto;
+}
+.patient_block .patient_overview_line {
+  border: none;
+  padding-bottom: 3px;
+}
+.patient_block .patient_overview_list {
+  padding: 0 0 30px;
+  border: none;
+}
+.patient_block .overview_caption_v2 {
+  font: 16px "HelveticaNeueBold", sans-serif;
+  text-transform: none;
+  color: #3b3e40;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e0e7ec;
+}
+.patient_block .overview_info dt {
+  color: #7e91a0;
+  min-width: 60px;
+}
+.patient_block .overview_info dd {
+  color: #3e4045;
+}
+@media only screen and (min-width: 720px) {
+  .patient_block {
+    float: left;
+  }
+}
+
+.patient_appointments {
+  padding-top: 7px;
+  position: relative;
+  max-width: 700px;
+}
+.patient_appointments .caption_v2 {
+  padding-left: 12px;
+}
+@media only screen and (min-width: 720px) {
+  .patient_appointments {
+    margin-left: 340px;
+    padding-right: 80px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .patient_appointments {
+    margin-left: 410px;
+    padding-right: 100px;
+  }
 }
 
 .patient_card_controls {
@@ -5241,6 +5450,22 @@ textarea.form_input.input_v3 {
 
 .btn_v3 {
   height: 58px;
+}
+.btn_v3.new_appointment_btn {
+  float: left;
+  right: 10px;
+  bottom: 0;
+  width: 58px;
+  margin: 20px 0 50px;
+  font-size: 30px;
+  line-height: 58px;
+  text-align: center;
+  border-radius: 100%;
+}
+@media only screen and (min-width: 720px) {
+  .btn_v3.new_appointment_btn {
+    position: absolute;
+  }
 }
 .btn_v3.add_patient_line {
   display: block;

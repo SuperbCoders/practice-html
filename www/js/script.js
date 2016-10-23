@@ -138,8 +138,7 @@ $(function ($) {
             dayNamesShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
             dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
             beforeShow: function (inp, dp) {
-                console.log(inp, dp);
-
+                
                 $(inp).parent().addClass('dp_opened');
 
                 $(dp.dpDiv).addClass('change_time_mod');

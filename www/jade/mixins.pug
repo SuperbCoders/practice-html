@@ -449,7 +449,17 @@ mixin patient_overview(collapsed)
                 .overview_caption ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
                 p Договор №000099
                 
-    
+mixin appointment_menu()
+    .appointment_menu
+        .appointment_menu_btn
+        ul.appointment_menu_list
+            li Редактировать
+            li Напечатать
+            li Отправить по почте
+            li Скачать TXT файл
+                
+        
+        
 mixin aside_menu()
     .aside_menu_overlay.closeMenu
     .aside_menu_holder
