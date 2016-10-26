@@ -3,6 +3,7 @@ var profile_tabs,
     tabHeaderSpacer,
     appointmentForm,
     changeReceptionForm,
+    subRecordPopup,
     tabHeader;
 
 $(function ($) {
@@ -127,7 +128,6 @@ $(function ($) {
         appointmentForm.dialog('open');
         return false;
     });
-
 
     body_var.delegate('.write2Card', 'click', function (e) {
 

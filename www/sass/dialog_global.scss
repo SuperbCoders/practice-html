@@ -61,6 +61,10 @@
   .overlay_v3 & {
     background: #fff;
   }
+
+  .overlay_v4 & {
+    background: #000;
+  }
 }
 
 .ui-helper-clearfix {
@@ -96,6 +100,30 @@
       font-size: 20px;
       line-height: 28px;
       color: rgba(0, 0, 0, .5);
+    }
+  }
+
+  .dialog_close_butt_mod_3 & {
+    @extend .icon-before;
+    @extend .icon-close;
+    cursor: pointer;
+    position: absolute;
+    top: 37px;
+    right: 30px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    background: none;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 23px;
+      line-height: 28px;
+      color: #fff;
     }
   }
 
@@ -157,6 +185,24 @@
     height: 60px;
   }
 
+  .dialog_v4 & {
+    cursor: move;
+    height: 58px;
+    padding: 20px 40px 0;
+    border-radius: 10px 10px 0 0;
+    font: 20px/1 $HelveticaNeueBold;
+    color: #3b3e40;
+    background: #f6f6f6;
+  }
+
+  .dialog_v5 & {
+    background: #2c61ff;
+    padding: 20px 0 0;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+  }
+  
   .dialog_green & {
     background: #adffcb;
   }

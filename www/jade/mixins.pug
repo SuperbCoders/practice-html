@@ -11,6 +11,8 @@ mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, publ
         script(src='js/jquery-ui.js?no_cache')
         script(src='js/chosen.jquery.js?no_cache')
         script(src='js/script.js?no_cache')
+        - if (step_1)
+            script(src='js/steps.js')
         - if (edit_profile)
             script(src='js/swiper.js')
             //script(src='js/chosen.jquery.js')

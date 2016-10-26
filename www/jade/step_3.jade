@@ -32,21 +32,41 @@ html(lang='ru')
                                                 li Предварительный анализ
                                                 li Назначение
                                                 li Результаты
-                                                li Создать новую
+                                                li.manageSubRecordPopup Создать новую
                                         
                                 
                                 .row
-                                    .new_appointment_files
+                                    .new_appointment_files.has_files
+                                        .appointment_file
+                                            .file_name Analyz-krovi.pdf
+                                            .file_rm.icon-close
+                                            .file_size 2.1 mb
+                                        .appointment_file
+                                            .file_name Rentgen.jpg
+                                            .file_rm.icon-close
+                                            .file_progress
+                                                .progress_val(style='width:60%;')
                                         .appointment_file
                                             label.form_label
                                                 input.hidden_input(type='file')
-                                                span Добавьте 
-    
-                                            span  файлы, если это необходимо 
+                                                span Upload
+                                            span  files, or drop here if you want
     
                                 .row
                                     a.btn_v8.add_record_btn.yellow_black_btn.addAppointment(href='step_3.html') Добавить запись в карту
                                         
                         
                 
-            
+        #subrecord_popup.popup_form(style='display:none' title='Управление подзаписями')
+            ul.subrecord_list
+                li Первичный прием
+                li Предварительный анализ
+                li Назначение
+                li Результаты
+                li.addMarker
+                    a.gl_link.openSubRecordAdd(href='#') Создать подзапись
+                    
+        #add_subrecord_popup.add_subrecord_popup(style='display:none')
+            .input_w.add_subrecord
+                input#new_saubrecord_item.form_input.input_v12.checkEmpty(placeholder='Название подзаписи')
+                button.icon-checkmark.btn_apply_subrecord.applySubRecord

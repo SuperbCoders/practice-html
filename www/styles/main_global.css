@@ -93,7 +93,7 @@
   -webkit-box-align: stretch;
 }
 
-.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .appointment_media_list:after, .appointment_controls .row:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
+.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .appointment_media_list:after, .appointment_controls .row:after, .appointment_file:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
   position: static;
   display: block;
   height: 0;
@@ -367,7 +367,7 @@ textarea:focus::-moz-placeholder {
 [class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .patient_tip_arrow:before, .appointment_menu_btn:before, .appointment_back_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .msg_check:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v4 .chosen-single:before, .chosen_v4
 .chzn-single:before, .chosen_v3 .chosen-single:before, .chosen_v3
 .chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
-.chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .btn_v5.add_write_block_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before, .dialog_close_butt_mod_2 .ui-dialog-titlebar-close:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
+.chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .btn_v5.add_write_block_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before, .dialog_close_butt_mod_3 .ui-dialog-titlebar-close:before, .dialog_close_butt_mod_2 .ui-dialog-titlebar-close:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .fancybox-nav:before {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -421,7 +421,7 @@ textarea:focus::-moz-placeholder {
   content: "\e909";
 }
 
-.icon-close:before, .aside_close_btn:before, .appointment_back_btn:before, .rm_attach_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before, .dialog_close_butt_mod_2 .ui-dialog-titlebar-close:before {
+.icon-close:before, .aside_close_btn:before, .appointment_back_btn:before, .rm_attach_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before, .dialog_close_butt_mod_3 .ui-dialog-titlebar-close:before, .dialog_close_butt_mod_2 .ui-dialog-titlebar-close:before {
   content: "\e908";
 }
 
@@ -2708,6 +2708,7 @@ a {
 .appointment_menu_holder {
   position: relative;
   float: left;
+  margin-bottom: 20px;
 }
 .appointment_menu_holder:hover .subrecord_menu {
   display: block;
@@ -2891,6 +2892,7 @@ a {
 }
 
 .new_appointment_block .input_w {
+  max-width: 600px;
   margin-bottom: 40px;
 }
 
@@ -2928,14 +2930,16 @@ a {
   text-align: center;
   position: relative;
 }
+.new_appointment_files.has_files {
+  padding: 13px 0;
+}
 
 .appointment_file {
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: bold;
+  font: 16px/20px "HelveticaNeueBold", sans-serif;
   letter-spacing: .5px;
-  padding: 20px;
+  padding: 19px 20px;
   position: relative;
+  text-align: left;
 }
 .appointment_file:before {
   content: '';
@@ -2951,6 +2955,89 @@ a {
 }
 .appointment_file .form_label {
   color: #5067ea;
+}
+.appointment_file + .appointment_file {
+  width: 370px;
+  max-width: 100%;
+}
+
+.file_size {
+  color: #3b3e40;
+  float: right;
+  font-family: "HelveticaNeueLight", sans-serif;
+}
+
+.file_progress {
+  position: relative;
+  float: right;
+  height: 8px;
+  width: 113px;
+  border-radius: 4px;
+  background: #ebebeb;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress_val {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #5067ea;
+}
+
+.file_name {
+  float: left;
+  max-width: 165px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.file_rm {
+  float: right;
+  position: relative;
+  margin-left: 25px;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.subrecord_list {
+  padding: 20px 10px 0;
+  margin-bottom: -10px;
+}
+.subrecord_list li {
+  font-size: 19px;
+  line-height: 23px;
+  color: #3b3e40;
+  padding: 17px 0;
+  border-top: 1px solid rgba(230, 230, 230, 0.5);
+}
+.subrecord_list li:first-child {
+  border-top: none;
+}
+.subrecord_list .gl_link {
+  font-size: 15px;
+  color: #2c61ff;
+}
+
+.hide_subrecord_popup .subrecord_popup {
+  display: none !important;
+}
+
+.btn_apply_subrecord {
+  position: absolute;
+  background: none;
+  left: 100%;
+  margin-left: 12px;
+  top: 0;
+  color: #fff;
+  font-size: 30px;
+  display: none;
+}
+.not_empty ~ .btn_apply_subrecord {
+  display: block;
 }
 
 .media_name {
@@ -3690,6 +3777,17 @@ a {
     padding: 0 40px 300px;
     position: relative;
   }
+}
+
+.add_subrecord_popup {
+  min-height: 0 !important;
+}
+
+.add_subrecord_item {
+  background: #2c61ff;
+  border-radius: 10px;
+  padding-bottom: 35px;
+  position: relative;
 }
 
 .time_switch_w {
@@ -4764,6 +4862,19 @@ html:not(.edit_patient) .edit_mode {
 .form_input.input_v11::-moz-placeholder {
   color: rgba(59, 62, 64, 0.2);
 }
+.form_input.input_v12 {
+  height: 32px;
+  font: 19px/32px "HelveticaNeueLight", sans-serif;
+  color: #fff;
+  padding: 0 6px;
+  letter-spacing: .5px;
+}
+.form_input.input_v12::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+.form_input.input_v12::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
 
 .header_search_form {
   display: inline-block;
@@ -4782,6 +4893,10 @@ html:not(.edit_patient) .edit_mode {
   }
 }
 
+.input_w.add_subrecord {
+  margin: 0 120px 0 35px;
+  position: relative;
+}
 .input_w.placeholder_mod {
   position: relative;
   padding-top: 20px;
@@ -6174,6 +6289,9 @@ textarea.form_input.input_v3 {
 .overlay_v3 .ui-widget-overlay {
   background: #fff;
 }
+.overlay_v4 .ui-widget-overlay {
+  background: #000;
+}
 
 .ui-helper-clearfix {
   display: block;
@@ -6205,6 +6323,26 @@ textarea.form_input.input_v3 {
   font-size: 20px;
   line-height: 28px;
   color: rgba(0, 0, 0, 0.5);
+}
+.dialog_close_butt_mod_3 .ui-dialog-titlebar-close {
+  cursor: pointer;
+  position: absolute;
+  top: 37px;
+  right: 30px;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  background: none;
+}
+.dialog_close_butt_mod_3 .ui-dialog-titlebar-close:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 23px;
+  line-height: 28px;
+  color: #fff;
 }
 .dialog_close_butt_mod_2 .ui-dialog-titlebar-close {
   cursor: pointer;
@@ -6248,6 +6386,22 @@ textarea.form_input.input_v3 {
 }
 .dialog_v3 .ui-dialog-titlebar {
   height: 60px;
+}
+.dialog_v4 .ui-dialog-titlebar {
+  cursor: move;
+  height: 58px;
+  padding: 20px 40px 0;
+  border-radius: 10px 10px 0 0;
+  font: 20px/1 "HelveticaNeueBold", sans-serif;
+  color: #3b3e40;
+  background: #f6f6f6;
+}
+.dialog_v5 .ui-dialog-titlebar {
+  background: #2c61ff;
+  padding: 20px 0 0;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px 10px 0 0;
 }
 .dialog_green .ui-dialog-titlebar {
   background: #adffcb;

@@ -1753,6 +1753,7 @@ $patient_scale_time: 1s;
 .appointment_menu_holder {
   position: relative;
   float: left;
+  margin-bottom: 20px;
 
   &:hover {
     .subrecord_menu {
@@ -1960,6 +1961,7 @@ $patient_scale_time: 1s;
 
 .new_appointment_block {
   .input_w {
+    max-width: 600px;
     margin-bottom: 40px;
   }
 }
@@ -2005,15 +2007,19 @@ $patient_scale_time: 1s;
   border-radius: 10px;
   text-align: center;
   position: relative;
+
+  &.has_files {
+    padding: 13px 0;
+  }
 }
 
 .appointment_file {
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: bold;
+  @extend %clearfix;
+  font: 16px/20px $HelveticaNeueBold;
   letter-spacing: .5px;
-  padding: 20px;
+  padding: 19px 20px;
   position: relative;
+  text-align: left;
 
   &:before {
     content: '';
@@ -2033,6 +2039,96 @@ $patient_scale_time: 1s;
 
   .form_label {
     color: #5067ea;
+  }
+
+  + .appointment_file {
+    width: 370px;
+    max-width: 100%;
+  }
+}
+
+.file_size {
+  color: #3b3e40;
+  float: right;
+  font-family: $HelveticaNeueLight;
+}
+
+.file_progress {
+  position: relative;
+  float: right;
+  height: 8px;
+  width: 113px;
+  border-radius: 4px;
+  background: #ebebeb;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress_val {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #5067ea;
+}
+
+.file_name {
+  float: left;
+  max-width: 165px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.file_rm {
+  float: right;
+  position: relative;
+  margin-left: 25px;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.subrecord_list {
+  padding: 20px 10px 0;
+  margin-bottom: -10px;
+
+  li {
+    font-size: 19px;
+    line-height: 23px;
+    color: #3b3e40;
+    padding: 17px 0;
+    border-top: 1px solid rgba(230, 230, 230, .5);
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .gl_link {
+    font-size: 15px;
+    color: #2c61ff;
+  }
+}
+
+.subrecord_popup {
+  .hide_subrecord_popup & {
+    display: none !important;
+  }
+}
+
+.btn_apply_subrecord {
+  position: absolute;
+  background: none;
+  left: 100%;
+  margin-left: 12px;
+  top: 0;
+  color: #fff;
+  font-size: 30px;
+  display: none;
+
+  .not_empty ~ & {
+    display: block;
   }
 }
 
@@ -2930,7 +3026,17 @@ $patient_scale_time: 1s;
       position: relative;
     }
   }
+}
 
+.add_subrecord_popup {
+  min-height: 0 !important;
+}
+
+.add_subrecord_item {
+  background: #2c61ff;
+  border-radius: 10px;
+  padding-bottom: 35px;
+  position: relative;
 }
 
 .time_switch_w {
@@ -4201,6 +4307,22 @@ $patient_scale_time: 1s;
       color: rgba(59, 62, 64, .2);
     }
   }
+
+  &.input_v12 {
+    height: 32px;
+    font: 19px/32px $HelveticaNeueLight;
+    color: #fff;
+    padding: 0 6px;
+    letter-spacing: .5px;
+
+    &::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, .2);
+    }
+
+    &::-moz-placeholder {
+      color: rgba(255, 255, 255, .2);
+    }
+  }
 }
 
 .header_search_form {
@@ -4220,6 +4342,11 @@ $patient_scale_time: 1s;
 
 .input_w {
 
+  &.add_subrecord {
+    margin: 0 120px 0 35px;
+    position: relative;
+  }
+  
   &.placeholder_mod {
     position: relative;
     padding-top: 20px;
