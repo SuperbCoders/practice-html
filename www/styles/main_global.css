@@ -93,7 +93,7 @@
   -webkit-box-align: stretch;
 }
 
-.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
+.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .appointment_media_list:after, .appointment_controls .row:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
   position: static;
   display: block;
   height: 0;
@@ -364,10 +364,10 @@ textarea:focus::-moz-placeholder {
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .patient_tip_arrow:before, .appointment_menu_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .msg_check:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v4 .chosen-single:before, .chosen_v4
+[class^="icon-"]:before, [class*=" icon-"]:before, .icon-before:before, .logo:before, .aside_close_btn:before, .change_photo_btn:before, .patient_tip_arrow:before, .appointment_menu_btn:before, .appointment_back_btn:before, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .msg_check:before, .write_state_btn:before, .rm_attach_btn:before, .attach_btn:before, .input_w.datepicker_v1 .calendar_icon:before, .input_w.soc_input:before, .search_btn:before, .chosen_multiple_v1 .chzn-choices-arrow:before, .chosen_v4 .chosen-single:before, .chosen_v4
 .chzn-single:before, .chosen_v3 .chosen-single:before, .chosen_v3
 .chzn-single:before, .chosen_v2 .chosen-single:before, .chosen_v2
-.chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .btn_v5.add_write_block_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
+.chzn-single:before, .chosen_multiple_v1 .chzn_item.result-selected:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .btn_v3.add_patient_line:before, .btn_v4.soc_auth_btn:before, .btn_v5.add_write_block_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before, .dialog_close_butt_mod_2 .ui-dialog-titlebar-close:before, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .fancybox-nav:before {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -421,7 +421,7 @@ textarea:focus::-moz-placeholder {
   content: "\e909";
 }
 
-.icon-close:before, .aside_close_btn:before, .rm_attach_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before {
+.icon-close:before, .aside_close_btn:before, .appointment_back_btn:before, .rm_attach_btn:before, .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before, .dialog_close_butt_mod_2 .ui-dialog-titlebar-close:before {
   content: "\e908";
 }
 
@@ -2705,6 +2705,59 @@ a {
   margin-bottom: 20px;
 }
 
+.appointment_menu_holder {
+  position: relative;
+  float: left;
+}
+.appointment_menu_holder:hover .subrecord_menu {
+  display: block;
+}
+
+.subrecord_menu {
+  width: 280px;
+  left: 50%;
+  margin-left: -140px;
+  position: absolute;
+  display: none;
+}
+.subrecord_menu.open_top {
+  bottom: 100%;
+  padding-bottom: 20px;
+}
+.subrecord_menu.open_top .appointment_menu_list:before {
+  top: 100%;
+  border-top: 10px solid #454545;
+}
+.subrecord_menu.open_bottom {
+  top: 100%;
+  padding-top: 20px;
+}
+.subrecord_menu.open_bottom .appointment_menu_list:before {
+  bottom: 100%;
+  border-bottom: 10px solid #454545;
+}
+.subrecord_menu .appointment_menu_list {
+  display: block;
+  padding-top: 25px;
+  padding-bottom: 40px;
+  background: #454545;
+  border-radius: 20px;
+  position: relative;
+  text-align: center;
+}
+.subrecord_menu .appointment_menu_list:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.subrecord_menu .appointment_menu_list > li {
+  font-size: 16px;
+  padding: 14px 22px 14px;
+}
+
 .appointment_menu {
   position: absolute;
   top: 12px;
@@ -2794,6 +2847,119 @@ a {
 }
 .appointment_caption .gl_link:hover {
   color: #525cd5;
+}
+
+.appointment_media_list {
+  margin-left: -15px;
+}
+.appointment_media_list > li {
+  float: left;
+  margin-top: 20px;
+  padding-left: 15px;
+}
+
+.appointment_media {
+  -webkit-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  width: 170px;
+  height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.appointment_media.media_pdf {
+  background: #ffdada;
+}
+.appointment_media.media_mp3 {
+  background: #daeeff;
+}
+.appointment_media:hover {
+  opacity: .9;
+}
+
+.appointment_img img {
+  display: block;
+  max-width: 100%;
+}
+
+.new_appointment_w {
+  position: relative;
+  margin: 0 auto;
+  max-width: 920px;
+  padding-top: 80px;
+}
+
+.new_appointment_block .input_w {
+  margin-bottom: 40px;
+}
+
+.appointment_controls .row {
+  margin-bottom: 40px;
+}
+
+.appointment_back_btn {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: -90px;
+  width: 57px;
+  height: 57px;
+  border-radius: 100%;
+  background: #fff;
+  text-align: center;
+  border: 1px solid #3e4045;
+}
+.appointment_back_btn:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 24px;
+  line-height: 55px;
+  color: #3e4045;
+}
+
+.new_appointment_files {
+  float: left;
+  border: 1px dotted #000;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.appointment_file {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+  letter-spacing: .5px;
+  padding: 20px;
+  position: relative;
+}
+.appointment_file:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 20px;
+  left: 20px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.appointment_file:first-child:before {
+  display: none;
+}
+.appointment_file .form_label {
+  color: #5067ea;
+}
+
+.media_name {
+  color: #3b3e40;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 20px 20px 15px;
 }
 
 .patient_block {
@@ -4570,6 +4736,34 @@ html:not(.edit_patient) .edit_mode {
 .dp_opened .form_input.input_v9, .form_input.input_v9:focus {
   background: #63637b;
 }
+.form_input.input_v10 {
+  height: 44px;
+  font-size: 28px;
+  line-height: 32px;
+  color: #3b3e40;
+  font-weight: bold;
+  letter-spacing: .25px;
+}
+.form_input.input_v10::-webkit-input-placeholder {
+  color: rgba(59, 62, 64, 0.2);
+}
+.form_input.input_v10::-moz-placeholder {
+  color: rgba(59, 62, 64, 0.2);
+}
+.form_input.input_v11 {
+  height: 40px;
+  font-size: 24px;
+  line-height: 28px;
+  color: #3b3e40;
+  min-height: 325px;
+  letter-spacing: .5px;
+}
+.form_input.input_v11::-webkit-input-placeholder {
+  color: rgba(59, 62, 64, 0.2);
+}
+.form_input.input_v11::-moz-placeholder {
+  color: rgba(59, 62, 64, 0.2);
+}
 
 .header_search_form {
   display: inline-block;
@@ -5579,6 +5773,48 @@ textarea.form_input.input_v3 {
   border-radius: 10px;
 }
 
+.btn_v7 {
+  height: 30px;
+}
+.btn_v7.download_btn {
+  margin-left: 20px;
+  float: left;
+  border-radius: 15px;
+  padding: 7px 18px;
+}
+
+.btn_v8 {
+  height: 60px;
+}
+.btn_v8.add_record_btn {
+  float: left;
+  font-size: 18px;
+  line-height: 20px;
+  border-radius: 30px;
+  padding: 20px 38px;
+}
+
+.btn_v9 {
+  height: 37px;
+}
+.btn_v9.add_subrecord_btn {
+  -webkit-transition: border-color 0.3s, background 0.3s, color 0.3s;
+  -ms-transition: border-color 0.3s, background 0.3s, color 0.3s;
+  transition: border-color 0.3s, background 0.3s, color 0.3s;
+  float: left;
+  border-radius: 18px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 16px;
+  padding: 0 23px 0 15px;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+}
+.btn_v9.add_subrecord_btn .icon {
+  padding-right: 9px;
+}
+
 .yellow_black_btn {
   -webkit-transition: color 0.3s, background 0.3s;
   -ms-transition: color 0.3s, background 0.3s;
@@ -5634,6 +5870,14 @@ textarea.form_input.input_v3 {
   -ms-transition: color 0.3s, background 0.3s;
   transition: color 0.3s, background 0.3s;
   color: #000;
+  background: #fff;
+}
+
+.white__btn_2 {
+  -webkit-transition: color 0.3s, background 0.3s;
+  -ms-transition: color 0.3s, background 0.3s;
+  transition: color 0.3s, background 0.3s;
+  color: #3b3e40;
   background: #fff;
 }
 
@@ -5927,6 +6171,9 @@ textarea.form_input.input_v3 {
 .overlay_v2 .ui-widget-overlay, .overlay_v1 .ui-widget-overlay {
   background: rgba(0, 0, 0, 0.85);
 }
+.overlay_v3 .ui-widget-overlay {
+  background: #fff;
+}
 
 .ui-helper-clearfix {
   display: block;
@@ -5959,6 +6206,27 @@ textarea.form_input.input_v3 {
   line-height: 28px;
   color: rgba(0, 0, 0, 0.5);
 }
+.dialog_close_butt_mod_2 .ui-dialog-titlebar-close {
+  cursor: pointer;
+  position: absolute;
+  top: -22px;
+  right: -120px;
+  width: 57px;
+  height: 57px;
+  border-radius: 100%;
+  background: #fff;
+  border: 1px solid #3e4045;
+}
+.dialog_close_butt_mod_2 .ui-dialog-titlebar-close:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 24px;
+  line-height: 55px;
+  color: #3e4045;
+}
 .no_close_mod .ui-dialog-titlebar-close {
   display: none !important;
 }
@@ -5977,6 +6245,9 @@ textarea.form_input.input_v3 {
   cursor: move;
   height: 45px;
   border-radius: 10px 10px 0 0;
+}
+.dialog_v3 .ui-dialog-titlebar {
+  height: 60px;
 }
 .dialog_green .ui-dialog-titlebar {
   background: #adffcb;

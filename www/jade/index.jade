@@ -50,7 +50,7 @@ html(lang='ru')
                                                 .label_holder: label.form_label(for='doctor_pass') Пароль
                                                 .input_w.size_27
                                                     a.btn_v2.black_blue_btn.change_btn.passBtn(href='#') Изменить
-                                                    input.form_input.input_v1.passInput(type='password' style='display:none')
+                                                    input#doctor_pass.form_input.input_v1.passInput(type='password' style='display:none')
 
                                             .form_row
                                                 .label_holder: label.form_label(for='doctor_photo') Портрет врача
@@ -158,7 +158,7 @@ html(lang='ru')
                                                 .label_holder: label.form_label(for='doctor_allow_que') Разрешить запись на прием
                                                 .input_w.size_8
                                                     label.toggle_emul.toggle_v1
-                                                        input.hidden_input(type='checkbox')
+                                                        input#doctor_allow_que.hidden_input(type='checkbox')
                                                         .toggle_box
                                                             span.toggle_text.toggle_true Да
                                                             span.toggle_text.toggle_false Нет
@@ -168,7 +168,7 @@ html(lang='ru')
                                                 .label_holder: label.form_label(for='doctor_profile_vis') Профиль опубликован
                                                 .input_w.size_8
                                                     label.toggle_emul.toggle_v1
-                                                        input.hidden_input(type='checkbox')
+                                                        input#doctor_profile_vis.hidden_input(type='checkbox')
                                                         .toggle_box
                                                             span.toggle_text.toggle_true Да
                                                             span.toggle_text.toggle_false Нет

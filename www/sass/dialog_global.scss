@@ -57,6 +57,10 @@
   .overlay_v1 & {
     background: transparentize(#000, .15);
   }
+  
+  .overlay_v3 & {
+    background: #fff;
+  }
 }
 
 .ui-helper-clearfix {
@@ -95,6 +99,31 @@
     }
   }
 
+  .dialog_close_butt_mod_2 & {
+    @extend .icon-before;
+    @extend .icon-close;
+    cursor: pointer;
+    position: absolute;
+    top: -22px;
+    right: -120px;
+    width: 57px;
+    height: 57px;
+    border-radius: 100%;
+    background: #fff;
+    border: 1px solid #3e4045;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 24px;
+      line-height: 55px;
+      color: #3e4045;
+    }
+  }
+  
   .no_close_mod & {
     display: none !important;
   }
@@ -122,6 +151,10 @@
     cursor: move;
     height: 45px;
     border-radius: 10px 10px 0 0;
+  }
+  
+  .dialog_v3 & {
+    height: 60px;
   }
 
   .dialog_green & {

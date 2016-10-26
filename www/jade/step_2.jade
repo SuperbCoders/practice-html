@@ -1,0 +1,52 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('Practic карта пациента 2', false, false, false, false, false, false, false, true)
+
+    body
+        .wrapper
+            .base
+                div.main_content
+                    .section_inner
+                        .new_appointment_w
+                            a.appointment_back_btn(href='patient_card.html')
+                            .new_appointment_block
+                                .input_w
+                                    input.form_input.input_v10(placeholder='Новая запись' value='Предварительный анализ')
+    
+                                .input_w
+                                    textarea.form_input.input_v11(placeholder='Текст записи') 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники.  Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
+                                        | 
+                                        | 21 Сентября приняла 2 таблитки асперина и анаферон. 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7.
+    
+                            .appointment_controls
+                                .row
+                                    .appointment_menu_holder
+                                        .btn_v9.add_subrecord_btn.black_yellow_btn
+                                            span.icon-plus.icon
+                                            span Еще подзапись
+                                        
+                                        .subrecord_menu.open_top
+                                            ul.appointment_menu_list
+                                                li Первичный прием
+                                                li Предварительный анализ
+                                                li Назначение
+                                                li Результаты
+                                                li Создать новую
+                                        
+                                
+                                .row
+                                    .new_appointment_files
+                                        .appointment_file
+                                            label.form_label
+                                                input.hidden_input(type='file')
+                                                span Добавьте 
+    
+                                            span  файлы, если это необходимо 
+    
+                                .row
+                                    a.btn_v8.add_record_btn.yellow_black_btn.addAppointment(href='step_3.html') Добавить запись в карту
+                                        
+                        
+                
+            

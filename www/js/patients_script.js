@@ -1,6 +1,7 @@
 var profile_tabs,
     profile_tabs_swiper,
     tabHeaderSpacer,
+    appointmentForm,
     changeReceptionForm,
     tabHeader;
 
@@ -77,7 +78,6 @@ $(function ($) {
         }
     });
 
-
     $('#first_run_schedule').dialog({
         autoOpen: false,
         modal: true,
@@ -94,7 +94,7 @@ $(function ($) {
     });
 
     $('#promo').dialog({
-        autoOpen: true,
+        autoOpen: false,
         modal: true,
         width: 380,
         closeText: '',
@@ -107,7 +107,28 @@ $(function ($) {
             body_var.removeClass('overlay_v2');
         }
     });
-    
+
+    appointmentForm = $('#appointment_form').dialog({
+        autoOpen: false,
+        modal: true,
+        width: 920,
+        closeText: '',
+        appendTo: '.wrapper',
+        dialogClass: "dialog_v3 appointment_form_2 dialog_close_butt_mod_2 always_open",
+        open: function (event, ui) {
+            body_var.addClass('overlay_v3');
+        },
+        close: function (event, ui) {
+            body_var.removeClass('overlay_v3');
+        }
+    });
+
+    $('.openAppointmentForm').on ('click', function () {
+        appointmentForm.dialog('open');
+        return false;
+    });
+
+
     body_var.delegate('.write2Card', 'click', function (e) {
 
         html_var.addClass('edit_patient');
@@ -164,6 +185,13 @@ $(function ($) {
     $('.saveCard').on('click', function () {
         html_var.removeClass('edit_patient');
         $('#open_read').click();
+        return false;
+    });
+
+    $('.addAppointment').on('click', function () {
+
+        appointmentForm.dialog('close');
+
         return false;
     });
 

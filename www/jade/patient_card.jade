@@ -83,10 +83,38 @@ html(lang='ru')
                                                 
                                             p 2 таблетки амфетоминов после обеда. Вечером делать ингаляцию, пить как можно больше воды, чая с медом или вареньем.
                                                 
-                                a.btn_v3.new_appointment_btn.yellow_black_btn.icon-plus(href='#')
+                                    li
+                                        .appointment_block
+                                            +appointment_menu()
+
+                                            .patient_note_date 23 СЕНТЯБРЯ 2016
                                                 
-                                
-                
+                                            .appointment_caption: a.gl_link(href='#') Предварительный анализ
+                                                
+                                            p 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
+                                            
+                                            .appointment_caption: a.gl_link(href='#') Предварительный анализ
+                                                
+                                            p 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
+                                            
+                                            ul.appointment_media_list
+                                                li
+                                                    .appointment_media.media_pdf
+                                                        .media_name Analyz-krovi.pdf
+                                                        a.btn_v7.download_btn.white__btn_2(href='#') Скачать
+                                                        
+                                                li
+                                                    .appointment_media
+                                                        .appointment_img
+                                                            img(src='i/appointment_media.png')
+                                                        
+                                                li
+                                                    .appointment_media.media_mp3
+                                                        .media_name Analyz-krovi.pdf
+                                                        a.btn_v7.download_btn.white__btn_2(href='#') Скачать
+                                                
+                                a.btn_v3.new_appointment_btn.yellow_black_btn.icon-plus.openAppointmentForm_(href='step_1.html')
+                                                
                 //-+aside_menu()
                 
             +time_switcher()
