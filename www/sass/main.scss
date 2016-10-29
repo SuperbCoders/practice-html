@@ -2184,7 +2184,11 @@ $patient_scale_time: 1s;
 
   .patient_info {
     margin-top: 18px;
+    margin-right: 35px;
     height: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .patient_name {
@@ -2199,8 +2203,8 @@ $patient_scale_time: 1s;
   }
 
   .patient_status_w {
-    right: 1px;
-    top: 14px;
+    right: 5px;
+    top: 20px;
     left: auto;
   }
 
@@ -5309,7 +5313,6 @@ textarea.form_input.input_v3 {
     cursor: pointer;
     letter-spacing: 0.5px;
   }
-
 }
 
 .btn_v2 {
@@ -5387,9 +5390,10 @@ textarea.form_input.input_v3 {
     width: 58px;
     margin: 20px 0 50px;
     font-size: 30px;
-    line-height: 58px;
+    line-height: 60px;
     text-align: center;
     border-radius: 100%;
+    padding-left: 1px;
 
     @include respond-to-min($tablet) {
       position: absolute;
