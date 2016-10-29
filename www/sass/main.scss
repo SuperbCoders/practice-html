@@ -1752,9 +1752,12 @@ $patient_scale_time: 1s;
 
 .appointment_menu_holder {
   position: relative;
-  float: left;
-  margin-bottom: 20px;
 
+  .row & {
+    float: left;
+    margin-bottom: 20px;
+  }
+  
   &:hover {
     .subrecord_menu {
       display: block;
@@ -1763,12 +1766,18 @@ $patient_scale_time: 1s;
 }
 
 .subrecord_menu {
+  z-index: 1;
   width: 280px;
   left: 50%;
   margin-left: -140px;
   position: absolute;
   display: none;
 
+  &.left_mod {
+    left: 0;
+    margin-left: 0;
+  }
+  
   &.open_top {
     bottom: 100%;
     padding-bottom: 20px;
@@ -1811,6 +1820,10 @@ $patient_scale_time: 1s;
       font-size: 16px;
       padding: 14px 22px 14px;
     }
+  }
+
+  .appointment_menu_focus:focus + & {
+    display: block;
   }
 }
 
@@ -4352,14 +4365,13 @@ $patient_scale_time: 1s;
 }
 
 .input_w {
+  position: relative;
 
   &.add_subrecord {
     margin: 0 120px 0 35px;
-    position: relative;
   }
   
   &.placeholder_mod {
-    position: relative;
     padding-top: 20px;
     overflow: hidden;
 
@@ -4398,7 +4410,6 @@ $patient_scale_time: 1s;
   }
 
   &.datepicker_v1 {
-    position: relative;
 
     .calendar_icon {
       @extend .icon-before;
@@ -4460,7 +4471,6 @@ $patient_scale_time: 1s;
 
   &.search_input_w {
     display: block;
-    position: relative;
 
     .input_v2 {
       padding-left: 40px;
@@ -4469,7 +4479,6 @@ $patient_scale_time: 1s;
 
   &.soc_input {
     display: block;
-    position: relative;
 
     &:before {
       @extend .icon-before;
@@ -4521,7 +4530,6 @@ textarea.form_input.input_v1 {
   &.mod_1 {
     height: 100px;
   }
-
 }
 
 textarea.form_input.input_v3 {

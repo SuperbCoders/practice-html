@@ -2707,6 +2707,8 @@ a {
 
 .appointment_menu_holder {
   position: relative;
+}
+.row .appointment_menu_holder {
   float: left;
   margin-bottom: 20px;
 }
@@ -2715,11 +2717,16 @@ a {
 }
 
 .subrecord_menu {
+  z-index: 1;
   width: 280px;
   left: 50%;
   margin-left: -140px;
   position: absolute;
   display: none;
+}
+.subrecord_menu.left_mod {
+  left: 0;
+  margin-left: 0;
 }
 .subrecord_menu.open_top {
   bottom: 100%;
@@ -2757,6 +2764,9 @@ a {
 .subrecord_menu .appointment_menu_list > li {
   font-size: 16px;
   padding: 14px 22px 14px;
+}
+.appointment_menu_focus:focus + .subrecord_menu {
+  display: block;
 }
 
 .appointment_menu {
@@ -4901,12 +4911,13 @@ html:not(.edit_patient) .edit_mode {
   }
 }
 
-.input_w.add_subrecord {
-  margin: 0 120px 0 35px;
+.input_w {
   position: relative;
 }
+.input_w.add_subrecord {
+  margin: 0 120px 0 35px;
+}
 .input_w.placeholder_mod {
-  position: relative;
   padding-top: 20px;
   overflow: hidden;
 }
@@ -4934,9 +4945,6 @@ html:not(.edit_patient) .edit_mode {
 .input_w.placeholder_mod input:focus + .form_label, .input_w.placeholder_mod input.not_empty + .form_label {
   top: 0;
   font-size: 16px;
-}
-.input_w.datepicker_v1 {
-  position: relative;
 }
 .input_w.datepicker_v1 .calendar_icon {
   position: absolute;
@@ -4970,14 +4978,12 @@ html:not(.edit_patient) .edit_mode {
 }
 .input_w.search_input_w {
   display: block;
-  position: relative;
 }
 .input_w.search_input_w .input_v2 {
   padding-left: 40px;
 }
 .input_w.soc_input {
   display: block;
-  position: relative;
 }
 .input_w.soc_input:before {
   content: '';

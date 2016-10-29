@@ -42,6 +42,14 @@ $(function ($) {
         return false;
     });
 
+    $('.selectRecordName').on ('click', function () {
+        var name = $(this);
+
+        name.closest('.recordName').find('input').val(name.text());
+
+        return false;
+    });
+
     $('.addSubRecordBlock').on ('click', function () {
         var docScroll = doc.scrollTop(), newSubRecord = $('<div class="new_appointment_block"><div class="input_w"><input class="form_input input_v10" placeholder="Новая запись" value="' + $(this).text() + '"></div><div class="input_w"><textarea class="form_input input_v11 autoSize" placeholder="Текст записи"></textarea></div></div>');
 
