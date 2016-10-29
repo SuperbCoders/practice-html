@@ -15,7 +15,7 @@ html(lang='ru')
                                     input.form_input.input_v10(placeholder='Новая запись')
     
                                 .input_w
-                                    textarea.form_input.input_v11(placeholder='Текст записи')
+                                    textarea.form_input.input_v11.autoSize(placeholder='Текст записи')
     
                             .appointment_controls
                                 .row
@@ -28,4 +28,11 @@ html(lang='ru')
                                             span  файлы, если это необходимо 
     
                                 .row
-                                    a.btn_v8.add_record_btn.yellow_black_btn.addAppointment(href='step_2.html') Добавить запись в карту
+                                    
+                        .profile_tab_controls
+                            .section_inner
+                                .new_appointment_controls
+                                    .fl
+                                        .mb
+                                            a.btn_v8.add_record_btn.yellow_black_btn.addAppointment(href='step_2.html') Добавить запись в карту
+                                        

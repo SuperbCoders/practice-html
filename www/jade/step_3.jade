@@ -15,11 +15,18 @@ html(lang='ru')
                                     input.form_input.input_v10(placeholder='Новая запись' value='Предварительный анализ')
     
                                 .input_w
-                                    textarea.form_input.input_v11(placeholder='Текст записи') 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники.  Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
+                                    textarea.form_input.input_v11.autoSize(placeholder='Текст записи') 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники.  Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
                                         | 
                                         | 21 Сентября приняла 2 таблитки асперина и анаферон. 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7.
+                                    
+                            .new_appointment_block
+                                .input_w
+                                    input.form_input.input_v10(placeholder='Новая запись' value='Заключение')
     
-                            .appointment_controls
+                                .input_w
+                                    textarea.form_input.input_v11.autoSize(placeholder='Текст записи') 21 Сентября приняла 2 таблитки асперина и анаферон. 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7.
+    
+                            .appointment_controls.appointmentControls
                                 .row
                                     .appointment_menu_holder
                                         .btn_v9.add_subrecord_btn.black_yellow_btn
@@ -28,10 +35,10 @@ html(lang='ru')
                                         
                                         .subrecord_menu.open_top
                                             ul.appointment_menu_list
-                                                li Первичный прием
-                                                li Предварительный анализ
-                                                li Назначение
-                                                li Результаты
+                                                li.addSubRecordBlock Первичный прием
+                                                li.addSubRecordBlock Предварительный анализ
+                                                li.addSubRecordBlock Назначение
+                                                li.addSubRecordBlock Результаты
                                                 li.manageSubRecordPopup Создать новую
                                         
                                 
@@ -51,11 +58,13 @@ html(lang='ru')
                                                 input.hidden_input(type='file')
                                                 span Upload
                                             span  files, or drop here if you want
-    
-                                .row
-                                    a.btn_v8.add_record_btn.yellow_black_btn.addAppointment(href='step_3.html') Добавить запись в карту
-                                        
-                        
+                                            
+                        .profile_tab_controls
+                            .section_inner
+                                .new_appointment_controls
+                                    .fl
+                                        .mb
+                                            a.btn_v8.add_record_btn.yellow_black_btn.addAppointment(href='step_1.html') Добавить запись в карту
                 
         #subrecord_popup.popup_form(style='display:none' title='Управление подзаписями')
             ul.subrecord_list

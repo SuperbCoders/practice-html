@@ -42,6 +42,18 @@ $(function ($) {
         return false;
     });
 
+    $('.addSubRecordBlock').on ('click', function () {
+        var docScroll = doc.scrollTop(), newSubRecord = $('<div class="new_appointment_block"><div class="input_w"><input class="form_input input_v10" placeholder="Новая запись" value="' + $(this).text() + '"></div><div class="input_w"><textarea class="form_input input_v11 autoSize" placeholder="Текст записи"></textarea></div></div>');
+
+        $('.appointmentControls').before(newSubRecord);
+
+        //newSubRecord.find('textarea').focus();
+        
+        docScrollTo(docScroll + newSubRecord.height() + 76, 0);
+
+        return false;
+    });
+
     $('.applySubRecord').on ('click', function () {
         var sabRecordItem = $('#new_saubrecord_item');
         $('.addMarker').before($('<li>' + sabRecordItem.val() + '</li>'));
@@ -60,5 +72,10 @@ $(function ($) {
         }
 
     });
+
+    $('.autoSize').each(function (ind) {
+        autoSize(this);
+    });
+    
 });
 

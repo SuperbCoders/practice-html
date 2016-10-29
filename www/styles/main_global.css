@@ -93,7 +93,7 @@
   -webkit-box-align: stretch;
 }
 
-.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .appointment_media_list:after, .appointment_controls .row:after, .appointment_file:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
+.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .appointment_media_list:after, .new_appointment_controls:after, .appointment_controls .row:after, .appointment_file:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
   position: static;
   display: block;
   height: 0;
@@ -2888,12 +2888,21 @@ a {
   position: relative;
   margin: 0 auto;
   max-width: 920px;
-  padding-top: 80px;
+  padding: 80px 0;
+}
+
+.new_appointment_controls {
+  margin: 0 auto;
+  max-width: 920px;
+  padding: 5px 0;
 }
 
 .new_appointment_block .input_w {
-  max-width: 600px;
   margin-bottom: 40px;
+}
+.new_appointment_block + .new_appointment_block {
+  padding-top: 35px;
+  border-top: 1px solid #d8d8d8;
 }
 
 .appointment_controls .row {
@@ -4849,11 +4858,10 @@ html:not(.edit_patient) .edit_mode {
   color: rgba(59, 62, 64, 0.2);
 }
 .form_input.input_v11 {
-  height: 40px;
-  font-size: 24px;
-  line-height: 28px;
+  height: 44px;
+  font-size: 19px;
+  line-height: 1.53;
   color: #3b3e40;
-  min-height: 325px;
   letter-spacing: .5px;
 }
 .form_input.input_v11::-webkit-input-placeholder {
@@ -6168,7 +6176,7 @@ textarea.form_input.input_v3 {
     right: 0;
     bottom: 0;
     left: 0;
-    height: 50px;
+    min-height: 50px;
   }
 }
 @media only screen and (max-width: 1199px) {

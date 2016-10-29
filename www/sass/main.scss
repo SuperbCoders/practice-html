@@ -1956,13 +1956,24 @@ $patient_scale_time: 1s;
   position: relative;
   margin: 0 auto;
   max-width: 920px;
-  padding-top: 80px;
+  padding: 80px 0;
+}
+
+.new_appointment_controls {
+  @extend %clearfix;
+  margin: 0 auto;
+  max-width: 920px;
+  padding: 5px 0;
 }
 
 .new_appointment_block {
   .input_w {
-    max-width: 600px;
     margin-bottom: 40px;
+  }
+
+  + .new_appointment_block {
+    padding-top: 35px;
+    border-top: 1px solid #d8d8d8;
   }
 }
 
@@ -4292,11 +4303,11 @@ $patient_scale_time: 1s;
   }
 
   &.input_v11 {
-    height: 40px;
-    font-size: 24px;
-    line-height: 28px;
+    height: 44px;
+    font-size: 19px;
+    line-height: 1.53;
     color: #3b3e40;
-    min-height: 325px;
+    //min-height: 325px;
     letter-spacing: .5px;
 
     &::-webkit-input-placeholder {
@@ -5795,7 +5806,7 @@ $rectWidth: 1200px;
     right: 0;
     bottom: 0;
     left: 0;
-    height: 50px;
+    min-height: 50px;
   }
 
   @include respond-to-max($desktop) {
