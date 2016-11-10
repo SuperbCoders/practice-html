@@ -12,7 +12,7 @@ html(lang='ru')
                             a.appointment_back_btn(href='patient_card.html')
                             .new_appointment_block
                                 .input_w
-                                    input.form_input.input_v10(placeholder='Новая запись')
+                                    input.form_input.input_v10( autocomplete="off" placeholder='Новая запись')
     
                                 .input_w
                                     textarea.form_input.input_v11.autoSize(placeholder='Текст записи')
@@ -22,7 +22,7 @@ html(lang='ru')
                                     .new_appointment_files
                                         .appointment_file
                                             label.form_label
-                                                input.hidden_input(type='file')
+                                                input.hidden_input( autocomplete="off" type='file')
                                                 span Добавьте 
     
                                             span  файлы, если это необходимо 

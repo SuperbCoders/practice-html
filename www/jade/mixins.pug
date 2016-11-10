@@ -153,7 +153,7 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                     .header_search_form
                         form(action='#' novalidate)
                             label.input_w.search_input_w
-                                input.input_v2.form_input(placeholder='Поиск пациента')
+                                input.input_v2.form_input( autocomplete="off" placeholder='Поиск пациента')
                                 button.search_btn
     
                 .fl.mob_hidden.read_mode
@@ -167,19 +167,19 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                         ul.filter_toggle.filter_toggle_v1
                             li.filter_t_item
                                 label.filter_t_box
-                                    input.hidden_input(type='radio' name='patient_filter' checked)
+                                    input.hidden_input( autocomplete="off" type='radio' name='patient_filter' checked)
                                     span.filter_t_name
                                         | Все
                                         span.dt_hidden  пациенты
                             li.filter_t_item
                                 label.filter_t_box
-                                    input.hidden_input(type='radio' name='patient_filter')
+                                    input.hidden_input( autocomplete="off" type='radio' name='patient_filter')
                                     span.filter_t_name
                                         span.dt_hidden Не подтвержденые
                                         span.mob_hidden Ожидают подтверждения
                             li.filter_t_item.mob_hidden
                                 label.filter_t_box
-                                    input.hidden_input(type='radio' name='patient_filter')
+                                    input.hidden_input( autocomplete="off" type='radio' name='patient_filter')
                                     span.filter_t_name В архиве 
     
                     .mb.edit_mode
@@ -220,7 +220,7 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                     .header_search_form
                         form(action='#' novalidate)
                             label.input_w.search_input_w
-                                input.input_v2.form_input(placeholder='Поиск пациента')
+                                input.input_v2.form_input( autocomplete="off" placeholder='Поиск пациента')
                                 button.search_btn
     
                 .fl.mob_hidden
@@ -230,19 +230,19 @@ mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_
                     ul.filter_toggle.filter_toggle_v1
                         li.filter_t_item
                             label.filter_t_box
-                                input.hidden_input(type='radio' name='patient_filter' checked)
+                                input.hidden_input( autocomplete="off" type='radio' name='patient_filter' checked)
                                 span.filter_t_name
                                     | Все
                                     span.dt_hidden  пациенты
                         li.filter_t_item
                             label.filter_t_box
-                                input.hidden_input(type='radio' name='patient_filter')
+                                input.hidden_input( autocomplete="off" type='radio' name='patient_filter')
                                 span.filter_t_name
                                     span.dt_hidden Не подтвержденые
                                     span.mob_hidden Ожидают подтверждения
                         li.filter_t_item.mob_hidden
                             label.filter_t_box
-                                input.hidden_input(type='radio' name='patient_filter')
+                                input.hidden_input( autocomplete="off" type='radio' name='patient_filter')
                                 span.filter_t_name В архиве 
         
     .preloader
@@ -262,7 +262,7 @@ mixin time_switcher()
                         .time_switch_term Дата:
                     .form_cell
                         .time_switch_val
-                            input#change_reception_time.form_input.input_v9(value='6 января' tabindex="-1")
+                            input#change_reception_time.form_input.input_v9( autocomplete="off" value='6 января' tabindex="-1")
                             
                 .form_row
                     .form_cell
@@ -336,22 +336,22 @@ mixin popup()
             +patient_status('right_mod', 'newPatientState')
             .form_row
                 .input_w.placeholder_mod
-                    input#new_patient_name.form_input.input_v4.checkEmpty(type='text', name='new_patient_name', value='')
+                    input#new_patient_name.form_input.input_v4.checkEmpty( autocomplete="off" type='text', name='new_patient_name', value='')
                     label.form_label.fz_20_(for='new_patient_name') Имя пациента
     
             .form_row
                 .input_w.placeholder_mod
-                    input#new_patient_phone.form_input.input_v4.checkEmpty(type='tel', name='new_patient_phone')
+                    input#new_patient_phone.form_input.input_v4.checkEmpty( autocomplete="off" type='tel', name='new_patient_phone')
                     label.form_label(for='new_patient_phone') Телефон
     
             .form_row
                 .input_w.placeholder_mod
-                    input#new_patient_email.form_input.input_v4.checkEmpty(type='email', name='new_patient_email')
+                    input#new_patient_email.form_input.input_v4.checkEmpty( autocomplete="off" type='email', name='new_patient_email')
                     label.form_label(for='new_patient_email') Email
     
             .form_row
                 .input_w.placeholder_mod
-                    input#new_patient_describe.form_input.input_v4.checkEmpty(type='email', name='new_patient_describe')
+                    input#new_patient_describe.form_input.input_v4.checkEmpty( autocomplete="off" type='email', name='new_patient_describe')
                     label.form_label(for='new_patient_describe') Краткое описание (только для вас)
             .controls_block
                 button.btn_v2.new_patient_btn.newPatientBtn.yellow_black_btn(): span.mb Записать на 30 декабря, в 12:00
@@ -391,7 +391,7 @@ mixin write_control()
 
         .write_control_item.custom_field
             .input_w
-                input.form_input.input_v8.addParamVal(placeholder='Введите название')
+                input.form_input.input_v8.addParamVal( autocomplete="off" placeholder='Введите название')
             .write_state_control
                 .write_state_btn.mod_ok.addTolist
 
@@ -401,17 +401,17 @@ mixin appointments()
         .form_content
             .form_row
                 .input_w.placeholder_mod
-                    input#new_patient_name.form_input.input_v4.checkEmpty(type='text', name='new_patient_name', value='')
+                    input#new_patient_name.form_input.input_v4.checkEmpty( autocomplete="off" type='text', name='new_patient_name', value='')
                     label.form_label.fz_20(for='new_patient_name') Введите имя и фамилию
 
             .form_row
                 .input_w.placeholder_mod
-                    input#new_patient_phone.form_input.input_v4.checkEmpty(type='tel', name='new_patient_phone')
+                    input#new_patient_phone.form_input.input_v4.checkEmpty( autocomplete="off" type='tel', name='new_patient_phone')
                     label.form_label(for='new_patient_phone') Телефон
 
             .form_row
                 .input_w.placeholder_mod
-                    input#new_patient_email.form_input.input_v4.checkEmpty(type='email', name='new_patient_email')
+                    input#new_patient_email.form_input.input_v4.checkEmpty( autocomplete="off" type='email', name='new_patient_email')
                     label.form_label(for='new_patient_email') Email (если есть, чтобы получить мед. карту)
 
         .form_footer: a.btn_v4.appointment_btn.appointmentTimeBtn.yellow_black_btn(href='#form_page_1') Выбрать время записи
@@ -495,14 +495,14 @@ mixin popups()
                     .mb Вход через email
     
             .form_row
-                label.hidden_input(for='new_patient_email') Email
+                label.hidden_input( autocomplete="off" for='new_patient_email') Email
                 .input_w
-                    input#new_patient_email.form_input.input_v3.blue_mod.text_center.checkEmpty(type='email', name='new_patient_email', placeholder='Email')
+                    input#new_patient_email.form_input.input_v3.blue_mod.text_center.checkEmpty( autocomplete="off" type='email', name='new_patient_email', placeholder='Email')
     
             .form_row
-                label.hidden_input(for='new_patient_describe') Краткое описание (только для вас)
+                label.hidden_input(for='new_patient_describe') Краткое описание ( autocomplete="off" только для вас)
                 .input_w
-                    input#new_patient_describe.form_input.input_v3.blue_mod.text_center.checkEmpty(type='password', name='new_patient_describe', placeholder='Пароль')
+                    input#new_patient_describe.form_input.input_v3.blue_mod.text_center.checkEmpty( autocomplete="off" type='password', name='new_patient_describe', placeholder='Пароль')
     
             .form_row
                 button.btn_v4.login_btn.disabled_btn_gray.disableEmpty() Войти или зарегистрироваться
@@ -516,9 +516,9 @@ mixin popups()
                 .form_caption Восстановление пароля
                         
                 .form_row
-                    label.hidden_input(for='new_patient_email') Email
+                    label.hidden_input( autocomplete="off" for='new_patient_email') Email
                     .input_w
-                        input#new_patient_email.form_input.input_v3.blue_mod.text_center(type='email', name='new_patient_email', placeholder='Email')
+                        input#new_patient_email.form_input.input_v3.blue_mod.text_center( autocomplete="off" type='email', name='new_patient_email', placeholder='Email')
             
                 .form_row
                     button.btn_v4.login_btn.disabled_btn_gray() Восстановить

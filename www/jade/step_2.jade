@@ -12,7 +12,7 @@ html(lang='ru')
                             a.appointment_back_btn(href='patient_card.html')
                             .new_appointment_block
                                 .input_w.recordName.appointment_menu_holder
-                                    input.form_input.input_v10(placeholder='Новая запись' value='Предварительный анализ')
+                                    input.form_input.input_v10( autocomplete="off" placeholder='Новая запись' value='Предварительный анализ')
                                     .subrecord_menu.open_bottom.left_mod
                                         ul.appointment_menu_list
                                             li.selectRecordName Первичный прием
@@ -21,7 +21,7 @@ html(lang='ru')
                                             li.selectRecordName Результаты
     
                                 .input_w
-                                    textarea.form_input.input_v11.autoSize(placeholder='Текст записи') 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники.  Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
+                                    textarea.form_input.input_v11.autoSize( placeholder='Текст записи') 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники.  Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
                                         | 
                                         | 21 Сентября приняла 2 таблитки асперина и анаферон. 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7.
     
@@ -44,7 +44,7 @@ html(lang='ru')
                                     .new_appointment_files
                                         .appointment_file
                                             label.form_label
-                                                input.hidden_input(type='file')
+                                                input.hidden_input( autocomplete="off" type='file')
                                                 span Добавьте 
     
                                             span  файлы, если это необходимо 
@@ -67,6 +67,6 @@ html(lang='ru')
 
         #add_subrecord_popup.add_subrecord_popup(style='display:none')
             .input_w.add_subrecord
-                input#new_saubrecord_item.form_input.input_v12.checkEmpty(placeholder='Название подзаписи')
+                input#new_saubrecord_item.form_input.input_v12.checkEmpty( autocomplete="off" placeholder='Название подзаписи')
                 button.icon-checkmark.btn_apply_subrecord.applySubRecord
             

@@ -27,26 +27,26 @@ html(lang='ru')
                                                     span
                                                         | Телефон 
                                                         span.mob_hidden  клиента 
-                                            input#patient_photo.hidden_input(type='file' )
+                                            input#patient_photo.hidden_input( autocomplete="off" type='file' )
                                             .patient_add_avatar
                                                 span.patient_avatar_letter Ф
                                                 label.change_photo_btn.btn_v1(for='patient_photo')
 
                                     .form_row
                                         label.input_w
-                                            input.form_input.input_v3(placeholder='ФИО')
+                                            input.form_input.input_v3( autocomplete="off" placeholder='ФИО')
                                     .form_row
                                         label.input_w
-                                            textarea.form_input.input_v3(placeholder='Краткое описание клиента (этот текст будет видеть только врач)')
+                                            textarea.form_input.input_v3(placeholder='Краткое описание клиента ( autocomplete="off" этот текст будет видеть только врач)')
                                     .form_row.mob_add_mod
                                         label.input_w
-                                            input.form_input.input_v3(placeholder='Телефон клиента')
+                                            input.form_input.input_v3( autocomplete="off" placeholder='Телефон клиента')
                                             .add_btn_holder
                                                 a.add_row_btn.yellow_black_btn.cloneRowBtn(href='#')
 
                                     .form_row
                                         label.input_w
-                                            input.form_input.input_v3(placeholder='Email')
+                                            input.form_input.input_v3( autocomplete="off" placeholder='Email')
 
                                 .tab_inner.form_row_v1
                                     h2.caption_v1 Портрет пациента
@@ -57,28 +57,28 @@ html(lang='ru')
                                             ul.filter_toggle.filter_toggle_v2
                                                 li.filter_t_item
                                                     label.filter_t_box
-                                                        input.hidden_input(type='radio' name='patient_filter' checked)
+                                                        input.hidden_input( autocomplete="off" type='radio' name='patient_filter' checked)
                                                         span.filter_t_name Мужской
                                                 li.filter_t_item
                                                     label.filter_t_box
-                                                        input#patient_gender_f.hidden_input(type='radio' name='patient_filter')
+                                                        input#patient_gender_f.hidden_input( autocomplete="off" type='radio' name='patient_filter')
                                                         span.filter_t_name Женский
                                                 
                                     .form_row
                                         .label_holder: label.form_label(for='patient_age') Возраст
                                         label.input_w.size_29.datepicker_v1.max_w_300
-                                            input#patient_age.form_input.input_v1()
+                                            input#patient_age.form_input.input_v1( autocomplete="off" )
                                             span.calendar_icon
                                         span.patient_age_val 22 года
 
                                     .form_row
                                         .label_holder: label.form_label(for='patient_weight') Вес
                                         .input_w.size_59
-                                            input#patient_weight.form_input.input_v1(placeholder='80 кг')
+                                            input#patient_weight.form_input.input_v1( autocomplete="off" placeholder='80 кг')
                                     .form_row
                                         .label_holder: label.form_label(for='patient_height') Рост
                                         .input_w.size_59
-                                            input#patient_height.form_input.input_v1(placeholder='185 см')
+                                            input#patient_height.form_input.input_v1( autocomplete="off" placeholder='185 см')
                                             
                                     .form_row
                                         .label_holder: .form_label() Группа крови
@@ -100,27 +100,27 @@ html(lang='ru')
                                     .form_row
                                         .label_holder: label.form_label(for='patient_chronic_diseases') Хронические заболевания
                                         .input_w.size_59
-                                            textarea#patient_chronic_diseases.form_input.mod_1.input_v1(placeholder='Перечислите через запятую')
+                                            textarea#patient_chronic_diseases.form_input.mod_1.input_v1(  placeholder='Перечислите через запятую')
     
                                     .form_row
                                         .label_holder: label.form_label(for='patient_bad_habits') Вредные привычки
                                         .input_w.size_59
-                                            textarea#patient_bad_habits.form_input.mod_1.input_v1(placeholder='Перечислите через запятую')
+                                            textarea#patient_bad_habits.form_input.mod_1.input_v1(  placeholder='Перечислите через запятую')
     
                                     .form_row
                                         .label_holder: label.form_label(for='patient_profession') Профессия
                                         .input_w.size_59
-                                            input#patient_profession.form_input.input_v1()
+                                            input#patient_profession.form_input.input_v1( autocomplete="off" )
                                             
                                 .tab_inner.form_row_v1
                                     .form_row
                                         .label_holder: label.form_label(for='patient_doc_number') Договор №
                                         .input_w.size_59
-                                            input#patient_doc_number.form_input.input_v1()
+                                            input#patient_doc_number.form_input.input_v1( autocomplete="off" )
                                     .form_row
                                         .label_holder: label.form_label(for='patient_reg_date') Дата регистрации
                                         .input_w.size_59
-                                            input#patient_reg_date.form_input.input_v1()
+                                            input#patient_reg_date.form_input.input_v1( autocomplete="off" )
                                                      
                             .profile_tab_controls
                                 .section_inner
