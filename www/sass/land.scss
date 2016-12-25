@@ -212,7 +212,7 @@ a {
     margin-bottom: 30px;
     display: inline-block;
     vertical-align: top;
-    
+
     @include respond-to-min($mobile) {
       max-width: 49%;
     }
@@ -371,15 +371,12 @@ a {
 }
 
 .price_block {
-  display: inline-block;
-  vertical-align: top;
   background: #5b00ff;
   color: #fff;
   position: relative;
   padding: 52px 30px;
-  width: 300px;
   height: 395px;
-  margin: 20px;
+  margin: 20px 20px 40px;
   border-radius: 20px;
 
   &:before {
@@ -403,6 +400,13 @@ a {
   &._demo {
     background: #ffebdc;
     color: #000;
+  }
+
+  @include respond-to-min($mobile) {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    margin: 20px;
   }
 
   @include respond-to-min($tablet) {

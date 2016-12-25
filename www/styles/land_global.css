@@ -947,15 +947,12 @@ a {
 }
 
 .price_block {
-  display: inline-block;
-  vertical-align: top;
   background: #5b00ff;
   color: #fff;
   position: relative;
   padding: 52px 30px;
-  width: 300px;
   height: 395px;
-  margin: 20px;
+  margin: 20px 20px 40px;
   border-radius: 20px;
 }
 .price_block:before {
@@ -977,6 +974,14 @@ a {
 .price_block._demo {
   background: #ffebdc;
   color: #000;
+}
+@media only screen and (min-width: 480px) {
+  .price_block {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    margin: 20px;
+  }
 }
 @media only screen and (min-width: 720px) {
   .price_block {
