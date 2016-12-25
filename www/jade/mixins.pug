@@ -52,6 +52,19 @@ mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, publ
             script(src='js/fullcalendar.js')
             script(src='js/calendar_script.js?no_cache')
 
+mixin land_head(page_title)
+    head
+        title=page_title
+        | <!-- saved from url=(0014)about:internet -->
+        meta(charset='utf-8')
+        meta(name='viewport', content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='styles/land_global.css?no_cache', media='all')
+        link(href="https://fonts.googleapis.com/css?family=Lora:400,700|Noto+Serif:400,700|Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet")
+
+        script(src='js/jquery1.10.js?no_cache')
+        script(src='js/land_script.js?no_cache')
+
+
 
 mixin loop_while(counter)
     -i=0;
@@ -92,6 +105,15 @@ mixin patient_info_table()
     .patient_info_table: .other_info_cell
         p +7 927 026 10 22
         p yaosamo@gmail.com
+        
+mixin land_header()
+    div.header
+        .section_inner.clearfix
+            .logo_block: a.logo(href='#')
+            
+            .header_controls
+                a.btn_v2.black_btn.auth_btn(href='#') Вход для клиентов
+        
             
 mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_patient, notification_center)
     div.header

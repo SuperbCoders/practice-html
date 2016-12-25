@@ -1,0 +1,134 @@
+@import "variables";
+
+@font-face {
+  font-family: 'practic_icons';
+  src:  url('#{$icomoon-font-path}/practic_icons.eot?rf918c');
+  src:  url('#{$icomoon-font-path}/practic_icons.eot?rf918c#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/practic_icons.ttf?rf918c') format('truetype'),
+    url('#{$icomoon-font-path}/practic_icons.woff?rf918c') format('woff'),
+    url('#{$icomoon-font-path}/practic_icons.svg?rf918c#practic_icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'practic_icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chevron_left {
+  &:before {
+    content: $icon-chevron_left;
+  }
+}
+.icon-pencil {
+  &:before {
+    content: $icon-pencil;
+  }
+}
+.icon-fb {
+  &:before {
+    content: $icon-fb;
+  }
+}
+.icon-vk {
+  &:before {
+    content: $icon-vk;
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus;
+  }
+}
+.icon-tw {
+  &:before {
+    content: $icon-tw;
+  }
+}
+.icon-photo {
+  &:before {
+    content: $icon-photo;
+  }
+}
+.icon-checkmark {
+  &:before {
+    content: $icon-checkmark;
+  }
+}
+.icon-logogray {
+  &:before {
+    content: $icon-logogray;
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+.icon-uniE90A {
+  &:before {
+    content: $icon-uniE90A;
+  }
+}
+.icon-uniE90B {
+  &:before {
+    content: $icon-uniE90B;
+  }
+}
+.icon-map_pin {
+  &:before {
+    content: $icon-map_pin;
+  }
+}
+.icon-attach {
+  &:before {
+    content: $icon-attach;
+  }
+}
+.icon-minus {
+  &:before {
+    content: $icon-minus;
+  }
+}
+.icon-donemark {
+  &:before {
+    content: $icon-donemark;
+  }
+}
+.icon-chevron_right {
+  &:before {
+    content: $icon-chevron_right;
+  }
+}
+.icon-tip_arrow {
+  &:before {
+    content: $icon-tip_arrow;
+  }
+}
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right;
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left;
+  }
+}
+
