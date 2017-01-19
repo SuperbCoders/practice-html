@@ -1750,6 +1750,23 @@ $patient_scale_time: 1s;
   }
 }
 
+.appointments_control {
+  @extend %clearfix;
+
+  @include respond-to-min($tablet) {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  @include respond-to-min($desktop) {
+    position: fixed;
+    bottom: 0;
+    right: auto;
+    width: 680px;
+  }
+}
+
 .appointment_menu_holder {
   position: relative;
 
@@ -1757,7 +1774,7 @@ $patient_scale_time: 1s;
     float: left;
     margin-bottom: 20px;
   }
-  
+
   &:hover {
     .subrecord_menu {
       display: block;
@@ -1777,7 +1794,7 @@ $patient_scale_time: 1s;
     left: 0;
     margin-left: 0;
   }
-  
+
   &.open_top {
     bottom: 100%;
     padding-bottom: 20px;
@@ -4374,7 +4391,7 @@ $patient_scale_time: 1s;
   &.add_subrecord {
     margin: 0 120px 0 35px;
   }
-  
+
   &.placeholder_mod {
     padding-top: 20px;
     overflow: hidden;
@@ -5396,7 +5413,9 @@ textarea.form_input.input_v3 {
     padding-left: 1px;
 
     @include respond-to-min($tablet) {
-      position: absolute;
+      //position: absolute;
+      float: right;
+      right: 0;
     }
   }
 
