@@ -93,7 +93,7 @@
   -webkit-box-align: stretch;
 }
 
-.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .appointment_media_list:after, .new_appointment_controls:after, .appointment_controls .row:after, .appointment_file:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
+.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .appointments_control:after, .appointment_media_list:after, .new_appointment_controls:after, .appointment_controls .row:after, .appointment_file:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
   position: static;
   display: block;
   height: 0;
@@ -103,7 +103,7 @@
 }
 
 .ui-datepicker th,
-.ui-datepicker td, .profile_tab_header, .tab_active_cursor, .tab_list, .write_state_btn {
+.ui-datepicker td, .profile_tab_header, .tab_active_cursor, .tab_list, .avatar, .write_state_btn {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   transform: translateZ(0);
@@ -2279,6 +2279,7 @@ a {
   position: absolute;
   width: 50px;
   border-radius: 20px;
+  z-index: 2;
 }
 .patient_avatar_letter + .change_photo_btn, .doctor_photo .change_photo_btn {
   margin-top: -16px;
@@ -2477,9 +2478,6 @@ a {
   border-radius: 100%;
 }
 .patient_avatar img {
-  -webkit-transition: transform 0.3s;
-  -ms-transition: transform 0.3s;
-  transition: transform 0.3s;
   width: 40px;
   height: 40px;
   display: block;
@@ -2490,7 +2488,7 @@ a {
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
-.patient_card:hover + .avatar_clone .patient_avatar img {
+.patient_card:hover + .avatar_clone .patient_avatar .avatar {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
@@ -2514,10 +2512,22 @@ a {
   bottom: 0;
   margin: 0;
 }
-.avatar_clone .patient_avatar:hover img {
+.avatar_clone .patient_avatar:hover .avatar {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
+}
+
+.avatar {
+  -webkit-transition: transform 0.3s;
+  -ms-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transform-origin: 50% 50%;
+  border-radius: 100%;
+  text-align: center;
+  color: #636363;
+  background: #ececec;
+  line-height: 40px;
 }
 
 .patient_photo_block {
@@ -2554,6 +2564,8 @@ a {
   height: 80px;
   display: block;
   border-radius: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .patient_avatar_letter {
@@ -2703,6 +2715,22 @@ a {
 
 .appointments_list > li {
   margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 720px) {
+  .appointments_control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .appointments_control {
+    position: fixed;
+    bottom: 0;
+    right: auto;
+    width: 680px;
+  }
 }
 
 .appointment_menu_holder {
@@ -5792,7 +5820,8 @@ textarea.form_input.input_v3 {
 }
 @media only screen and (min-width: 720px) {
   .btn_v3.new_appointment_btn {
-    position: absolute;
+    float: right;
+    right: 0;
   }
 }
 .btn_v3.add_patient_line {
