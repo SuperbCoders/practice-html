@@ -93,7 +93,7 @@
   -webkit-box-align: stretch;
 }
 
-.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .appointments_control:after, .appointment_media_list:after, .new_appointment_controls:after, .appointment_controls .row:after, .appointment_file:after, .patient_menu_w:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
+.clearfix:after, .main_menu:after, .notification_item:after, .user_info:after, .tab_list:after, .overview_info:after, .patient_board:after, .patient_avatar_holder:after, .appointments_control:after, .appointment_media_list:after, .new_appointment_controls:after, .appointment_controls .row:after, .appointment_file:after, .patient_menu_w:after, .doctor_controls:after, .logo_holder:after, .soc_auth:after, .time_switcher_block .form_row:after, .form_row:after, .filter_toggle:after, .patient_write_block:after, .write_controls:after, .attach_list:after, .note_lines:after, .note_img_list:after, .gender_toggle:after, .form_controls:after, .write_form_controls:after {
   position: static;
   display: block;
   height: 0;
@@ -1417,7 +1417,9 @@ a {
 }
 .logo.logo_v1 {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
+  line-height: 1;
+  padding: 0;
 }
 .logo.logo_v1:before {
   color: #b7b7b7;
@@ -3528,18 +3530,25 @@ a {
 }
 
 .doctor_spec {
+  font: 18px/1.5 "HelveticaNeue", sans-serif;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #d8d8d8;
+}
+
+.doctor_education {
   font: 14px "HelveticaNeue", sans-serif;
   color: #969696;
 }
 
 .doctor_phone {
   font: 25px "HelveticaNeue", sans-serif;
-  margin: 60px 0 10px;
+  margin: 30px 0 10px;
 }
 
 .doctor_name {
   font: 40px/47px "PT Serif", serif;
-  margin: 10px 0 20px;
+  margin: 10px 0 15px;
 }
 
 .doctor_block {
@@ -3568,20 +3577,31 @@ a {
   line-height: 1.5;
 }
 
+@media only screen and (min-width: 1200px) {
+  .doctor_cv {
+    min-height: 250px;
+  }
+}
+
 .doctor_controls {
-  margin: 80px auto 0;
-  max-width: 220px;
+  margin: 70px auto 0;
+  line-height: 50px;
+}
+.doctor_controls > li {
+  float: right;
+}
+.doctor_controls > li:first-child {
+  float: left;
 }
 
 .doctor_info {
   background: #fff;
   padding: 20px;
-  text-align: center;
   margin-bottom: 20px;
 }
 @media only screen and (min-width: 1200px) {
   .doctor_info {
-    padding: 40px 65px;
+    padding: 30px 60px 65px;
     margin-bottom: 0;
     width: 50%;
     display: -webkit-box;
@@ -3631,13 +3651,13 @@ a {
 
 .doctor_soc li {
   display: inline-block;
-  vertical-align: top;
-  margin: 20px 18px 0;
+  vertical-align: middle;
+  margin: 20px 3px 0 37px;
 }
 
 .logo_holder {
-  text-align: center;
   margin-bottom: 20px;
+  line-height: 32px;
 }
 
 .calendar_holder {
@@ -5707,6 +5727,13 @@ textarea.form_input.input_v3 {
 .btn_v1 {
   height: 32px;
 }
+.btn_v1.profile_btn {
+  display: block;
+  padding: 0 21px;
+  border-radius: 16px;
+  position: relative;
+  letter-spacing: .025em;
+}
 .btn_v1.save_card_btn {
   display: block;
   position: relative;
@@ -5873,8 +5900,7 @@ textarea.form_input.input_v3 {
   font: 14px/50px "HelveticaNeue", sans-serif;
 }
 .btn_v4.doctor_btn {
-  width: 100%;
-  max-width: 300px;
+  min-width: 220px;
   margin: 0 auto;
   display: block;
   text-decoration: none;
