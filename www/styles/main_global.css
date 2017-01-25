@@ -1195,6 +1195,9 @@ body {
 body.body_gray {
   background: #f5f5f5;
 }
+body.body_white {
+  background: #fff;
+}
 
 a {
   text-decoration: none;

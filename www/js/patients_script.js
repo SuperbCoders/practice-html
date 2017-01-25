@@ -47,7 +47,6 @@ $(function ($) {
         }
     });
 
-
     $('.openMenu').on('click', function () {
         html_var.addClass('menu_open');
         return false;
@@ -189,9 +188,12 @@ $(function ($) {
     });
 
     $('.addAppointment').on('click', function () {
-
         appointmentForm.dialog('close');
+        return false;
+    });
 
+    $('.printCard').on('click', function () {
+        printCard();
         return false;
     });
 
@@ -240,3 +242,8 @@ $(function ($) {
 
 });
 
+function printCard(param) {
+    var url = "print_card.html";
+    var windowParams = "menubar=no,location=yes,resizable=yes,scrollbars=no,status=no,width=500,height=400";
+    window.open(url, "Print", windowParams);
+}

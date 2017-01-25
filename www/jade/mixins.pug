@@ -1,4 +1,4 @@
-mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, public_profile, patient_card, edit_card, step_1)
+mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, public_profile, patient_card, edit_card, step_1, print)
     head
         title=page_title
         | <!-- saved from url=(0014)about:internet -->
@@ -6,11 +6,19 @@ mixin dev_head(page_title, edit_profile, patients, add_patient, scheduller, publ
         meta(name='viewport', content="width=device-width, initial-scale=1.0")
         - if (patients)
             link(rel='stylesheet', href='styles/jquery.fancybox.css?no_cache')
-        link(rel='stylesheet', href='styles/main_global.css?no_cache', media='all')
-        script(src='js/jquery1.10.js?no_cache')
-        script(src='js/jquery-ui.js?no_cache')
-        script(src='js/chosen.jquery.js?no_cache')
-        script(src='js/script.js?no_cache')
+        - if (print)
+            link(rel='stylesheet', href='styles/print.css?no_cache')
+            script.
+                setTimeout(function () {
+                    window.print();
+                    window.close();
+                }, 5);
+        - else
+            link(rel='stylesheet', href='styles/main_global.css?no_cache', media='all')
+            script(src='js/jquery1.10.js?no_cache')
+            script(src='js/jquery-ui.js?no_cache')
+            script(src='js/chosen.jquery.js?no_cache')
+            script(src='js/script.js?no_cache')
         - if (step_1)
             script(src='js/steps.js')
         - if (edit_profile)
@@ -478,11 +486,9 @@ mixin appointment_menu()
         .appointment_menu_btn
         ul.appointment_menu_list
             li Редактировать
-            li Напечатать
+            li.printCard Напечатать
             li Отправить по почте
             li Скачать TXT файл
-                
-        
         
 mixin aside_menu()
     .aside_menu_overlay.closeMenu
