@@ -20,10 +20,12 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'expanded'
+                    style: 'expanded',
+                    source: 'none'
                 },
                 files: {
-                    'styles/main_global.css': 'sass/main_global.scss'
+                    'styles/main_global.css': 'sass/main_global.scss',
+                    'styles/land_global.css': 'sass/land_global.scss'
                 }
             }
         },
@@ -49,5 +51,5 @@ module.exports = function (grunt) {
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('default', ['watch_styles', 'watch_templates']);
+    grunt.registerTask('default', ['watch']);
 };

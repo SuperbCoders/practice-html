@@ -1,91 +1,120 @@
 include mixins.pug
 doctype html
 html(lang='ru')
-    +dev_head('Practic карта пациента', false, false, false, false, false, true)
+    +dev_head('Practic карта пациента', false, true)
 
-    body.body_gray.sub_header_mod
+    body.body_gray
         .wrapper
-            //.rect_1024
+            //-.rect_1024
             .base.load_more_mod
-                +header(2, false, false, true)
+                +header(2)
 
                 div.main_content
                     .section_inner
-                        ul.patients_list
-                            +loop_while(3)
-                                li.patient_unit
-                                    .patient_card
-                                        +patient_status()
-                                        +patient_menu()
+                        .patient_board
+                            .patient_block
+                                .patient_card
+                                    +patient_status()
+                                    //+patient_menu()
+                                    .patient_avatar_holder
                                         a.patient_avatar(href='#'): img(src='i/user_2.png')
                                         .patient_info
-                                            .patient_name: a.gl_link.gray_link(href='#'): span Осинцев Константин
-                                            p Краткая информация о пациенте Первичный прием, возможно анализы...
-                                        +patient_info_table()
-                                        
-                                        .patient_card_controls.skipOpen.patient_warn: .patient_info_table
-                                            .controls_cell
-                                                a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Подтвердить прием на 29 декабря в 12:00
-                                                p: a.gl_link.changeReceptionTime(href='#') Изменить время приема
+                                            .patient_name
+                                                a.gl_link.gray_link(href='#'): span Юлия Бокова
+                                            .patient_city Москва 
+                                            
+                                    .patient_preview
+                                        p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
+                                    
+                                    +patient_info_table()
+                                    
+                                    .patient_card_controls.skipOpen: .patient_info_table
+                                        .controls_cell
+                                            a.btn_v2.patient_btn.green_btn(href='#'): span.mb Записать на прием
+                                                    
+                                    ul.patient_overview_list
+                                        li.patient_overview_line
+                                            .overview_caption_v2 Портрет
+                                            dl.overview_info
+                                                dt Рост:
+                                                dd 178
+                                                dt Вес
+                                                dd 55 кг
+                                                dt Возраст
+                                                dd 44
+
+                                        li.patient_overview_line
+                                            .overview_caption_v2 Особенности
+                                            p Аллергия на цветы
+
+                                        li.patient_overview_line
+                                            .overview_caption_v2 Дополнительно
+                                            p Договор №000099
+
+                            .patient_appointments
+                                .caption_v2 Записи
+                                    
+                                ul.appointments_list
+                                    li
+                                        .appointment_block
+                                            +appointment_menu()
+                                                
+                                            .patient_note_date 23 СЕНТЯБРЯ 2016
+                                                
+                                            .appointment_caption: a(href='#') Первичный прием
+                                                
+                                            p 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
+                                            
+                                            .appointment_caption: a(href='#') Назначение
+                                                
+                                            p 2 таблетки амфетоминов после обеда. Вечером делать ингаляцию, пить как можно больше воды, чая с медом или вареньем.
+                                                
+                                    li
+                                        .appointment_block
+                                            +appointment_menu()
+
+                                            .patient_note_date 23 СЕНТЯБРЯ 2016
+                                                
+                                            .appointment_caption: a.gl_link(href='#') Первичный прием
+                                                
+                                            p 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
+                                            
+                                            .appointment_caption: a.gl_link(href='#') Назначение
+                                                
+                                            p 2 таблетки амфетоминов после обеда. Вечером делать ингаляцию, пить как можно больше воды, чая с медом или вареньем.
+                                                
+                                    li
+                                        .appointment_block
+                                            +appointment_menu()
+
+                                            .patient_note_date 23 СЕНТЯБРЯ 2016
+                                                
+                                            .appointment_caption: a.gl_link(href='#') Предварительный анализ
+                                                
+                                            p 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
+                                            
+                                            .appointment_caption: a.gl_link(href='#') Предварительный анализ
+                                                
+                                            p 20 Сентября почувствовала себя плохо, выпила нурафен, гарчичники. Температура 40.7. Вызвали скорую, сделали укол жаропонижающего. 21 Сентября приняла 2 таблитки асперина и анаферон.
+                                            
+                                            ul.appointment_media_list
+                                                li
+                                                    .appointment_media.media_pdf
+                                                        .media_name Analyz-krovi.pdf
+                                                        a.btn_v7.download_btn.white__btn_2(href='#') Скачать
                                                         
-                                        +patient_overview()
-                        
-                                li.patient_unit
-                                    .patient_card
-                                        +patient_status()
-                                        +patient_menu()
-                                        a.patient_avatar(href='#'): img(src='i/user_1.png')
-                                        .patient_info
-                                            .patient_name: a.gl_link.gray_link(href='#'): span Самойлов Ярослав Георгиевич
-                                            p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
-                                        +patient_info_table()
-                                        .patient_card_controls.skipOpen: .patient_info_table
-                                            .controls_cell
-                                                a.btn_v2.patient_btn.black_yellow_btn(href='#'): span.mb Записать на прием
-                                        +patient_overview()
+                                                li
+                                                    .appointment_media
+                                                        .appointment_img
+                                                            img(src='i/appointment_media.png')
+                                                        
+                                                li
+                                                    .appointment_media.media_mp3
+                                                        .media_name Analyz-krovi.pdf
+                                                        a.btn_v7.download_btn.white__btn_2(href='#') Скачать
+                                .appointments_control
+                                    a.btn_v3.new_appointment_btn.yellow_black_btn.icon-plus.openAppointmentForm_(href='step_1.html')
 
-                                li.patient_unit
-                                    .patient_card
-                                        +patient_status()
-                                        +patient_menu()
-                                        a.patient_avatar(href='#'): img(src='i/user_2.png')
-                                        .patient_info
-                                            .patient_name: a.gl_link.gray_link(href='#'): span Петрова Алина
-                                            p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
-                                        +patient_info_table()
-                                        .patient_card_controls.skipOpen.patient_confirm: .patient_info_table
-                                            .controls_cell
-                                                a.btn_v2.patient_btn.white_white_btn(href='#'): span.mb Изменить прием 29 февраля, в 12:00
-                                                p: a.gl_link(href='#') Отменить приём
-                                        +patient_overview()
-
-                                li.patient_unit
-                                    .patient_card
-                                        +patient_status()
-                                        +patient_menu()
-                                        a.patient_avatar(href='#'): img(src='i/user_2.png')
-                                        .patient_info
-                                            .patient_name: a.gl_link.gray_link(href='#'): span Петрова Алина
-                                            p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
-                                        +patient_info_table()
-                                        .patient_card_controls.skipOpen.patient_ready: .patient_info_table
-                                            .controls_cell
-                                                a.btn_v2.patient_btn.green_btn(href='#'): span.mb Начать прием
-                                        +patient_overview()
-
-                        .pagination_holder
-                            ul.pagination_list
-                                li.pagination_item.pagination_prev: a.gl_link(href='#') 
-                                li.pagination_item: a.gl_link(href='#') 1
-                                li.pagination_item.active: a.gl_link(href='#') 2
-                                li.pagination_item: a.gl_link(href='#') 3
-                                li.pagination_item: a.gl_link(href='#') 4
-                                li.pagination_item: a.gl_link(href='#') 5
-                                li.pagination_item: a.gl_link(href='#') ...304
-                                li.pagination_item.pagination_next: a.gl_link(href='#')
-                                
-                a.load_more_btn(href='#') Показать еще карточки пациентов
-                
                 //-+aside_menu()
                 
             +time_switcher()

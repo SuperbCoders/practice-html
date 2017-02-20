@@ -5,7 +5,7 @@ html(lang='ru')
 
     body.body_gray.sub_header_mod
         .wrapper
-            //.rect_1024
+            //-.rect_1024
             .base.load_more_mod
                 +header(2, true)
 
@@ -36,7 +36,8 @@ html(lang='ru')
                                                 //+patient_overview()
                                                     
                                             .avatar_clone
-                                                a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_2.png')
+                                                a.patient_avatar.skipOpen.write2Card(href='#')
+                                                    .avatar: span ФФ
                                 
                                         li.patient_unit
                                             
@@ -53,7 +54,8 @@ html(lang='ru')
                                                 //+patient_overview()
         
                                             .avatar_clone
-                                                a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_1.png')
+                                                a.patient_avatar.skipOpen.write2Card(href='#')
+                                                    .avatar: img(src='i/user_1.png')
                                                     
                                         li.patient_unit
                                             
@@ -71,7 +73,8 @@ html(lang='ru')
                                                 //+patient_overview()
         
                                             .avatar_clone
-                                                a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_2.png')
+                                                a.patient_avatar.skipOpen.write2Card(href='#')
+                                                    .avatar: img(src='i/user_2.png')
                                                     
                                         li.patient_unit
                                             
@@ -88,7 +91,8 @@ html(lang='ru')
                                                 //+patient_overview()
         
                                             .avatar_clone
-                                                a.patient_avatar.skipOpen.write2Card(href='#'): img(src='i/user_2.png')
+                                                a.patient_avatar.skipOpen.write2Card(href='#')
+                                                    .avatar: img(src='i/user_2.png')
                                                     
                                 .pagination_holder.read_mode
                                     ul.pagination_list

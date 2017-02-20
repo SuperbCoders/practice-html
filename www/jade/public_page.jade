@@ -7,24 +7,31 @@ html(lang='ru')
         .wrapper.doctor_block
             .doctor_info
                 .logo_holder
-                    a.logo.logo_v1(href='#')
+                    .fl
+                        a.logo.logo_v1(href='#')
+                    .fr
+                        a.btn_v1.black_yellow_btn.profile_btn(href='#') Моя мед. карта
                 
                 .doctor_overview
-                    .doctor_spec Офтальмолог (окулист), врач первой категории
-                        
-                    .doctor_name Виталий Николаевич  <br>  Приказный
-                    p Офтальмология изучает болезни органов зрения, разрабатывает способы их лечения и предупреждения; кроме того, офтальмология как отрасль науки занимается вопросами анатомии и физиологии глаза.
+                    .doctor_name Виталий Николаевич Приказный
+                    .doctor_cv
+                        p Офтальмолог (окулист), врач первой категории, 20 лет опыта
+                        p.doctor_education Образование: 2-й медицинский институт им. Сеченова 
+
+                        p.doctor_spec Офтальмология изучает болезни органов зрения, разрабатывает способы их лечения и предупреждения; кроме того, офтальмология как отрасль науки занимается вопросами анатомии и физиологии.
+                    
                     .doctor_phone +7 (927) 584-22-13
                         
-                    .doctor_spec Для записи по телефону
+                    .doctor_education Для записи по телефону
                         
-                    .doctor_controls
-                        a.btn_v4.doctor_btn.yellow_black_btn.openAppointmentBtn(href='#') Записаться на прием
-                        
-                ul.doctor_soc
-                    li: a.doc_soc_link.soc_i_vk(href='#')
-                    li: a.doc_soc_link.soc_i_fb(href='#')
-                    li: a.doc_soc_link.soc_i_tw(href='#')
+                    ul.doctor_controls
+                        li
+                            a.btn_v4.doctor_btn.yellow_black_btn.openAppointmentBtn(href='#') Записаться на прием
+                        li
+                            ul.doctor_soc
+                                li: a.doc_soc_link.soc_i_vk(href='#')
+                                li: a.doc_soc_link.soc_i_fb(href='#')
+                                li: a.doc_soc_link.soc_i_tw(href='#')
                     
             .doctor_aside_photo
                 img(src='i/doctor_1.jpg')

@@ -6,7 +6,7 @@ $(function ($) {
         autoOpen: false,
         modal: true,
         width: 480,
-        dialogClass: "dialog_v1 no_close_mod dialog_title_v1"
+        dialogClass: "dialog_v1 dialog_close_butt_mod_1 dialog_title_v1"
     });
 
     $('.openAppointmentBtn').on('click', function () {

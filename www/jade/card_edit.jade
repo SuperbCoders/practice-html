@@ -5,7 +5,7 @@ html(lang='ru')
 
     body.sub_header_mod
         .wrapper
-            //.rect_1024
+            //-.rect_1024
             .base.controls_mod
                 +header(2, false, false, false, true)
 
@@ -25,7 +25,7 @@ html(lang='ru')
                                 
                             .attach_block
                                 label.attach_btn.gl_link.gray_link_3
-                                    input.hidden_input(type='file')
+                                    input.hidden_input( autocomplete="off" type='file')
                                     span Прикрепить файл
                                     
                                 ul.attach_list
@@ -40,7 +40,7 @@ html(lang='ru')
                                 +write_control()
 
                             .write_content
-                                textarea.form_input.input_v7(placeholder='Выберите назначение и введите текст')
+                                textarea.form_input.input_v7( placeholder='Выберите назначение и введите текст')
                                 
                             .attach_block &nbsp;
 
