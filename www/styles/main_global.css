@@ -6390,6 +6390,8 @@ textarea.form_input.input_v3 {
   height: 28px;
   text-align: center;
   background: none;
+  z-index: 3;
+  font-size: 0;
 }
 .dialog_close_butt_mod_1 .ui-dialog-titlebar-close:before {
   position: absolute;

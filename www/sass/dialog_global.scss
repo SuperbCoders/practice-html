@@ -90,6 +90,8 @@
     height: 28px;
     text-align: center;
     background: none;
+    z-index: 3;
+    font-size: 0;
 
     &:before {
       position: absolute;

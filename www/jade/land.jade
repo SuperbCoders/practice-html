@@ -155,7 +155,12 @@ html(lang='ru')
                                             span.icon-fb.share_icon
                                             span Поделиться
                                         
-                                .copyright ИП, Осинцев 2017, hello@praktica.cc
+                                .copyright
+                                    p ИП, Осинцев 2017, 
+                                        a.clr_white(href='mailto:hello@praktica.cc') hello@praktica.cc
+                                    ul.footer_links
+                                        li: a.clr_white(href='#') Наши реквизиты
+                                        li: a.clr_white(href='#') Оферта и Правила
 
                 //-+aside_menu()
                 +popups()

@@ -15,7 +15,7 @@
   -webkit-box-align: start;
 }
 
-.clearfix:after, .benefits_list:after, .tutorial_block:after, .price_holder:after, .footer:after {
+.clearfix:after, .benefits_list:after, .tutorial_block:after, .price_holder:after, .footer_links:after, .footer:after {
   position: static;
   display: block;
   height: 0;
@@ -1025,12 +1025,35 @@ a {
 .copyright {
   font-size: 15px;
   color: #6f7685;
-  text-align: center;
+}
+.copyright p {
+  line-height: normal;
 }
 @media only screen and (min-width: 720px) {
   .copyright {
     float: left;
   }
+}
+
+.footer_links {
+  color: #bec3cf;
+}
+.footer_links > li {
+  float: left;
+  position: relative;
+}
+.footer_links > li:before {
+  content: '\2022';
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 5px;
+}
+.footer_links > li:first-child:before {
+  display: none;
+}
+
+.clr_white {
+  color: #bec3cf;
 }
 
 .share_block {

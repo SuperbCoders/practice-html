@@ -453,11 +453,42 @@ a {
 .copyright {
   font-size: 15px;
   color: #6f7685;
-  text-align: center;
+
+  p {
+    line-height: normal;
+  }
 
   @include respond-to-min($tablet) {
     float: left;
   }
+}
+
+.footer_links {
+  @extend %clearfix;
+  color: #bec3cf;
+
+  > li {
+    float: left;
+    position: relative;
+  
+    &:before {
+      content: '\2022';
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 5px;
+    }
+
+    &:first-child {
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.clr_white {
+  color: #bec3cf;
 }
 
 .share_block {
