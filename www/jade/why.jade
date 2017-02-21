@@ -1,0 +1,78 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +land_head('Practic land')
+
+    body._land
+        .wrapper
+            //-.rect_1024
+            .base
+                +land_header()
+
+                div.main_content
+                    .section.first_section
+                        .section_inner
+                            .article_v1
+                                h1 Для чего мне это?
+                                h2 Разгрузите голову
+                                p Врачу частной практики очень многое приходится держать в голове. Перенесите все вопросы с записью пациентов и ведению их карт в Практику – и вам станет проще.
+                                p Контроль и планирование. Все ваши дела и пациенты у вас перед глазами. Легко анализировать собственную деятельность, есть доступ ко всем записям, появляется возможность планировать свою работу эффективнее. 
+                                h3 Современный и профессиональный подход. Медицина уже немыслима без информационных технологий. Мы стараемся предоставить частному врачу возможности по ведению дел, сравнимые с решениями крупных клиник.
+                                p
+                                    b Удобство для пациентов.
+                                    | Давайте скажем прямо: сейчас пациенты хотят удобства. Они хотят запись через сайт, оплату картой, смс-уведомления, онлайн-доступ к своей карте и прочее. Практика поможет вам внедрить все эти штуки (ну или почти все).
+                                p    
+                                    b Меньше бумаг.  
+                                    |  Ежедневники, карты пациентов, выписки – вся эта макулатура в наше время только мешает. Практика поможет вам сократить объем бумажной работы.
+                            .price_holder
+                                .price_block._demo
+                                    .price_img
+                                        img(src='i/land/party.png')
+                                
+                                    p Первые
+                                
+                                    .demo_period
+                                        span 6
+                                        span 0
+                                    
+                                    p Дней <br> бесплатно
+                                    
+                                    
+                                .price_block
+                                    .price_img
+                                        img(src='i/land/pie.png')
+                                
+                                    p Далее
+                                
+                                    .demo_period 839₽
+                                    
+                                    p В месяц, при оплате <br> за год
+                                    
+                                    .price_tip Или 1,000₽ помесячно
+                                        
+                    .footer_holder
+                        .section_inner
+                            .section_controls
+                                a.btn_v1.try_btn.white_btn(href='#') Попробовать бесплатно
+                                
+                            .footer
+                                ul.share_block
+                                    li 
+                                        a.btn_v3.white_btn_2.share_btn(href='#')
+                                            span.icon-tw.share_icon
+                                            span Твитнуть
+                                    li 
+                                        a.btn_v3.white_btn_2.share_btn(href='#')
+                                            span.icon-fb.share_icon
+                                            span Поделиться
+                                        
+                                .copyright
+                                    p ИП, Осинцев 2017, 
+                                        a.clr_white(href='mailto:hello@praktica.cc') hello@praktica.cc
+                                    ul.footer_links
+                                        li: a.clr_white(href='#') Наши реквизиты
+                                        li: a.clr_white(href='#') Оферта и Правила
+
+                //-+aside_menu()
+                +popups()
+                
