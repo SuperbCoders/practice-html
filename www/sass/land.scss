@@ -358,6 +358,47 @@ a {
   }
 }
 
+.article_v1 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  
+  h1 {
+    text-align: center;
+    color: #3b3e40;
+    font: 60px/72px $HelveticaNeueBold;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 26px;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+    margin-bottom: 76px;
+    letter-spacing: -.015em;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    text-align: left;
+    letter-spacing: -.02em;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.38;
+    color: #000;
+    text-align: left;
+    letter-spacing: -.025em;
+    max-width: 700px;
+    margin: 45px auto 50px;
+  }
+}
+
 .price_holder {
   @extend %clearfix;
   position: relative;

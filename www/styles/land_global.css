@@ -934,6 +934,44 @@ a {
   line-height: 1.5;
 }
 
+.article_v1 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.article_v1 h1 {
+  text-align: center;
+  color: #3b3e40;
+  font: 60px/72px "HelveticaNeueBold", sans-serif;
+  margin-bottom: 20px;
+}
+.article_v1 h2 {
+  font-size: 26px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  margin-bottom: 76px;
+  letter-spacing: -.015em;
+}
+.article_v1 p {
+  font-size: 18px;
+  line-height: 28px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  text-align: left;
+  letter-spacing: -.02em;
+}
+.article_v1 h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.38;
+  color: #000;
+  text-align: left;
+  letter-spacing: -.025em;
+  max-width: 700px;
+  margin: 45px auto 50px;
+}
+
 .price_holder {
   position: relative;
   z-index: 1;
