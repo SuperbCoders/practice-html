@@ -3131,6 +3131,7 @@ a {
   float: left;
   margin-top: 3px;
   margin-right: 10px;
+  position: relative;
 }
 .patient_block .patient_status_w {
   right: 5px;
