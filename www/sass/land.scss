@@ -137,8 +137,35 @@ a {
   }
 }
 
+.land_menu {
+  @extend %clearfix;
+  margin: 0 300px;
+  text-align: center;
+
+  > li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 15px;
+  }
+}
+
+.nav_link {
+  @include transition_all(color .3s);
+  font-size: 15px;
+  color: #000;
+
+  &:hover {
+    color: #4f61df;
+  }
+}
+
 .logo_block {
   float: left;
+
+  .phone {
+    font-size: 15px;
+    letter-spacing: .025em;
+  }
 }
 
 .header_controls {
@@ -362,14 +389,14 @@ a {
   max-width: 800px;
   margin: 0 auto;
   padding-bottom: 20px;
-  
+
   h1 {
     text-align: center;
     color: #3b3e40;
     font: 60px/72px $HelveticaNeueBold;
     margin-bottom: 20px;
   }
-  
+
   h2 {
     font-size: 26px;
     font-weight: 400;
@@ -378,7 +405,7 @@ a {
     margin-bottom: 76px;
     letter-spacing: -.015em;
   }
-  
+
   p {
     font-size: 18px;
     line-height: 28px;
@@ -511,7 +538,7 @@ a {
   > li {
     float: left;
     position: relative;
-  
+
     &:before {
       content: '\2022';
       display: inline-block;
