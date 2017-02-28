@@ -117,12 +117,17 @@ mixin patient_info_table()
 mixin land_header()
     div.header
         .section_inner.clearfix
-            .logo_block: a.logo(href='#')
-            
+            .logo_block
+                a.logo(href='#')
+                span.phone +7 800 123-45-67
             .header_controls
                 a.btn_v2.black_btn.auth_btn(href='#') Вход для клиентов
-        
             
+            ul.land_menu
+                li: a.nav_link(href='#') Зачем это
+                li: a.nav_link(href='#') Как работает
+                li: a.nav_link(href='#') Цены
+
 mixin header(active_menu, sub_header, profile_sub_header, card_sub_header, edit_patient, notification_center)
     div.header
         .section_inner.clearfix
