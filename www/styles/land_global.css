@@ -1056,8 +1056,9 @@ a {
 }
 
 .price_img {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   text-align: center;
+  font-size: 38px;
 }
 .price_img img {
   display: inline-block;
