@@ -1072,12 +1072,15 @@ a {
 .demo_period {
   padding: 18px 0;
   text-align: center;
-  font-weight: bold;
-  line-height: 88px;
 }
 .demo_period span {
   display: inline-block;
   vertical-align: top;
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 88px;
+}
+.demo_period ._period {
   border-radius: 12px;
   border: 1px solid #000;
   width: 60px;
