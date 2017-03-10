@@ -20,7 +20,7 @@ body {
   &.body_gray {
     background: #f5f5f5;
   }
-  
+
   &.body_white {
     background: #fff;
   }
@@ -1506,7 +1506,7 @@ $patient_scale_time: 1s;
   height: 40px;
   margin: 28px auto 22px;
   border-radius: 100%;
-  
+
   img {
     width: 40px;
     height: 40px;
@@ -2005,6 +2005,16 @@ $patient_scale_time: 1s;
   margin: 0 auto;
   max-width: 920px;
   padding: 80px 0;
+
+  .logo_block {
+    position: absolute;
+    top: 22px;
+    left: -120px;
+
+    .logo:before {
+      color: #000;
+    }
+  }
 }
 
 .new_appointment_controls {
@@ -2040,7 +2050,7 @@ $patient_scale_time: 1s;
   cursor: pointer;
   position: absolute;
   top: 0;
-  right: -90px;
+  right: -100px;
   width: 57px;
   height: 57px;
   border-radius: 100%;
@@ -2786,10 +2796,10 @@ $patient_scale_time: 1s;
   @extend %clearfix;
   margin: 70px auto 0;
   line-height: 50px;
-  
+
   > li {
     float: right;
-    
+
     &:first-child {
       float: left;
     }
@@ -5335,7 +5345,7 @@ textarea.form_input.input_v3 {
     position: relative;
     letter-spacing: .025em;
   }
-  
+
   &.save_card_btn {
     display: block;
     position: relative;
