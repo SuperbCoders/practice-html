@@ -1099,7 +1099,17 @@ button {
   .form_input {
     text-align: center;
   }
+}
 
+.add_btn_holder {
+
+  .form_input + & {
+    position: absolute;
+    top: 50%;
+    right: 11px;
+    margin-top: -12px;
+    margin-right: 1.5%;
+  }
 }
 
 .profile_tab_holder {
@@ -1233,6 +1243,10 @@ button {
 .tab_inner {
   padding: 40px 0 20px;
   border-top: 2px solid #e5e5e5;
+
+  &._no_bdr {
+    border: none;
+  }
 
   @include respond-to-max($desktop) {
     padding: 15px 0 15px;
@@ -1601,10 +1615,13 @@ $patient_scale_time: 1s;
   display: block;
   width: 80px;
   height: 80px;
-  margin: 22px auto 40px;
   border-radius: 100%;
   position: relative;
   background: #ececec;
+
+  .patient_info_block & {
+
+  }
 
   img {
     width: 80px;
@@ -2246,7 +2263,7 @@ $patient_scale_time: 1s;
 
   .patient_card .patient_card_controls {
     margin: 0 -20px;
-    padding: 0 20px;
+    padding: 10px 20px;
     border-radius: 0;
     text-align: center;
   }
@@ -2404,6 +2421,22 @@ $patient_scale_time: 1s;
     left: auto;
     right: 28px;
     top: 3px;
+  }
+
+  &.rel_mode {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    left: auto;
+    top: auto;
+
+    &.chosen_v2 .chzn-single {
+      border-color: #c2c2c2;
+
+      &:before {
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -5193,6 +5226,7 @@ textarea.form_input.input_v3 {
   .chosen_v2 & {
     @include transition_all(background .3s);
     margin-bottom: 2px;
+    line-height: 20px;
 
     &:hover {
       background: #efefef;

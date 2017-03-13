@@ -2129,6 +2129,14 @@ button {
   text-align: center;
 }
 
+.form_input + .add_btn_holder {
+  position: absolute;
+  top: 50%;
+  right: 11px;
+  margin-top: -12px;
+  margin-right: 1.5%;
+}
+
 .profile_tab_holder {
   margin: 0 auto;
   max-width: 700px;
@@ -2253,6 +2261,9 @@ button {
 .tab_inner {
   padding: 40px 0 20px;
   border-top: 2px solid #e5e5e5;
+}
+.tab_inner._no_bdr {
+  border: none;
 }
 @media only screen and (max-width: 1199px) {
   .tab_inner {
@@ -2571,7 +2582,6 @@ button {
   display: block;
   width: 80px;
   height: 80px;
-  margin: 22px auto 40px;
   border-radius: 100%;
   position: relative;
   background: #ececec;
@@ -3142,7 +3152,7 @@ button {
 }
 .patient_block .patient_card .patient_card_controls {
   margin: 0 -20px;
-  padding: 0 20px;
+  padding: 10px 20px;
   border-radius: 0;
   text-align: center;
 }
@@ -3277,6 +3287,19 @@ button {
   left: auto;
   right: 28px;
   top: 3px;
+}
+.patient_status_w.rel_mode {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  left: auto;
+  top: auto;
+}
+.patient_status_w.rel_mode.chosen_v2 .chzn-single {
+  border-color: #c2c2c2;
+}
+.patient_status_w.rel_mode.chosen_v2 .chzn-single:before {
+  opacity: 1;
 }
 
 .patient_menu_w {
@@ -5639,6 +5662,7 @@ textarea.form_input.input_v3 {
   -ms-transition: background 0.3s;
   transition: background 0.3s;
   margin-bottom: 2px;
+  line-height: 20px;
 }
 .chosen_v2 .chzn_item:hover {
   background: #efefef;

@@ -14,12 +14,12 @@ html(lang='ru')
                         .profile_container
                             .profile_tab_header_inner
                                 a.go_back_btn(href='#')
-                                h2.caption_v1.text_center Новая карточка пациента
+                                
                             .profile_tab_holder
-                                    
-                                .patient_info_block
-                                    
-                                    .form_row
+                                h2.caption_v1 Новая карточка пациента
+
+                                //-.patient_info_block
+                                    //-.form_row
                                         .patient_photo_block
                                             +patient_status()
                                             //-.patient_phone
@@ -33,22 +33,61 @@ html(lang='ru')
                                                 span.patient_avatar_letter Ф
                                                 label.change_photo_btn.btn_v1(for='patient_photo')
 
-                                    .form_row
+                                    //-.form_row
                                         label.input_w
                                             input.form_input.input_v3( autocomplete="off" placeholder='ФИО')
-                                    .form_row
+                                    //-.form_row
                                         label.input_w
                                             textarea.form_input.input_v3(placeholder='Краткое описание клиента ( autocomplete="off" этот текст будет видеть только врач)')
-                                    .form_row.mob_add_mod
+                                    //-.form_row.mob_add_mod
                                         label.input_w
                                             input.form_input.input_v3( autocomplete="off" placeholder='Телефон клиента')
                                             .add_btn_holder
                                                 a.add_row_btn.yellow_black_btn.cloneRowBtn(href='#')
 
-                                    .form_row
+                                    //-.form_row
                                         label.input_w
                                             input.form_input.input_v3( autocomplete="off" placeholder='Email')
 
+                                .tab_inner.form_row_v1._no_bdr
+                                    .form_row
+                                        .fl
+                                            .patient_add_avatar
+                                                input#patient_photo.hidden_input(autocomplete="off" type='file')
+                                                .patient_add_avatar
+                                                    img(src='i/note_img_1.jpg')
+                                                    span.patient_avatar_letter Ф
+                                                    label.change_photo_btn.btn_v1(for='patient_photo')
+                                    
+                                    .form_row
+                                        .label_holder: .form_label() Категория клиентов
+                                        .input_w.size_45.max_w_300
+                                            +patient_status('rel_mode')
+                                            
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_fio') ФИО
+                                        .input_w.size_59
+                                            input#patient_fio.form_input.input_v3( autocomplete="off" placeholder='ФИО')
+                                        
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_description')
+                                            span.mb Краткое описание клиента (этот текст будет видеть только врач)
+                                        .input_w.size_59
+                                            textarea#patient_description.form_input.input_v3(placeholder='Краткое описание клиента ( autocomplete="off" этот текст будет видеть только врач)')
+                                        
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_phone') Телефон клиента
+                                        .input_w.size_59
+                                            input#patient_phone.form_input.input_v3( autocomplete="off" placeholder='Телефон клиента')
+                                            .add_btn_holder
+                                                a.add_row_btn.yellow_black_btn.cloneRowBtn(href='#')
+                                        
+                                    .form_row
+                                        .label_holder: label.form_label(for='patient_email') Email
+                                        .input_w.size_59
+                                            input#patient_email.form_input.input_v3( autocomplete="off" placeholder='Email')
+                                        
+                                        
                                 .tab_inner.form_row_v1
                                     h2.caption_v1 Портрет пациента
 
