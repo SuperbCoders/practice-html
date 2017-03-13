@@ -3140,6 +3140,12 @@ button {
 .patient_block .patient_card_controls {
   margin: 0;
 }
+.patient_block .patient_card .patient_card_controls {
+  margin: 0 -20px;
+  padding: 0 20px;
+  border-radius: 0;
+  text-align: center;
+}
 .patient_block .controls_cell {
   height: 80px;
 }
@@ -8199,6 +8205,7 @@ be a descendant of the grid when it is being dragged.
   padding: 9px 13px;
   font-size: 13px;
   border: none;
+  margin-bottom: 1px;
 }
 .calendar_v2 .fc-event:before {
   -webkit-transition: background 0.3s;

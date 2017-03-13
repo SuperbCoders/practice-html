@@ -551,7 +551,7 @@ button {
       }
     }
   }
-  
+
   &._no_line {
     span {
       border-bottom-color: transparent !important;
@@ -2242,6 +2242,13 @@ $patient_scale_time: 1s;
 
   .patient_card_controls {
     margin: 0;
+  }
+
+  .patient_card .patient_card_controls {
+    margin: 0 -20px;
+    padding: 0 20px;
+    border-radius: 0;
+    text-align: center;
   }
 
   .controls_cell {
