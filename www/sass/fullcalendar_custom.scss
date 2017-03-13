@@ -782,6 +782,7 @@ $axisWidth: 60px;
     padding: 9px 13px;
     font-size: 13px;
     border: none;
+    margin-bottom: 1px;
 
     &:before {
       @include transition_all(background .3s);
