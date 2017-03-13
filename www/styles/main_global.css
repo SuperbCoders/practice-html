@@ -2933,6 +2933,14 @@ a {
   max-width: 920px;
   padding: 80px 0;
 }
+.new_appointment_w .logo_block {
+  position: absolute;
+  top: 22px;
+  left: -120px;
+}
+.new_appointment_w .logo_block .logo:before {
+  color: #000;
+}
 
 .new_appointment_controls {
   margin: 0 auto;
@@ -2956,7 +2964,7 @@ a {
   cursor: pointer;
   position: absolute;
   top: 0;
-  right: -90px;
+  right: -100px;
   width: 57px;
   height: 57px;
   border-radius: 100%;
