@@ -129,7 +129,7 @@ a {
   padding: 28px 0;
 
   &._white {
-    background: rgba(255, 255, 255, .75);
+    background: rgba(255, 255, 255, .9);
   }
 
   .section_inner {
@@ -462,7 +462,7 @@ a {
 
   p {
     font-size: 20px;
-    line-height: 1.3;
+    //line-height: 1.3;
   }
 
   &._demo {
@@ -505,13 +505,16 @@ a {
 .demo_period {
   padding: 18px 0;
   text-align: center;
-  font-size: 80px;
-  font-weight: bold;
-  line-height: 88px;
 
   span {
     display: inline-block;
     vertical-align: top;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 88px;
+  }
+
+  ._period {
     border-radius: 12px;
     border: 1px solid #000;
     width: 60px;
@@ -535,6 +538,7 @@ a {
 .footer_links {
   @extend %clearfix;
   color: #bec3cf;
+  font-size: 15px;
 
   > li {
     float: left;
@@ -553,6 +557,11 @@ a {
         display: none;
       }
     }
+  }
+
+  @include respond-to-min($tablet) {
+    float: right;
+    line-height: 1;
   }
 }
 

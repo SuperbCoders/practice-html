@@ -10,7 +10,66 @@ var html_var,
     notificationTimer,
     notificationBtn,
     notificationDropdown,
-    controlPanelBtn;
+    controlPanelBtn,
+    user_clors = [
+        'd32f2f',
+        'C2185B',
+        '7B1FA2',
+        '512DA8',
+        '303F9F',
+        '1976D2',
+        '0288D1',
+        '0097A7',
+        '00796B',
+        '388E3C',
+        '689F38',
+        'AFB42B',
+        'FBC02D',
+        'FFA000',
+        'F57C00',
+        'E64A19',
+        '5D4037',
+        '616161',
+        '455A64',
+        'c62828',
+        'AD1457',
+        '6A1B9A',
+        '4527A0',
+        '283593',
+        '1565C0',
+        '0277BD',
+        '00838F',
+        '00695C',
+        '2E7D32',
+        '558B2F',
+        '9E9D24',
+        'F9A825',
+        'FF8F00',
+        'EF6C00',
+        'D84315',
+        '4E342E',
+        '424242',
+        '37474F',
+        'b71c1c',
+        '880E4F',
+        '4A148C',
+        '311B92',
+        '1A237E',
+        '0D47A1',
+        '01579B',
+        '006064',
+        '004D40',
+        '1B5E20',
+        '33691E',
+        '827717',
+        'F57F17',
+        'FF6F00',
+        'E65100',
+        'BF360C',
+        '3E2723',
+        '212121',
+        '263238'
+    ];
 
 $(function ($) {
 
@@ -35,6 +94,13 @@ $(function ($) {
      */
 
     var inputEvents = 'keyup,keypress,focus,blur,change'.split(',');
+
+    $('.rndBG').each(function (ind) {
+        $(this).css({
+            'background-color': '#' + user_clors[Math.floor(Math.random() * user_clors.length)],
+            'color': '#fff'
+        });
+    });
 
     for (var i in inputEvents) $('.checkEmpty').on(inputEvents[i], function (e) {
         var checkBlock = $(this).closest('.checkEmptyBlock'),
@@ -138,7 +204,7 @@ $(function ($) {
             dayNamesShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
             dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
             beforeShow: function (inp, dp) {
-                
+
                 $(inp).parent().addClass('dp_opened');
 
                 $(dp.dpDiv).addClass('change_time_mod');
