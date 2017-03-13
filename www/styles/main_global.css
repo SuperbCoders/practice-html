@@ -1636,6 +1636,9 @@ button {
 .gl_link.gray_link:hover span {
   border-bottom-color: rgba(0, 0, 0, 0.6);
 }
+.gl_link._no_line span {
+  border-bottom-color: transparent !important;
+}
 
 .user_m_item {
   padding-left: 16px;
@@ -2624,6 +2627,14 @@ button {
   display: table;
   width: 100%;
   border-top: 1px solid #e1e1e1;
+}
+
+.new_phone_cell {
+  display: table-cell;
+  vertical-align: middle;
+  height: 57px;
+  width: 100%;
+  font-size: 15px;
 }
 
 .other_info_cell {

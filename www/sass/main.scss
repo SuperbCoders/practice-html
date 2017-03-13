@@ -551,6 +551,12 @@ button {
       }
     }
   }
+  
+  &._no_line {
+    span {
+      border-bottom-color: transparent !important;
+    }
+  }
 }
 
 .user_m_item {
@@ -1656,6 +1662,14 @@ $patient_scale_time: 1s;
   border-top: 1px solid #e1e1e1;
 }
 
+.new_phone_cell {
+  display: table-cell;
+  vertical-align: middle;
+  height: 57px;
+  width: 100%;
+  font-size: 15px;
+}
+
 .other_info_cell {
   display: table-cell;
   vertical-align: middle;
@@ -2479,7 +2493,7 @@ $patient_scale_time: 1s;
   span {
     left: 50%;
     margin-left: -1px;
-    
+
     &:before {
       content: '';
       position: absolute;
@@ -5489,7 +5503,7 @@ textarea.form_input.input_v3 {
     border-radius: 100%;
     padding-left: 1px;
     pointer-events: all;
-    
+
     @include respond-to-min($tablet) {
       //position: absolute;
       float: right;

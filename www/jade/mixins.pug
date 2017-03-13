@@ -113,6 +113,10 @@ mixin patient_info_table()
     .patient_info_table: .other_info_cell
         p +7 927 026 10 22
         p yaosamo@gmail.com
+           
+mixin patient_new_phone()
+    .patient_info_table: .new_phone_cell
+        a.blue_link.gl_link._no_line(href='#'): span + Добавить номер телефона
         
 mixin land_header()
     div.header
