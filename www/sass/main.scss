@@ -239,6 +239,12 @@ button {
   letter-spacing: .35px;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 1) {
+  ::-webkit-:not(:root:root) .menu_user_name {
+    letter-spacing: 0;
+  }
+}
+
 .calendar_header_holder {
   position: fixed;
   top: 0;
@@ -1774,6 +1780,7 @@ $patient_scale_time: 1s;
 
 .appointments_control {
   @extend %clearfix;
+  pointer-events: none;
 
   @include respond-to-min($tablet) {
     position: fixed;
@@ -2472,6 +2479,16 @@ $patient_scale_time: 1s;
   span {
     left: 50%;
     margin-left: -1px;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      top: -20px;
+      left: -20px;
+      border-radius: 100%;
+    }
   }
 
   &:after,
@@ -5471,7 +5488,8 @@ textarea.form_input.input_v3 {
     text-align: center;
     border-radius: 100%;
     padding-left: 1px;
-
+    pointer-events: all;
+    
     @include respond-to-min($tablet) {
       //position: absolute;
       float: right;
