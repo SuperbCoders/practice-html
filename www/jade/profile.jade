@@ -69,7 +69,23 @@ html(lang='ru')
                                                     .doctor_photo
                                                         img.doctor_img(src='i/user_1.png')
                                                         label.change_photo_btn.btn_v1(for='doctor_photo')
-
+                                                        
+                                            .form_row
+                                                .label_holder: .form_label: span.mb Подключить другие социальные сети для входа
+                                                .input_w.size_62
+                                                    ul.soc_auth._triple_mod
+                                                        li.soc_auth_item
+                                                            a.btn_v10.soc_auth_btn.s_auth_vk.vk_btn(href='#') Вконтакте
+                                                        li.soc_auth_item
+                                                            a.btn_v10.soc_auth_btn.s_auth_tw.tw_btn(href='#') Твиттер 
+                                                        li.soc_auth_item
+                                                            .btn_v10.soc_auth_btn._logged
+                                                                span.s_avatar
+                                                                    img(src='i/soc_avatar.png')
+                                                                .mb
+                                                                    span Facebook 
+                                                                    a.gl_link.blue_link._invert(href='#'): span отключить
+                                                        
                                     #tab_2
                                         .tab_inner.form_row_v1
                                             .form_row
