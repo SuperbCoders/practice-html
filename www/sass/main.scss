@@ -557,7 +557,7 @@ button {
       border-bottom-color: transparent !important;
     }
   }
-  
+
   &._invert:not(:hover) {
     span {
       border-bottom-color: transparent !important;
@@ -1275,12 +1275,12 @@ button {
 
 .doctor_public_photo {
   position: relative;
-  background: #e5e5e5;
+  background: #f7f7f7;
   border-radius: 8px;
-  min-height: 200px;
+  min-height: 120px;
   max-height: 300px;
   overflow: hidden;
-  border: 1px solid #b7b7b7;
+  //border: 1px solid #b7b7b7;
 
   img {
     max-width: 100%;
@@ -1312,7 +1312,7 @@ button {
     bottom: 10px;
   }
 
-  &:first-child {
+  .change_photo_tip:first-child & {
     margin-left: -25px !important;
     left: 50% !important;
     bottom: auto;
@@ -1338,7 +1338,6 @@ button {
     content: '';
     border-radius: 20px;
     background: #000;
-    opacity: .3;
   }
 
   &:hover {
@@ -1348,6 +1347,29 @@ button {
     }
   }
 
+}
+
+.change_photo_tip {
+  p {
+    display: none;
+    margin-top: 0 !important;
+    color: #323232;
+  }
+
+  &:first-child {
+    @extend %hor_vert_centr;
+    position: absolute;
+    min-width: 75%;
+    padding-left: 60px;
+
+    .change_photo_btn {
+      left: 25px !important;
+    }
+
+    p {
+      display: block;
+    }
+  }
 }
 
 .patient_tip_holder {
@@ -3073,7 +3095,7 @@ $patient_scale_time: 1s;
   bottom: 0;
   left: 0;
   width: 40px;
-  
+
   img {
     display: block;
     max-width: 100%;

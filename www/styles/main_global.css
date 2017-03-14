@@ -137,7 +137,7 @@
   transform: translate(-50%, 0);
 }
 
-.user_initials, .aside_close_btn:before, .change_photo_btn:before, .patient_avatar_letter, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .rm_attach_btn:before, .search_btn:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .calendar_v1 .fc-toolbar .fc-center, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
+.user_initials, .aside_close_btn:before, .change_photo_btn:before, .change_photo_tip:first-child, .patient_avatar_letter, .pagination_item.pagination_next .gl_link:before, .pagination_item.pagination_prev .gl_link:before, .doc_soc_link:before, .rm_attach_btn:before, .search_btn:before, .go_back_btn:before, .add_row_btn:before, .rm_row_btn:before, .btn_v1.add_card_btn:before, .calendar_v1 .fc-toolbar .fc-center, .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v1 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .calendar_v2 .fc-toolbar .fc-center, .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-next-button:before,
 .calendar_v2 .fc-toolbar .fc-right .fc-button-group .fc-prev-button:before, .fancybox-nav:before {
   top: 50%;
@@ -2289,12 +2289,11 @@ button {
 
 .doctor_public_photo {
   position: relative;
-  background: #e5e5e5;
+  background: #f7f7f7;
   border-radius: 8px;
-  min-height: 200px;
+  min-height: 120px;
   max-height: 300px;
   overflow: hidden;
-  border: 1px solid #b7b7b7;
 }
 .doctor_public_photo img {
   max-width: 100%;
@@ -2322,7 +2321,7 @@ button {
   left: 10px;
   bottom: 10px;
 }
-.change_photo_btn:first-child {
+.change_photo_tip:first-child .change_photo_btn {
   margin-left: -25px !important;
   left: 50% !important;
   bottom: auto;
@@ -2347,11 +2346,27 @@ button {
   content: '';
   border-radius: 20px;
   background: #000;
-  opacity: .3;
 }
 .change_photo_btn:hover:after {
   opacity: 1;
   background: #4c88fd;
+}
+
+.change_photo_tip p {
+  display: none;
+  margin-top: 0 !important;
+  color: #323232;
+}
+.change_photo_tip:first-child {
+  position: absolute;
+  min-width: 75%;
+  padding-left: 60px;
+}
+.change_photo_tip:first-child .change_photo_btn {
+  left: 25px !important;
+}
+.change_photo_tip:first-child p {
+  display: block;
 }
 
 .patient_tip_holder .patients_list {

@@ -151,8 +151,10 @@ html(lang='ru')
                                                     input#doctor_public_photo.hidden_input( autocomplete="off" type='file')
                                                     .doctor_public_photo
                                                         img.doctor_img(src='i/user_large_1.jpg')
-                                                        label.change_photo_btn.btn_v1(for='doctor_public_photo')
-                                                    
+                                                        .change_photo_tip
+                                                            p Постарайтесь найти фотографию с&nbsp;хорошим освещением
+                                                            label.change_photo_btn.btn_v1(for='doctor_public_photo')
+
                                             .form_row
                                                 .label_holder: label.form_label(for='doctor_specialty') Специальность
                                                 .input_w.size_59
