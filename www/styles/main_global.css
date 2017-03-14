@@ -1373,12 +1373,23 @@ button {
   margin-left: 2px;
   display: inline-block;
   vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.menu_avatar .avatar {
+  line-height: 32px;
+  max-width: 100%;
+  max-height: 100%;
 }
 .menu_avatar img {
   border-radius: 100%;
   width: 32px;
   height: 32px;
   display: block;
+}
+.menu_avatar img + .avatar {
+  display: none;
 }
 
 .menu_user_name {
