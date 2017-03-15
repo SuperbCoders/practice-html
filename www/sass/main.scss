@@ -6190,6 +6190,20 @@ $rectWidth: 1200px;
   display: none;
 }
 
+.retina {
+  display: none;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+  .retina {
+    display: initial;
+  }
+
+  .no_retina {
+    display: none;
+  }
+}
+
 //  todo remove
 
 #chromeperfectpixel-panel {
