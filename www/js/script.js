@@ -99,6 +99,8 @@ $(function ($) {
         $(this).css({
             'background-color': '#' + user_clors[Math.floor(Math.random() * user_clors.length)],
             'color': '#fff'
+        }).find('.patient_avatar_letter').css({
+            'color': '#fff'
         });
     });
 
