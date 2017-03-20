@@ -4972,6 +4972,37 @@ textarea.form_input.input_v3 {
     }
   }
 
+  .chosen_v1 & {
+    @include transition_all(border-color .3s);
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #b7b7b7;
+    padding: 10px;
+    height: 40px;
+    line-height: 18px;
+    color: #000;
+    position: relative;
+    background: #fff;
+
+    span {
+      display: block;
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    
+    &:before {
+
+    }
+
+    &.chzn-default {
+      color: #969696;
+    }
+  }
+
   .chosen_v1 .chzn-with-drop & {
     border-color: #4c88fd;
     z-index: 7;

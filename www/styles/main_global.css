@@ -5398,6 +5398,35 @@ textarea.form_input.input_v3 {
 .chzn-single.chzn-default {
   color: #969696;
 }
+.chosen_v1 .chosen-single, .chosen_v1
+.chzn-single {
+  -webkit-transition: border-color 0.3s;
+  -ms-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid #b7b7b7;
+  padding: 10px;
+  height: 40px;
+  line-height: 18px;
+  color: #000;
+  position: relative;
+  background: #fff;
+}
+.chosen_v1 .chosen-single span, .chosen_v1
+.chzn-single span {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.chosen_v1 .chosen-single.chzn-default, .chosen_v1
+.chzn-single.chzn-default {
+  color: #969696;
+}
 .chosen_v1 .chzn-with-drop .chosen-single, .chosen_v1 .chzn-with-drop
 .chzn-single {
   border-color: #4c88fd;
