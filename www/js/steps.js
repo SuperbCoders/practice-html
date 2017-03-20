@@ -17,7 +17,7 @@ $(function ($) {
         }
     });
 
-    $('.manageSubRecordPopup').on ('click', function () {
+    $('.manageSubRecordPopup').on('click', function () {
         subRecordPopup.dialog('open');
         return false;
     });
@@ -37,12 +37,12 @@ $(function ($) {
         }
     });
 
-    $('.openSubRecordAdd').on ('click', function () {
+    $('.openSubRecordAdd').on('click', function () {
         addSubRecordPopup.dialog('open');
         return false;
     });
 
-    $('.selectRecordName').on ('click', function () {
+    $('.selectRecordName').on('click', function () {
         var name = $(this);
 
         name.closest('.recordName').find('input').val(name.text());
@@ -50,19 +50,28 @@ $(function ($) {
         return false;
     });
 
-    $('.addSubRecordBlock').on ('click', function () {
-        var docScroll = doc.scrollTop(), newSubRecord = $('<div class="new_appointment_block"><div class="input_w"><input class="form_input input_v10" placeholder="Новая запись" value="' + $(this).text() + '"></div><div class="input_w"><textarea class="form_input input_v11 autoSize" placeholder="Текст записи"></textarea></div></div>');
+    $('body').delegate('.subRecordTitle', 'keydown', function (e) {
+        var inp = $(this);
+
+        if (!inp.val().length && e.keyCode == 8) {
+            inp.closest('.new_appointment_block').remove();
+        }
+
+    });
+
+    $('.addSubRecordBlock').on('click', function () {
+        var docScroll = doc.scrollTop(), newSubRecord = $('<div class="new_appointment_block"><div class="input_w"><input class="form_input input_v10 subRecordTitle" placeholder="Новая запись" value="' + $(this).text() + '"></div><div class="input_w"><textarea class="form_input input_v11 autoSize" placeholder="Текст записи"></textarea></div></div>');
 
         $('.appointmentControls').before(newSubRecord);
 
         //newSubRecord.find('textarea').focus();
-        
+
         docScrollTo(docScroll + newSubRecord.height() + 76, 0);
 
         return false;
     });
 
-    $('.applySubRecord').on ('click', function () {
+    $('.applySubRecord').on('click', function () {
         var sabRecordItem = $('#new_saubrecord_item');
         $('.addMarker').before($('<li>' + sabRecordItem.val() + '</li>'));
         addSubRecordPopup.dialog('close');
@@ -84,6 +93,6 @@ $(function ($) {
     $('.autoSize').each(function (ind) {
         autoSize(this);
     });
-    
+
 });
 
