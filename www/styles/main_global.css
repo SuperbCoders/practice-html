@@ -3622,7 +3622,9 @@ button {
   .doctor_aside_photo img {
     position: absolute;
     display: block;
-    width: 100%;
+    width: auto;
+    min-height: 100%;
+    min-width: 100%;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
