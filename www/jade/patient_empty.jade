@@ -1,0 +1,69 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head('Practic карта пациента', false, true)
+
+    body.body_gray
+        .wrapper
+            //-.rect_1024
+            .base.load_more_mod
+                +header(2)
+
+                div.main_content
+                    .section_inner
+                        .patient_board
+                            .patient_block
+                                .patient_card
+                                    +patient_status()
+                                    //+patient_menu()
+                                    .patient_avatar_holder
+                                        a.patient_avatar.rndBG(href='#')
+                                            .patient_avatar_letter ЮБ
+                                            //-img(src='i/user_2.png') 
+                                        .patient_info
+                                            .patient_name
+                                                a.gl_link.gray_link(href='#'): span Юлия Бокова
+                                            .patient_city Москва 
+                                            
+                                    .patient_preview
+                                        p Краткая информация о пациенте Первичный прием, возможно анализы, закладывает уши итд
+                                    
+                                    +patient_info_table()
+                                    +patient_new_phone()
+                                    
+                                    .patient_card_controls.skipOpen: .patient_info_table
+                                        .controls_cell
+                                            a.btn_v2.patient_btn.green_btn(href='#'): span.mb Записать на прием
+                                                    
+                                    ul.patient_overview_list
+                                        li.patient_overview_line
+                                            .overview_caption_v2 Портрет
+                                            dl.overview_info
+                                                dt Рост:
+                                                dd 178
+                                                dt Вес
+                                                dd 55 кг
+                                                dt Возраст
+                                                dd 44
+
+                                        li.patient_overview_line
+                                            .overview_caption_v2 Особенности
+                                            p Аллергия на цветы
+
+                                        li.patient_overview_line
+                                            .overview_caption_v2 Дополнительно
+                                            p Договор №000099
+
+                            .patient_appointments
+                                .caption_v2 Карта Пациента
+                                    
+                                .patient_appointments_tip Пока здесь нет записей, но вы можете добавить запись в карту, для этого нажмите на желтую кнопку внизу.
+                                
+                                .appointments_control
+                                    a.btn_v3.new_appointment_btn.yellow_black_btn.icon-plus.openAppointmentForm_(href='step_1.html')
+
+                //-+aside_menu()
+                
+            +time_switcher()
+            +popups()
+            

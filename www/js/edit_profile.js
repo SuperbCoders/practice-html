@@ -2,7 +2,22 @@ var profile_tabs,
     profile_tabs_swiper,
     open_chzn,
     tabHeaderSpacer,
-    tabHeader;
+    tabHeader,
+    inputMaskEvents = {
+        "oncomplete": function (ev) {
+            // console.log(ev, this);
+            $(this).addClass('_complete').removeClass('_incomplete');
+
+        },
+        "onincomplete": function (ev) {
+            // console.log(ev, this);
+            $(this).addClass('_incomplete').removeClass('_complete');
+        },
+        "oncleared": function (ev) {
+            // console.log(ev, this);
+            $(this).removeClass('_complete');
+        }
+    };
 
 $(function ($) {
 
@@ -86,11 +101,49 @@ $(function ($) {
         }
     });
 
+    initMask();
+
     init_chosen();
 
     fix_tab_header();
 
 });
+
+function initMask() {
+
+    $("input").each(function (i, el) {
+        var inp = $(el), param = inputMaskEvents;
+
+        if (inp.attr('data-inputmask-custom') != void 0) {
+            inp.inputmask(JSON.parse('{' + inp.attr('data-inputmask-custom').replace(/'/g, '"') + '}'));
+        }
+
+        // if (inp.attr('data-inputmask-phone') != void 0) {
+        //     inp.mask(inp.attr('data-inputmask-phone'), {placeholder: inp.attr('data-mask-placeholder')});
+        // }
+
+        // if (inp.attr('data-inputmask-regex') != void 0) {
+        //     param.regex = inp.attr('data-inputmask-regex');
+        //
+        //     inp.inputmask('Regex', param);
+        // }
+
+        if (inp.attr('data-inputmask') != void 0) {
+            inp.inputmask();
+        }
+
+        if (inp.attr('data-inputmask-email') != void 0) {
+            param.regex = inp.attr('data-inputmask-email');
+            param.placeholder = '_';
+
+            inp.inputmask('Regex', param);
+        }
+
+        if (inp.attr('data-inputmask-regex') != void 0) {
+            inp.inputmask('Regex', inputMaskEvents);
+        }
+    });
+}
 
 function init_chosen() {
 
@@ -163,11 +216,11 @@ function init_chosen() {
             .change(function (e) {
                 updateDaysRow($(e.target));
             }).chosen({
-                autohide_results_multiple: false,
-                allow_single_deselect: true,
-                width: "100%",
-                className: "form_o_b_item form_o_b_value_edit_mode"
-            });
+            autohide_results_multiple: false,
+            allow_single_deselect: true,
+            width: "100%",
+            className: "form_o_b_item form_o_b_value_edit_mode"
+        });
 
     }
 }

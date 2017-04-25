@@ -32,6 +32,11 @@
       right: 0;
       margin: 0 auto;
     }
+
+    &.dialog_green,
+    &.dialog_green_2 {
+      border-radius: 20px;
+    }
   }
 
   .no_animation & {
@@ -57,7 +62,7 @@
   .overlay_v1 & {
     background: transparentize(#000, .15);
   }
-  
+
   .overlay_v3 & {
     background: #fff;
   }
@@ -153,7 +158,7 @@
       color: #3e4045;
     }
   }
-  
+
   .no_close_mod & {
     display: none !important;
   }
@@ -182,7 +187,7 @@
     height: 45px;
     border-radius: 10px 10px 0 0;
   }
-  
+
   .dialog_v3 & {
     height: 60px;
   }
@@ -204,7 +209,7 @@
     z-index: 1;
     border-radius: 10px 10px 0 0;
   }
-  
+
   .dialog_green & {
     background: #adffcb;
   }
